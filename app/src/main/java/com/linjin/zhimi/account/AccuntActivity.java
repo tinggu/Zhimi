@@ -1,0 +1,138 @@
+package com.linjin.zhimi.account;
+
+import android.os.Bundle;
+import android.support.v4.app.FragmentTransaction;
+import android.widget.Toast;
+ 
+import com.cyou.band.DataCenter; 
+import com.cyou.band.base.BaseMvpActivity;
+import com.cyou.band.event.FindPWSuccessfulEvent;
+import com.cyou.band.event.LoginSuccessfulEvent;
+import com.cyou.band.event.RegisterSuccessfulEvent; 
+import com.cyou.band.utils.CacheUtils; 
+import com.cyou.common.utils.LogUtils;
+import com.cyou.quick.QuickApplication;
+import com.cyou.quick.mvp.MvpBasePresenter;
+import com.cyou.quick.mvp.MvpPresenter; 
+
+import de.greenrobot.event.EventBus;
+
+import com.linjin.zhimi.R;
+import com.linjin.zhimi.utils.DialogUtils;
+import com.linjin.zhimi.utils.IntentStarter;
+
+/**
+ * Description:
+ * Copyright  : Copyright (c) 2015
+ * Company    : 北京畅游天下网络科技有限公司
+ * Author     : wangjia_bi
+ * Date       : 2015/6/8 15:29
+ */
+public class AccuntActivity extends BaseMvpActivity {
+
+    public DialogUtils dialogUtils;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+//        //屏蔽右划返回
+//        SwipeBackHelper.getCurrentPage(this).setSwipeBackEnable(false);
+        setContentView(R.layout.activity_accunt);
+        EventBus.getDefault().register(this);
+        dialogUtils = new DialogUtils();
+        showSelect();
+    }
+
+    @Override
+    public MvpPresenter createPresenter() {
+        return new MvpBasePresenter();
+    }
+
+//    @Override
+//    protected void onNewIntent(Intent intent) {
+//        super.onNewIntent(intent);
+//        if (DataCenter.getInstance().getUserToken() != null) {
+//            IntentStarter.showMain(AccuntActivity.this);
+//        }
+//    }
+
+    @Override
+    public void onDestroy() {
+        dialogUtils.hideLoading();
+        EventBus.getDefault().unregister(this);
+        super.onDestroy();
+    }
+
+    public void showSelect() {
+        SelectFragment selectFragment = new SelectFragment(this);
+        FragmentTransaction trasection = getSupportFragmentManager().beginTransaction();
+        trasection.replace(R.id.fragmentContainer, selectFragment);
+//        trasection.addToBackStack("select");
+        trasection.commit();
+    }
+
+
+    public void showLogin() {
+        LoginFragment loginFragment = new LoginFragment(this);
+        FragmentTransaction trasection = getSupportFragmentManager().beginTransaction();
+        trasection.replace(R.id.fragmentContainer, loginFragment);
+        trasection.addToBackStack("login");
+        trasection.commit();
+    }
+
+    public void showRegister(String phone, String password) {
+        RegisterFragment registerFragment = new RegisterFragment(this, phone, password);
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragmentContainer, registerFragment);
+        transaction.addToBackStack("register");
+        transaction.commit();
+    }
+
+    public void showFindPassword(String phone) {
+        FindPWFragment findPWFragment = new FindPWFragment(phone);
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.addToBackStack(null)
+                .add(R.id.fragmentContainer, findPWFragment)
+                .commit();
+    }
+
+    //登录成功事件
+    public void onEventMainThread(LoginSuccessfulEvent event) {
+        refreshCache();
+        LogUtils.i("login", "LoginSuccessfulEvent");
+        Toast.makeText(QuickApplication.getInstance(), "登录成功！", Toast.LENGTH_LONG).show();
+        enterMain();
+    }
+
+    //注册成功事件
+    public void onEventMainThread(RegisterSuccessfulEvent event) {
+        refreshCache();
+        LogUtils.i("login", "RegisterSuccessfulEvent");
+        //强制创建默认身份
+        IntentStarter.enter(this);
+        Toast.makeText(QuickApplication.getInstance(), "注册成功！", Toast.LENGTH_LONG).show();
+    }
+
+    //找回密码成功事件
+    public void onEventMainThread(FindPWSuccessfulEvent event) {
+        refreshCache();
+        LogUtils.i("login", "FindPWSuccessfulEvent");
+        Toast.makeText(QuickApplication.getInstance(), "密码已找回，请注意保管！", Toast.LENGTH_LONG).show();
+        enterMain();
+    }
+    
+    private void refreshCache(){
+        if (DataCenter.getInstance().hasUser()) {
+            CacheUtils.init(DataCenter.getInstance().getUserID());
+            CacheUtils.refreshCache();
+        }else{
+            LogUtils.e("user 为空初始化失败");
+        }
+    }
+
+    
+    private void enterMain() {
+        finish();
+        IntentStarter.showMain(AccuntActivity.this);
+    }
+}

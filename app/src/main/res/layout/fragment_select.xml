@@ -1,0 +1,46 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/main_bg">
+
+    <!--<ImageView-->
+    <!--android:id="@+id/iv_logo"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginTop="100dp"-->
+    <!--android:scaleType="center"-->
+    <!--android:src="@mipmap/main_bg" />-->
+
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_register"
+            style="@style/Login.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/action_register" />
+
+        <View
+            android:layout_width="16dp"
+            android:layout_height="50dp"
+            android:layout_weight="0" />
+
+        <Button
+            android:id="@+id/btn_login"
+            style="@style/Login.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/action_login" />
+    </LinearLayout>
+
+</FrameLayout>

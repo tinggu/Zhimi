@@ -1,0 +1,91 @@
+apply plugin: 'com.android.application'
+apply plugin: 'packer'
+
+def verName = "0.0.1"
+def verCode = 1
+
+packer {
+    // 指定渠道打包输出目录
+    archiveOutput = file(new File("E:\\FTP_download\\Band", verName))
+    // 指定渠道打包输出文件名格式
+    archiveNameFormat = 'BandV${versionName}${buildType}.${flavorName}'
+    // 指定渠道打包需要修改的AndroidManifest文件项
+    manifestMatcher = ['UMENG_CHANNEL', 'test']
+//    // 指定是否使用build版本号自增
+//    buildNumberAuto = true
+//    // 指定使用版本号自增的buildType，默认是全部
+//    buildNumberTypeMatcher = ['release', 'beta']
+
+}
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        applicationId "com.linjin.zhimi"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode verCode
+        versionName verName
+
+        // dex突破65535的限制
+        multiDexEnabled true
+
+        // 默认是umeng的渠道
+        manifestPlaceholders = [UMENG_CHANNEL_VALUE: "test"]
+//        //设置支持的SO库架构
+//        ndk {
+//            //设置支持的SO库架构
+//            abiFilters 'armeabi' //, 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+//        }
+    }
+
+    // dex突破65535的限制
+    dexOptions {
+        jumboMode true
+    }
+
+    // 移除lint检查的error
+    lintOptions {
+        abortOnError false
+    }
+
+    //签名
+    signingConfigs {
+        release {
+            storeFile file('../keyStore/m8u')      //签名文件
+            storePassword "com.cyou.m8u"
+            keyAlias "m8u"
+            keyPassword "com.cyou.m8u"  //签名密码
+        }
+    }
+    
+    buildTypes {
+        release {
+            //混淆
+            minifyEnabled false
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources true
+            //加载默认混淆配置文件及自定义混淆 配置
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile project(':SMSSDK')
+    compile project(':uilib')
+
+    //内存泄露检查
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.3.1'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.3.1'
+
+    // add packer-helper
+    compile 'com.mcxiaoke.gradle:packer-helper:1.0.2'
+}
+
+

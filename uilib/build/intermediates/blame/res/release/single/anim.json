@@ -1,0 +1,78 @@
+[
+    {
+        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\anim\\abc_fade_out.xml",
+        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\anim\\abc_fade_out.xml"
+    },
+    {
+        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\anim\\abc_grow_fade_in_from_bottom.xml",
+        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
+    },
+    {
+        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\anim\\abc_popup_enter.xml",
+        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\anim\\abc_popup_enter.xml"
+    },
+    {
+        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\anim\\design_snackbar_in.xml",
+        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.0\\res\\anim\\design_snackbar_in.xml"
+    },
+    {
+        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\anim\\abc_fade_in.xml",
+        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\anim\\abc_fade_in.xml"
+    },
+    {
+        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\anim\\popup_enter.xml",
+        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.github.afollestad.material-dialogs\\core\\0.8.5.7\\res\\anim\\popup_enter.xml"
+    },
+    {
+        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\anim\\abc_slide_in_top.xml",
+        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\anim\\abc_slide_in_top.xml"
+    },
+    {
+        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\anim\\abc_shrink_fade_out_from_bottom.xml",
+        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
+    },
+    {
+        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\anim\\abc_slide_out_top.xml",
+        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\anim\\abc_slide_out_top.xml"
+    },
+    {
+        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\anim\\abc_slide_in_bottom.xml",
+        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\anim\\abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\anim\\slide_in_bottom.xml",
+        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.bigkoo\\pickerview\\2.0.8\\res\\anim\\slide_in_bottom.xml"
+    },
+    {
+        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\anim\\design_snackbar_out.xml",
+        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.0\\res\\anim\\design_snackbar_out.xml"
+    },
+    {
+        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\anim\\decelerate_cubic.xml",
+        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.github.afollestad.material-dialogs\\core\\0.8.5.7\\res\\anim\\decelerate_cubic.xml"
+    },
+    {
+        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\anim\\abc_popup_exit.xml",
+        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\anim\\abc_popup_exit.xml"
+    },
+    {
+        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\anim\\abc_slide_out_bottom.xml",
+        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\anim\\abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\anim\\design_fab_in.xml",
+        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.0\\res\\anim\\design_fab_in.xml"
+    },
+    {
+        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\anim\\popup_exit.xml",
+        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.github.afollestad.material-dialogs\\core\\0.8.5.7\\res\\anim\\popup_exit.xml"
+    },
+    {
+        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\anim\\design_fab_out.xml",
+        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.0\\res\\anim\\design_fab_out.xml"
+    },
+    {
+        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\anim\\slide_out_bottom.xml",
+        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.bigkoo\\pickerview\\2.0.8\\res\\anim\\slide_out_bottom.xml"
+    }
+]

@@ -1,0 +1,24 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/start_bg">
+
+    <!--<ImageView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center_horizontal"-->
+        <!--android:layout_marginTop="108dp"-->
+        <!--android:scaleType="centerCrop"-->
+        <!--android:src="@mipmap/main_bg" />-->
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center_horizontal|bottom"-->
+    <!--android:layout_marginBottom="135dp"-->
+    <!--android:text="@string/app_name"-->
+    <!--android:textColor="@color/color_181b1d"-->
+    <!--android:textSize="17sp" />-->
+
+</FrameLayout>

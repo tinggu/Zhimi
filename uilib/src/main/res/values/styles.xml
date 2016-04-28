@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="PercentBar_Default">
+        <item name="android:layout_height">10dp</item>
+        <item name="android:layout_width">match_parent</item>
+
+        <item name="percent_max">100</item>
+        <item name="percent_current">0</item>
+
+        <item name="percent_unreached_color">#ffffff</item>
+        <item name="percent_reached_color">#2fb6ff</item>
+
+        <item name="percent_text_size">15sp</item>
+        <item name="percent_text_color">#2fb6ff</item>
+
+        <item name="percent_reached_bar_height">10dp</item>
+        <item name="percent_unreached_bar_height">10dp</item>
+    </style>
+
+    <style name="PercentBar_Relax_Blue">
+        <item name="android:layout_height">10dp</item>
+        <item name="android:layout_width">match_parent</item>
+
+        <item name="percent_max">100</item>
+        <item name="percent_current">0</item>
+
+        <item name="percent_unreached_color">#ffffff</item>
+        <item name="percent_reached_color">#2fb6ff</item>
+        <item name="percent_text_size">15sp</item>
+        <item name="percent_text_color">#2fb6ff</item>
+
+        <item name="percent_reached_bar_height">10dp</item>
+        <item name="percent_unreached_bar_height">10dp</item>
+    </style>
+</resources>

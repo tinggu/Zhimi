@@ -1,0 +1,79 @@
+<resources>
+    <string name="app_name">知觅</string>
+
+    <!--通用-->
+    <string name="text_finish">完成</string>
+    <string name="text_cancel">取消</string>
+    <string name="text_back">返回</string>
+    <string name="text_save">保存</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_mobile_num">输入登录手机号</string>
+    <string name="prompt_password">输入密码</string>
+    <string name="prompt_code">请输入验证码</string>
+    <string name="action_login">登录</string>
+    <string name="action_login_loading">登录中...</string>
+    <string name="action_register">注册</string>
+    <string name="action_add">加入</string>
+    <string name="action_forget"><u>忘记密码？</u></string>
+    <string name="action_new_register">注册新用户</string>
+    <string name="action_sign_in">使用手机号注册</string>
+    <string name="action_sign_in_short">Sign in</string>
+
+    <string name="login_error_phone_not_registered">手机号未注册</string>
+    <string name="login_error_password_error">登录密码错误</string>
+    <string name="login_error_phonenum_empty">手机号不能为空</string>
+    <string name="login_error_password_empty">密码不能为空</string>
+
+    <string name="login_phonenumber_hint">请输入手机号</string>
+    <string name="login_password_hint">请输入密码</string>
+    <string name="login_findpassword">忘记密码</string>
+
+    <!-- Strings related to register -->
+    <string name="register_password_hint">设置登录密码（请使用6-20个字符）</string>
+    <string name="register_repeat_password">确认密码</string>
+    <string name="register_get_validation_code">发送验证码</string>
+    <string name="register_invitation_mobile">输入邀请人手机号(选填)</string>
+    <string name="validation_code_null">请输入验证码</string>
+    <string name="reget_validation_code">重新发送</string>
+    <string name="register_agree">点击注册表示同意</string>
+    <string name="register_protocal">《用户服务协议》</string>
+    <string name="register_error_validation_code_get_failed">获取验证码失败，请重试</string>
+    <string name="register_error_phone_already_registered">手机号已注册</string>
+    <string name="register_error_phone_invalid">手机号不正确</string>
+    <string name="register_error_password_invalid">密码不符合规范</string>
+    <string name="register_error_password_repeat_wrong">重复输入密码不匹配</string>
+    <string name="register_error_validation_code_wrong">验证码错误</string>
+    <string name="validation_code_count_down">已发送(%ss)</string>
+    <string name="no_network_connection">当前无网络连接，请检查您的网络设置</string>
+
+    <!--String related to change password -->
+    <string name="changepassword_oldnumber_hint">输入旧密码</string>
+    <string name="changepassword_newnumber_hint">修改密码（6-20位）</string>
+    <string name="changepassword_repeat_newnumber_hint">确认密码</string>
+    <string name="password_unmuch">前后输入的新密码不一致</string>
+    <string name="change_password_word_title">修改密码</string>
+    <string name="commit_change_password">提交修改</string>
+
+    <!-- Strings related to find password -->
+    <string name="findPW_password">重设密码（6-20位）</string>
+    <string name="findPW_reset_password">确认</string>
+    <string name="findPW_loading">重设中，请稍后...</string>
+
+    <string name="net_error">当前无网络连接，请检查您的网络设置</string>
+    <string name="use_protocol">用户使用协议</string>
+
+
+    <!-- loading -->
+    <string name="loading">载入中</string>
+    <!-- error -->
+    <string name="error_hint">点击页面刷新</string>
+
+
+    <!--主页底部导航-->
+    <string name="topbar_title_main">主页</string>
+    <string name="radio_home">主页</string>
+    <string name="radio_message">消息</string>
+    <string name="radio_self">我的</string>
+
+</resources>

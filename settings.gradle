@@ -1,0 +1,1 @@
+include ':app', ':base-mvp', ':app-model', ':common', ':umeng', ':uilib', ':SMSSDK'

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main$Generated" generated="true"><source path="D:\GitWork\Zhimi\uilib\src\main\res"/><source path="D:\GitWork\Zhimi\uilib\build\generated\res\rs\release"/><source path="D:\GitWork\Zhimi\uilib\build\generated\res\resValues\release"/></dataSet><dataSet config="release$Generated" generated="true"><source path="D:\GitWork\Zhimi\uilib\src\release\res"/></dataSet><dataSet config="main" generated-set="main$Generated"><source path="D:\GitWork\Zhimi\uilib\src\main\res"><file name="charsidebar_bg" path="D:\GitWork\Zhimi\uilib\src\main\res\drawable\charsidebar_bg.xml" qualifiers="" type="drawable"/><file name="photoview_activity" path="D:\GitWork\Zhimi\uilib\src\main\res\layout\photoview_activity.xml" qualifiers="" type="layout"/><file name="load_progress_0" path="D:\GitWork\Zhimi\uilib\src\main\res\mipmap-xhdpi\load_progress_0.png" qualifiers="xhdpi-v4" type="mipmap"/><file name="load_progress_1" path="D:\GitWork\Zhimi\uilib\src\main\res\mipmap-xhdpi\load_progress_1.png" qualifiers="xhdpi-v4" type="mipmap"/><file name="load_progress_10" path="D:\GitWork\Zhimi\uilib\src\main\res\mipmap-xhdpi\load_progress_10.png" qualifiers="xhdpi-v4" type="mipmap"/><file name="load_progress_11" path="D:\GitWork\Zhimi\uilib\src\main\res\mipmap-xhdpi\load_progress_11.png" qualifiers="xhdpi-v4" type="mipmap"/><file name="load_progress_12" path="D:\GitWork\Zhimi\uilib\src\main\res\mipmap-xhdpi\load_progress_12.png" qualifiers="xhdpi-v4" type="mipmap"/><file name="load_progress_2" path="D:\GitWork\Zhimi\uilib\src\main\res\mipmap-xhdpi\load_progress_2.png" qualifiers="xhdpi-v4" type="mipmap"/><file name="load_progress_3" path="D:\GitWork\Zhimi\uilib\src\main\res\mipmap-xhdpi\load_progress_3.png" qualifiers="xhdpi-v4" type="mipmap"/><file name="load_progress_4" path="D:\GitWork\Zhimi\uilib\src\main\res\mipmap-xhdpi\load_progress_4.png" qualifiers="xhdpi-v4" type="mipmap"/><file name="load_progress_5" path="D:\GitWork\Zhimi\uilib\src\main\res\mipmap-xhdpi\load_progress_5.png" qualifiers="xhdpi-v4" type="mipmap"/><file name="load_progress_6" path="D:\GitWork\Zhimi\uilib\src\main\res\mipmap-xhdpi\load_progress_6.png" qualifiers="xhdpi-v4" type="mipmap"/><file name="load_progress_7" path="D:\GitWork\Zhimi\uilib\src\main\res\mipmap-xhdpi\load_progress_7.png" qualifiers="xhdpi-v4" type="mipmap"/><file name="load_progress_8" path="D:\GitWork\Zhimi\uilib\src\main\res\mipmap-xhdpi\load_progress_8.png" qualifiers="xhdpi-v4" type="mipmap"/><file name="load_progress_9" path="D:\GitWork\Zhimi\uilib\src\main\res\mipmap-xhdpi\load_progress_9.png" qualifiers="xhdpi-v4" type="mipmap"/><file name="login_icon_delete" path="D:\GitWork\Zhimi\uilib\src\main\res\mipmap-xhdpi\login_icon_delete.png" qualifiers="xhdpi-v4" type="mipmap"/><file name="switch_bj_bule" path="D:\GitWork\Zhimi\uilib\src\main\res\mipmap-xhdpi\switch_bj_bule.png" qualifiers="xhdpi-v4" type="mipmap"/><file name="switch_bj_white" path="D:\GitWork\Zhimi\uilib\src\main\res\mipmap-xhdpi\switch_bj_white.png" qualifiers="xhdpi-v4" type="mipmap"/><file name="switch_handle" path="D:\GitWork\Zhimi\uilib\src\main\res\mipmap-xhdpi\switch_handle.png" qualifiers="xhdpi-v4" type="mipmap"/><file path="D:\GitWork\Zhimi\uilib\src\main\res\values\attrs.xml" qualifiers=""><declare-styleable name="Themes">
+        <attr format="reference" name="percentBarStyle"/>
+    </declare-styleable><attr name="siArrowPosition">
+        <enum name="left" value="0"/>
+        <enum name="right" value="1"/>
+    </attr><declare-styleable name="ClearableEditText">
+        <attr format="dimension" name="ce_padding"/>
+        <attr format="reference" name="ce_drawable"/>
+    </declare-styleable><attr name="siStrokeJoin">
+        <enum name="bevel" value="0"/>
+        <enum name="miter" value="1"/>
+        <enum name="round" value="2"/>
+    </attr><declare-styleable name="PercentBar">
+        <attr format="integer" name="percent_current"/>
+        <attr format="integer" name="percent_max"/>
+
+        <attr format="color" name="percent_unreached_color"/>
+        <attr format="color" name="percent_reached_color"/>
+
+        <attr format="dimension" name="percent_reached_bar_height"/>
+        <attr format="dimension" name="percent_unreached_bar_height"/>
+
+        <attr format="dimension" name="percent_text_size"/>
+        <attr format="color" name="percent_text_color"/>
+
+        <attr format="dimension" name="percent_text_offset"/>
+
+        <attr format="enum" name="percent_text_visibility">
+            <enum name="visible" value="0"/>
+            <enum name="invisible" value="1"/>
+        </attr>
+    </declare-styleable><attr name="siBorderType">
+        <enum name="stroke" value="0"/>
+        <enum name="fill" value="1"/>
+    </attr><attr name="siStrokeCap">
+        <enum name="butt" value="0"/>
+        <enum name="round" value="1"/>
+        <enum name="square" value="2"/>
+    </attr><declare-styleable name="ShaderImageView">
+        <attr format="boolean" name="siSquare"/>
+        <attr format="color" name="siBorderColor"/>
+        <attr format="dimension" name="siBorderWidth"/>
+        <attr format="float" name="siBorderAlpha"/>
+        <attr format="integer|reference" name="siForeground"/>
+        <!-- Rounded Image View -->
+        <attr format="dimension" name="siRadius"/>
+        <!--BubbleImageView-->
+        <attr name="siArrowPosition"/>
+        <attr format="dimension" name="siTriangleHeight"/>
+        <!--PorterImageView-->
+        <attr format="integer|reference" name="siShape"/>
+        <!--ShaderImageView-->
+        <attr name="siBorderType"/>
+        <attr name="siStrokeCap"/>
+        <attr name="siStrokeJoin"/>
+        <attr format="dimension" name="siStrokeMiter"/>
+    </declare-styleable></file><file path="D:\GitWork\Zhimi\uilib\src\main\res\values\strings.xml" qualifiers=""><string name="app_name">uilib</string></file><file path="D:\GitWork\Zhimi\uilib\src\main\res\values\styles.xml" qualifiers=""><style name="PercentBar_Relax_Blue">
+        <item name="android:layout_height">10dp</item>
+        <item name="android:layout_width">match_parent</item>
+
+        <item name="percent_max">100</item>
+        <item name="percent_current">0</item>
+
+        <item name="percent_unreached_color">#ffffff</item>
+        <item name="percent_reached_color">#2fb6ff</item>
+        <item name="percent_text_size">15sp</item>
+        <item name="percent_text_color">#2fb6ff</item>
+
+        <item name="percent_reached_bar_height">10dp</item>
+        <item name="percent_unreached_bar_height">10dp</item>
+    </style><style name="PercentBar_Default">
+        <item name="android:layout_height">10dp</item>
+        <item name="android:layout_width">match_parent</item>
+
+        <item name="percent_max">100</item>
+        <item name="percent_current">0</item>
+
+        <item name="percent_unreached_color">#ffffff</item>
+        <item name="percent_reached_color">#2fb6ff</item>
+
+        <item name="percent_text_size">15sp</item>
+        <item name="percent_text_color">#2fb6ff</item>
+
+        <item name="percent_reached_bar_height">10dp</item>
+        <item name="percent_unreached_bar_height">10dp</item>
+    </style></file></source><source path="D:\GitWork\Zhimi\uilib\build\generated\res\rs\release"/><source path="D:\GitWork\Zhimi\uilib\build\generated\res\resValues\release"/></dataSet><dataSet config="release" generated-set="release$Generated"><source path="D:\GitWork\Zhimi\uilib\src\release\res"/></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="Themes"><attr format="reference" name="percentBarStyle"/></declare-styleable><declare-styleable name="PercentBar"><attr format="integer" name="percent_current"/><attr format="integer" name="percent_max"/><attr format="color" name="percent_unreached_color"/><attr format="color" name="percent_reached_color"/><attr format="dimension" name="percent_reached_bar_height"/><attr format="dimension" name="percent_unreached_bar_height"/><attr format="dimension" name="percent_text_size"/><attr format="color" name="percent_text_color"/><attr format="dimension" name="percent_text_offset"/><attr format="enum" name="percent_text_visibility"><enum name="visible" value="0"/><enum name="invisible" value="1"/></attr></declare-styleable><declare-styleable name="ClearableEditText"><attr format="dimension" name="ce_padding"/><attr format="reference" name="ce_drawable"/></declare-styleable><declare-styleable name="ShaderImageView"><attr format="boolean" name="siSquare"/><attr format="color" name="siBorderColor"/><attr format="dimension" name="siBorderWidth"/><attr format="float" name="siBorderAlpha"/><attr format="integer|reference" name="siForeground"/><attr format="dimension" name="siRadius"/><attr name="siArrowPosition"/><attr format="dimension" name="siTriangleHeight"/><attr format="integer|reference" name="siShape"/><attr name="siBorderType"/><attr name="siStrokeCap"/><attr name="siStrokeJoin"/><attr format="dimension" name="siStrokeMiter"/></declare-styleable></configuration></mergedItems></merger>

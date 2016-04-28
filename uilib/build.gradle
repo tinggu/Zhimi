@@ -1,0 +1,54 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    compileOptions {
+        sourceCompatibility rootProject.ext.javaSourceCompatibility
+        targetCompatibility rootProject.ext.javaTargetCompatibility
+    }
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile 'com.android.support:appcompat-v7:' + rootProject.ext.appcompat7Version
+    compile 'com.android.support:recyclerview-v7:' + rootProject.ext.appcompat7Version
+    compile 'com.android.support:design:' + rootProject.ext.appcompat7Version
+
+    compile project(':common')
+    //switch button
+    //    compile 'com.kyleduo.switchbutton:library:1.2.8'
+    
+    //Fresco
+    compile "com.facebook.fresco:fresco:0.9.0"
+    compile 'com.facebook.fresco:imagepipeline-okhttp:0.9.0'
+    //PhotoView
+    compile 'com.commit451:PhotoView:1.2.5'
+    
+    //Material Dialog
+    compile('com.github.afollestad.material-dialogs:core:0.8.5.7@aar') {
+        transitive = true
+    }
+    
+    // add pickerview
+    compile 'com.bigkoo:pickerview:2.0.8'
+    compile 'de.hdodenhof:circleimageview:2.0.0'
+    
+    //pager indicator
+    compile 'com.github.tinggu:SpriteIndicator:0.4'
+    
+    // add packer-helper
+    compile 'com.mcxiaoke.gradle:packer-helper:1.0.2'
+}

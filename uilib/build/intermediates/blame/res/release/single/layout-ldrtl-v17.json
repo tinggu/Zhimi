@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\layout-ldrtl-v17\\md_listitem_multichoice.xml",
+        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.github.afollestad.material-dialogs\\core\\0.8.5.7\\res\\layout-ldrtl-v17\\md_listitem_multichoice.xml"
+    },
+    {
+        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\layout-ldrtl-v17\\md_listitem_singlechoice.xml",
+        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.github.afollestad.material-dialogs\\core\\0.8.5.7\\res\\layout-ldrtl-v17\\md_listitem_singlechoice.xml"
+    }
+]

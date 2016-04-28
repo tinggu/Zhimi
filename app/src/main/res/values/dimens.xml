@@ -1,0 +1,78 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+
+    <dimen name="act_padding">15dp</dimen>
+
+    <dimen name="text_padding">10dp</dimen>
+
+    <!-- 注册登录 -->
+    <dimen name="top_padding">20dp</dimen>
+    <dimen name="left_right_padding">15dp</dimen>
+
+    <!--search edittext-->
+    <dimen name="et_search_height">27dp</dimen>
+    <dimen name="search_text_size">15sp</dimen>
+
+
+    <!-- title bar-->
+    <dimen name="topbar_back">40dp</dimen>
+    <dimen name="topbar_plus">40dp</dimen>
+    <dimen name="topbar_height">50dp</dimen>
+    <dimen name="topbar_title_text_size">18sp</dimen>
+
+    <!--用户管理-->
+    <dimen name="text_size_15">15sp</dimen>
+
+    <!--主页_底部导航-->
+    <dimen name="bottom_bar_height">53dp</dimen>
+    <dimen name="bottom_bar_text_size">11sp</dimen>
+    <!--主页_group-->
+    <dimen name="group_card_bg_height">140dp</dimen>
+    <dimen name="group_card_bg_width">165dp</dimen>
+    <dimen name="group_card_text_name_size">15sp</dimen>
+    <dimen name="group_card_text_count_size">15sp</dimen>
+    <dimen name="group_card_bottom_height">55dp</dimen>
+    <!--主页_header-->
+    <dimen name="group_card_header_height">48dp</dimen>
+    <dimen name="group_card_header_width">48dp</dimen>
+    <!--chat_tab-->
+    <dimen name="chat_tab_width">54dp</dimen>
+
+
+    <!--group create-->
+    <dimen name="group_template_width">200dp</dimen>
+    <dimen name="group_template_height">232dp</dimen>
+    <dimen name="group_template_header_height">46dp</dimen>
+    <dimen name="group_template_header_width">46dp</dimen>
+    <!--group create menu-->
+    <dimen name="group_cover_width">100dp</dimen>
+    <dimen name="group_cover_height">100dp</dimen>
+    <dimen name="group_card_width">64dp</dimen>
+    <dimen name="group_card_height">64dp</dimen>
+    <dimen name="text_size_16">16sp</dimen>
+    <dimen name="text_size_17">17sp</dimen>
+
+    <!--card manmage-->
+    <dimen name="card_manage_header_width">74dp</dimen>
+    <dimen name="card_manage_header_height">74dp</dimen>
+    <dimen name="card_manage_maign_top">37dp</dimen>
+    <dimen name="card_manage_height">120dp</dimen>
+    <!--card create-->
+    <dimen name="card_create_width">100dp</dimen>
+    <dimen name="card_create_height">100dp</dimen>
+    <dimen name="card_color_item_height">50dp</dimen>
+    <dimen name="card_color_item_width">50dp</dimen>
+
+    <!--group detail-->
+    <dimen name="group_detail_bg_width">280dp</dimen>
+    <dimen name="group_detail_bg_height">280dp</dimen>
+
+    <dimen name="item_height">50dp</dimen>
+
+    <!--group vote-->
+    <dimen name="vote_header_width">38dp</dimen>
+    <dimen name="vote_header_height">38dp</dimen>
+</resources>
