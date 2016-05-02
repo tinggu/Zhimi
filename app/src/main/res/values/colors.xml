@@ -21,6 +21,8 @@
 
     <color name="color_topbar_title_text">#181b1d</color>
     <color name="color_d2d2d2">#d2d2d2</color>
+    <color name="color_divider">#edf0f3</color>
+    <color name="color_title_divider">#d2dde4</color>
     <color name="bg_color">#F4F3F3</color>
 
     <color name="no_color">#00000000</color>

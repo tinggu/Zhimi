@@ -13,8 +13,9 @@ import com.cyou.band.utils.CacheUtils;
 import com.cyou.common.utils.LogUtils;
 import com.cyou.quick.QuickApplication;
 import com.cyou.quick.mvp.MvpBasePresenter;
-import com.cyou.quick.mvp.MvpPresenter; 
+import com.cyou.quick.mvp.MvpPresenter;
 
+import cn.smssdk.InitUtils;
 import de.greenrobot.event.EventBus;
 
 import com.linjin.zhimi.R;
@@ -41,6 +42,7 @@ public class AccuntActivity extends BaseMvpActivity {
         EventBus.getDefault().register(this);
         dialogUtils = new DialogUtils();
         showSelect();
+        InitUtils.initSDK(this);
     }
 
     @Override

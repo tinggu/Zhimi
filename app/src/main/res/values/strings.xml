@@ -13,7 +13,7 @@
     <string name="prompt_code">请输入验证码</string>
     <string name="action_login">登录</string>
     <string name="action_login_loading">登录中...</string>
-    <string name="action_register">注册</string>
+    <string name="action_register">立即加入</string>
     <string name="action_add">加入</string>
     <string name="action_forget"><u>忘记密码？</u></string>
     <string name="action_new_register">注册新用户</string>
@@ -25,9 +25,9 @@
     <string name="login_error_phonenum_empty">手机号不能为空</string>
     <string name="login_error_password_empty">密码不能为空</string>
 
-    <string name="login_phonenumber_hint">请输入手机号</string>
-    <string name="login_password_hint">请输入密码</string>
-    <string name="login_findpassword">忘记密码</string>
+    <string name="login_phonenumber_hint">手机号码</string>
+    <string name="login_password_hint">知觅登录密码</string>
+    <string name="login_findpassword">忘记密码?</string>
 
     <!-- Strings related to register -->
     <string name="register_password_hint">设置登录密码（请使用6-20个字符）</string>

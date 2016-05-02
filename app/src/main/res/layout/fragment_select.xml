@@ -27,7 +27,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/action_register" />
+            android:background="@drawable/selector_round_register_btn"
+            android:text="@string/action_register"
+            android:textColor="@color/black" />
 
         <View
             android:layout_width="16dp"
