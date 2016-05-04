@@ -1,4 +1,4 @@
-package com.linjin.common.utils;
+package com.tinggu.common.utils;
 
 import com.linjin.zhimi.DataCenter;
 import com.linjin.zhimi.api.TimestampApi;

@@ -1,4 +1,4 @@
-package com.linjin.common.provider;
+package com.tinggu.common.provider;
 
 import android.annotation.TargetApi;
 import android.content.res.AssetFileDescriptor;

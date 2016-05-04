@@ -1,4 +1,4 @@
-package com.linjin.common.utils;
+package com.tinggu.common.utils;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

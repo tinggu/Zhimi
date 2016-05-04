@@ -54,10 +54,10 @@ android {
     //签名
     signingConfigs {
         release {
-            storeFile file('../keyStore/m8u')      //签名文件
-            storePassword "com.cyou.m8u"
-            keyAlias "m8u"
-            keyPassword "com.cyou.m8u"  //签名密码
+            storeFile file('../keyStore/linjin_keystore.jks')      //签名文件
+            storePassword "linjin741"
+            keyAlias "zhimi"
+            keyPassword "zhimi741"  //签名密码
         }
     }
     

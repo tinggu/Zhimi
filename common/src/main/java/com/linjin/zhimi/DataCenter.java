@@ -5,7 +5,7 @@ import android.text.TextUtils;
 
 import com.cyou.zhimi.model.ConstantsModel;
 import com.cyou.zhimi.model.account.User;
-import com.linjin.common.utils.LogUtils;
+import com.tinggu.common.utils.LogUtils;
 import com.cyou.quick.QuickApplication;
 
 import java.io.DataInputStream;

@@ -1,7 +1,7 @@
 package com.linjin.zhimi;
 
-import com.linjin.common.utils.LogUtils;
-import com.linjin.common.utils.TrackUtils;
+import com.tinggu.common.utils.LogUtils;
+import com.tinggu.common.utils.TrackUtils;
 import com.facebook.drawee.backends.pipeline.Fresco;
 
 

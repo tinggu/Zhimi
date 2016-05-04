@@ -13,9 +13,9 @@ import android.webkit.WebViewClient;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView; 
-import com.linjin.common.utils.LogUtils;
-import com.linjin.common.utils.NetWorkUtils;
-import com.linjin.common.utils.TrackUtils;
+import com.tinggu.common.utils.LogUtils;
+import com.tinggu.common.utils.NetWorkUtils;
+import com.tinggu.common.utils.TrackUtils;
 import com.cyou.quick.QuickActivity;
 
 import butterknife.Bind;

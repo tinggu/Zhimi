@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog; 
 import com.linjin.zhimi.base.BaseMvpActivity;
-import com.linjin.common.utils.LogUtils;
+import com.tinggu.common.utils.LogUtils;
 import com.linjin.zhimi.R;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;

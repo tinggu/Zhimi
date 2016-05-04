@@ -3,30 +3,20 @@ package com.linjin.zhimi.account;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.Nullable;
-import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.TextView;
 
-import com.cyou.quick.QuickApplication;
+import com.cyou.quick.mvp.MvpView;
 import com.cyou.ui.ClearableEditText;
-import com.cyou.zhimi.model.account.AuthCredentials;
-import com.linjin.common.utils.KeyboardUtils;
-import com.linjin.common.utils.LogUtils;
-import com.linjin.common.utils.NetWorkUtils;
-import com.linjin.common.utils.TrackUtils;
+import com.tinggu.common.utils.KeyboardUtils;
+import com.tinggu.common.utils.LogUtils;
+import com.tinggu.common.utils.TrackUtils;
 import com.linjin.zhimi.R;
 import com.linjin.zhimi.base.BaseMvpFragment;
-import com.linjin.zhimi.config.BandConfig;
-import com.linjin.zhimi.utils.IntentStarter;
 import com.linjin.zhimi.widget.TopActionBar;
-import com.linjin.zhimi.widget.TopSnackBar;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
-import com.mobsandgeeks.saripaar.annotation.ConfirmPassword;
 import com.mobsandgeeks.saripaar.annotation.Length;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import com.mobsandgeeks.saripaar.annotation.Order;
@@ -35,7 +25,6 @@ import com.mobsandgeeks.saripaar.annotation.Password;
 import java.util.List;
 
 import butterknife.Bind;
-import butterknife.OnClick;
 
 /**
  * Description:
@@ -45,9 +34,8 @@ import butterknife.OnClick;
  * Date       : 2015/6/11 14:43
  */
 @SuppressLint("ValidFragment")
-public class RegisterStep0Fragment
-        extends BaseMvpFragment<RegisterView, RegisterPresenter>
-        implements RegisterView, Validator.ValidationListener {
+public class RegisterStep0Fragment extends BaseMvpFragment<RegisterView, RegisterPresenter>
+        implements MvpView, Validator.ValidationListener {
 
     private static final int RETRY_INTERVAL = 59;
     Validator validator;
@@ -64,79 +52,48 @@ public class RegisterStep0Fragment
     @Bind(R.id.ev_password)
     ClearableEditText evPassword;
 
-    @ConfirmPassword(messageResId = R.string.register_error_password_repeat_wrong)
-    @Order(2)
-    @Bind(R.id.ev_password_repeat)
-    ClearableEditText evPasswordRepeat;
-
-    @Order(3)
-    @NotEmpty(messageResId = R.string.validation_code_null)
-    @Bind(R.id.ev_validation_code)
-    EditText evValidationCode;
-
-    @Bind(R.id.tv_get_code)
-    TextView tvGetCode;
-
-    @Bind(R.id.topSnackBar)
-    TopSnackBar topSnackBar;
 
     @Bind(R.id.topActionBar)
     TopActionBar topActionBar;
 
-    private int time = RETRY_INTERVAL;
-
-    private AccuntActivity accuntActivity;
-
-    private boolean isFinish;
-    private boolean isGetcode;
-
+    private RegisterPresenter presenter;
 
     String phone;
     String password;
 
-    public RegisterStep0Fragment(AccuntActivity accuntActivity, String phone, String password) {
-        this.accuntActivity = accuntActivity;
-        this.phone = phone;
-        this.password = password;
+    public RegisterStep0Fragment(RegisterPresenter presenter) {
+        this.presenter = presenter;
     }
 
     private void initView() {
-        topActionBar.setTitle(R.string.action_register);
+        topActionBar.setTitle("登录知觅");
         topActionBar.setBackListener(new TopActionBar.BackListener() {
             @Override
             public void onBack() {
                 KeyboardUtils.callBackKeyClick();
             }
         });
-        validator = new Validator(this);
-        validator.setValidationListener(this);
-        evPhonenum.setText(phone);
-        evPassword.setText(password);
-        evPhonenum.post(new Runnable() {
+        topActionBar.setActionListener(new TopActionBar.ActionListener() {
             @Override
-            public void run() {
-                evPhonenum.requestFocus();
-                evPhonenum.setSelection(phone.length());
+            public void onAction() {
+                presenter.nextStep(1);
             }
         });
-        if (phone != null && phone.length() == 11) {
-//            tvGetCode.callOnClick();
-            onClick(tvGetCode);
-        }
-        isFinish = false;
+        validator = new Validator(this);
+        validator.setValidationListener(this);
+
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRetainInstance(true);
-        isGetcode = false;
     }
-    
+
 
     @Override
     protected int getLayoutRes() {
-        return R.layout.fragment_register;
+        return R.layout.fragment_register_step0;
     }
 
     @Override
@@ -156,110 +113,11 @@ public class RegisterStep0Fragment
 
     @Override
     public RegisterPresenter createPresenter() {
-        return new RegisterPresenter();
-    }
-
-    /**
-     * 倒数计时
-     */
-    private void countDown() {
-        tvGetCode.setEnabled(false);
-        final Handler handler = new Handler();
-
-        Runnable runnable = new Runnable() {
-            @Override
-            public void run() {
-                time--;
-                if (time == 0) {
-                    tvGetCode.setText(R.string.reget_validation_code);
-                    tvGetCode.setEnabled(true);
-                    time = RETRY_INTERVAL;
-                } else {
-                    Context context = getContext();
-                    if (context == null) {
-                        return;
-                    }
-                    String countDown = getContext().getString(R.string.validation_code_count_down, time);
-                    tvGetCode.setText(countDown);
-                    if (!isFinish) {
-                        handler.postDelayed(this, 1000);
-                    }
-                }
-
-            }
-        };
-
-        handler.post(runnable);
-    }
-
-    @OnClick({R.id.tv_get_code, R.id.btn_register, R.id.tv_protocal})
-    public void onClick(View view) {
-        int id = view.getId();
-        if (id == R.id.btn_register) {
-            if (!NetWorkUtils.isNetConnected(getActivity())) {
-                showTip(getResources().getString(R.string.net_error));
-                return;
-            }
-//            doInvitation();
-            validator.validate();
-        } else if (id == R.id.tv_protocal) {
-            //打开使用协议
-            String url = BandConfig.h5_use_protocol;
-            String title = getString(R.string.use_protocol);
-            IntentStarter.showProtocal(accuntActivity, url, title);
-            TrackUtils.getInstance().onEvent("Register_declaration");
-
-        } else if (id == R.id.tv_get_code) {
-            String mobileNum = evPhonenum.getText().toString();
-            if (TextUtils.isEmpty(mobileNum)) {
-                String message = getContext().getString(R.string.login_error_phonenum_empty);
-                showTip(message);
-            } else if (mobileNum.length() == 11) {
-                if (NetWorkUtils.isNetConnected(QuickApplication.getInstance())) {
-                    countDown();
-                    presenter.doGetCheckCode(mobileNum);
-                    if (isGetcode) {
-                        TrackUtils.getInstance().onEvent("Register_rp_nextsend");
-                    } else {
-                        /*AppProvide.getInstance().onEvent("Register_rp_verification");*/
-                        isGetcode = true;
-                    }
-                } else {
-                    showTip(getContext().getString(R.string.no_network_connection));
-                }
-
-            } else {
-                String message = getContext().getString(R.string.register_error_phone_invalid);
-                showTip(message);
-            }
-        }
-
+        return presenter;
     }
 
     public Context getContext() {
         return getActivity();
-    }
-    
-    @Override
-    public void showTip(String message) {
-        topSnackBar.showOnceTip(message);
-        hideLoading();
-    }
-
-    @Override
-    public void showLoading() {
-        accuntActivity.dialogUtils.showLoading(getActivity(), "注册中，请稍后...");
-    }
-
-    @Override
-    public void hideLoading() {
-        accuntActivity.dialogUtils.hideLoading();
-    }
-
-    @Override
-    public void finish() {
-        hideLoading();
-        isFinish = true;
     }
 
     @Override
@@ -267,10 +125,8 @@ public class RegisterStep0Fragment
 //        showLoading();
         String mobileNum = evPhonenum.getText().toString();
         String password = evPassword.getText().toString();
-        String code = evValidationCode.getText().toString();
+
         TrackUtils.getInstance().onEvent("Register_rp_register");
-//        TalkingDataAppCpa.onRegister(AppProvide.dataCenter().getUserID());
-        getPresenter().doRegister(new AuthCredentials(mobileNum, password, code));
 //        String inviteCode = evInvitationMobile.getText() == null ? "" : evInvitationMobile.getText().toString();
     }
 
@@ -285,7 +141,7 @@ public class RegisterStep0Fragment
 //            }
             String message = error.getCollatedErrorMessage(getActivity());
             LogUtils.e("register", "register error == " + message);
-            showTip(message.split("\n")[0]);
+            toast(message.split("\n")[0]);
             return;
         }
 

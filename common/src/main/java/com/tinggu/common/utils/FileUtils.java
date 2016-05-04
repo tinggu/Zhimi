@@ -1,4 +1,4 @@
-package com.linjin.common.utils;
+package com.tinggu.common.utils;
 
 import android.content.ContentResolver;
 import android.content.ContentUris;
@@ -16,7 +16,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.webkit.MimeTypeMap;
 
-import com.linjin.common.provider.LocalStorageProvider;
+import com.tinggu.common.provider.LocalStorageProvider;
 
 import java.io.File;
 import java.io.FileFilter;

@@ -7,10 +7,10 @@ import android.view.View;
 
 import com.linjin.zhimi.base.BaseMvpFragment;
 import com.cyou.zhimi.model.account.AuthCredentials;
-import com.linjin.common.utils.KeyboardUtils;
-import com.linjin.common.utils.LogUtils;
-import com.linjin.common.utils.NetWorkUtils;
-import com.linjin.common.utils.TrackUtils;
+import com.tinggu.common.utils.KeyboardUtils;
+import com.tinggu.common.utils.LogUtils;
+import com.tinggu.common.utils.NetWorkUtils;
+import com.tinggu.common.utils.TrackUtils;
 import com.cyou.ui.ClearableEditText;
 import com.linjin.zhimi.R;
 import com.mobsandgeeks.saripaar.ValidationError;
@@ -25,7 +25,6 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.OnClick;
 import com.linjin.zhimi.widget.TopActionBar;
-import com.linjin.zhimi.widget.TopSnackBar;
 
 /**
  * Description:
@@ -70,7 +69,8 @@ public class LoginFragment
     }
 
     private void initView() {
-        topActionBar.setTitle(R.string.action_login);
+        topActionBar.setTitle("登录知觅");
+        topActionBar.hideAction();
         topActionBar.setBackListener(new TopActionBar.BackListener() {
             @Override
             public void onBack() {
@@ -102,7 +102,7 @@ public class LoginFragment
         int id = view.getId();
         if (id == R.id.btn_login) {
             if (!NetWorkUtils.isNetConnected(getActivity())) {
-                showTip(getResources().getString(R.string.net_error));
+                toast(R.string.net_error); 
                 return;
             }
             LogUtils.d("login", "click login");

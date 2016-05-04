@@ -1,16 +1,16 @@
 package com.linjin.zhimi.account;
 
+import com.cyou.quick.mvp.rx.scheduler.AndroidSchedulerTransformer;
+import com.cyou.zhimi.model.BaseModel;
+import com.cyou.zhimi.model.account.AuthCredentials;
+import com.cyou.zhimi.model.account.User;
 import com.linjin.zhimi.DataCenter;
 import com.linjin.zhimi.api.AccuntApi;
 import com.linjin.zhimi.event.FindPWSuccessfulEvent;
 import com.linjin.zhimi.event.LoginSuccessfulEvent;
-import com.cyou.zhimi.model.BaseModel;
-import com.cyou.zhimi.model.account.AuthCredentials;
-import com.cyou.zhimi.model.account.User;
 import com.linjin.zhimi.rest.ApiCode;
 import com.linjin.zhimi.rest.RestUtils;
-import com.linjin.common.utils.LogUtils;
-import com.cyou.quick.mvp.rx.scheduler.AndroidSchedulerTransformer;
+import com.tinggu.common.utils.LogUtils;
 
 import de.greenrobot.event.EventBus;
 import rx.Observable;
@@ -47,7 +47,7 @@ public class FindPWPresenter extends AccuntPresenter<FindPWView> {
             @Override
             public void onNext(BaseModel code) {
                 if (isViewAttached() && code.getCode() != ApiCode.SUCCESS_CODE) {
-                    getView().showTip(code.getMsg());
+                    getView().showTip(ApiCode.getMsg(code.getCode()));
                 }
 //                checkCode = code.getCheckCode();
             }
@@ -92,7 +92,7 @@ public class FindPWPresenter extends AccuntPresenter<FindPWView> {
             @Override
             public void onNext(User account) {
                 LogUtils.i("login", "FindPWPresenter onNext ");
-                  
+
                 DataCenter.getInstance().saveUser(account);
                 EventBus.getDefault().post(new LoginSuccessfulEvent());
 
@@ -113,7 +113,7 @@ public class FindPWPresenter extends AccuntPresenter<FindPWView> {
                             DataCenter.getInstance().saveUser(token);
                             return Observable.just(token);
                         } else {
-                            return Observable.error(new Throwable(token.getMsg()));
+                            return Observable.error(new Throwable(ApiCode.getMsg(token.getCode())));
                         }
                     }
                 });

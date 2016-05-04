@@ -126,6 +126,10 @@ public class TopActionBar extends RelativeLayout {
         tv_back.setVisibility(View.GONE);
         iv_back.setVisibility(View.GONE);
     }
+    
+    public void hideAction(){
+        tv_action.setVisibility(View.GONE);
+    }
 
     public void setBackType(int type) {
         if (type == BACK_IMAGE) {

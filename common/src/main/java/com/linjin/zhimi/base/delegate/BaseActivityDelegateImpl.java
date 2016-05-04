@@ -1,6 +1,6 @@
 package com.linjin.zhimi.base.delegate;
 
-import com.linjin.common.utils.TrackUtils;
+import com.tinggu.common.utils.TrackUtils;
 import com.cyou.quick.QuickApplication;
 import com.cyou.quick.mvp.MvpPresenter;
 import com.cyou.quick.mvp.MvpView;

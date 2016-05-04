@@ -3,24 +3,23 @@ package com.linjin.zhimi.account;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.widget.Toast;
- 
-import com.linjin.zhimi.DataCenter; 
-import com.linjin.zhimi.base.BaseMvpActivity;
-import com.linjin.zhimi.event.FindPWSuccessfulEvent;
-import com.linjin.zhimi.event.LoginSuccessfulEvent;
-import com.linjin.zhimi.event.RegisterSuccessfulEvent; 
-import com.linjin.zhimi.utils.CacheUtils; 
-import com.linjin.common.utils.LogUtils;
+
 import com.cyou.quick.QuickApplication;
 import com.cyou.quick.mvp.MvpBasePresenter;
 import com.cyou.quick.mvp.MvpPresenter;
+import com.tinggu.common.utils.LogUtils;
+import com.linjin.zhimi.DataCenter;
+import com.linjin.zhimi.R;
+import com.linjin.zhimi.base.BaseMvpActivity;
+import com.linjin.zhimi.event.FindPWSuccessfulEvent;
+import com.linjin.zhimi.event.LoginSuccessfulEvent;
+import com.linjin.zhimi.event.RegisterSuccessfulEvent;
+import com.linjin.zhimi.utils.CacheUtils;
+import com.linjin.zhimi.utils.DialogUtils;
+import com.linjin.zhimi.utils.IntentStarter;
 
 import cn.smssdk.InitUtils;
 import de.greenrobot.event.EventBus;
-
-import com.linjin.zhimi.R;
-import com.linjin.zhimi.utils.DialogUtils;
-import com.linjin.zhimi.utils.IntentStarter;
 
 /**
  * Description:
@@ -33,16 +32,16 @@ public class AccuntActivity extends BaseMvpActivity {
 
     public DialogUtils dialogUtils;
 
+    private RegisterPresenter regPresenter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        //屏蔽右划返回
-//        SwipeBackHelper.getCurrentPage(this).setSwipeBackEnable(false);
         setContentView(R.layout.activity_accunt);
         EventBus.getDefault().register(this);
         dialogUtils = new DialogUtils();
+        regPresenter = new RegisterPresenter(this);
         showSelect();
-        InitUtils.initSDK(this);
     }
 
     @Override
@@ -82,11 +81,44 @@ public class AccuntActivity extends BaseMvpActivity {
         trasection.commit();
     }
 
-    public void showRegister(String phone, String password) {
-        RegisterFragment registerFragment = new RegisterFragment(this, phone, password);
+    public void showRegister0() {
+        InitUtils.initSDK(this);
+        RegisterStep0Fragment registerFragment = new RegisterStep0Fragment(regPresenter);
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.fragmentContainer, registerFragment);
-        transaction.addToBackStack("register");
+        transaction.addToBackStack("step0");
+        transaction.commit();
+    }
+
+    public void showRegister1() {
+        RegisterStep0Fragment registerFragment = new RegisterStep0Fragment(regPresenter);
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragmentContainer, registerFragment);
+        transaction.addToBackStack("step1");
+        transaction.commit();
+    }
+
+    public void showRegister2() {
+        RegisterStep0Fragment registerFragment = new RegisterStep0Fragment(regPresenter);
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragmentContainer, registerFragment);
+        transaction.addToBackStack("step2");
+        transaction.commit();
+    }
+
+    public void showRegister3() {
+        RegisterStep0Fragment registerFragment = new RegisterStep0Fragment(regPresenter);
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragmentContainer, registerFragment);
+        transaction.addToBackStack("step3");
+        transaction.commit();
+    }
+
+    public void showRegister4() {
+        RegisterStep0Fragment registerFragment = new RegisterStep0Fragment(regPresenter);
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragmentContainer, registerFragment);
+        transaction.addToBackStack("step4");
         transaction.commit();
     }
 
@@ -122,17 +154,17 @@ public class AccuntActivity extends BaseMvpActivity {
         Toast.makeText(QuickApplication.getInstance(), "密码已找回，请注意保管！", Toast.LENGTH_LONG).show();
         enterMain();
     }
-    
-    private void refreshCache(){
+
+    private void refreshCache() {
         if (DataCenter.getInstance().hasUser()) {
             CacheUtils.init(DataCenter.getInstance().getUserID());
             CacheUtils.refreshCache();
-        }else{
+        } else {
             LogUtils.e("user 为空初始化失败");
         }
     }
 
-    
+
     private void enterMain() {
         finish();
         IntentStarter.showMain(AccuntActivity.this);

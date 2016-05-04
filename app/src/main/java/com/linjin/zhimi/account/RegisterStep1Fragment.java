@@ -13,10 +13,10 @@ import android.widget.TextView;
 
 import com.linjin.zhimi.base.BaseMvpFragment;
 import com.cyou.zhimi.model.account.AuthCredentials;
-import com.linjin.common.utils.KeyboardUtils;
-import com.linjin.common.utils.LogUtils;
-import com.linjin.common.utils.NetWorkUtils;
-import com.linjin.common.utils.TrackUtils;
+import com.tinggu.common.utils.KeyboardUtils;
+import com.tinggu.common.utils.LogUtils;
+import com.tinggu.common.utils.NetWorkUtils;
+import com.tinggu.common.utils.TrackUtils;
 import com.cyou.quick.QuickApplication;
 import com.cyou.ui.ClearableEditText;
 import com.linjin.zhimi.R;
@@ -156,7 +156,7 @@ public class RegisterStep1Fragment
 
     @Override
     public RegisterPresenter createPresenter() {
-        return new RegisterPresenter();
+        return new RegisterPresenter(null);
     }
 
     /**

@@ -1,14 +1,14 @@
 package com.linjin.zhimi.account;
 
 
-import com.linjin.zhimi.DataCenter;
-import com.linjin.zhimi.api.AccuntApi;
-import com.linjin.zhimi.event.RegisterSuccessfulEvent;
+import com.cyou.quick.mvp.rx.scheduler.AndroidSchedulerTransformer;
 import com.cyou.zhimi.model.BaseModel;
 import com.cyou.zhimi.model.account.AuthCredentials;
 import com.cyou.zhimi.model.account.User;
+import com.linjin.zhimi.DataCenter;
+import com.linjin.zhimi.api.AccuntApi;
+import com.linjin.zhimi.event.RegisterSuccessfulEvent;
 import com.linjin.zhimi.rest.ApiCode;
-import com.cyou.quick.mvp.rx.scheduler.AndroidSchedulerTransformer;
 
 import de.greenrobot.event.EventBus;
 import rx.Observable;
@@ -24,8 +24,36 @@ import rx.functions.Func1;
  */
 public class RegisterPresenter extends AccuntPresenter<RegisterView> {
 
-   
-//    private String checkCode;
+    private AccuntActivity accuntActivity;
+
+    String username;
+    String password;
+    String name;
+    int sex;
+    String title;
+    String devicetoken;
+
+    public RegisterPresenter(AccuntActivity accuntActivity) {
+        this.accuntActivity = accuntActivity;
+    }
+
+    //    private String checkCode;
+    public void nextStep(int step) {
+        switch (step) {
+            case 1:
+                accuntActivity.showRegister1();
+                break;
+            case 2:
+                accuntActivity.showRegister2();
+                break;
+            case 3:
+                accuntActivity.showRegister3();
+                break;
+            case 4:
+                accuntActivity.showRegister4();
+                break;
+        }
+    }
 
     public void doGetCheckCode(String mobileNum) {
 
@@ -47,7 +75,7 @@ public class RegisterPresenter extends AccuntPresenter<RegisterView> {
             @Override
             public void onNext(BaseModel code) {
                 if (isViewAttached() && code.getCode() != ApiCode.SUCCESS_CODE) {
-                    getView().showTip(code.getMsg());
+                    getView().showTip("错误码:" + code.getCode());
                 }
 //                checkCode = code.getCheckCode();
             }
@@ -100,17 +128,17 @@ public class RegisterPresenter extends AccuntPresenter<RegisterView> {
 
 
         return accuntApi.register(credentials.getCode(), credentials.getMobileNum(), credentials.getPassword())
-                        .flatMap(new Func1<User, Observable<User>>() {
-                            @Override
-                            public Observable<User> call(User token) {
-                                if (token.getCode() == ApiCode.SUCCESS_CODE) {
-                                   DataCenter.getInstance().saveUser(token);
-                                    return Observable.just(token);
-                                } else {
-                                    return Observable.error(new Throwable(token.getMsg()));
-                                }
-                            }
-                        });
+                .flatMap(new Func1<User, Observable<User>>() {
+                    @Override
+                    public Observable<User> call(User token) {
+                        if (token.getCode() == ApiCode.SUCCESS_CODE) {
+                            DataCenter.getInstance().saveUser(token);
+                            return Observable.just(token);
+                        } else {
+                            return Observable.error(new Throwable("错误码:" + token.getCode()));
+                        }
+                    }
+                });
 
 
     }

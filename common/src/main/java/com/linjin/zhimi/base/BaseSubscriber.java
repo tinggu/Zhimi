@@ -3,10 +3,10 @@ package com.linjin.zhimi.base;
 import android.text.TextUtils;
 import android.widget.Toast;
 
-import com.linjin.zhimi.DataCenter;
-import com.cyou.zhimi.model.BaseModel;
-import com.linjin.zhimi.rest.ApiCode;
 import com.cyou.quick.QuickApplication;
+import com.cyou.zhimi.model.BaseModel;
+import com.linjin.zhimi.DataCenter;
+import com.linjin.zhimi.rest.ApiCode;
 
 import rx.Subscriber;
 
@@ -19,6 +19,9 @@ import rx.Subscriber;
  **/
 
 public class BaseSubscriber<T> extends Subscriber<T> {
+
+   
+
     @Override
     public void onCompleted() {
 
@@ -34,24 +37,30 @@ public class BaseSubscriber<T> extends Subscriber<T> {
 
     @Override
     public void onNext(T o) {
-        if ((o instanceof BaseModel)) {
-            if (((BaseModel) o).getCode() == ApiCode.FAILED_CODE_TOKEN_INVALID) {
-//                IntentStarter.showLogin(null);
-               DataCenter.getInstance().removeUser();
-                String tip = ((BaseModel) o).getMsg();
-                if (!TextUtils.isEmpty(tip)) {
-                    Toast.makeText(QuickApplication.getInstance(), tip, Toast.LENGTH_SHORT).show();
-                }
-                return;
-            }
 
-            if (((BaseModel) o).getCode() == ApiCode.FAILED_CODE_SERVER_ERROR) {
-                String tip = ((BaseModel) o).getMsg();
-                if (!TextUtils.isEmpty(tip)) {
-                    Toast.makeText(QuickApplication.getInstance(), tip, Toast.LENGTH_SHORT).show();
-                }
-                return;
+        BaseModel model;
+        if ((o instanceof BaseModel)) {
+            model = (BaseModel) o;
+        } else {
+            return;
+        }
+
+        if (model.getCode() == ApiCode.FAILED_CODE_TOKEN_INVALID) {
+//                IntentStarter.showLogin(null);
+            DataCenter.getInstance().removeUser();
+            String tip = ApiCode.getMsg(model.getCode());
+            if (!TextUtils.isEmpty(tip)) {
+                Toast.makeText(QuickApplication.getInstance(), tip, Toast.LENGTH_SHORT).show();
+            }
+            return;
+        }
+
+        if (model.getCode() == ApiCode.FAILED_CODE_SERVER_ERROR) {
+            String tip = ApiCode.getMsg(model.getCode());
+            if (!TextUtils.isEmpty(tip)) {
+                Toast.makeText(QuickApplication.getInstance(), tip, Toast.LENGTH_SHORT).show();
             }
         }
+
     }
 }

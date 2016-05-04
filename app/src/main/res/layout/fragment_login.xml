@@ -10,79 +10,92 @@
         android:id="@+id/topActionBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:transcriptMode="alwaysScroll"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_gravity="center"
+                android:layout_margin="20dp"
+                android:src="@mipmap/reg_avatar" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Login.Text"
+                    android:text="账号" />
+
+                <com.cyou.ui.ClearableEditText
+                    android:id="@+id/ev_phonenum"
+                    style="@style/Login.EditText"
+                    android:hint="@string/login_phonenumber_hint"
+                    android:inputType="number"
+                    android:maxLength="11" />
+            </LinearLayout>
+
+
+            <View style="@style/Login.View" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Login.Text"
+                    android:text="密码" />
+
+                <com.cyou.ui.ClearableEditText
+                    android:id="@+id/ev_password"
+                    style="@style/Login.EditText"
+                    android:hint="@string/login_password_hint"
+                    android:inputType="textPassword"
+                    android:maxLength="20" />
+            </LinearLayout>
+
+
+            <View style="@style/Login.View" />
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/left_right_padding"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_findpassword"
+                    style="@style/Login.Text"
+                    android:layout_gravity="center_vertical"
+                    android:padding="0dp"
+                    android:text="@string/login_findpassword"
+                    android:textColor="@color/text_blue" />
+
+                <Button
+                    android:id="@+id/btn_login"
+                    style="@style/Login.Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_gravity="right|center_vertical"
+                    android:text="@string/action_login" />
+            </FrameLayout>
+        </LinearLayout>
+
+    </ScrollView>
     
-    <ImageView
-        android:layout_width="110dp"
-        android:layout_height="110dp"
-        android:layout_gravity="center"
-        android:layout_margin="20dp"
-        android:src="@mipmap/reg_avatar" />
-    
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            style="@style/Login.Text"
-            android:text="账号" />
-
-        <com.cyou.ui.ClearableEditText
-            android:id="@+id/ev_phonenum"
-            style="@style/Login.EditText"
-            android:hint="@string/login_phonenumber_hint"
-            android:inputType="number"
-            android:maxLength="11" />
-    </LinearLayout>
-
-
-    <View style="@style/Login.View" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            style="@style/Login.Text"
-            android:text="密码" />
-
-        <com.cyou.ui.ClearableEditText
-            android:id="@+id/ev_password"
-            style="@style/Login.EditText"
-            android:hint="@string/login_password_hint"
-            android:inputType="textPassword"
-            android:maxLength="20" />
-    </LinearLayout>
-
-
-    <View style="@style/Login.View" />
-
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/left_right_padding"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/tv_findpassword"
-            style="@style/Login.Text"
-            android:layout_gravity="center_vertical"
-            android:padding="0dp"
-            android:text="@string/login_findpassword"
-            android:textColor="@color/text_blue" />
-
-        <Button
-            android:id="@+id/btn_login"
-            style="@style/Login.Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right|center_vertical"
-            android:text="@string/action_login" />
-    </FrameLayout>
-
-
 </LinearLayout>
 
 

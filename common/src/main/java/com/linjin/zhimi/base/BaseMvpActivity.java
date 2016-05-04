@@ -61,7 +61,9 @@ public abstract class BaseMvpActivity<V extends MvpView, P extends MvpPresenter<
     protected void toast(int id) {
         Toast.makeText(this, id, Toast.LENGTH_SHORT).show();
     }
+
     
+
 //    protected void swipeBackConfig(){
 //        SwipeBackHelper.getCurrentPage(this)//获取当前页面
 //                .setSwipeBackEnable(true)//设置是否可滑动

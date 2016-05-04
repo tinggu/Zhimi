@@ -8,7 +8,7 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 
-import com.linjin.common.utils.TrackUtils;
+import com.tinggu.common.utils.TrackUtils;
 import com.cyou.quick.QuickFragment;
 
 import java.util.ArrayList;

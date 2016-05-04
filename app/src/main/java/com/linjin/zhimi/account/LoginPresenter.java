@@ -6,7 +6,7 @@ import com.cyou.zhimi.model.account.AuthCredentials;
 import com.cyou.zhimi.model.account.LoginException;
 import com.cyou.zhimi.model.account.User;
 import com.linjin.zhimi.rest.ApiCode;
-import com.linjin.common.utils.LogUtils;
+import com.tinggu.common.utils.LogUtils;
 
 import de.greenrobot.event.EventBus;
 import rx.Observable;
@@ -64,7 +64,7 @@ public class LoginPresenter extends AccuntPresenter<LoginView> {
 //                    initConstants();
                     EventBus.getDefault().post(new LoginSuccessfulEvent());
                 } else {
-                    onError(new LoginException(token.getCode(), token.getMsg()));
+                    onError(new LoginException(token.getCode(),  ApiCode.getMsg(token.getCode())));
                 }
             }
         };

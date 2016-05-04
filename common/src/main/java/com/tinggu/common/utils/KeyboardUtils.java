@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.linjin.common.utils;
+package com.tinggu.common.utils;
 
 import android.app.Instrumentation;
 import android.content.Context;
