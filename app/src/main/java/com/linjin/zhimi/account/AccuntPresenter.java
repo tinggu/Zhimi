@@ -1,5 +1,6 @@
 package com.linjin.zhimi.account;
 
+import com.cyou.zhimi.model.account.UserModel;
 import com.linjin.zhimi.api.AccuntApi;
 import com.cyou.zhimi.model.account.AuthCredentials;
 import com.cyou.zhimi.model.account.User;
@@ -20,7 +21,7 @@ import rx.Subscriber;
  */
 public abstract class AccuntPresenter<V extends MvpView> extends MvpBasePresenter<V> {
 
-    private Subscriber<User> subscriber;
+    private Subscriber<UserModel> subscriber;
     protected AccuntApi accuntApi = RestUtils.createApi(AccuntApi.class);
 //    protected SchedulerTransformer schedulerTransformer = AppProvide.schedulerTransformer();
     
@@ -38,9 +39,9 @@ public abstract class AccuntPresenter<V extends MvpView> extends MvpBasePresente
         }
     }
 
-    public abstract Subscriber<User> createSubscriber();
+    public abstract Subscriber<UserModel> createSubscriber();
 
-    public abstract Observable<User> createObservable(AuthCredentials credentials);
+    public abstract Observable<UserModel> createObservable(AuthCredentials credentials);
 
     protected void doBase(AuthCredentials credentials) {
         // Kind of "callback"
@@ -48,8 +49,8 @@ public abstract class AccuntPresenter<V extends MvpView> extends MvpBasePresente
         //can't use lastest subscriber
         subscriber = createSubscriber();
 
-        Observable<User> observable = createObservable(credentials);
-        observable.compose(new AndroidSchedulerTransformer<User>()).subscribe(subscriber);
+        Observable<UserModel> observable = createObservable(credentials);
+        observable.compose(new AndroidSchedulerTransformer<UserModel>()).subscribe(subscriber);
 //        observable.subscribe(subscriber);
 
 //        AppProvide.applyScheduler(createObservable(credentials)).subscribe(subscriber);

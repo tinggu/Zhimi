@@ -1,6 +1,6 @@
 package com.cyou.zhimi.model.account;
 
-import com.cyou.common.utils.MD5Utils;
+        import com.cyou.common.utils.MD5Utils;
 
 /**
  * Description:
@@ -11,19 +11,24 @@ import com.cyou.common.utils.MD5Utils;
  */
 public class AuthCredentials {
 
+    public static final String SALT = "zhimi";
+
+    private  String deviceToken;
+
     private String code;
 
     private String mobileNum;
 
     private String password;
 
-    public AuthCredentials(String mobileNum, String password) {
+    public AuthCredentials(String mobileNum, String password,String device_token) {
         this.mobileNum = mobileNum;
         this.password = password;
+        this.deviceToken =device_token;
     }
 
-    public AuthCredentials(String mobileNum, String password, String code) {
-        this(mobileNum, password);
+    public AuthCredentials(String mobileNum, String password,String device_token, String code) {
+        this(mobileNum, password,device_token);
         this.code = code;
     }
 
@@ -32,11 +37,15 @@ public class AuthCredentials {
     }
 
     public String getPassword() {
-        return MD5Utils.getStringMD5_32(password);
+        return MD5Utils.getStringMD5_32(MD5Utils.getStringMD5_32(password) + SALT);
     }
 
     public String getCode() {
         return code;
+    }
+
+    public String getDeviceToken() {
+        return deviceToken;
     }
 
 }

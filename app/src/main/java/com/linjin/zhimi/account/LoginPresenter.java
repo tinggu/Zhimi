@@ -1,10 +1,11 @@
 package com.linjin.zhimi.account;
 
-import com.linjin.zhimi.DataCenter;
-import com.linjin.zhimi.event.LoginSuccessfulEvent;
 import com.cyou.zhimi.model.account.AuthCredentials;
 import com.cyou.zhimi.model.account.LoginException;
 import com.cyou.zhimi.model.account.User;
+import com.cyou.zhimi.model.account.UserModel;
+import com.linjin.zhimi.DataCenter;
+import com.linjin.zhimi.event.LoginSuccessfulEvent;
 import com.linjin.zhimi.rest.ApiCode;
 import com.tinggu.common.utils.LogUtils;
 
@@ -30,8 +31,8 @@ public class LoginPresenter extends AccuntPresenter<LoginView> {
     }
 
     @Override
-    public Subscriber<User> createSubscriber() {
-        return new Subscriber<User>() {
+    public Subscriber<UserModel> createSubscriber() {
+        return new Subscriber<UserModel>() {
             @Override
             public void onCompleted() {
                 LogUtils.i("login", "LoginSuccess onCompleted ");
@@ -56,11 +57,11 @@ public class LoginPresenter extends AccuntPresenter<LoginView> {
             }
 
             @Override
-            public void onNext(User token) {
+            public void onNext(UserModel token) {
                 LogUtils.i("login", "LoginSuccess onNext ");
                 if (token.getCode() == ApiCode.SUCCESS_CODE) {
                     LogUtils.i("login", "LoginSuccess onNext ");
-                    DataCenter.getInstance().saveUser(token);
+                    DataCenter.getInstance().saveUser(token.getUser());
 //                    initConstants();
                     EventBus.getDefault().post(new LoginSuccessfulEvent());
                 } else {
@@ -71,11 +72,11 @@ public class LoginPresenter extends AccuntPresenter<LoginView> {
     }
 
     @Override
-    public Observable<User> createObservable(AuthCredentials credentials) {
+    public Observable<UserModel> createObservable(AuthCredentials credentials) {
 //        AccuntApi accuntApi = RestUtils.createApi(AccuntApi.class);
         //保存手机号
 //        DataCenter.getInstance().saveUserMobile(credentials.getMobileNum());
-        return accuntApi.login(credentials.getMobileNum(), credentials.getPassword());
+        return accuntApi.login(credentials.getMobileNum(), credentials.getPassword(), credentials.getDeviceToken());
     }
     
 //    public void initConstants(){

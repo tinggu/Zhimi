@@ -5,6 +5,7 @@ import com.cyou.quick.mvp.rx.scheduler.AndroidSchedulerTransformer;
 import com.cyou.zhimi.model.BaseModel;
 import com.cyou.zhimi.model.account.AuthCredentials;
 import com.cyou.zhimi.model.account.User;
+import com.cyou.zhimi.model.account.UserModel;
 import com.linjin.zhimi.DataCenter;
 import com.linjin.zhimi.api.AccuntApi;
 import com.linjin.zhimi.event.RegisterSuccessfulEvent;
@@ -26,7 +27,8 @@ public class RegisterPresenter extends AccuntPresenter<RegisterView> {
 
     private AccuntActivity accuntActivity;
 
-    String username;
+//    String username;
+    String phone;
     String password;
     String name;
     int sex;
@@ -35,6 +37,12 @@ public class RegisterPresenter extends AccuntPresenter<RegisterView> {
 
     public RegisterPresenter(AccuntActivity accuntActivity) {
         this.accuntActivity = accuntActivity;
+    }
+
+    public void setPhoneAndPassword(String phone, String password) {
+
+        this.phone = phone;
+        this.password = password;
     }
 
     //    private String checkCode;
@@ -94,8 +102,8 @@ public class RegisterPresenter extends AccuntPresenter<RegisterView> {
     }
 
     @Override
-    public Subscriber<User> createSubscriber() {
-        Subscriber<User> subscriber = new Subscriber<User>() {
+    public Subscriber<UserModel> createSubscriber() {
+        Subscriber<UserModel> subscriber = new Subscriber<UserModel>() {
             @Override
             public void onCompleted() {
                 if (isViewAttached()) {
@@ -113,7 +121,7 @@ public class RegisterPresenter extends AccuntPresenter<RegisterView> {
             }
 
             @Override
-            public void onNext(User account) {
+            public void onNext(UserModel account) {
                 EventBus.getDefault().post(new RegisterSuccessfulEvent());
             }
 
@@ -122,17 +130,17 @@ public class RegisterPresenter extends AccuntPresenter<RegisterView> {
     }
 
     @Override
-    public Observable<User> createObservable(AuthCredentials credentials) {
+    public Observable<UserModel> createObservable(AuthCredentials credentials) {
         //保存手机号
 //       DataCenter.getInstance().saveUserMobile(credentials.getMobileNum());
 
 
         return accuntApi.register(credentials.getCode(), credentials.getMobileNum(), credentials.getPassword())
-                .flatMap(new Func1<User, Observable<User>>() {
+                .flatMap(new Func1<UserModel, Observable<UserModel>>() {
                     @Override
-                    public Observable<User> call(User token) {
+                    public Observable<UserModel> call(UserModel token) {
                         if (token.getCode() == ApiCode.SUCCESS_CODE) {
-                            DataCenter.getInstance().saveUser(token);
+                            DataCenter.getInstance().saveUser(token.getUser());
                             return Observable.just(token);
                         } else {
                             return Observable.error(new Throwable("错误码:" + token.getCode()));

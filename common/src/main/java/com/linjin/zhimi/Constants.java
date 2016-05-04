@@ -7,15 +7,17 @@ public class Constants {
 
     //debug
     public static boolean DEBUG = true;
+    
+    
 
-    /**
-     * 友盟统计 appkey 5673daa367e58ee835002006
-     */
-    public final static String UMENG_APPKEY="5673daa367e58ee835002006";
-    /**
-     * talkingdata统计
-     */
-    public final static String TD_APP_ID="842192F1FC1CE49D57D66BCEE4A35BC5";
+//    /**
+//     * 友盟统计 appkey 5673daa367e58ee835002006
+//     */
+//    public final static String UMENG_APPKEY = "5673daa367e58ee835002006";
+//    /**
+//     * talkingdata统计
+//     */
+//    public final static String TD_APP_ID = "842192F1FC1CE49D57D66BCEE4A35BC5";
 
     /**
      * create new question : select pic
@@ -41,7 +43,7 @@ public class Constants {
 
     public final static int IMG_OPTION_LIMIT_WIDTH = 362;
     public final static int IMG_OPTION_LIMIT_HEIGHT = 660;
-    
+
     /**
      * share platform
      */

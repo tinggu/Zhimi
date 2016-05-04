@@ -2,6 +2,7 @@ package com.linjin.zhimi.api;
 
 import com.cyou.zhimi.model.BaseModel;
 import com.cyou.zhimi.model.account.User;
+import com.cyou.zhimi.model.account.UserModel;
 
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -25,9 +26,11 @@ public interface AccuntApi {
      * @return
      */
     @FormUrlEncoded
-    @POST("/login")
-    Observable<User> login(@Field("mobileNum") String mobileNum,
-                                @Field("password") String password);
+    @POST("user/login")
+    Observable<UserModel> login(@Field("mobileNum") String mobileNum,
+                           @Field("password") String password,
+                           @Field("devicetoken") String devicetoken
+    );
 
     /**
      * 创建用户
@@ -39,24 +42,33 @@ public interface AccuntApi {
      */
     @FormUrlEncoded
     @POST("/createUser")
-    Observable<User> register(@Field("code") String code,
-                                   @Field("mobileNum") String mobileNum,
-                                   @Field("password") String password
+    Observable<UserModel> register(@Field("code") String code,
+                              @Field("mobileNum") String mobileNum,
+                              @Field("password") String password
     );
 
 
     byte TYPE_REGISTER = 1;
     byte TYPE_FIND_PASSWORD = 2;
+
     /**
      * 获取验证码
-     * @param mobileNum  手机号码
-     * @param type  类型 1：注册2：找回密码
+     *
+     * @param mobileNum 手机号码
+     * @param type      类型 1：注册2：找回密码
      * @return
      */
     @FormUrlEncoded
     @POST("/getCheckCode")
     Observable<BaseModel> getCheckCode(@Field("mobileNum") String mobileNum,
                                        @Field("type") byte type);
+
+
+    @POST("user/regsms")
+    Observable<BaseModel> checkCode(@Field("appkey") String appkey,
+                                    @Field("phone") String phone,
+                                    @Field("zone") String zone,
+                                    @Field("code") String code);
 
     /**
      * 找回密码
@@ -68,7 +80,7 @@ public interface AccuntApi {
      */
     @FormUrlEncoded
     @POST("/findPassword")
-    Observable<User> findPassword(@Field("mobileNum") String mobileNum,
+    Observable<UserModel> findPassword(@Field("mobileNum") String mobileNum,
                                        @Field("newPassword") String password,
                                        @Field("code") String code);
 
@@ -81,6 +93,6 @@ public interface AccuntApi {
      */
     @FormUrlEncoded
     @POST("/changePassword")
-    Observable<User> changePassword(@Field("oldPassword") String oldPassword,
-                                         @Field("newPassword") String newPassword);
+    Observable<UserModel> changePassword(@Field("oldPassword") String oldPassword,
+                                    @Field("newPassword") String newPassword);
 }

@@ -4,6 +4,7 @@ import com.cyou.quick.mvp.rx.scheduler.AndroidSchedulerTransformer;
 import com.cyou.zhimi.model.BaseModel;
 import com.cyou.zhimi.model.account.AuthCredentials;
 import com.cyou.zhimi.model.account.User;
+import com.cyou.zhimi.model.account.UserModel;
 import com.linjin.zhimi.DataCenter;
 import com.linjin.zhimi.api.AccuntApi;
 import com.linjin.zhimi.event.FindPWSuccessfulEvent;
@@ -72,8 +73,8 @@ public class FindPWPresenter extends AccuntPresenter<FindPWView> {
     }
 
     @Override
-    public Subscriber<User> createSubscriber() {
-        return new Subscriber<User>() {
+    public Subscriber<UserModel> createSubscriber() {
+        return new Subscriber<UserModel>() {
             @Override
             public void onCompleted() {
                 if (isViewAttached()) {
@@ -90,10 +91,10 @@ public class FindPWPresenter extends AccuntPresenter<FindPWView> {
             }
 
             @Override
-            public void onNext(User account) {
+            public void onNext(UserModel account) {
                 LogUtils.i("login", "FindPWPresenter onNext ");
 
-                DataCenter.getInstance().saveUser(account);
+                DataCenter.getInstance().saveUser(account.getUser());
                 EventBus.getDefault().post(new LoginSuccessfulEvent());
 
                 EventBus.getDefault().post(new FindPWSuccessfulEvent());
@@ -103,14 +104,14 @@ public class FindPWPresenter extends AccuntPresenter<FindPWView> {
     }
 
     @Override
-    public Observable<User> createObservable(AuthCredentials credentials) {
+    public Observable<UserModel> createObservable(AuthCredentials credentials) {
 
         return accuntApi.findPassword(credentials.getMobileNum(), credentials.getPassword(), credentials.getCode())
-                .flatMap(new Func1<User, Observable<User>>() {
+                .flatMap(new Func1<UserModel, Observable<UserModel>>() {
                     @Override
-                    public Observable<User> call(User token) {
+                    public Observable<UserModel> call(UserModel token) {
                         if (token.getCode() == ApiCode.SUCCESS_CODE) {
-                            DataCenter.getInstance().saveUser(token);
+                            DataCenter.getInstance().saveUser(token.getUser());
                             return Observable.just(token);
                         } else {
                             return Observable.error(new Throwable(ApiCode.getMsg(token.getCode())));

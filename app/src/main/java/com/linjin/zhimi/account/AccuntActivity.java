@@ -91,7 +91,7 @@ public class AccuntActivity extends BaseMvpActivity {
     }
 
     public void showRegister1() {
-        RegisterStep0Fragment registerFragment = new RegisterStep0Fragment(regPresenter);
+        RegisterStep1Fragment registerFragment = new RegisterStep1Fragment(regPresenter);
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.fragmentContainer, registerFragment);
         transaction.addToBackStack("step1");

@@ -11,15 +11,11 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.linjin.zhimi.base.BaseMvpFragment;
-import com.cyou.zhimi.model.account.AuthCredentials;
-import com.tinggu.common.utils.KeyboardUtils;
-import com.tinggu.common.utils.LogUtils;
-import com.tinggu.common.utils.NetWorkUtils;
-import com.tinggu.common.utils.TrackUtils;
 import com.cyou.quick.QuickApplication;
 import com.cyou.ui.ClearableEditText;
+import com.cyou.zhimi.model.account.AuthCredentials;
 import com.linjin.zhimi.R;
+import com.linjin.zhimi.base.BaseMvpFragment;
 import com.linjin.zhimi.config.BandConfig;
 import com.linjin.zhimi.utils.IntentStarter;
 import com.linjin.zhimi.widget.TopActionBar;
@@ -31,6 +27,10 @@ import com.mobsandgeeks.saripaar.annotation.Length;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import com.mobsandgeeks.saripaar.annotation.Order;
 import com.mobsandgeeks.saripaar.annotation.Password;
+import com.tinggu.common.utils.KeyboardUtils;
+import com.tinggu.common.utils.LogUtils;
+import com.tinggu.common.utils.NetWorkUtils;
+import com.tinggu.common.utils.TrackUtils;
 
 import java.util.List;
 
@@ -94,11 +94,10 @@ public class RegisterStep1Fragment
     String phone;
     String password;
 
-    public RegisterStep1Fragment(AccuntActivity accuntActivity, String phone, String password) {
-        this.accuntActivity = accuntActivity;
-        this.phone = phone;
-        this.password = password;
+    public RegisterStep1Fragment(RegisterPresenter presenter) {
+        this.presenter = presenter;
     }
+
 
     private void initView() {
         topActionBar.setTitle(R.string.action_register);

@@ -5,26 +5,27 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 
-import com.linjin.zhimi.base.BaseMvpFragment;
-import com.cyou.zhimi.model.account.AuthCredentials;
-import com.tinggu.common.utils.KeyboardUtils;
-import com.tinggu.common.utils.LogUtils;
-import com.tinggu.common.utils.NetWorkUtils;
-import com.tinggu.common.utils.TrackUtils;
 import com.cyou.ui.ClearableEditText;
+import com.cyou.zhimi.model.account.AuthCredentials;
 import com.linjin.zhimi.R;
+import com.linjin.zhimi.base.BaseMvpFragment;
+import com.linjin.zhimi.widget.TopActionBar;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
 import com.mobsandgeeks.saripaar.annotation.Length;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import com.mobsandgeeks.saripaar.annotation.Order;
 import com.mobsandgeeks.saripaar.annotation.Password;
+import com.tinggu.common.utils.KeyboardUtils;
+import com.tinggu.common.utils.LogUtils;
+import com.tinggu.common.utils.NetWorkUtils;
+import com.tinggu.common.utils.TrackUtils;
+import com.umeng.message.UmengRegistrar;
 
 import java.util.List;
 
 import butterknife.Bind;
 import butterknife.OnClick;
-import com.linjin.zhimi.widget.TopActionBar;
 
 /**
  * Description:
@@ -50,16 +51,16 @@ public class LoginFragment
     @Order(2)
     @Bind(R.id.ev_password)
     ClearableEditText evPassword;
-    
+
 //    @Bind(R.id.btn_login)
 //    Button btnLogin;
-    
+
 //    @Bind(R.id.topSnackBar)
 //    TopSnackBar topSnackBar;
-    
+
     @Bind(R.id.topActionBar)
     TopActionBar topActionBar;
-    
+
     private Validator validator;
 
     private AccuntActivity accuntActivity;
@@ -91,18 +92,18 @@ public class LoginFragment
         super.onViewCreated(view, savedInstanceState);
         initView();
     }
-    
+
     @Override
     public LoginPresenter createPresenter() {
         return new LoginPresenter();
     }
 
-    @OnClick({R.id.btn_login,  R.id.tv_findpassword})
+    @OnClick({R.id.btn_login, R.id.tv_findpassword})
     public void onClick(View view) {
         int id = view.getId();
         if (id == R.id.btn_login) {
             if (!NetWorkUtils.isNetConnected(getActivity())) {
-                toast(R.string.net_error); 
+                toast(R.string.net_error);
                 return;
             }
             LogUtils.d("login", "click login");
@@ -110,7 +111,7 @@ public class LoginFragment
 //        } else if (id == R.id.tv_register) {
 //            accuntActivity.showRegister(evPhonenum.getText().toString(), evPassword.getText().toString());
 //            TrackUtils.getInstance().onEvent("Register_registration");
-        
+
         } else if (id == R.id.tv_findpassword) {
             accuntActivity.showFindPassword(evPhonenum.getText().toString());
             TrackUtils.getInstance().onEvent("Register_forgotpassword");
@@ -121,7 +122,7 @@ public class LoginFragment
 //    public void onTextChanged() {
 //        hideError();
 //    }
-    
+
     @Override
     public void showTip(String message) {
         LogUtils.i(TAG, "show tip " + message);
@@ -141,7 +142,7 @@ public class LoginFragment
         accuntActivity.dialogUtils.hideLoading();
 //        btnLogin.setText(R.string.action_login);
     }
-    
+
 
     @Override
     public void onValidationSucceeded() {
@@ -149,7 +150,8 @@ public class LoginFragment
         showLoading();
         String name = evPhonenum.getText().toString();
         String pass = evPassword.getText().toString();
-        presenter.doLogin(new AuthCredentials(name, pass));
+        String device_token = UmengRegistrar.getRegistrationId(getActivity());
+        presenter.doLogin(new AuthCredentials(name, pass, device_token));
     }
 
     @Override
@@ -159,7 +161,7 @@ public class LoginFragment
 
             int id = view.getId();
             if (id == R.id.ev_phonenum) {
-                
+
             }
 //            if (view instanceof EditText) {
 //                view.clearAnimation();

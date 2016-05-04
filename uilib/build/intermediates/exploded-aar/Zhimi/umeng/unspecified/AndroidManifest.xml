@@ -19,6 +19,9 @@
             android:name="UMENG_APPKEY"
             android:value="5726f55fe0f55aabf0000e22" />
         <meta-data
+            android:name="UMENG_MESSAGE_SECRET"
+            android:value="bb7d834dad494d471a4fd1c013d83bbc" />
+        <meta-data
             android:name="UMENG_CHANNEL"
             android:value="LinJin" />
     </application>

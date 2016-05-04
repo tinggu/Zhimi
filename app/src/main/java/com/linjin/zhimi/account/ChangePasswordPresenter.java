@@ -2,6 +2,7 @@ package com.linjin.zhimi.account;
 
 import android.widget.Toast;
 
+import com.cyou.zhimi.model.account.UserModel;
 import com.linjin.zhimi.DataCenter;
 import com.linjin.zhimi.api.AccuntApi;
 import com.cyou.zhimi.model.account.User;
@@ -30,9 +31,9 @@ public class ChangePasswordPresenter extends MvpBasePresenter<ChangePasswordView
         ));
     }
 
-    protected void subscribeChangePassword(Observable<User> observable) {
+    protected void subscribeChangePassword(Observable<UserModel> observable) {
 
-        Subscriber<User> subscriber = new Subscriber<User>() {
+        Subscriber<UserModel> subscriber = new Subscriber<UserModel>() {
             @Override
             public void onCompleted() {
                 getView().hideLoading();
@@ -44,17 +45,17 @@ public class ChangePasswordPresenter extends MvpBasePresenter<ChangePasswordView
             }
 
             @Override
-            public void onNext(User changePassword) {
+            public void onNext(UserModel changePassword) {
                 if (changePassword.getCode() == ApiCode.SUCCESS_CODE) {
                     Toast.makeText(QuickApplication.getInstance(), "密码修改成功", Toast.LENGTH_SHORT).show();
-                   DataCenter.getInstance().saveUser(changePassword);
+                   DataCenter.getInstance().saveUser(changePassword.getUser());
                 } else {
                     Toast.makeText(QuickApplication.getInstance(), "密码修改失败", Toast.LENGTH_SHORT).show();
 
                 }
             }
         };
-        observable.compose(new AndroidSchedulerTransformer<User>()).subscribe(subscriber);
+        observable.compose(new AndroidSchedulerTransformer<UserModel>()).subscribe(subscriber);
     }
 
 }

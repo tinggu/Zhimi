@@ -75,7 +75,7 @@ public class DataCenter {
         Context context = QuickApplication.getInstance();
         try {
             DataInputStream dataInputStream = new DataInputStream(context.openFileInput(USER_FILE_NAME));
-            user = new User(dataInputStream);
+//            user = new User(dataInputStream);
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -91,7 +91,7 @@ public class DataCenter {
         try {
             fos = context.openFileOutput(USER_FILE_NAME, Context.MODE_PRIVATE);
             DataOutputStream dos = new DataOutputStream(fos);
-            user.writeToFile(dos);
+//            user.writeToFile(dos);
             this.user = user;
 
         } catch (Exception e) {
@@ -195,15 +195,16 @@ public class DataCenter {
 
 
     public String getUserID() {
-        if (user == null || TextUtils.isEmpty(user.getUserId()))
+        if (user == null || TextUtils.isEmpty(user.getUid()))
             return "-1";
-        return user.getUserId();
+        return user.getUid();
     }
 
     public String getUserToken() {
-        if (user == null || TextUtils.isEmpty(user.getToken()))
-            return "";
-        return user.getToken();
+//        if (user == null || TextUtils.isEmpty(user.getToken()))
+//            return "";
+//        return user.getToken();
+        return "";
     }
 
     public boolean hasDefaultCard() {

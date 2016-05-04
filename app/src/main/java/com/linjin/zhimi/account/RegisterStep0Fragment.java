@@ -58,15 +58,14 @@ public class RegisterStep0Fragment extends BaseMvpFragment<RegisterView, Registe
 
     private RegisterPresenter presenter;
 
-    String phone;
-    String password;
+
 
     public RegisterStep0Fragment(RegisterPresenter presenter) {
         this.presenter = presenter;
     }
 
     private void initView() {
-        topActionBar.setTitle("登录知觅");
+//        topActionBar.setTitle("登录知觅");
         topActionBar.setBackListener(new TopActionBar.BackListener() {
             @Override
             public void onBack() {

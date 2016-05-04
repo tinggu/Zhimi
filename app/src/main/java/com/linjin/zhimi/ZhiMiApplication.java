@@ -3,6 +3,7 @@ package com.linjin.zhimi;
 import com.tinggu.common.utils.LogUtils;
 import com.tinggu.common.utils.TrackUtils;
 import com.facebook.drawee.backends.pipeline.Fresco;
+import com.umeng.message.PushAgent;
 
 
 public class ZhiMiApplication extends CommonApplication {
@@ -22,13 +23,12 @@ public class ZhiMiApplication extends CommonApplication {
         initLog();
         
         DataCenter.getInstance().init();
-        
-        //initLeanCloud fresco
+         
         Fresco.initialize(this);
 
-        //initLeanCloud TrackUtils
         TrackUtils.getInstance().init();
-        
+
+        initPush();
     }
 
 
@@ -36,6 +36,11 @@ public class ZhiMiApplication extends CommonApplication {
         Constants.DEBUG = BuildConfig.DEBUG;
         LogUtils.init("band", Constants.DEBUG);
         LogUtils.i("DEBUG", "DEBUG= " + Constants.DEBUG);
+    }
+    
+    private void initPush(){
+        PushAgent mPushAgent = PushAgent.getInstance(this);
+        mPushAgent.enable();
     }
     
 }

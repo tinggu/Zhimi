@@ -5,7 +5,7 @@ package com.linjin.zhimi;
  */
 public interface ServerConstants {
 
-    String API_BASE_URL = "http://101.200.208.96:9000";//测试服务器
+    String API_BASE_URL = "http://123.57.135.41/test/public/";//测试服务器
 //    String API_BASE_URL = "http://10.12.24.116:8080/groupWeb";//发现服务器
 
 //    String API_BASE_URL = "http://101.200.31.239/";//正式服务器
