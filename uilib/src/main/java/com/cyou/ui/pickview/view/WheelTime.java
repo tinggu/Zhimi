@@ -3,11 +3,12 @@ package com.cyou.ui.pickview.view;
 import android.content.Context;
 import android.view.View;
 
-import com.cyou.qselect.uilib.R;
-import com.cyou.qselect.uilib.pickview.SimpleTimePicker;
-import com.cyou.qselect.uilib.pickview.adapter.NumericWheelAdapter;
-import com.cyou.qselect.uilib.pickview.lib.WheelView;
-import com.cyou.qselect.uilib.pickview.listener.OnItemSelectedListener;
+
+import com.cyou.ui.R;
+import com.cyou.ui.pickview.SimpleTimePicker;
+import com.cyou.ui.pickview.adapter.NumericWheelAdapter;
+import com.cyou.ui.pickview.lib.WheelView;
+import com.cyou.ui.pickview.listener.OnItemSelectedListener;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

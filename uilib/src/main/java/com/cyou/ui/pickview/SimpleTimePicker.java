@@ -7,8 +7,9 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import com.cyou.qselect.uilib.R;
-import com.cyou.qselect.uilib.pickview.view.WheelTime;
+
+import com.cyou.ui.R;
+import com.cyou.ui.pickview.view.WheelTime;
 
 import java.util.Calendar;
 import java.util.Date;

@@ -7,8 +7,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog; 
-import com.cyou.band.base.BaseMvpActivity;
-import com.cyou.common.utils.LogUtils;
+import com.linjin.zhimi.base.BaseMvpActivity;
+import com.linjin.common.utils.LogUtils;
 import com.linjin.zhimi.R;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;

@@ -3,10 +3,8 @@ package io.realm;
 import android.content.Context;
 import android.view.LayoutInflater;
 
-import com.cyou.band.base.adapter.BaseListenerAdapter;
-import static com.cyou.band.base.adapter.BaseListenerAdapter.BaseViewHolder;
-
-import static android.support.v7.widget.RecyclerView.ViewHolder;
+import com.linjin.zhimi.base.adapter.BaseListenerAdapter;
+import static com.linjin.zhimi.base.adapter.BaseListenerAdapter.BaseViewHolder;
 
 /**
  * Description:

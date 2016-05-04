@@ -9,12 +9,12 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-
 import com.linjin.zhimi.R;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+
 /**
  * Description:
  * Copyright  : Copyright (c) 2015
@@ -47,25 +47,34 @@ public class TopActionBar extends RelativeLayout {
 
     public TopActionBar(Context context) {
         super(context);
+        initView(context);
     }
 
     public TopActionBar(Context context, AttributeSet attrs) {
         super(context, attrs);
+        initView(context);
     }
 
     public TopActionBar(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        initView(context);
     }
 
-    @Override
-    protected void onFinishInflate() {
-        super.onFinishInflate();
+    private void initView(Context context) {
+        View.inflate(context, R.layout.top_bar, this);
         ButterKnife.bind(this);
-        //默认返回是图片类型
-        setBackType(BACK_IMAGE);
-        //默认不显示finish
-        tv_action.setVisibility(GONE);
+//        setVisibility(GONE);
     }
+
+//    @Override
+//    protected void onFinishInflate() {
+//        super.onFinishInflate();
+//        ButterKnife.bind(this);
+//        //默认返回是图片类型
+//        setBackType(BACK_IMAGE);
+//        //默认不显示finish
+//        tv_action.setVisibility(GONE);
+//    }
 
     public void setTitle(@StringRes int resid) {
         tv_title.setText(resid);

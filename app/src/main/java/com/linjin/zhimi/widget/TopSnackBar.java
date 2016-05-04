@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.linjin.zhimi.R;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
 
 
@@ -27,7 +28,8 @@ public class TopSnackBar extends LinearLayout {
 //    private static final int DURATION = 250;
 //    private static final int SHOW_TIME = 2000;
 
-    private TextView tvTip;
+    @Bind(R.id.tv_tip)
+     TextView tvTip;
 
     private boolean isAnimFinsh;
 
@@ -50,8 +52,7 @@ public class TopSnackBar extends LinearLayout {
         View.inflate(context, R.layout.top_tip, this);
         ButterKnife.bind(this);
         setVisibility(GONE);
-        isAnimFinsh = true;
-        tvTip = (TextView) findViewById(R.id.tv_tip);
+        isAnimFinsh = true; 
     }
 
 //    @Override

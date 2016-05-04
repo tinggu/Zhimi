@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 
-import com.cyou.band.DataCenter;
+import com.linjin.zhimi.DataCenter;
 import com.cyou.quick.QuickApplication;
 import com.linjin.zhimi.R;
 import com.linjin.zhimi.account.AccuntActivity;

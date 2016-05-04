@@ -1,0 +1,46 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".account.AccuntActivity">
+
+    <com.linjin.zhimi.widget.TopActionBar
+        android:id="@+id/topActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="70dp"
+        android:src="@mipmap/reg_avatar" />
+
+    <TextView
+        style="@style/Login.Text"
+        android:layout_gravity="center"
+        android:text="上传一张形象照"
+        android:textColor="@color/text_hint_color" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp">
+
+        <Button
+            android:id="@+id/btn_login"
+            style="@style/Login.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="40dp"
+            android:text="进入知觅" />
+    </FrameLayout>
+
+</LinearLayout>
+
+
+

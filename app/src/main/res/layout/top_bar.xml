@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<com.linjin.zhimi.widget.TopActionBar
-    android:id="@+id/topActionBar"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="@dimen/topbar_height"
     android:layout_alignParentTop="true"
-    android:background="@color/color_base">
+    android:background="@color/white"
+    tools:context=".account.AccuntActivity">
 
     <ImageView
         android:id="@+id/iv_back"
@@ -18,8 +18,8 @@
         android:gravity="center"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
-        android:src="@mipmap/status_cancel"
-        />
+        android:src="@mipmap/status_prev"
+        android:visibility="gone" />
 
     <TextView
         android:id="@+id/tv_back"
@@ -33,19 +33,20 @@
         android:gravity="center"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
+        
         android:text="@string/text_cancel"
-        android:textColor="@color/color_light_blue"
-        android:textSize="@dimen/text_size_15"
-        />
+        android:textColor="@color/text_grey"
+        android:textSize="@dimen/text_size_little_title" />
 
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="@string/app_name"
+        android:text="开启知觅之旅"
         android:textColor="@color/color_topbar_title_text"
-        android:textSize="@dimen/topbar_title_text_size"/>
+        android:textSize="@dimen/topbar_title_text_size"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/tv_action"
@@ -56,16 +57,15 @@
         android:gravity="center"
         android:paddingLeft="@dimen/act_padding"
         android:paddingRight="@dimen/act_padding"
-        android:text="@string/text_save"
-        android:textColor="@color/color_light_blue"
-        android:textSize="@dimen/text_size_15"
-        />
+        android:text="@string/text_next"
+        android:textColor="@color/text_grey"
+        android:textSize="@dimen/text_size_little_title" />
 
     <View
         android:id="@+id/bottom_line"
         android:layout_width="match_parent"
         android:layout_height="1px"
         android:layout_alignParentBottom="true"
-        android:background="@color/color_line"
-        android:visibility="gone"/>
-</com.linjin.zhimi.widget.TopActionBar>  
+        android:background="@color/color_title_divider" />
+
+</RelativeLayout>  

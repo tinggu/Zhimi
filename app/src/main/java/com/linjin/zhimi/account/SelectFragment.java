@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
  
-import com.cyou.band.base.BaseMvpFragment;
+import com.linjin.zhimi.base.BaseMvpFragment;
 import com.cyou.quick.mvp.MvpBasePresenter;
 import com.cyou.quick.mvp.MvpPresenter;
 import com.linjin.zhimi.R;

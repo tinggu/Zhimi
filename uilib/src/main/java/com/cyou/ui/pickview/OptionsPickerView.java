@@ -5,9 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 
-import com.cyou.qselect.uilib.R;
-import com.cyou.qselect.uilib.pickview.view.BasePickerView;
-import com.cyou.qselect.uilib.pickview.view.WheelOptions;
+
+import com.cyou.ui.R;
+import com.cyou.ui.pickview.view.BasePickerView;
+import com.cyou.ui.pickview.view.WheelOptions;
 
 import java.util.ArrayList;
 

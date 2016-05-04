@@ -1,0 +1,56 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".account.AccuntActivity">
+
+    <include layout="@layout/top_bar" />
+
+    <TextView
+        style="@style/Login.Label"
+        android:text="验证手机号码" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/left_right_padding"
+        android:text="短信验证码已发送到 13911111111"
+        android:textColor="@color/text_hint_color" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/top_padding">
+
+        <TextView
+            style="@style/Login.Text"
+            android:text="验证码" />
+
+        <com.cyou.ui.ClearableEditText
+            android:id="@+id/ev_validation_code"
+            style="@style/Login.EditText"
+            android:layout_width="wrap_content"
+            android:hint="请输入验证码"
+            android:inputType="number"
+            android:maxLength="4" />
+
+        <TextView
+            android:id="@+id/tv_get_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:gravity="right|center_vertical"
+            android:text="@string/register_get_validation_code" />
+    </LinearLayout>
+
+    <View style="@style/Login.View" />
+
+
+</LinearLayout>
+
+
+

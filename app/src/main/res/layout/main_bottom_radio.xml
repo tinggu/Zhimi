@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/bottom_bar_height"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/color_line" />
+
+    <RadioGroup
+        android:id="@+id/main_group"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bottom_bar_bg"
+        android:descendantFocusability="afterDescendants"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/dock_1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@color/no_color"
+            android:button="@null"
+            android:checked="true"
+            android:drawableTop="@drawable/dock_1_selector"
+            android:gravity="center"
+            android:paddingTop="5dp"
+            android:text="@string/radio_dock_1"
+            android:textColor="@color/bottom_bar_text_color"
+            android:textSize="@dimen/bottom_bar_text_size" />
+
+        <RadioButton
+            android:id="@+id/dock_2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@color/no_color"
+            android:button="@null"
+            android:drawableTop="@drawable/dock_2_selector"
+            android:gravity="center"
+            android:paddingTop="5dp"
+            android:text="@string/radio_dock_2"
+            android:textColor="@color/bottom_bar_text_color"
+            android:textSize="@dimen/bottom_bar_text_size" />
+
+        <RadioButton
+            android:id="@+id/dock_3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@color/no_color"
+            android:button="@null"
+            android:drawableTop="@drawable/dock_3_selector"
+            android:gravity="center"
+            android:paddingTop="5dp"
+            android:text="@string/radio_dock_3"
+            android:textColor="@color/bottom_bar_text_color"
+            android:textSize="@dimen/bottom_bar_text_size" />
+
+        <RadioButton
+            android:id="@+id/dock_4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@color/no_color"
+            android:button="@null"
+            android:drawableTop="@drawable/dock_4_selector"
+            android:gravity="center"
+            android:paddingTop="5dp"
+            android:text="@string/radio_dock_4"
+            android:textColor="@color/bottom_bar_text_color"
+            android:textSize="@dimen/bottom_bar_text_size" />
+
+    </RadioGroup>
+</LinearLayout>

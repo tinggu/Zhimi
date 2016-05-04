@@ -14,10 +14,13 @@
     <color name="yellow">#ffce54</color>
 
     <color name="color_base">#f3f3f3</color>
+    <color name="text_blue">#1da1f2</color>
+    <color name="text_grey">#555555</color>
     <color name="text_hint_color">#787878</color>
     <color name="color_btn_validation_code">#6fb7eb</color>
     <color name="more_background">#f3f3f3</color>
     <color name="color_tip_bg">#4e4e4e</color>
+    <color name="color_redio_grey">#ccd6dd</color>
 
     <color name="color_topbar_title_text">#181b1d</color>
     <color name="color_d2d2d2">#d2d2d2</color>
@@ -36,14 +39,14 @@
     <color name="color_878787">#878787</color>
 
     <!--主页底部导航-->
-    <color name="bottom_bar_bg">#f7f7f7</color>
-    <color name="bottom_bar_text_color">#424242</color>
+    <color name="bottom_bar_bg">#f8f8f8</color>
+    <color name="bottom_bar_text_color">#8899a6</color>
 
     <!--topbar-->
-    <color name="color_light_blue">#2fb6ff</color>
+    <color name="color_light_blue">#1da1f2</color>
 
     <!--分隔线-->
-    <color name="color_line">#bebebe</color>
+    <color name="color_line">#d2dde4</color>
     <!--create group cover-->
     <color name="color_create_photo">#ffce54</color>
 </resources>

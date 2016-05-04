@@ -30,6 +30,6 @@
         android:maxWidth="200dp"
         android:text="创建成功"
         android:textColor="@color/white"
-        android:textSize="@dimen/text_size_15"
+        android:textSize="@dimen/text_size_little_title"
         />
 </LinearLayout>

@@ -1,13 +1,13 @@
 package com.linjin.zhimi.account;
 
 
-import com.cyou.band.DataCenter;
-import com.cyou.band.api.AccuntApi;
-import com.cyou.band.event.RegisterSuccessfulEvent;
-import com.cyou.band.model.BaseModel;
-import com.cyou.band.model.account.AuthCredentials;
-import com.cyou.band.model.account.User;
-import com.cyou.band.rest.ApiCode;
+import com.linjin.zhimi.DataCenter;
+import com.linjin.zhimi.api.AccuntApi;
+import com.linjin.zhimi.event.RegisterSuccessfulEvent;
+import com.cyou.zhimi.model.BaseModel;
+import com.cyou.zhimi.model.account.AuthCredentials;
+import com.cyou.zhimi.model.account.User;
+import com.linjin.zhimi.rest.ApiCode;
 import com.cyou.quick.mvp.rx.scheduler.AndroidSchedulerTransformer;
 
 import de.greenrobot.event.EventBus;

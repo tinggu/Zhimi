@@ -5,7 +5,7 @@ import android.os.Handler;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.cyou.band.base.BaseMvpActivity;
+import com.linjin.zhimi.base.BaseMvpActivity;
 import com.cyou.quick.mvp.MvpBasePresenter;
 import com.cyou.quick.mvp.MvpPresenter;
 import com.linjin.zhimi.R;

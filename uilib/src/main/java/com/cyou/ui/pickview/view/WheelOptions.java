@@ -2,10 +2,10 @@ package com.cyou.ui.pickview.view;
 
 import android.view.View;
 
-import com.cyou.qselect.uilib.R;
-import com.cyou.qselect.uilib.pickview.adapter.ArrayWheelAdapter;
-import com.cyou.qselect.uilib.pickview.lib.WheelView;
-import com.cyou.qselect.uilib.pickview.listener.OnItemSelectedListener;
+import com.cyou.ui.R;
+import com.cyou.ui.pickview.adapter.ArrayWheelAdapter;
+import com.cyou.ui.pickview.lib.WheelView;
+import com.cyou.ui.pickview.listener.OnItemSelectedListener;
 
 import java.util.ArrayList;
 

@@ -1,0 +1,81 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".account.AccuntActivity">
+
+    <com.linjin.zhimi.widget.TopActionBar
+        android:id="@+id/topActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        style="@style/Login.Label"
+        android:text="你的姓名和性别" />
+    
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/Login.Text"
+                android:text="姓名" />
+
+            <com.cyou.ui.ClearableEditText
+                android:id="@+id/ev_phonenum"
+                style="@style/Login.EditText"
+                android:layout_width="200dp"
+                android:hint="小明"
+
+                android:maxLength="10" />
+        </LinearLayout>
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginLeft="15dp"
+
+            android:layout_marginRight="15dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:background="@drawable/selector_radio_btn"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:text="男"
+                android:textColor="@color/white" />
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="30dp" />
+
+            <RadioButton
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:background="@drawable/selector_radio_btn"
+                android:button="@null"
+                android:gravity="center"
+                android:text="女"
+                android:textColor="@color/white" />
+        </RadioGroup>
+
+    </FrameLayout>
+
+    <View style="@style/Login.View" />
+    
+</LinearLayout>
+
+
+

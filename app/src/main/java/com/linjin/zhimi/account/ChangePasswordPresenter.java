@@ -2,11 +2,11 @@ package com.linjin.zhimi.account;
 
 import android.widget.Toast;
 
-import com.cyou.band.DataCenter;
-import com.cyou.band.api.AccuntApi;
-import com.cyou.band.model.account.User;
-import com.cyou.band.rest.ApiCode;
-import com.cyou.band.rest.RestUtils;
+import com.linjin.zhimi.DataCenter;
+import com.linjin.zhimi.api.AccuntApi;
+import com.cyou.zhimi.model.account.User;
+import com.linjin.zhimi.rest.ApiCode;
+import com.linjin.zhimi.rest.RestUtils;
 import com.cyou.common.utils.MD5Utils;
 import com.cyou.quick.QuickApplication;
 import com.cyou.quick.mvp.MvpBasePresenter;

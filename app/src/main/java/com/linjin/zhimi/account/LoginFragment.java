@@ -5,12 +5,12 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 
-import com.cyou.band.base.BaseMvpFragment;
-import com.cyou.band.model.account.AuthCredentials;
-import com.cyou.common.utils.KeyboardUtils;
-import com.cyou.common.utils.LogUtils;
-import com.cyou.common.utils.NetWorkUtils;
-import com.cyou.common.utils.TrackUtils;
+import com.linjin.zhimi.base.BaseMvpFragment;
+import com.cyou.zhimi.model.account.AuthCredentials;
+import com.linjin.common.utils.KeyboardUtils;
+import com.linjin.common.utils.LogUtils;
+import com.linjin.common.utils.NetWorkUtils;
+import com.linjin.common.utils.TrackUtils;
 import com.cyou.ui.ClearableEditText;
 import com.linjin.zhimi.R;
 import com.mobsandgeeks.saripaar.ValidationError;
@@ -55,8 +55,8 @@ public class LoginFragment
 //    @Bind(R.id.btn_login)
 //    Button btnLogin;
     
-    @Bind(R.id.topSnackBar)
-    TopSnackBar topSnackBar;
+//    @Bind(R.id.topSnackBar)
+//    TopSnackBar topSnackBar;
     
     @Bind(R.id.topActionBar)
     TopActionBar topActionBar;
@@ -97,7 +97,7 @@ public class LoginFragment
         return new LoginPresenter();
     }
 
-    @OnClick({R.id.btn_login, R.id.tv_register, R.id.tv_findpassword})
+    @OnClick({R.id.btn_login,  R.id.tv_findpassword})
     public void onClick(View view) {
         int id = view.getId();
         if (id == R.id.btn_login) {
@@ -107,9 +107,10 @@ public class LoginFragment
             }
             LogUtils.d("login", "click login");
             validator.validate();
-        } else if (id == R.id.tv_register) {
-            accuntActivity.showRegister(evPhonenum.getText().toString(), evPassword.getText().toString());
-            TrackUtils.getInstance().onEvent("Register_registration");
+//        } else if (id == R.id.tv_register) {
+//            accuntActivity.showRegister(evPhonenum.getText().toString(), evPassword.getText().toString());
+//            TrackUtils.getInstance().onEvent("Register_registration");
+        
         } else if (id == R.id.tv_findpassword) {
             accuntActivity.showFindPassword(evPhonenum.getText().toString());
             TrackUtils.getInstance().onEvent("Register_forgotpassword");
@@ -124,7 +125,8 @@ public class LoginFragment
     @Override
     public void showTip(String message) {
         LogUtils.i(TAG, "show tip " + message);
-        topSnackBar.showOnceTip(message);
+//        topSnackBar.showOnceTip(message);
+        toast(message);
         hideLoading();
     }
 

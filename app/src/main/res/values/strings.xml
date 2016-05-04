@@ -6,6 +6,7 @@
     <string name="text_cancel">取消</string>
     <string name="text_back">返回</string>
     <string name="text_save">保存</string>
+    <string name="text_next">下一步</string>
 
     <!-- Strings related to login -->
     <string name="prompt_mobile_num">输入登录手机号</string>
@@ -72,8 +73,9 @@
 
     <!--主页底部导航-->
     <string name="topbar_title_main">主页</string>
-    <string name="radio_home">主页</string>
-    <string name="radio_message">消息</string>
-    <string name="radio_self">我的</string>
+    <string name="radio_dock_1">匿题</string>
+    <string name="radio_dock_2">发现</string>
+    <string name="radio_dock_3">私聊</string>
+    <string name="radio_dock_4">我的</string>
 
 </resources>

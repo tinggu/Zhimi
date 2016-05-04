@@ -1,10 +1,7 @@
 package com.linjin.zhimi;
 
-import com.cyou.band.CommonApplication;
-import com.cyou.band.Constants;
-import com.cyou.band.DataCenter;
-import com.cyou.common.utils.LogUtils;
-import com.cyou.common.utils.TrackUtils;
+import com.linjin.common.utils.LogUtils;
+import com.linjin.common.utils.TrackUtils;
 import com.facebook.drawee.backends.pipeline.Fresco;
 
 

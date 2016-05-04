@@ -12,11 +12,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.cyou.band.base.BaseMvpFragment;
-import com.cyou.band.model.account.AuthCredentials;
-import com.cyou.common.utils.KeyboardUtils;
-import com.cyou.common.utils.LogUtils;
-import com.cyou.common.utils.TrackUtils;
+import com.linjin.zhimi.base.BaseMvpFragment;
+import com.cyou.zhimi.model.account.AuthCredentials;
+import com.linjin.common.utils.KeyboardUtils;
+import com.linjin.common.utils.LogUtils;
+import com.linjin.common.utils.TrackUtils;
 import com.cyou.ui.ClearableEditText;
 import com.linjin.zhimi.R;
 import com.mobsandgeeks.saripaar.ValidationError;

@@ -14,20 +14,25 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">1dp</item>
         <item name="android:layout_marginLeft">@dimen/left_right_padding</item>
+        <item name="android:layout_marginRight">@dimen/left_right_padding</item>
     </style>
 
     <style name="Login.Button">
         <item name="android:background">@drawable/selector_round_btn</item>
         <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
-
+    
     <style name="Login.Label">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">@dimen/left_right_padding</item>
-        <item name="android:textColor">@color/color_light_blue</item>
-
+        <item name="android:layout_marginTop">40dp</item>
+        <item name="android:layout_marginBottom">14dp</item>
+        <item name="android:textSize">24dp</item>
+        <item name="android:layout_marginLeft">@dimen/left_right_padding</item>
+        <item name="android:textColor">@color/text_blue</item>
+       
     </style>
     
     <style name="Login.Text"> 
@@ -39,12 +44,21 @@
     <item name="android:textColor">@color/black</item> 
     <item name="android:singleLine">true</item>
     </style>
+
+    <style name="Login.Title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">@dimen/left_right_padding</item>
+        <item name="android:paddingRight">@dimen/left_right_padding</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:singleLine">true</item>
+    </style>
     
     <style name="Login.EditText">
         <item name="android:background">@color/white</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">50dp</item>
-        <item name="android:paddingLeft">@dimen/left_right_padding</item>
         <item name="android:paddingRight">@dimen/left_right_padding</item>
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/text_base_color</item>
