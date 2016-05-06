@@ -1,2 +1,47 @@
 linjin741
 zhimi741
+
+
+D:\>keytool -list -v -keystore linjin_keystore.jks -storepass linjin741
+
+密钥库类型: JKS
+密钥库提供方: SUN
+
+您的密钥库包含 1 个条目
+
+别名: zhimi
+创建日期: 2016-5-4
+条目类型: PrivateKeyEntry
+证书链长度: 1
+证书[1]:
+所有者: CN=wangjia, OU=linjin, O=linjin, L=Beijing, ST=China, C=86
+发布者: CN=wangjia, OU=linjin, O=linjin, L=Beijing, ST=China, C=86
+序列号: 16b0c6bd
+有效期开始日期: Wed May 04 17:43:38 CST 2016, 截止日期: Sun Apr 28 17:43:38 CST 2041
+证书指纹:
+         MD5: CA:75:91:DD:80:8A:DD:08:9E:FB:F7:78:F8:46:17:AD
+         SHA1: F7:6D:B8:C3:CA:20:13:52:3B:39:BB:F7:C1:FF:FD:0A:06:FF:42:73
+         SHA256: 7C:FA:FB:8D:82:E7:DB:08:35:FE:F3:F9:E8:0B:CA:08:3C:69:DB:01:EC:E0:20:AA:1B:63:03:F2:FD:F2:F9:1E
+         签名算法名称: SHA256withRSA
+         版本: 3
+
+扩展:
+
+#1: ObjectId: 2.5.29.14 Criticality=false
+SubjectKeyIdentifier [
+KeyIdentifier [
+0000: B0 48 F4 9B 22 E1 4C C5   3F A0 C4 51 93 CA 5D D3  .H..".L.?..Q..].
+0010: 23 CC 28 26                                        #.(&
+]
+]
+
+
+
+*******************************************
+*******************************************
+
+
+
+
+
+

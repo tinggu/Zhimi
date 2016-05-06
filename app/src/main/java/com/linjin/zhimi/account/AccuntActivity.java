@@ -40,7 +40,7 @@ public class AccuntActivity extends BaseMvpActivity {
         setContentView(R.layout.activity_accunt);
         EventBus.getDefault().register(this);
         dialogUtils = new DialogUtils();
-        regPresenter = new RegisterPresenter(this);
+       
         showSelect();
     }
 
@@ -83,6 +83,7 @@ public class AccuntActivity extends BaseMvpActivity {
 
     public void showRegister0() {
         InitUtils.initSDK(this);
+        regPresenter = new RegisterPresenter(this);
         RegisterStep0Fragment registerFragment = new RegisterStep0Fragment(regPresenter);
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.fragmentContainer, registerFragment);

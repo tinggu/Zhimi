@@ -156,7 +156,7 @@ public class RegisterFragment
 
     @Override
     public RegisterPresenter createPresenter() {
-        return new RegisterPresenter(null);
+        return new RegisterPresenter(accuntActivity);
     }
 
     /**

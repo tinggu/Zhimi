@@ -4,13 +4,15 @@ package com.linjin.zhimi.account;
 import com.cyou.quick.mvp.rx.scheduler.AndroidSchedulerTransformer;
 import com.cyou.zhimi.model.BaseModel;
 import com.cyou.zhimi.model.account.AuthCredentials;
-import com.cyou.zhimi.model.account.User;
 import com.cyou.zhimi.model.account.UserModel;
 import com.linjin.zhimi.DataCenter;
 import com.linjin.zhimi.api.AccuntApi;
 import com.linjin.zhimi.event.RegisterSuccessfulEvent;
 import com.linjin.zhimi.rest.ApiCode;
+import com.tinggu.common.utils.KeyboardUtils;
 
+import cn.smssdk.EventHandler;
+import cn.smssdk.SMSSDK;
 import de.greenrobot.event.EventBus;
 import rx.Observable;
 import rx.Subscriber;
@@ -26,8 +28,9 @@ import rx.functions.Func1;
 public class RegisterPresenter extends AccuntPresenter<RegisterView> {
 
     private AccuntActivity accuntActivity;
-
-//    String username;
+    private EventHandler eh;
+    private int currStep;
+    //    String username;
     String phone;
     String password;
     String name;
@@ -37,6 +40,27 @@ public class RegisterPresenter extends AccuntPresenter<RegisterView> {
 
     public RegisterPresenter(AccuntActivity accuntActivity) {
         this.accuntActivity = accuntActivity;
+        eh = new EventHandler() {
+
+            @Override
+            public void afterEvent(int event, int result, Object data) {
+
+                if (result == SMSSDK.RESULT_COMPLETE) {
+                    //回调完成
+                    if (event == SMSSDK.EVENT_SUBMIT_VERIFICATION_CODE) {
+                        //提交验证码成功
+                    } else if (event == SMSSDK.EVENT_GET_VERIFICATION_CODE) {
+                        //获取验证码成功
+                    } else if (event == SMSSDK.EVENT_GET_SUPPORTED_COUNTRIES) {
+                        //返回支持发送验证码的国家列表
+                    }
+                } else {
+                    ((Throwable) data).printStackTrace();
+                }
+            }
+        };
+        SMSSDK.registerEventHandler(eh); //注册短信回调
+
     }
 
     public void setPhoneAndPassword(String phone, String password) {
@@ -45,9 +69,14 @@ public class RegisterPresenter extends AccuntPresenter<RegisterView> {
         this.password = password;
     }
 
+    public void back(){
+        currStep--;
+        KeyboardUtils.callBackKeyClick();
+    }
+    
     //    private String checkCode;
-    public void nextStep(int step) {
-        switch (step) {
+    public void nextStep() {
+        switch (currStep) {
             case 1:
                 accuntActivity.showRegister1();
                 break;
@@ -61,9 +90,15 @@ public class RegisterPresenter extends AccuntPresenter<RegisterView> {
                 accuntActivity.showRegister4();
                 break;
         }
+        currStep++;
+    }
+
+    public void getVerificationCode() {
+        SMSSDK.getVerificationCode("+86", phone);
     }
 
     public void doGetCheckCode(String mobileNum) {
+
 
         Subscriber<BaseModel> subscriber = new Subscriber<BaseModel>() {
             @Override
@@ -149,5 +184,9 @@ public class RegisterPresenter extends AccuntPresenter<RegisterView> {
                 });
 
 
+    }
+
+    public String getPhone() {
+        return phone;
     }
 }
