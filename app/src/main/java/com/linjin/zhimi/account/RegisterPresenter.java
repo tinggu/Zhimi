@@ -13,6 +13,7 @@ import com.tinggu.common.utils.KeyboardUtils;
 
 import cn.smssdk.EventHandler;
 import cn.smssdk.SMSSDK;
+import cn.smssdk.SMSSDKInitUtils;
 import de.greenrobot.event.EventBus;
 import rx.Observable;
 import rx.Subscriber;
@@ -37,6 +38,7 @@ public class RegisterPresenter extends AccuntPresenter<RegisterView> {
     int sex;
     String title;
     String devicetoken;
+    private String zone = "+86";
 
     public RegisterPresenter(AccuntActivity accuntActivity) {
         this.accuntActivity = accuntActivity;
@@ -69,11 +71,11 @@ public class RegisterPresenter extends AccuntPresenter<RegisterView> {
         this.password = password;
     }
 
-    public void back(){
+    public void back() {
         currStep--;
         KeyboardUtils.callBackKeyClick();
     }
-    
+
     //    private String checkCode;
     public void nextStep() {
         switch (currStep) {
@@ -94,7 +96,7 @@ public class RegisterPresenter extends AccuntPresenter<RegisterView> {
     }
 
     public void getVerificationCode() {
-        SMSSDK.getVerificationCode("+86", phone);
+        SMSSDK.getVerificationCode(zone, phone);
     }
 
     public void doGetCheckCode(String mobileNum) {
@@ -128,6 +130,10 @@ public class RegisterPresenter extends AccuntPresenter<RegisterView> {
         observable.compose(new AndroidSchedulerTransformer<BaseModel>()).subscribe(subscriber);
 //        AppProvide.applyScheduler()  .subscribe(subscriber);
 
+    }
+
+    public void checkCode(String code) {
+        accuntApi.checkCode(SMSSDKInitUtils.APPKEY, code, zone, phone);
     }
 
     public void doRegister(AuthCredentials credentials) {

@@ -1,7 +1,6 @@
 package com.linjin.zhimi.api;
 
 import com.cyou.zhimi.model.BaseModel;
-import com.cyou.zhimi.model.account.User;
 import com.cyou.zhimi.model.account.UserModel;
 
 import retrofit2.http.Field;
@@ -9,13 +8,6 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.POST;
 import rx.Observable;
 
-/**
- * Description:
- * Copyright  : Copyright (c) 2015
- * Company    : 北京畅游天下网络科技有限公司
- * Author     : liujianguang
- * Date       : 2016/1/4
- **/
 public interface AccuntApi {
 
     /**
@@ -28,8 +20,8 @@ public interface AccuntApi {
     @FormUrlEncoded
     @POST("user/login")
     Observable<UserModel> login(@Field("mobileNum") String mobileNum,
-                           @Field("password") String password,
-                           @Field("devicetoken") String devicetoken
+                                @Field("password") String password,
+                                @Field("devicetoken") String devicetoken
     );
 
     /**
@@ -41,10 +33,21 @@ public interface AccuntApi {
      * @return
      */
     @FormUrlEncoded
-    @POST("/createUser")
+    @POST("/reg")
     Observable<UserModel> register(@Field("code") String code,
-                              @Field("mobileNum") String mobileNum,
-                              @Field("password") String password
+                                   @Field("mobileNum") String mobileNum,
+                                   @Field("password") String password
+    );
+
+    
+    @FormUrlEncoded
+    @POST("user/reg")
+    Observable<UserModel> register(@Field("username") String phone,
+                                   @Field("password") String password,
+                                   @Field("name") String name,
+                                   @Field("sex") String sex,
+                                   @Field("title") String title,
+                                   @Field("devicetoken") String devicetoken
     );
 
 
@@ -94,5 +97,5 @@ public interface AccuntApi {
     @FormUrlEncoded
     @POST("/changePassword")
     Observable<UserModel> changePassword(@Field("oldPassword") String oldPassword,
-                                    @Field("newPassword") String newPassword);
+                                         @Field("newPassword") String newPassword);
 }

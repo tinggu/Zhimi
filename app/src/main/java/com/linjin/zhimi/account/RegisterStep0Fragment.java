@@ -26,10 +26,7 @@ import butterknife.Bind;
  */
 @SuppressLint("ValidFragment")
 public class RegisterStep0Fragment extends RegisterStepBaseFragment {
-
-    private static final int RETRY_INTERVAL = 59;
-    Validator validator;
-
+    
     @NotEmpty(messageResId = R.string.login_error_phonenum_empty, sequence = 0)
     @Length(min = 11, max = 11, messageResId = R.string.register_error_phone_invalid, sequence = 1)
     @Order(0)
@@ -38,15 +35,12 @@ public class RegisterStep0Fragment extends RegisterStepBaseFragment {
 
     @NotEmpty(messageResId = R.string.login_error_password_empty)
     @Password(messageResId = R.string.register_error_password_invalid)
+//    @Length(min = 6, max = 18, messageResId = R.string.register_error_password_invalid, sequence = 0)
     @Order(1)
     @Bind(R.id.ev_password)
     ClearableEditText evPassword;
-
-
-    @Bind(R.id.topActionBar)
-    TopActionBar topActionBar;
-
-
+    
+    
     public RegisterStep0Fragment(RegisterPresenter presenter) {
         super(presenter);
     }

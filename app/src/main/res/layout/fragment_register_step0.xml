@@ -49,7 +49,7 @@
             style="@style/Login.EditText"
             android:hint="请设置6-18位密码"
             android:inputType="textPassword"
-            android:maxLength="20" />
+            android:maxLength="18" />
     </LinearLayout>
 
 

@@ -29,7 +29,7 @@ import butterknife.OnClick;
 public class RegisterStep1Fragment extends RegisterStepBaseFragment {
 
     private static final int RETRY_INTERVAL = 59;
-    Validator validator;
+
 
     @NotEmpty(messageResId = R.string.validation_code_null)
     @Bind(R.id.ev_validation_code)
@@ -111,6 +111,7 @@ public class RegisterStep1Fragment extends RegisterStepBaseFragment {
             if (!NetWorkUtils.isNetConnected(QuickApplication.getInstance())) {
                 toast(getContext().getString(R.string.no_network_connection));
             } else {
+                countDown();
                 presenter.getVerificationCode();
             }
         }
@@ -126,8 +127,8 @@ public class RegisterStep1Fragment extends RegisterStepBaseFragment {
     public void onValidationSucceeded() {
 //        showLoading(); 
         String code = evValidationCode.getText().toString();
-        TrackUtils.getInstance().onEvent("Register_rp_register");
-//        TalkingDataAppCpa.onRegister(AppProvide.dataCenter().getUserID());
+//        TrackUtils.getInstance().onEvent("Register_rp_register");
+        presenter.checkCode(code);
 //        getPresenter().doRegister(new AuthCredentials(mobileNum, password, code));
 //        String inviteCode = evInvitationMobile.getText() == null ? "" : evInvitationMobile.getText().toString();
     }

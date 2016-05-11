@@ -18,7 +18,7 @@ import com.linjin.zhimi.utils.CacheUtils;
 import com.linjin.zhimi.utils.DialogUtils;
 import com.linjin.zhimi.utils.IntentStarter;
 
-import cn.smssdk.InitUtils;
+import cn.smssdk.SMSSDKInitUtils;
 import de.greenrobot.event.EventBus;
 
 /**
@@ -82,7 +82,7 @@ public class AccuntActivity extends BaseMvpActivity {
     }
 
     public void showRegister0() {
-        InitUtils.initSDK(this);
+        SMSSDKInitUtils.initSDK(this);
         regPresenter = new RegisterPresenter(this);
         RegisterStep0Fragment registerFragment = new RegisterStep0Fragment(regPresenter);
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();

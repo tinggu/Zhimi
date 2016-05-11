@@ -57,15 +57,15 @@ public class LoginPresenter extends AccuntPresenter<LoginView> {
             }
 
             @Override
-            public void onNext(UserModel token) {
+            public void onNext(UserModel userModel) {
                 LogUtils.i("login", "LoginSuccess onNext ");
-                if (token.getCode() == ApiCode.SUCCESS_CODE) {
+                if (userModel.getCode() == ApiCode.SUCCESS_CODE) {
                     LogUtils.i("login", "LoginSuccess onNext ");
-                    DataCenter.getInstance().saveUser(token.getUser());
+                    DataCenter.getInstance().saveUser(userModel.getUser());
 //                    initConstants();
                     EventBus.getDefault().post(new LoginSuccessfulEvent());
                 } else {
-                    onError(new LoginException(token.getCode(),  ApiCode.getMsg(token.getCode())));
+                    onError(new LoginException(userModel.getCode(),  ApiCode.getMsg(userModel.getCode())));
                 }
             }
         };

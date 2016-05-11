@@ -43,11 +43,12 @@
     <string name="register_error_phone_already_registered">手机号已注册</string>
     <string name="register_error_phone_invalid">手机号不正确</string>
     <string name="register_error_password_invalid">密码不符合规范</string>
+    <string name="register_error_password_length">密码长度不符合规范</string>
     <string name="register_error_password_repeat_wrong">重复输入密码不匹配</string>
     <string name="register_error_validation_code_wrong">验证码错误</string>
     <string name="validation_code_count_down">已发送(%ss)</string>
     <string name="no_network_connection">当前无网络连接，请检查您的网络设置</string>
-
+    
     <!--String related to change password -->
     <string name="changepassword_oldnumber_hint">输入旧密码</string>
     <string name="changepassword_newnumber_hint">修改密码（6-20位）</string>
