@@ -133,7 +133,30 @@ public class RegisterPresenter extends AccuntPresenter<RegisterView> {
     }
 
     public void checkCode(String code) {
-        accuntApi.checkCode(SMSSDKInitUtils.APPKEY, code, zone, phone);
+        Observable<BaseModel> observable = accuntApi.checkCode(SMSSDKInitUtils.APPKEY, code, zone, phone);
+        observable.compose(new AndroidSchedulerTransformer<BaseModel>()).subscribe(new Subscriber<BaseModel>() {
+
+            @Override
+            public void onCompleted() {
+
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                if (isViewAttached()) getView().showTip(e.getMessage());
+            }
+
+            @Override
+            public void onNext(BaseModel model) {
+                if (model.getCode() == ApiCode.SUCCESS_CODE) {
+                    nextStep();
+                } else {
+                    if (isViewAttached()) getView().showTip(model.getData());
+
+                }
+
+            }
+        });
     }
 
     public void doRegister(AuthCredentials credentials) {

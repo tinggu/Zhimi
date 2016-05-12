@@ -28,7 +28,7 @@ import butterknife.OnClick;
 @SuppressLint("ValidFragment")
 public class RegisterStep1Fragment extends RegisterStepBaseFragment {
 
-    private static final int RETRY_INTERVAL = 59;
+    private static final int RETRY_INTERVAL = 60;
 
 
     @NotEmpty(messageResId = R.string.validation_code_null)

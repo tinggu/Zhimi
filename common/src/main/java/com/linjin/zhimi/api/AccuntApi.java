@@ -10,19 +10,30 @@ import rx.Observable;
 
 public interface AccuntApi {
 
+    @FormUrlEncoded
+    @POST("user/reg")
+    Observable<UserModel> register(@Field("username") String phone,
+                                   @Field("password") String password,
+                                   @Field("name") String name,
+                                   @Field("sex") String sex,
+                                   @Field("title") String title,
+                                   @Field("devicetoken") String devicetoken
+    );
+
     /**
      * 用户登陆
      *
-     * @param mobileNum 手机号码
+     * @param phone 手机号码
      * @param password  用户密码
      * @return
      */
     @FormUrlEncoded
     @POST("user/login")
-    Observable<UserModel> login(@Field("mobileNum") String mobileNum,
+    Observable<UserModel> login(@Field("username") String phone,
                                 @Field("password") String password,
                                 @Field("devicetoken") String devicetoken
     );
+
 
     /**
      * 创建用户
@@ -39,39 +50,17 @@ public interface AccuntApi {
                                    @Field("password") String password
     );
 
-    
-    @FormUrlEncoded
-    @POST("user/reg")
-    Observable<UserModel> register(@Field("username") String phone,
-                                   @Field("password") String password,
-                                   @Field("name") String name,
-                                   @Field("sex") String sex,
-                                   @Field("title") String title,
-                                   @Field("devicetoken") String devicetoken
-    );
-
 
     byte TYPE_REGISTER = 1;
     byte TYPE_FIND_PASSWORD = 2;
 
-    /**
-     * 获取验证码
-     *
-     * @param mobileNum 手机号码
-     * @param type      类型 1：注册2：找回密码
-     * @return
-     */
     @FormUrlEncoded
-    @POST("/getCheckCode")
-    Observable<BaseModel> getCheckCode(@Field("mobileNum") String mobileNum,
-                                       @Field("type") byte type);
-
-
     @POST("user/regsms")
     Observable<BaseModel> checkCode(@Field("appkey") String appkey,
                                     @Field("phone") String phone,
                                     @Field("zone") String zone,
                                     @Field("code") String code);
+
 
     /**
      * 找回密码
@@ -98,4 +87,16 @@ public interface AccuntApi {
     @POST("/changePassword")
     Observable<UserModel> changePassword(@Field("oldPassword") String oldPassword,
                                          @Field("newPassword") String newPassword);
+
+    /**
+     * 获取验证码
+     *
+     * @param mobileNum 手机号码
+     * @param type      类型 1：注册2：找回密码
+     * @return
+     */
+    @FormUrlEncoded
+    @POST("/getCheckCode")
+    Observable<BaseModel> getCheckCode(@Field("mobileNum") String mobileNum,
+                                       @Field("type") byte type);
 }

@@ -1,8 +1,6 @@
 package com.linjin.zhimi.account;
 
 import com.cyou.zhimi.model.account.AuthCredentials;
-import com.cyou.zhimi.model.account.LoginException;
-import com.cyou.zhimi.model.account.User;
 import com.cyou.zhimi.model.account.UserModel;
 import com.linjin.zhimi.DataCenter;
 import com.linjin.zhimi.event.LoginSuccessfulEvent;
@@ -47,12 +45,6 @@ public class LoginPresenter extends AccuntPresenter<LoginView> {
                 if (isViewAttached()) {
                     String message = e.getMessage();
                     getView().showTip(message);
-//                    if (e instanceof LoginException) {
-//                        int errorCode = ((LoginException) e).errorEode;
-//                        if (errorCode == ApiCode.FAILED_CODE_PASSWORD_ERROR) {
-//                            getView().showFindPassword();
-//                        }
-//                    }
                 }
             }
 
@@ -65,7 +57,11 @@ public class LoginPresenter extends AccuntPresenter<LoginView> {
 //                    initConstants();
                     EventBus.getDefault().post(new LoginSuccessfulEvent());
                 } else {
-                    onError(new LoginException(userModel.getCode(),  ApiCode.getMsg(userModel.getCode())));
+                    if (isViewAttached()) {
+                     
+                        getView().showTip( userModel.getData());
+                    }
+                    
                 }
             }
         };
@@ -78,26 +74,5 @@ public class LoginPresenter extends AccuntPresenter<LoginView> {
 //        DataCenter.getInstance().saveUserMobile(credentials.getMobileNum());
         return accuntApi.login(credentials.getMobileNum(), credentials.getPassword(), credentials.getDeviceToken());
     }
-    
-//    public void initConstants(){
-//        Log.i("token", "initConstants: ");
-////        accuntApi.getConstants().observeOn(AndroidSchedulers.mainThread())
-//        accuntApi.getConstants().compose(new AndroidSchedulerTransformer<ConstantsModel>())
-//                .subscribe(new Subscriber<ConstantsModel>() {
-//            @Override
-//            public void onCompleted() {
-//            }
-//
-//            @Override
-//            public void onError(Throwable e) {
-//                e.printStackTrace();
-//            }
-//
-//            @Override
-//            public void onNext(ConstantsModel constantsModel) {
-//                DataCenter.getInstance().saveConstants(constantsModel);
-//            }
-//        });
-//    }
 
 }

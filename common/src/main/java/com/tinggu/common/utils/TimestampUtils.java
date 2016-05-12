@@ -39,7 +39,7 @@ public class TimestampUtils {
 
             @Override
             public void onNext(Timestamp timestamp) {
-                if (timestamp.code == ApiCode.SUCCESS_CODE) {
+                if (timestamp.getCode() == ApiCode.SUCCESS_CODE) {
                     DataCenter.getInstance().setServerTime(timestamp.timestamp);
                 }
             }

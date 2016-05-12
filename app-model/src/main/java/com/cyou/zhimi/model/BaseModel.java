@@ -13,18 +13,30 @@ public class BaseModel {
      */
     @Expose
     @SerializedName("code")
-    public int code;
+    private int code;
    
 
     public int getCode() {
         return code;
     }
 
-     
+    /**
+     * message
+     */
+    @Expose
+    @SerializedName("data1")
+    private String  data;
+
+
+    public String getData() {
+        return data;
+    }
+
     @Override
     public String toString() {
         return "BaseModel{" +
                 "code=" + code +
+                ", data='" + data + '\'' +
                 '}';
     }
 }

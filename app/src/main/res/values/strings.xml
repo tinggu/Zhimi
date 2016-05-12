@@ -27,6 +27,7 @@
     <string name="login_error_password_empty">密码不能为空</string>
 
     <string name="login_phonenumber_hint">手机号码</string>
+    <string name="login_phone_title">手机号</string>
     <string name="login_password_hint">知觅登录密码</string>
     <string name="login_findpassword">忘记密码?</string>
 

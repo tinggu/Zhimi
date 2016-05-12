@@ -51,10 +51,6 @@ public abstract class AccuntPresenter<V extends MvpView> extends MvpBasePresente
 
         Observable<UserModel> observable = createObservable(credentials);
         observable.compose(new AndroidSchedulerTransformer<UserModel>()).subscribe(subscriber);
-//        observable.subscribe(subscriber);
-
-//        AppProvide.applyScheduler(createObservable(credentials)).subscribe(subscriber);
-//        observable.compose(schedulerTransformer).subscribe(subscriber);
     }
 
     @Override

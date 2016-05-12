@@ -38,25 +38,21 @@ import butterknife.OnClick;
 public class LoginFragment
         extends BaseMvpFragment<LoginView, LoginPresenter>
         implements LoginView, Validator.ValidationListener {
+    
     private static final String TAG = "LoginFragment";
 
     @NotEmpty(messageResId = R.string.login_error_phonenum_empty, sequence = 0)
     @Length(min = 11, max = 11, messageResId = R.string.register_error_phone_invalid, sequence = 1)
-    @Order(1)
+    @Order(0)
     @Bind(R.id.ev_phonenum)
     ClearableEditText evPhonenum;
 
     @NotEmpty(messageResId = R.string.login_error_password_empty)
     @Password(min = 6, messageResId = R.string.register_error_password_invalid, sequence = 2)
-    @Order(2)
+    @Order(1)
     @Bind(R.id.ev_password)
     ClearableEditText evPassword;
 
-//    @Bind(R.id.btn_login)
-//    Button btnLogin;
-
-//    @Bind(R.id.topSnackBar)
-//    TopSnackBar topSnackBar;
 
     @Bind(R.id.topActionBar)
     TopActionBar topActionBar;
@@ -108,25 +104,15 @@ public class LoginFragment
             }
             LogUtils.d("login", "click login");
             validator.validate();
-//        } else if (id == R.id.tv_register) {
-//            accuntActivity.showRegister(evPhonenum.getText().toString(), evPassword.getText().toString());
-//            TrackUtils.getInstance().onEvent("Register_registration");
-
         } else if (id == R.id.tv_findpassword) {
             accuntActivity.showFindPassword(evPhonenum.getText().toString());
             TrackUtils.getInstance().onEvent("Register_forgotpassword");
         }
     }
 
-//    @OnTextChanged({R.id.ev_password, R.id.ev_phonenum})
-//    public void onTextChanged() {
-//        hideError();
-//    }
 
     @Override
     public void showTip(String message) {
-        LogUtils.i(TAG, "show tip " + message);
-//        topSnackBar.showOnceTip(message);
         toast(message);
         hideLoading();
     }
@@ -134,13 +120,11 @@ public class LoginFragment
     @Override
     public void showLoading() {
         accuntActivity.dialogUtils.showLoading(getActivity(), "登录中，请稍后...");
-//        btnLogin.setText(R.string.action_login_loading);
     }
 
     @Override
     public void hideLoading() {
         accuntActivity.dialogUtils.hideLoading();
-//        btnLogin.setText(R.string.action_login);
     }
 
 

@@ -1,8 +1,6 @@
 package com.linjin.zhimi.rest;
 
 
-import com.cyou.zhimi.model.BaseModel;
-
 public class ApiCode {
 
     //协议code码

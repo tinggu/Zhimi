@@ -15,7 +15,7 @@ public class UserModel extends BaseModel {
 
     @Expose
     @SerializedName("data")
-    User user;
+    private User user;
 
     public User getUser() {
         return user;
