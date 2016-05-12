@@ -12,13 +12,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.linjin.zhimi.base.BaseMvpFragment;
-import com.cyou.zhimi.model.account.AuthCredentials;
-import com.tinggu.common.utils.KeyboardUtils;
-import com.tinggu.common.utils.LogUtils;
-import com.tinggu.common.utils.TrackUtils;
 import com.cyou.ui.ClearableEditText;
+import com.cyou.zhimi.model.account.AuthCredentials;
 import com.linjin.zhimi.R;
+import com.linjin.zhimi.base.BaseMvpFragment;
+import com.linjin.zhimi.widget.TopActionBar;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
 import com.mobsandgeeks.saripaar.annotation.ConfirmPassword;
@@ -26,13 +24,14 @@ import com.mobsandgeeks.saripaar.annotation.Length;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import com.mobsandgeeks.saripaar.annotation.Order;
 import com.mobsandgeeks.saripaar.annotation.Password;
+import com.tinggu.common.utils.KeyboardUtils;
+import com.tinggu.common.utils.LogUtils;
+import com.tinggu.common.utils.TrackUtils;
 
 import java.util.List;
 
 import butterknife.Bind;
 import butterknife.OnClick;
-import com.linjin.zhimi.widget.TopActionBar;
-import com.linjin.zhimi.widget.TopSnackBar;
 
 /**
  * Description:
@@ -75,12 +74,9 @@ public class FindPWFragment
     @Bind(R.id.tv_get_code)
     TextView tvGetCode;
 
-    @Bind(R.id.topSnackBar)
-    TopSnackBar topSnackBar;
-
     @Bind(R.id.topActionBar)
     TopActionBar topActionBar;
-    
+
     private int time = RETRY_INTERVAL;
 
 
@@ -93,28 +89,28 @@ public class FindPWFragment
         this.phone = phone;
     }
 
-    private  void initView() {
-        topActionBar.setTitle(R.string.action_register);
+    private void initView() {
+        topActionBar.setTitle("密码找回");
         topActionBar.setBackListener(new TopActionBar.BackListener() {
             @Override
-            public void onBack() {
-//                getActivity().finish();
+            public void onBack() { 
                 KeyboardUtils.callBackKeyClick();
             }
         });
+        topActionBar.hideAction();
         validator = new Validator(this);
         validator.setValidationListener(this);
         evPhonenum.setText(phone);
-        evPhonenum.post(new Runnable() {
-            @Override
-            public void run() {
-                evPhonenum.requestFocus();
-                evPhonenum.setSelection(phone.length());
-            }
-        });
-        if (phone != null && phone.length() == 11) {
-            onClick(tvGetCode);
-        }
+//        evPhonenum.post(new Runnable() {
+//            @Override
+//            public void run() {
+//                evPhonenum.requestFocus();
+//                evPhonenum.setSelection(phone.length());
+//            }
+//        });
+//        if (phone != null && phone.length() == 11) {
+//            onClick(tvGetCode);
+//        }
         isFinish = false;
     }
 
@@ -224,7 +220,7 @@ public class FindPWFragment
 
     @Override
     public void showTip(String message) {
-        topSnackBar.showOnceTip(message);
+        toast(message);
         hideLoading();
     }
 

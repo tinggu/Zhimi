@@ -30,24 +30,24 @@
                 android:text="姓名" />
 
             <com.cyou.ui.ClearableEditText
-                android:id="@+id/ev_phonenum"
+                android:id="@+id/ev_name"
                 style="@style/Login.EditText"
-                android:layout_width="200dp"
+                android:layout_width="180dp"
                 android:hint="小明"
-
                 android:maxLength="10" />
         </LinearLayout>
 
         <RadioGroup
+            android:id="@+id/rg_sex"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right|center_vertical"
             android:layout_marginLeft="15dp"
-
             android:layout_marginRight="15dp"
             android:orientation="horizontal">
 
             <RadioButton
+                android:id="@+id/rb_male"
                 android:layout_width="60dp"
                 android:layout_height="30dp"
                 android:background="@drawable/selector_radio_btn"
@@ -62,6 +62,7 @@
                 android:layout_height="30dp" />
 
             <RadioButton
+                android:id="@+id/rb_female"
                 android:layout_width="60dp"
                 android:layout_height="30dp"
                 android:background="@drawable/selector_radio_btn"

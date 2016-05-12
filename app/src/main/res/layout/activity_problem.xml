@@ -4,7 +4,10 @@
     android:background="@color/white"
     android:orientation="vertical">
 
-    <include layout="@layout/top_bar" />
+    <com.linjin.zhimi.widget.TopActionBar
+        android:id="@+id/topActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <FrameLayout
         android:layout_width="match_parent"

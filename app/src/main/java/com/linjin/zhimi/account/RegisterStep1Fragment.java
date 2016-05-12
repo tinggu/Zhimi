@@ -2,7 +2,6 @@ package com.linjin.zhimi.account;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.EditText;
@@ -10,10 +9,8 @@ import android.widget.TextView;
 
 import com.cyou.quick.QuickApplication;
 import com.linjin.zhimi.R;
-import com.mobsandgeeks.saripaar.Validator;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import com.tinggu.common.utils.NetWorkUtils;
-import com.tinggu.common.utils.TrackUtils;
 
 import butterknife.Bind;
 import butterknife.OnClick;
@@ -41,9 +38,7 @@ public class RegisterStep1Fragment extends RegisterStepBaseFragment {
     @Bind(R.id.tv_get_code)
     TextView tvGetCode;
 
-    private int time = RETRY_INTERVAL;
-
-    private boolean isFinish;
+    private int time;
 
     public RegisterStep1Fragment(RegisterPresenter presenter) {
         super(presenter);
@@ -53,16 +48,15 @@ public class RegisterStep1Fragment extends RegisterStepBaseFragment {
     protected void initView() {
         super.initView();
         tvTip.setText("短信验证码已发送到 " + presenter.getPhone());
+        reset();
         onClick(tvGetCode);
-        isFinish = false;
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setRetainInstance(true);
+    private void reset() {
+        time = RETRY_INTERVAL;
+        tvGetCode.setText(R.string.register_get_validation_code);
+        tvGetCode.setEnabled(true);
     }
-
 
     @Override
     protected int getLayoutRes() {
@@ -92,9 +86,9 @@ public class RegisterStep1Fragment extends RegisterStepBaseFragment {
                     }
                     String countDown = getContext().getString(R.string.validation_code_count_down, time);
                     tvGetCode.setText(countDown);
-                    if (!isFinish) {
-                        handler.postDelayed(this, 1000);
-                    }
+
+                    handler.postDelayed(this, 1000);
+
                 }
 
             }
@@ -125,12 +119,11 @@ public class RegisterStep1Fragment extends RegisterStepBaseFragment {
 
     @Override
     public void onValidationSucceeded() {
-//        showLoading(); 
         String code = evValidationCode.getText().toString();
-//        TrackUtils.getInstance().onEvent("Register_rp_register");
-        presenter.checkCode(code);
-//        getPresenter().doRegister(new AuthCredentials(mobileNum, password, code));
-//        String inviteCode = evInvitationMobile.getText() == null ? "" : evInvitationMobile.getText().toString();
+//        presenter.checkCode(code);
+
+        reset();
+        presenter.nextStep();
     }
 
 

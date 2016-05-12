@@ -12,6 +12,7 @@
         android:layout_height="wrap_content" />
 
     <ImageView
+        android:id="@+id/img_avatar"
         android:layout_width="140dp"
         android:layout_height="140dp"
         android:layout_gravity="center"

@@ -114,6 +114,10 @@ public class TopActionBar extends RelativeLayout {
         tv_action.setTextColor(getResources().getColor(colorid));
     }
 
+//    public void setActionVisibility(int visibility) {
+//        tv_action.setVisibility(GONE);
+//    }
+
     public void showBottomLine() {
         bottom_line.setVisibility(VISIBLE);
     }
@@ -126,8 +130,8 @@ public class TopActionBar extends RelativeLayout {
         tv_back.setVisibility(View.GONE);
         iv_back.setVisibility(View.GONE);
     }
-    
-    public void hideAction(){
+
+    public void hideAction() {
         tv_action.setVisibility(View.GONE);
     }
 

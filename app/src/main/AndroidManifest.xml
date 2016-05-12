@@ -26,7 +26,7 @@
             android:name=".account.AccuntActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize"/>
+            android:windowSoftInputMode="adjustPan"/>
 
         <activity
             android:name=".main.MainActivity"

@@ -5,7 +5,6 @@ import android.widget.RadioGroup;
 
 import com.cyou.ui.ClearableEditText;
 import com.linjin.zhimi.R;
-import com.mobsandgeeks.saripaar.Validator;
 import com.mobsandgeeks.saripaar.annotation.Length;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import com.mobsandgeeks.saripaar.annotation.Order;
@@ -20,7 +19,7 @@ import butterknife.Bind;
  * Date       : 2015/6/11 14:43
  */
 @SuppressLint("ValidFragment")
-public class RegisterStep2Fragment extends RegisterStepBaseFragment {
+public class RegisterStep3Fragment extends RegisterStepBaseFragment {
   
 
     @NotEmpty(messageResId = R.string.login_error_name_empty, sequence = 0)
@@ -32,13 +31,13 @@ public class RegisterStep2Fragment extends RegisterStepBaseFragment {
     @Bind(R.id.rg_sex)
     RadioGroup radiogroup;
 
-    public RegisterStep2Fragment(RegisterPresenter presenter) {
+    public RegisterStep3Fragment(RegisterPresenter presenter) {
         super(presenter);
     }
 
     @Override
     protected int getLayoutRes() {
-        return R.layout.fragment_register_step2;
+        return R.layout.fragment_register_step3;
     }
 
     @Override

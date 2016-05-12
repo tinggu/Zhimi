@@ -100,7 +100,7 @@ public class AccuntActivity extends BaseMvpActivity {
     }
 
     public void showRegister2() {
-        RegisterStep0Fragment registerFragment = new RegisterStep0Fragment(regPresenter);
+        RegisterStep2Fragment registerFragment = new RegisterStep2Fragment(regPresenter);
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.fragmentContainer, registerFragment);
         transaction.addToBackStack("step2");
@@ -108,7 +108,7 @@ public class AccuntActivity extends BaseMvpActivity {
     }
 
     public void showRegister3() {
-        RegisterStep0Fragment registerFragment = new RegisterStep0Fragment(regPresenter);
+        RegisterStep3Fragment registerFragment = new RegisterStep3Fragment(regPresenter);
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.fragmentContainer, registerFragment);
         transaction.addToBackStack("step3");
@@ -116,7 +116,7 @@ public class AccuntActivity extends BaseMvpActivity {
     }
 
     public void showRegister4() {
-        RegisterStep0Fragment registerFragment = new RegisterStep0Fragment(regPresenter);
+        RegisterStep4Fragment registerFragment = new RegisterStep4Fragment(regPresenter);
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.fragmentContainer, registerFragment);
         transaction.addToBackStack("step4");

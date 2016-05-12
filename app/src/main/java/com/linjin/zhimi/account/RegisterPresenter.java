@@ -42,26 +42,26 @@ public class RegisterPresenter extends AccuntPresenter<RegisterView> {
 
     public RegisterPresenter(AccuntActivity accuntActivity) {
         this.accuntActivity = accuntActivity;
-        eh = new EventHandler() {
-
-            @Override
-            public void afterEvent(int event, int result, Object data) {
-
-                if (result == SMSSDK.RESULT_COMPLETE) {
-                    //回调完成
-                    if (event == SMSSDK.EVENT_SUBMIT_VERIFICATION_CODE) {
-                        //提交验证码成功
-                    } else if (event == SMSSDK.EVENT_GET_VERIFICATION_CODE) {
-                        //获取验证码成功
-                    } else if (event == SMSSDK.EVENT_GET_SUPPORTED_COUNTRIES) {
-                        //返回支持发送验证码的国家列表
-                    }
-                } else {
-                    ((Throwable) data).printStackTrace();
-                }
-            }
-        };
-        SMSSDK.registerEventHandler(eh); //注册短信回调
+//        eh = new EventHandler() {
+//
+//            @Override
+//            public void afterEvent(int event, int result, Object data) {
+//
+//                if (result == SMSSDK.RESULT_COMPLETE) {
+//                    //回调完成
+//                    if (event == SMSSDK.EVENT_SUBMIT_VERIFICATION_CODE) {
+//                        //提交验证码成功
+//                    } else if (event == SMSSDK.EVENT_GET_VERIFICATION_CODE) {
+//                        //获取验证码成功
+//                    } else if (event == SMSSDK.EVENT_GET_SUPPORTED_COUNTRIES) {
+//                        //返回支持发送验证码的国家列表
+//                    }
+//                } else {
+//                    ((Throwable) data).printStackTrace();
+//                }
+//            }
+//        };
+//        SMSSDK.registerEventHandler(eh); //注册短信回调
 
     }
 
@@ -69,6 +69,14 @@ public class RegisterPresenter extends AccuntPresenter<RegisterView> {
 
         this.phone = phone;
         this.password = password;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setSex(int sex) {
+        this.sex = sex;
     }
 
     public void back() {
@@ -143,7 +151,8 @@ public class RegisterPresenter extends AccuntPresenter<RegisterView> {
 
             @Override
             public void onError(Throwable e) {
-                if (isViewAttached()) getView().showTip(e.getMessage());
+                if (isViewAttached()) 
+                    getView().showTip(e.getMessage());
             }
 
             @Override
@@ -151,7 +160,8 @@ public class RegisterPresenter extends AccuntPresenter<RegisterView> {
                 if (model.getCode() == ApiCode.SUCCESS_CODE) {
                     nextStep();
                 } else {
-                    if (isViewAttached()) getView().showTip(model.getData());
+                    if (isViewAttached())
+                        getView().showTip(model.getData());
 
                 }
 
@@ -215,7 +225,5 @@ public class RegisterPresenter extends AccuntPresenter<RegisterView> {
 
     }
 
-    public String getPhone() {
-        return phone;
-    }
+
 }
