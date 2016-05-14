@@ -28,7 +28,6 @@
             android:id="@+id/ev_title"
             style="@style/Login.EditText"
             android:layout_width="match_parent"
-            android:layout_marginRight="20dp"
             android:hint="如健身教练、学生、工程师"
             android:maxLength="15" />
     </LinearLayout>

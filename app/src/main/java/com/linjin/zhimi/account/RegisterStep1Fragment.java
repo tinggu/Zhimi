@@ -3,6 +3,7 @@ package com.linjin.zhimi.account;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -39,6 +40,7 @@ public class RegisterStep1Fragment extends RegisterStepBaseFragment {
     TextView tvGetCode;
 
     private int time;
+    private boolean isFinsh;
 
     public RegisterStep1Fragment(RegisterPresenter presenter) {
         super(presenter);
@@ -47,15 +49,15 @@ public class RegisterStep1Fragment extends RegisterStepBaseFragment {
     @Override
     protected void initView() {
         super.initView();
+        
         tvTip.setText("短信验证码已发送到 " + presenter.getPhone());
-        reset();
         onClick(tvGetCode);
     }
 
     private void reset() {
-        time = RETRY_INTERVAL;
         tvGetCode.setText(R.string.register_get_validation_code);
         tvGetCode.setEnabled(true);
+
     }
 
     @Override
@@ -69,24 +71,26 @@ public class RegisterStep1Fragment extends RegisterStepBaseFragment {
      */
     private void countDown() {
         tvGetCode.setEnabled(false);
+        time = RETRY_INTERVAL;
+        isFinsh = false;
         final Handler handler = new Handler();
 
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
+                if (isFinsh) {
+                    return;
+                }
                 time--;
                 if (time == 0) {
                     tvGetCode.setText(R.string.reget_validation_code);
                     tvGetCode.setEnabled(true);
-                    time = RETRY_INTERVAL;
                 } else {
-                    Context context = getContext();
-                    if (context == null) {
+                    if (tvGetCode == null) {
                         return;
                     }
                     String countDown = getContext().getString(R.string.validation_code_count_down, time);
                     tvGetCode.setText(countDown);
-
                     handler.postDelayed(this, 1000);
 
                 }
@@ -105,8 +109,8 @@ public class RegisterStep1Fragment extends RegisterStepBaseFragment {
             if (!NetWorkUtils.isNetConnected(QuickApplication.getInstance())) {
                 toast(getContext().getString(R.string.no_network_connection));
             } else {
-                countDown();
                 presenter.getVerificationCode();
+                countDown();
             }
         }
     }
@@ -121,7 +125,7 @@ public class RegisterStep1Fragment extends RegisterStepBaseFragment {
     public void onValidationSucceeded() {
         String code = evValidationCode.getText().toString();
 //        presenter.checkCode(code);
-
+        isFinsh = true;
         reset();
         presenter.nextStep();
     }

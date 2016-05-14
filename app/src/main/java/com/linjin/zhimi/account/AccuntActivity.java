@@ -1,5 +1,6 @@
 package com.linjin.zhimi.account;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.widget.Toast;
@@ -7,7 +8,6 @@ import android.widget.Toast;
 import com.cyou.quick.QuickApplication;
 import com.cyou.quick.mvp.MvpBasePresenter;
 import com.cyou.quick.mvp.MvpPresenter;
-import com.tinggu.common.utils.LogUtils;
 import com.linjin.zhimi.DataCenter;
 import com.linjin.zhimi.R;
 import com.linjin.zhimi.base.BaseMvpActivity;
@@ -17,6 +17,7 @@ import com.linjin.zhimi.event.RegisterSuccessfulEvent;
 import com.linjin.zhimi.utils.CacheUtils;
 import com.linjin.zhimi.utils.DialogUtils;
 import com.linjin.zhimi.utils.IntentStarter;
+import com.tinggu.common.utils.LogUtils;
 
 import cn.smssdk.SMSSDKInitUtils;
 import de.greenrobot.event.EventBus;
@@ -40,7 +41,7 @@ public class AccuntActivity extends BaseMvpActivity {
         setContentView(R.layout.activity_accunt);
         EventBus.getDefault().register(this);
         dialogUtils = new DialogUtils();
-       
+
         showSelect();
     }
 
@@ -115,10 +116,12 @@ public class AccuntActivity extends BaseMvpActivity {
         transaction.commit();
     }
 
+    RegisterStep4Fragment registerFragment4;
+
     public void showRegister4() {
-        RegisterStep4Fragment registerFragment = new RegisterStep4Fragment(regPresenter);
+        registerFragment4 = new RegisterStep4Fragment(regPresenter);
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.fragmentContainer, registerFragment);
+        transaction.replace(R.id.fragmentContainer, registerFragment4);
         transaction.addToBackStack("step4");
         transaction.commit();
     }
@@ -169,5 +172,13 @@ public class AccuntActivity extends BaseMvpActivity {
     private void enterMain() {
         finish();
         IntentStarter.showMain(AccuntActivity.this);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (registerFragment4 != null) {
+            registerFragment4.onActivityResult(requestCode, resultCode, data);
+        }
+
     }
 }

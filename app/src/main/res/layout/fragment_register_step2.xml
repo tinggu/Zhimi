@@ -32,7 +32,7 @@
             <com.cyou.ui.ClearableEditText
                 android:id="@+id/ev_name"
                 style="@style/Login.EditText"
-                android:layout_width="180dp"
+                android:layout_width="150dp"
                 android:hint="小明"
                 android:maxLength="10" />
         </LinearLayout>

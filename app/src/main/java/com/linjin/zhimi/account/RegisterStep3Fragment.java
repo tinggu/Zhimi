@@ -23,13 +23,12 @@ public class RegisterStep3Fragment extends RegisterStepBaseFragment {
   
 
     @NotEmpty(messageResId = R.string.login_error_name_empty, sequence = 0)
-    @Length(max = 10, sequence = 1)
+    @Length(max = 15, sequence = 1)
     @Order(0)
-    @Bind(R.id.ev_name)
-    ClearableEditText evName;
+    @Bind(R.id.ev_title)
+    ClearableEditText evTitle;
 
-    @Bind(R.id.rg_sex)
-    RadioGroup radiogroup;
+     
 
     public RegisterStep3Fragment(RegisterPresenter presenter) {
         super(presenter);
@@ -40,24 +39,12 @@ public class RegisterStep3Fragment extends RegisterStepBaseFragment {
         return R.layout.fragment_register_step3;
     }
 
-    @Override
-    protected void initView() {
-        super.initView();
-        radiogroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if(checkedId == R.id.rb_male){
-                    presenter.setSex(1);
-                }else  if (checkedId == R.id.rb_female){
-                    presenter.setSex(0);
-                }
-            }
-        });
-    }
+   
 
 
     @Override
     public void onValidationSucceeded() {
+        presenter.setTitle(evTitle.getText().toString());
         presenter.nextStep();
 //        TrackUtils.getInstance().onEvent("Register_rp_register");
     }

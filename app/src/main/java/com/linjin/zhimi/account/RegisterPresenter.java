@@ -35,7 +35,7 @@ public class RegisterPresenter extends AccuntPresenter<RegisterView> {
     String phone;
     String password;
     String name;
-    int sex;
+    int sex = 1;
     String title;
     String devicetoken;
     private String zone = "+86";
@@ -79,6 +79,14 @@ public class RegisterPresenter extends AccuntPresenter<RegisterView> {
         this.sex = sex;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+    
     public void back() {
         currStep--;
         KeyboardUtils.callBackKeyClick();
@@ -151,7 +159,7 @@ public class RegisterPresenter extends AccuntPresenter<RegisterView> {
 
             @Override
             public void onError(Throwable e) {
-                if (isViewAttached()) 
+                if (isViewAttached())
                     getView().showTip(e.getMessage());
             }
 
@@ -169,11 +177,16 @@ public class RegisterPresenter extends AccuntPresenter<RegisterView> {
         });
     }
 
+    public void doRegister(){
+        
+    }
+    
     public void doRegister(AuthCredentials credentials) {
         if (isViewAttached())
             getView().showLoading();
         super.doBase(credentials);
     }
+    
 
     @Override
     public Subscriber<UserModel> createSubscriber() {
@@ -226,4 +239,5 @@ public class RegisterPresenter extends AccuntPresenter<RegisterView> {
     }
 
 
+   
 }

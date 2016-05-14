@@ -1,12 +1,13 @@
 package com.linjin.zhimi.base;
 
+import android.support.v4.app.Fragment;
 import android.widget.Toast;
 
-import com.linjin.zhimi.base.delegate.BaseFragamentDelegateImpl;
 import com.cyou.quick.mvp.MvpBasePresenter;
 import com.cyou.quick.mvp.MvpFragment;
 import com.cyou.quick.mvp.MvpView;
 import com.cyou.quick.mvp.delegate.FragmentMvpDelegate;
+import com.linjin.zhimi.base.delegate.BaseFragamentDelegateImpl;
 
 import io.realm.Realm;
 
@@ -19,16 +20,16 @@ import io.realm.Realm;
  */
 public abstract class BaseMvpFragment<V extends MvpView, P extends MvpBasePresenter<V>>
         extends MvpFragment<V, P> {
-    
+
     protected Realm realm;
-    
+
     protected FragmentMvpDelegate<V, P> getMvpDelegate() {
-        if(this.mvpDelegate == null) {
+        if (this.mvpDelegate == null) {
             this.mvpDelegate = new BaseFragamentDelegateImpl<>(this);
         }
         return this.mvpDelegate;
     }
-    
+
     protected boolean filterException(Exception e) {
         if (e != null) {
             toast(e.getMessage());
@@ -37,7 +38,7 @@ public abstract class BaseMvpFragment<V extends MvpView, P extends MvpBasePresen
             return true;
         }
     }
-    
+
     @Override
     public void onDestroyView() {
         super.onDestroyView();
@@ -53,4 +54,6 @@ public abstract class BaseMvpFragment<V extends MvpView, P extends MvpBasePresen
     protected void toast(int id) {
         Toast.makeText(this.getActivity(), id, Toast.LENGTH_SHORT).show();
     }
+    
+
 }

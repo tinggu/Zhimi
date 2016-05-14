@@ -1,13 +1,19 @@
 package com.linjin.zhimi.base;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.util.Log;
 import android.widget.Toast;
 
-import com.linjin.zhimi.base.delegate.BaseActivityDelegateImpl;
 import com.cyou.quick.mvp.MvpActivity;
 import com.cyou.quick.mvp.MvpPresenter;
 import com.cyou.quick.mvp.MvpView;
 import com.cyou.quick.mvp.delegate.ActivityMvpDelegate;
+import com.linjin.zhimi.base.delegate.BaseActivityDelegateImpl;
+
+import java.util.List;
 
 import io.realm.Realm;
 
@@ -22,8 +28,9 @@ import io.realm.Realm;
 public abstract class BaseMvpActivity<V extends MvpView, P extends MvpPresenter<V>>
         extends MvpActivity<V, P> {
 
+    private static final String TAG = "BaseMvpActivity";
     protected Realm realm;
-    
+
     @Override
     protected ActivityMvpDelegate<V, P> getMvpDelegate() {
         if (this.mvpDelegate == null) {
@@ -44,7 +51,7 @@ public abstract class BaseMvpActivity<V extends MvpView, P extends MvpPresenter<
         super.onPostCreate(savedInstanceState);
 //        SwipeBackHelper.onPostCreate(this);
     }
-    
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -61,8 +68,6 @@ public abstract class BaseMvpActivity<V extends MvpView, P extends MvpPresenter<
     protected void toast(int id) {
         Toast.makeText(this, id, Toast.LENGTH_SHORT).show();
     }
-
-    
 
 //    protected void swipeBackConfig(){
 //        SwipeBackHelper.getCurrentPage(this)//获取当前页面

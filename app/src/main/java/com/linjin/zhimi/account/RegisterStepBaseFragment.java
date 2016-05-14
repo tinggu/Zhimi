@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -60,6 +61,7 @@ public abstract class RegisterStepBaseFragment
                 validator.validate();
             }
         });
+        Log.i("code", " initView: " + getClass().getName());
     }
 
     @Override

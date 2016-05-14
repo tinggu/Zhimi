@@ -1,15 +1,20 @@
 package com.linjin.zhimi.account;
 
 import android.annotation.SuppressLint;
-import android.widget.RadioGroup;
+import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
+import android.view.Gravity;
+import android.view.View;
+import android.widget.ImageView;
 
-import com.cyou.ui.ClearableEditText;
 import com.linjin.zhimi.R;
-import com.mobsandgeeks.saripaar.annotation.Length;
-import com.mobsandgeeks.saripaar.annotation.NotEmpty;
-import com.mobsandgeeks.saripaar.annotation.Order;
+import com.linjin.zhimi.utils.PhotoUtils;
+import com.linjin.zhimi.widget.SelectPicPopWindow;
+import com.tinggu.common.utils.LogUtils;
 
 import butterknife.Bind;
+import butterknife.OnClick;
 
 /**
  * Description:
@@ -19,17 +24,17 @@ import butterknife.Bind;
  * Date       : 2015/6/11 14:43
  */
 @SuppressLint("ValidFragment")
-public class RegisterStep4Fragment extends RegisterStepBaseFragment {
-  
+public class RegisterStep4Fragment extends RegisterStepBaseFragment implements PhotoUtils.RefreshImage {
 
-    @NotEmpty(messageResId = R.string.login_error_name_empty, sequence = 0)
-    @Length(max = 10, sequence = 1)
-    @Order(0)
-    @Bind(R.id.ev_name)
-    ClearableEditText evName;
+    PhotoUtils photoUtils = new PhotoUtils();
+    private Uri headUri;
+    private boolean isUpdatePic;
 
-    @Bind(R.id.rg_sex)
-    RadioGroup radiogroup;
+    @Bind(R.id.img_avatar)
+    ImageView imgAvatar;
+
+
+    SelectPicPopWindow selectPicPW;
 
     public RegisterStep4Fragment(RegisterPresenter presenter) {
         super(presenter);
@@ -43,16 +48,6 @@ public class RegisterStep4Fragment extends RegisterStepBaseFragment {
     @Override
     protected void initView() {
         super.initView();
-        radiogroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if(checkedId == R.id.rb_male){
-                    presenter.setSex(1);
-                }else  if (checkedId == R.id.rb_female){
-                    presenter.setSex(0);
-                }
-            }
-        });
     }
 
 
@@ -62,5 +57,64 @@ public class RegisterStep4Fragment extends RegisterStepBaseFragment {
 //        TrackUtils.getInstance().onEvent("Register_rp_register");
     }
 
+    //为弹出窗口实现监听类
+    private View.OnClickListener itemsOnClick = new View.OnClickListener() {
+        public void onClick(View v) {
+            selectPicPW.dismiss();
+            switch (v.getId()) {
+                case R.id.camera:
+                    photoUtils.startCamera(getActivity(), PhotoUtils.HEAD_PIC);
+                    break;
+                case R.id.gallery:
+                    PhotoUtils.startGallery(getActivity(), PhotoUtils.HEAD_PIC);
+                    break;
+                default:
+                    break;
+            }
+        }
+    };
 
+
+    /**
+     * 点击头像，弹出的选择框
+     */
+    protected void showSwitchPicDlg() {
+        if (null == selectPicPW) {
+            //实例化SelectPicPopupWindow
+            selectPicPW = new SelectPicPopWindow(getActivity(), itemsOnClick);
+        }
+        //显示窗口
+        selectPicPW.showAtLocation(imgAvatar, Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
+        //设置layout在PopupWindow中显示的位置
+    }
+
+    @OnClick({R.id.img_avatar, R.id.btn_login})
+    public void onClick(View view) {
+        int id = view.getId();
+        if (id == R.id.img_avatar) {
+            showSwitchPicDlg();
+
+        } else if (id == R.id.btn_login) {
+            presenter.doRegister();
+        }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+        LogUtils.i("header", "requestCode = " + requestCode);
+        if (Activity.RESULT_OK != resultCode) {
+            return;
+        }
+        photoUtils.setBitmapFromResult(getActivity(), this, requestCode, data, PhotoUtils.HEAD_PIC);
+    }
+
+
+    @Override
+    public void refresh(Uri uri) {
+        LogUtils.i("header", "card header uri =" + uri);
+        headUri = uri;
+        isUpdatePic = true;
+        imgAvatar.setImageURI(uri);
+    }
 }
