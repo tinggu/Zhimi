@@ -11,7 +11,12 @@ import com.cyou.quick.mvp.MvpBasePresenter;
 import com.cyou.quick.mvp.MvpPresenter;
 import com.linjin.zhimi.R;
 import com.linjin.zhimi.base.BaseMvpActivity;
+import com.linjin.zhimi.main.chat.ChatFragment;
+import com.linjin.zhimi.main.discovery.DiscoveryFragment;
+import com.linjin.zhimi.main.self.SelfFragment;
+import com.linjin.zhimi.main.topic.TopicFragment;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
@@ -31,8 +36,11 @@ public class MainActivity extends BaseMvpActivity {
     @Bind(R.id.dock_2)
     public RadioButton dock2;
 
+    @Bind(R.id.dock_3)
+    public RadioButton dock3;
+
     @Bind(R.id.dock_4)
-    public RadioButton dock_4;
+    public RadioButton dock4;
 
     private List<Fragment> fragments;
 
@@ -52,25 +60,28 @@ public class MainActivity extends BaseMvpActivity {
     protected void onNewIntent(Intent intent) {
     }
 
-//    private GroupListFragment groupListFragment;
-//    private ConversationRecentFragment messageGroupFragment;
-//    private SelfFragment selfFragment;
+    private TopicFragment topicFragment;
+    private DiscoveryFragment discoveryFragment;
+    private ChatFragment chatFragment;
+    private SelfFragment selfFragment;
 
     private void initView() {
 
         //定位底部tab,默认定位0，即群列表页
         int index = getIntent().getIntExtra("index", 0);
 
-//        fragments = new ArrayList<>();
-//        groupListFragment = new GroupListFragment();
-//        fragments.add(groupListFragment);
-//        messageGroupFragment = new ConversationRecentFragment();
-//        fragments.add(messageGroupFragment);
-//        selfFragment = new SelfFragment();
-//        fragments.add(selfFragment);
+        fragments = new ArrayList<>();
+        topicFragment = new TopicFragment();
+        fragments.add(topicFragment);
+        discoveryFragment = new DiscoveryFragment();
+        fragments.add(discoveryFragment);
+        chatFragment = new ChatFragment();
+        fragments.add(chatFragment);
+        selfFragment = new SelfFragment();
+        fragments.add(selfFragment);
 //
-//        FragmentTabAdapter tabAdapter =
-//                new FragmentTabAdapter(this, fragments, index, R.id.fragmentContainer, mainGroup);
+        FragmentTabAdapter tabAdapter =
+                new FragmentTabAdapter(this, fragments, index, R.id.fragmentContainer, mainGroup);
 
     }
 

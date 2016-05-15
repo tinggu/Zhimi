@@ -9,6 +9,7 @@ import com.cyou.quick.mvp.MvpBasePresenter;
 import com.cyou.quick.mvp.MvpPresenter;
 import com.linjin.zhimi.R;
 import com.linjin.zhimi.base.BaseMvpFragment;
+import com.linjin.zhimi.utils.IntentStarter;
 
 import butterknife.OnClick;
 
@@ -49,7 +50,8 @@ public class SelectFragment extends BaseMvpFragment {
                 accuntActivity.showRegister0();
                 break;
             case R.id.btn_login:
-                accuntActivity.showLogin();
+//                accuntActivity.showLogin();
+                IntentStarter.showMain(getActivity());
                 break;
         }
     }
