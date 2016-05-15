@@ -27,7 +27,7 @@
     <dimen name="text_size_little_title">16sp</dimen>
 
     <!--主页_底部导航-->
-    <dimen name="bottom_bar_height">53dp</dimen>
+    <dimen name="bottom_bar_height">54dp</dimen>
     <dimen name="bottom_bar_text_size">11sp</dimen>
     <!--主页_group-->
     <dimen name="group_card_bg_height">140dp</dimen>

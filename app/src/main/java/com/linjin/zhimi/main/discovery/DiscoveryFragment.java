@@ -10,7 +10,7 @@ public class DiscoveryFragment extends MvpFragment {
     
     @Override
     public MvpPresenter createPresenter() {
-        return null;
+        return new DiscoveryPresenter();
     }
 
     

@@ -11,7 +11,7 @@ public class TopicFragment extends MvpFragment {
 
     @Override
     public MvpPresenter createPresenter() {
-        return null;
+        return new TopicPresenter();
     }
 
 
