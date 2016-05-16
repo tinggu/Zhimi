@@ -100,12 +100,12 @@
         "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_list_menu_item_radio.xml"
     },
     {
-        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\layout\\abc_expanded_menu_layout.xml",
-        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_expanded_menu_layout.xml"
-    },
-    {
         "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\layout\\abc_search_dropdown_item_icons_2line.xml",
         "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
+    },
+    {
+        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\layout\\abc_expanded_menu_layout.xml",
+        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_expanded_menu_layout.xml"
     },
     {
         "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\layout\\abc_popup_menu_item_layout.xml",
@@ -240,12 +240,12 @@
         "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_action_mode_bar.xml"
     },
     {
-        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\layout\\notification_template_big_media_narrow.xml",
-        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\notification_template_big_media_narrow.xml"
-    },
-    {
         "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\layout\\design_layout_tab_text.xml",
         "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.0\\res\\layout\\design_layout_tab_text.xml"
+    },
+    {
+        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\layout\\notification_template_big_media_narrow.xml",
+        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\notification_template_big_media_narrow.xml"
     },
     {
         "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\layout\\abc_screen_content_include.xml",
