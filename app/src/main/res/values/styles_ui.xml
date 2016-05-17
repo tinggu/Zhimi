@@ -123,4 +123,26 @@
         <item name="android:windowContentOverlay">@null</item>
     </style>
 
+    <style name="Menu">
+        <item name="android:textSize">19sp</item>
+    </style>
+
+    <style name="Menu.Item">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/text_base_color</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+    
+    <style name="Menu.Title">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/text_base_color</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
 </resources>

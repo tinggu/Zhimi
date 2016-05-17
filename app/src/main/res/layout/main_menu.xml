@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="160dp"
+    android:layout_height="match_parent"
+    android:background="@color/color_menu_bg"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:background="@color/color_menu_title_bg"
+        android:textColor="@color/white" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_menu_title_bg"
+
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_card_manager"
+            style="@style/SelfTextView"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/view_rectangle"
+            android:drawableRight="@mipmap/list_back"
+            android:text="身份管理"/>
+        
+        
+    </LinearLayout>
+</LinearLayout>

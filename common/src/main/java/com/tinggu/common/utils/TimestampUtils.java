@@ -2,7 +2,7 @@ package com.tinggu.common.utils;
 
 import com.linjin.zhimi.DataCenter;
 import com.linjin.zhimi.api.TimestampApi;
-import com.cyou.zhimi.model.Timestamp;
+import com.zhimi.model.Timestamp;
 import com.linjin.zhimi.rest.ApiCode;
 import com.linjin.zhimi.rest.RestUtils;
 

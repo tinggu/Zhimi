@@ -2,7 +2,7 @@ package com.linjin.zhimi.base.adapter;
 
 import android.app.Activity;
 
-import com.cyou.zhimi.model.im.Message;
+import com.zhimi.model.im.Message;
 
 import java.util.List;
 

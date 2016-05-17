@@ -9,7 +9,7 @@ import com.linjin.zhimi.DataCenter;
 import com.linjin.zhimi.ServerConstants;
 import com.tinggu.common.utils.DeviceUtils;
 import com.tinggu.common.utils.LogUtils;
-import com.cyou.common.utils.MD5Utils;
+import com.zhimi.common.utils.MD5Utils;
 import com.cyou.quick.QuickApplication;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

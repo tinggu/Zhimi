@@ -22,6 +22,8 @@
     <color name="color_tip_bg">#4e4e4e</color>
     <color name="color_redio_grey">#ccd6dd</color>
 
+    <color name="color_menu_title_bg">#2D3137</color>
+    <color name="color_menu_bg">#3d4046</color>
     <color name="color_topbar_title_text">#181b1d</color>
     <color name="color_d2d2d2">#d2d2d2</color>
     <color name="color_divider">#edf0f3</color>

@@ -1,29 +1,12 @@
 package com.linjin.zhimi.main.self;
 
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.view.MotionEvent;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.cyou.quick.mvp.MvpFragment;
-import com.cyou.zhimi.model.card.GroupCard;
-import com.facebook.drawee.view.SimpleDraweeView;
+import com.zhimi.model.card.GroupCard;
 import com.linjin.zhimi.R;
-import com.linjin.zhimi.utils.CacheUtils;
-import com.linjin.zhimi.utils.IntentStarter;
-import com.tinggu.common.utils.LogUtils;
-import com.tinggu.common.utils.ScreenUtils;
-
-import java.util.List;
-
-import butterknife.Bind;
-import butterknife.OnClick;
-import io.realm.Realm;
 
 
 public class SelfFragment 

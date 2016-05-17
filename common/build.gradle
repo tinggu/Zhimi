@@ -30,7 +30,7 @@ dependencies {
     compile files('libs/prettytime-3.2.5.Final.jar')
 
     //AdapterDelegates
-    compile 'com.hannesdorfmann:adapterdelegates:1.1.0'
+    compile 'com.hannesdorfmann:adapterdelegates2:2.0.0'
     
     // 基于规则的Android UI输入验证库
     compile 'com.mobsandgeeks:android-saripaar:2.0.2'

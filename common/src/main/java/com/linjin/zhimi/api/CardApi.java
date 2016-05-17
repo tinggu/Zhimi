@@ -1,8 +1,8 @@
 package com.linjin.zhimi.api;
 
-import com.cyou.zhimi.model.BaseModel;
-import com.cyou.zhimi.model.card.CardCreateResult;
-import com.cyou.zhimi.model.card.GroupCardList;
+import com.zhimi.model.BaseModel;
+import com.zhimi.model.card.CardCreateResult;
+import com.zhimi.model.card.GroupCardList;
 
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;

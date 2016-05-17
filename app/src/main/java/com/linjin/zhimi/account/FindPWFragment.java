@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.cyou.ui.ClearableEditText;
-import com.cyou.zhimi.model.account.AuthCredentials;
+import com.zhimi.model.account.AuthCredentials;
 import com.linjin.zhimi.R;
 import com.linjin.zhimi.base.BaseMvpFragment;
 import com.linjin.zhimi.widget.TopActionBar;

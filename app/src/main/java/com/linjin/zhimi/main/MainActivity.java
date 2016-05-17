@@ -3,7 +3,9 @@ package com.linjin.zhimi.main;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -26,6 +28,7 @@ import butterknife.Bind;
 public class MainActivity extends BaseMvpActivity
         implements RadioGroup.OnCheckedChangeListener {
 
+    private static final String TAG = "MainActivity";
 //    @Bind(R.id.bottom_bar)
 //    View bottomBar;
 
@@ -44,9 +47,7 @@ public class MainActivity extends BaseMvpActivity
 //    @Bind(R.id.dock_4)
 //    public RadioButton dock4;
 
-    private List<Fragment> fragments;
-
-    private int fragmentContentId;
+    private List<Fragment> fragments; 
 
     private TopicFragment topicFragment;
     private DiscoveryFragment discoveryFragment;
@@ -55,11 +56,13 @@ public class MainActivity extends BaseMvpActivity
 
     private int currentTab; // 当前Tab页面索引
 
+    private ArrayList<View> radioButtons;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        initView();
+        initView(savedInstanceState);
     }
 
     @Override
@@ -67,63 +70,62 @@ public class MainActivity extends BaseMvpActivity
         return new MvpBasePresenter();
     }
 
+//    @Override
+//    protected void onNewIntent(Intent intent) {
+//
+//    }
+
     @Override
-    protected void onNewIntent(Intent intent) {
-
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt("index", currentTab);
+        Log.i(TAG, "onSaveInstanceState: ");
     }
+    
 
-    private void initView() {
+    private void initView(Bundle savedInstanceState) {
 
         //定位底部tab,默认定位0，即群列表页
         int index = getIntent().getIntExtra("index", 0);
 
         fragments = new ArrayList<>();
-        topicFragment = new TopicFragment();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        
+        if(savedInstanceState != null){ // “内存重启”时调用
+            topicFragment = (TopicFragment) fragmentManager.findFragmentByTag(topicFragment.getClass().getSimpleName());
+            discoveryFragment = (DiscoveryFragment) fragmentManager.findFragmentByTag(discoveryFragment.getClass().getSimpleName());
+            chatFragment = (ChatFragment) fragmentManager.findFragmentByTag(chatFragment.getClass().getSimpleName());
+            selfFragment = (SelfFragment) fragmentManager.findFragmentByTag(selfFragment.getClass().getSimpleName());
+        }else{
+            topicFragment = new TopicFragment();
+            discoveryFragment = new DiscoveryFragment();
+            chatFragment = new ChatFragment();
+            selfFragment = new SelfFragment();
+        }
+       
+        
         fragments.add(topicFragment);
-        discoveryFragment = new DiscoveryFragment();
         fragments.add(discoveryFragment);
-        chatFragment = new ChatFragment();
         fragments.add(chatFragment);
-        selfFragment = new SelfFragment();
         fragments.add(selfFragment);
-//
-//        FragmentTabAdapter tabAdapter =
-//                new FragmentTabAdapter(this, fragments, index, R.id.fragmentContainer, mainGroup);
+        
+        radioButtons = getChildRadions(); 
 
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        //由通知进入个人主页
-        // 默认显示第一页
 
         for (int i = 0; i < fragments.size(); i++) {
-            ft.add(fragmentContentId, fragments.get(i));
+            ft.add(R.id.fragmentContainer, fragments.get(i),fragments.get(i).getClass().getSimpleName());
             ft.hide(fragments.get(i));
         }
         ft.show(fragments.get(index));
         //ft.add(fragmentContentId, fragments.get(index));
 
         ft.commit();
-        switch (index) {
-            case 0:
-                mainGroup.check(R.id.dock_1);
-                break;
-            case 1:
-                mainGroup.check(R.id.dock_2);
-                break;
-            case 2:
-                mainGroup.check(R.id.dock_3);
-                break;
-            case 3:
-                mainGroup.check(R.id.dock_4);
-                break;
-        }
         mainGroup.setOnCheckedChangeListener(this);
+        checkFragment(index);
+        
     }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-    }
-
+    
     private long mPressedTime = 0;
 
     @Override
@@ -137,77 +139,52 @@ public class MainActivity extends BaseMvpActivity
         }
     }
 
-//    public void checkFragment(int i) {
-//        switch (i) {
-//            case 0:
-//                mainGroup.check(R.id.dock_1);
-//                break;
-//            case 1:
-//                mainGroup.check(R.id.dock_2);
-//                break;
-//            case 2:
-//                mainGroup.check(R.id.dock_3);
-//                break;
-//            case 3:
-//                mainGroup.check(R.id.dock_4);
-//                break;
-//        }
-//    }
+    public void checkFragment(int i) {
+        switch (i) {
+            case 0:
+                mainGroup.check(R.id.dock_1);
+                break;
+            case 1:
+                mainGroup.check(R.id.dock_2);
+                break;
+            case 2:
+                mainGroup.check(R.id.dock_3);
+                break;
+            case 3:
+                mainGroup.check(R.id.dock_4);
+                break;
+        }
+    }
 
 
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
         //将radioButton筛选出来
-        ArrayList<View> radioButtons = getChildRadions();
-
-        for (int i = 0; i < radioButtons.size(); i++) {
-            if (radioButtons.get(i).getId() == checkedId) {
-                Fragment fragment = fragments.get(i);
-                FragmentTransaction ft = obtainFragmentTransaction(i);
-
-                //getCurrentFragment().onPause(); // 暂停当前tab
-//                getCurrentFragment().onStop(); // 暂停当前tab
-
-                if (fragment.isAdded()) {
-//                    fragment.onStart(); // 启动目标tab的onStart()
-                    //fragment.onResume(); // 启动目标tab的onResume()
-                } else {
-                    ft.add(fragmentContentId, fragment);
-                }
-                changeFragmentTab(i); // 显示目标tab
-                ft.commitAllowingStateLoss();
-            }
-        }
-    }
-
-    private void changeFragmentTab(final int index) {
-        for (int i = 0; i < fragments.size(); i++) {
-            Fragment fragment = fragments.get(i);
-            FragmentTransaction transaction = obtainFragmentTransaction(index);
-            if (i == index) {
-                transaction.show(fragment);
-            } else {
-                transaction.hide(fragment);
-            }
-            transaction.commit();
-        }
-    }
-
-    /**
-     * 获取一个带动画的FragmentTransaction
-     *
-     * @param index
-     * @return
-     */
-    private FragmentTransaction obtainFragmentTransaction(int index) {
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        // 设置切换动画
-        if (index > currentTab) {
-            ft.setCustomAnimations(R.anim.slide_left_in, R.anim.slide_left_out);
-        } else {
-            ft.setCustomAnimations(R.anim.slide_right_in, R.anim.slide_right_out);
+        for (int i = 0; i < radioButtons.size(); i++) {
+
+            Fragment fragment = fragments.get(i);
+
+            if (i > currentTab) {
+                ft.setCustomAnimations(R.anim.slide_left_in, R.anim.slide_right_out);
+            } else {
+                ft.setCustomAnimations(R.anim.slide_right_in, R.anim.slide_left_out);
+            }
+
+            if (radioButtons.get(i).getId() == checkedId) {
+
+                if(checkedId == currentTab){
+                    return;
+                }
+
+                ft.show(fragment);
+                currentTab = i;
+            } else {
+                ft.hide(fragment);
+            }
         }
-        return ft;
+
+        ft.commitAllowingStateLoss();
     }
 
 

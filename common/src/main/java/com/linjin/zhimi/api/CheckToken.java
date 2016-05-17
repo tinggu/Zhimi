@@ -1,6 +1,6 @@
 package com.linjin.zhimi.api;
 
-import com.cyou.zhimi.model.BaseModel;
+import com.zhimi.model.BaseModel;
 
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;

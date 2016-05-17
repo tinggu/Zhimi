@@ -2,13 +2,12 @@ package com.linjin.zhimi.account;
 
 import android.widget.Toast;
 
-import com.cyou.zhimi.model.account.UserModel;
+import com.zhimi.model.account.UserModel;
 import com.linjin.zhimi.DataCenter;
 import com.linjin.zhimi.api.AccuntApi;
-import com.cyou.zhimi.model.account.User;
 import com.linjin.zhimi.rest.ApiCode;
 import com.linjin.zhimi.rest.RestUtils;
-import com.cyou.common.utils.MD5Utils;
+import com.zhimi.common.utils.MD5Utils;
 import com.cyou.quick.QuickApplication;
 import com.cyou.quick.mvp.MvpBasePresenter;
 import com.cyou.quick.mvp.rx.scheduler.AndroidSchedulerTransformer;

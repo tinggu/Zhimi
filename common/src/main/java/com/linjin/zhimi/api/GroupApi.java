@@ -1,9 +1,9 @@
 package com.linjin.zhimi.api;
 
-import com.cyou.zhimi.model.BaseModel;
-import com.cyou.zhimi.model.group.Group;
-import com.cyou.zhimi.model.group.GroupList;
-import com.cyou.zhimi.model.group.create.GroupCreate;
+import com.zhimi.model.BaseModel;
+import com.zhimi.model.group.Group;
+import com.zhimi.model.group.GroupList;
+import com.zhimi.model.group.create.GroupCreate;
 
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;

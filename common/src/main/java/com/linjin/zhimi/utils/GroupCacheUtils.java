@@ -3,7 +3,7 @@ package com.linjin.zhimi.utils;
 import android.support.v4.util.LongSparseArray;
 
 import com.linjin.zhimi.api.GroupMemberApi;
-import com.cyou.zhimi.model.card.GroupCardList;
+import com.zhimi.model.card.GroupCardList;
 import com.linjin.zhimi.rest.RestUtils;
 import com.tinggu.common.utils.LogUtils;
 import com.cyou.quick.QuickApplication;
