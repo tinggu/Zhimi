@@ -20,12 +20,12 @@
         "source": "D:\\GitWork\\Zhimi\\uilib\\src\\main\\res\\mipmap-xhdpi\\load_progress_1.png"
     },
     {
-        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\mipmap-xhdpi-v4\\switch_bj_bule.png",
-        "source": "D:\\GitWork\\Zhimi\\uilib\\src\\main\\res\\mipmap-xhdpi\\switch_bj_bule.png"
-    },
-    {
         "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\mipmap-xhdpi-v4\\load_progress_6.png",
         "source": "D:\\GitWork\\Zhimi\\uilib\\src\\main\\res\\mipmap-xhdpi\\load_progress_6.png"
+    },
+    {
+        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\mipmap-xhdpi-v4\\switch_bj_bule.png",
+        "source": "D:\\GitWork\\Zhimi\\uilib\\src\\main\\res\\mipmap-xhdpi\\switch_bj_bule.png"
     },
     {
         "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\mipmap-xhdpi-v4\\load_progress_12.png",

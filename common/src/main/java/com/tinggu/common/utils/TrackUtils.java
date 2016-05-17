@@ -40,9 +40,9 @@ public class TrackUtils {
         //友盟统计分析 打开调试模式
         MobclickAgent.setDebugMode(Constants.DEBUG);
         //友盟 默认渠道包
-        if (Constants.DEBUG) {
-            AnalyticsConfig.setChannel("test");
-        }
+//        if (Constants.DEBUG) {
+//            AnalyticsConfig.setChannel("test");
+//        }
 
         /** 设置是否对日志信息进行加密, 默认false(不加密) */
 //        AnalyticsConfig.enableEncrypt(true);

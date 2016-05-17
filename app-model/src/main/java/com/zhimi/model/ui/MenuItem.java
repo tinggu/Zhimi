@@ -1,5 +1,8 @@
 package com.zhimi.model.ui;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 /**
  * Description:
  * Copyright  : Copyright (c) 2015
@@ -8,7 +11,15 @@ package com.zhimi.model.ui;
  * Date       : 2016/5/17 11:55
  */
 public class MenuItem {
-    int iconResId;
-    int textResId;
-    int command;
+    @Expose
+    @SerializedName("iamge")
+    String iconResId;
+
+    @Expose
+    @SerializedName("title")
+    String textResId;
+
+    @Expose
+    @SerializedName("code")
+    String command;
 }
