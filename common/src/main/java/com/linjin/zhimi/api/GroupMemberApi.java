@@ -1,6 +1,6 @@
 package com.linjin.zhimi.api;
 
-import com.zhimi.model.card.GroupCardList;
+import com.linjin.zhimi.model.card.GroupCardList;
 
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;

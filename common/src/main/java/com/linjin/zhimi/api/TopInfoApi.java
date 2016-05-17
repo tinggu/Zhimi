@@ -1,6 +1,6 @@
 package com.linjin.zhimi.api;
 
-import com.zhimi.model.group.TopInfoList;
+import com.linjin.zhimi.model.group.TopInfoList;
 
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;

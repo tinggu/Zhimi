@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.cyou.quick.mvp.MvpFragment;
-import com.zhimi.model.card.GroupCard;
+import com.linjin.zhimi.model.card.GroupCard;
 import com.linjin.zhimi.R;
 
 

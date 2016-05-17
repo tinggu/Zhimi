@@ -1,8 +1,8 @@
 package com.linjin.zhimi.api;
 
-import com.zhimi.model.BaseModel;
-import com.zhimi.model.vote.VoteCreate;
-import com.zhimi.model.vote.VoteInfo;
+import com.linjin.zhimi.model.BaseModel;
+import com.linjin.zhimi.model.vote.VoteCreate;
+import com.linjin.zhimi.model.vote.VoteInfo;
 
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;

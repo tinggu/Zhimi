@@ -4,7 +4,7 @@ import android.text.TextUtils;
 import android.widget.Toast;
 
 import com.cyou.quick.QuickApplication;
-import com.zhimi.model.BaseModel;
+import com.linjin.zhimi.model.BaseModel;
 import com.linjin.zhimi.DataCenter;
 import com.linjin.zhimi.rest.ApiCode;
 

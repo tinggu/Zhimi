@@ -1,8 +1,8 @@
 package com.linjin.zhimi.account;
 
-import com.zhimi.model.account.UserModel;
+import com.linjin.zhimi.model.account.UserModel;
 import com.linjin.zhimi.api.AccuntApi;
-import com.zhimi.model.account.AuthCredentials;
+import com.linjin.zhimi.model.account.AuthCredentials;
 import com.linjin.zhimi.rest.RestUtils;
 import com.cyou.quick.mvp.MvpBasePresenter;
 import com.cyou.quick.mvp.MvpView;

@@ -1,7 +1,7 @@
 package com.linjin.zhimi.api;
 
-import com.zhimi.model.notice.NoticeCreate;
-import com.zhimi.model.notice.NoticeInfo;
+import com.linjin.zhimi.model.notice.NoticeCreate;
+import com.linjin.zhimi.model.notice.NoticeInfo;
 
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;

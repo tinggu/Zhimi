@@ -1,6 +1,6 @@
 package com.linjin.zhimi.api;
 
-import com.zhimi.model.QiNiuToken;
+import com.linjin.zhimi.model.QiNiuToken;
 
 import retrofit2.http.POST;
 import rx.Observable;

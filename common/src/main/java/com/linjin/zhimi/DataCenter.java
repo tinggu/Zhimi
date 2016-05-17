@@ -3,8 +3,8 @@ package com.linjin.zhimi;
 import android.content.Context;
 import android.text.TextUtils;
 
-import com.zhimi.model.ConstantsModel;
-import com.zhimi.model.account.User;
+import com.linjin.zhimi.model.ConstantsModel;
+import com.linjin.zhimi.model.account.User;
 import com.tinggu.common.utils.LogUtils;
 import com.cyou.quick.QuickApplication;
 

@@ -12,7 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.linjin.zhimi.base.BaseMvpFragment;
-import com.zhimi.model.account.AuthCredentials;
+import com.linjin.zhimi.model.account.AuthCredentials;
 import com.tinggu.common.utils.KeyboardUtils;
 import com.tinggu.common.utils.LogUtils;
 import com.tinggu.common.utils.NetWorkUtils;

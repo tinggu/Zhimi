@@ -29,9 +29,6 @@ android {
         versionCode verCode
         versionName verName
 
-        // dex突破65535的限制
-        multiDexEnabled true
-
         // 默认是umeng的渠道
         manifestPlaceholders = [UMENG_CHANNEL_VALUE: "test"]
 //        //设置支持的SO库架构
@@ -44,6 +41,7 @@ android {
     // dex突破65535的限制
     dexOptions {
         jumboMode true
+        incremental true
     }
 
     // 移除lint检查的error
@@ -60,7 +58,7 @@ android {
             keyPassword "zhimi741"  //签名密码
         }
     }
-    
+
     buildTypes {
         release {
             //混淆

@@ -6,7 +6,7 @@ import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.cyou.ui.ClearableEditText;
-import com.zhimi.model.account.AuthCredentials;
+import com.linjin.zhimi.model.account.AuthCredentials;
 import com.linjin.zhimi.R;
 import com.linjin.zhimi.base.BaseMvpFragment;
 import com.linjin.zhimi.widget.TopActionBar;
