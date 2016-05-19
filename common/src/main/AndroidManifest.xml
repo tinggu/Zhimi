@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.cyou.common">
+    package="com.tinggu.common">
 
     <application
         android:allowBackup="true"
