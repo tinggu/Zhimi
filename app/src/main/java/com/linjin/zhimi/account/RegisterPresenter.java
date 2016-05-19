@@ -169,7 +169,7 @@ public class RegisterPresenter extends AccuntPresenter<RegisterView> {
                     nextStep();
                 } else {
                     if (isViewAttached())
-                        getView().showTip(model.getData());
+                        getView().showTip(model.getMsg());
 
                 }
 

@@ -59,7 +59,7 @@ public class LoginPresenter extends AccuntPresenter<LoginView> {
                 } else {
                     if (isViewAttached()) {
                      
-                        getView().showTip( userModel.getData());
+                        getView().showTip( userModel.getMsg());
                     }
                     
                 }

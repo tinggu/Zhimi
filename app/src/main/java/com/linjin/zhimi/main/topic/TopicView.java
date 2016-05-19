@@ -2,6 +2,7 @@ package com.linjin.zhimi.main.topic;
 
 
 import com.cyou.quick.mvp.loadmore.LoadMoreView;
+import com.linjin.zhimi.model.topic.TopicAnswer;
 
 /**
  * Description:
@@ -11,7 +12,7 @@ import com.cyou.quick.mvp.loadmore.LoadMoreView;
  * Date       : 2015/12/23
  **/
 
-public interface TopicView<M> extends LoadMoreView<M> {
+public interface TopicView extends LoadMoreView<TopicAnswer> {
 
 
 }

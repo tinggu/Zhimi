@@ -1,6 +1,8 @@
 package com.linjin.zhimi.main.topic;
 
 import com.cyou.quick.mvp.MvpBasePresenter;
+import com.linjin.zhimi.base.BaseLoadMoreRxPresenter;
+import com.linjin.zhimi.model.topic.TopicAnswer;
 
 /**
  * Description:
@@ -10,5 +12,5 @@ import com.cyou.quick.mvp.MvpBasePresenter;
  * Date       : 2016/1/4
  **/
 
-public class TopicPresenter extends MvpBasePresenter {
+public class TopicPresenter extends BaseLoadMoreRxPresenter<TopicView, TopicAnswer> {
 }

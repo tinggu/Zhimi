@@ -10,18 +10,8 @@ import com.linjin.zhimi.rest.ApiCode;
 
 import rx.Subscriber;
 
-/**
- * Description:
- * Copyright  : Copyright (c) 2015
- * Company    : 北京畅游天下网络科技有限公司
- * Author     : liujianguang
- * Date       : 2016/1/12
- **/
-
 public class BaseSubscriber<T> extends Subscriber<T> {
-
-   
-
+    
     @Override
     public void onCompleted() {
 

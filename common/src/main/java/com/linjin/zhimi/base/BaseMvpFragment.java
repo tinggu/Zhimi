@@ -22,7 +22,8 @@ public abstract class BaseMvpFragment<V extends MvpView, P extends MvpBasePresen
         extends MvpFragment<V, P> {
 
     protected Realm realm;
-
+    
+    @Override
     protected FragmentMvpDelegate<V, P> getMvpDelegate() {
         if (this.mvpDelegate == null) {
             this.mvpDelegate = new BaseFragamentDelegateImpl<>(this);

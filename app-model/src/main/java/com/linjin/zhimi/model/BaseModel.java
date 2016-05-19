@@ -24,19 +24,21 @@ public class BaseModel {
      * message
      */
     @Expose
-    @SerializedName("data1")
-    private String  data;
+    @SerializedName("message")
+    private String  msg;
 
 
-    public String getData() {
-        return data;
+    public String getMsg() {
+        return msg;
     }
 
     @Override
     public String toString() {
         return "BaseModel{" +
                 "code=" + code +
-                ", data='" + data + '\'' +
+                ", data='" + msg + '\'' +
                 '}';
     }
+
+    
 }
