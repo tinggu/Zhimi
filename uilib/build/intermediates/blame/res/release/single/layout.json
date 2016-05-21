@@ -16,12 +16,12 @@
         "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_search_view.xml"
     },
     {
-        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\layout\\design_navigation_menu.xml",
-        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\layout\\design_navigation_menu.xml"
-    },
-    {
         "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\layout\\md_dialog_list.xml",
         "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.afollestad.material-dialogs\\core\\0.8.5.9\\res\\layout\\md_dialog_list.xml"
+    },
+    {
+        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\layout\\design_navigation_menu.xml",
+        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\layout\\design_navigation_menu.xml"
     },
     {
         "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\layout\\layout_basepickerview.xml",
@@ -68,12 +68,12 @@
         "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\layout\\design_bottom_sheet_dialog.xml"
     },
     {
-        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\layout\\md_listitem.xml",
-        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.afollestad.material-dialogs\\core\\0.8.5.9\\res\\layout\\md_listitem.xml"
-    },
-    {
         "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\layout\\pickerview_time.xml",
         "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.bigkoo\\pickerview\\2.0.8\\res\\layout\\pickerview_time.xml"
+    },
+    {
+        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\layout\\md_listitem.xml",
+        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.afollestad.material-dialogs\\core\\0.8.5.9\\res\\layout\\md_listitem.xml"
     },
     {
         "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\layout\\notification_template_part_chronometer.xml",
@@ -92,32 +92,32 @@
         "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.afollestad.material-dialogs\\core\\0.8.5.9\\res\\layout\\md_dialog_basic.xml"
     },
     {
-        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\layout\\support_simple_spinner_dropdown_item.xml",
-        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\support_simple_spinner_dropdown_item.xml"
-    },
-    {
         "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\layout\\design_navigation_item_subheader.xml",
         "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\layout\\design_navigation_item_subheader.xml"
     },
     {
-        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\layout\\md_dialog_progress.xml",
-        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.afollestad.material-dialogs\\core\\0.8.5.9\\res\\layout\\md_dialog_progress.xml"
+        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\layout\\support_simple_spinner_dropdown_item.xml",
+        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\support_simple_spinner_dropdown_item.xml"
     },
     {
         "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\layout\\design_navigation_item_header.xml",
         "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\layout\\design_navigation_item_header.xml"
     },
     {
-        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\layout\\abc_search_dropdown_item_icons_2line.xml",
-        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
+        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\layout\\md_dialog_progress.xml",
+        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.afollestad.material-dialogs\\core\\0.8.5.9\\res\\layout\\md_dialog_progress.xml"
+    },
+    {
+        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\layout\\abc_list_menu_item_radio.xml",
+        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_list_menu_item_radio.xml"
     },
     {
         "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\layout\\abc_expanded_menu_layout.xml",
         "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_expanded_menu_layout.xml"
     },
     {
-        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\layout\\abc_list_menu_item_radio.xml",
-        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_list_menu_item_radio.xml"
+        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\layout\\abc_search_dropdown_item_icons_2line.xml",
+        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
     },
     {
         "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\layout\\abc_popup_menu_item_layout.xml",
@@ -180,12 +180,12 @@
         "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.afollestad.material-dialogs\\core\\0.8.5.9\\res\\layout\\md_stub_titleframe_lesspadding.xml"
     },
     {
-        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_mode_close_item_material.xml",
-        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_action_mode_close_item_material.xml"
-    },
-    {
         "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\layout\\abc_alert_dialog_material.xml",
         "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_alert_dialog_material.xml"
+    },
+    {
+        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_mode_close_item_material.xml",
+        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_action_mode_close_item_material.xml"
     },
     {
         "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\layout\\design_navigation_menu_item.xml",
@@ -264,24 +264,24 @@
         "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\select_dialog_multichoice_material.xml"
     },
     {
-        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\layout\\design_navigation_item.xml",
-        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\layout\\design_navigation_item.xml"
-    },
-    {
         "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_bar_view_list_nav_layout.xml",
         "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
+    },
+    {
+        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\layout\\design_navigation_item.xml",
+        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\layout\\design_navigation_item.xml"
     },
     {
         "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_mode_bar.xml",
         "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_action_mode_bar.xml"
     },
     {
-        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\layout\\md_preference_custom.xml",
-        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.afollestad.material-dialogs\\commons\\0.8.5.9\\res\\layout\\md_preference_custom.xml"
-    },
-    {
         "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\layout\\md_stub_inputpref.xml",
         "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.afollestad.material-dialogs\\commons\\0.8.5.9\\res\\layout\\md_stub_inputpref.xml"
+    },
+    {
+        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\layout\\md_preference_custom.xml",
+        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.afollestad.material-dialogs\\commons\\0.8.5.9\\res\\layout\\md_preference_custom.xml"
     },
     {
         "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\layout\\notification_template_part_time.xml",
