@@ -54,7 +54,7 @@ public class RegisterStep4Fragment extends RegisterStepBaseFragment implements P
     @Override
     public void onValidationSucceeded() {
         presenter.nextStep();
-//        TrackUtils.getInstance().onEvent("Register_rp_register");
+//        TrackUtils.getInstance().onTrackEvent("Register_rp_register");
     }
 
     //为弹出窗口实现监听类

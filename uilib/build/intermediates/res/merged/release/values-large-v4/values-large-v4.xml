@@ -10,6 +10,7 @@
     <item name="abc_dialog_min_width_major" type="dimen">55%</item>
     <item name="abc_dialog_min_width_minor" type="dimen">80%</item>
     <dimen name="abc_search_view_text_min_width">192dip</dimen>
+    <dimen name="md_preference_content_inset">28dp</dimen>
     <integer name="abc_max_action_buttons">4</integer>
     <style name="Base.Theme.AppCompat.DialogWhenLarge" parent="Base.Theme.AppCompat.Dialog.FixedSize"/>
     <style name="Base.Theme.AppCompat.Light.DialogWhenLarge" parent="Base.Theme.AppCompat.Light.Dialog.FixedSize"/>

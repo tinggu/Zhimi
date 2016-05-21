@@ -11,10 +11,11 @@ import com.linjin.zhimi.event.RegisterSuccessfulEvent;
 import com.linjin.zhimi.rest.ApiCode;
 import com.tinggu.common.utils.KeyboardUtils;
 
+import org.greenrobot.eventbus.EventBus;
+
 import cn.smssdk.EventHandler;
 import cn.smssdk.SMSSDK;
-import cn.smssdk.SMSSDKInitUtils;
-import de.greenrobot.event.EventBus;
+import cn.smssdk.SMSSDKInitUtils; 
 import rx.Observable;
 import rx.Subscriber;
 import rx.functions.Func1;

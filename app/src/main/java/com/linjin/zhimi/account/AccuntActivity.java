@@ -19,9 +19,11 @@ import com.linjin.zhimi.utils.DialogUtils;
 import com.linjin.zhimi.utils.IntentStarter;
 import com.tinggu.common.utils.LogUtils;
 
-import cn.smssdk.SMSSDKInitUtils;
-import de.greenrobot.event.EventBus;
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
+import cn.smssdk.SMSSDKInitUtils;
 /**
  * Description:
  * Copyright  : Copyright (c) 2015
@@ -135,7 +137,8 @@ public class AccuntActivity extends BaseMvpActivity {
     }
 
     //登录成功事件
-    public void onEventMainThread(LoginSuccessfulEvent event) {
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onEvent(LoginSuccessfulEvent event) {
         refreshCache();
         LogUtils.i("login", "LoginSuccessfulEvent");
         Toast.makeText(QuickApplication.getInstance(), "登录成功！", Toast.LENGTH_LONG).show();
@@ -143,7 +146,8 @@ public class AccuntActivity extends BaseMvpActivity {
     }
 
     //注册成功事件
-    public void onEventMainThread(RegisterSuccessfulEvent event) {
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onEvent(RegisterSuccessfulEvent event) {
         refreshCache();
         LogUtils.i("login", "RegisterSuccessfulEvent");
         //强制创建默认身份
@@ -152,7 +156,8 @@ public class AccuntActivity extends BaseMvpActivity {
     }
 
     //找回密码成功事件
-    public void onEventMainThread(FindPWSuccessfulEvent event) {
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onEvent(FindPWSuccessfulEvent event) {
         refreshCache();
         LogUtils.i("login", "FindPWSuccessfulEvent");
         Toast.makeText(QuickApplication.getInstance(), "密码已找回，请注意保管！", Toast.LENGTH_LONG).show();

@@ -1,14 +1,14 @@
 [
     {
         "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\layout-v14\\md_stub_progress.xml",
-        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.github.afollestad.material-dialogs\\core\\0.8.5.7\\res\\layout-v14\\md_stub_progress.xml"
+        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.afollestad.material-dialogs\\core\\0.8.5.9\\res\\layout-v14\\md_stub_progress.xml"
     },
     {
         "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\layout-v14\\md_stub_progress_indeterminate.xml",
-        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.github.afollestad.material-dialogs\\core\\0.8.5.7\\res\\layout-v14\\md_stub_progress_indeterminate.xml"
+        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.afollestad.material-dialogs\\core\\0.8.5.9\\res\\layout-v14\\md_stub_progress_indeterminate.xml"
     },
     {
         "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\layout-v14\\md_stub_progress_indeterminate_horizontal.xml",
-        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.github.afollestad.material-dialogs\\core\\0.8.5.7\\res\\layout-v14\\md_stub_progress_indeterminate_horizontal.xml"
+        "source": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.afollestad.material-dialogs\\core\\0.8.5.9\\res\\layout-v14\\md_stub_progress_indeterminate_horizontal.xml"
     }
 ]

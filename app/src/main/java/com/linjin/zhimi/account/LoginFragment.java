@@ -106,7 +106,7 @@ public class LoginFragment
             validator.validate();
         } else if (id == R.id.tv_findpassword) {
             accuntActivity.showFindPassword(evPhonenum.getText().toString());
-            TrackUtils.getInstance().onEvent("Register_forgotpassword");
+            TrackUtils.getInstance().onTrackEvent("Register_forgotpassword");
         }
     }
 

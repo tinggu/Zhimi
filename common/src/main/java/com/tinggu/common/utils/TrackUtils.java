@@ -92,20 +92,20 @@ public class TrackUtils {
 //        TCAgent.onPageEnd(context, name);
     }
 
-    public void onEvent(String eventId) {
+    public void onTrackEvent(String eventId) {
         MobclickAgent.onEvent(context, eventId);
-//        TCAgent.onEvent(context, eventId);
+//        TCAgent.onTrackEvent(context, eventId);
     }
 
-    public void onEvent(String eventId, HashMap<String, String> map) {
+    public void onTrackEvent(String eventId, HashMap<String, String> map) {
         MobclickAgent.onEvent(context, eventId, map);
     }
 
-    public void onEventValue(String eventId, int du) {
+    public void onTrackEventValue(String eventId, int du) {
         MobclickAgent.onEventValue(context, eventId, null, du);
     }
 
-    public void onEventValue(String eventId, HashMap<String, String> map, int du) {
+    public void onTrackEventValue(String eventId, HashMap<String, String> map, int du) {
         MobclickAgent.onEventValue(context, eventId, map, du);
     }
 

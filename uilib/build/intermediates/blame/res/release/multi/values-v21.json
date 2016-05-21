@@ -7,30 +7,11 @@
                     "startLine": 2,
                     "startColumn": 4,
                     "startOffset": 55,
-                    "endColumn": 68,
-                    "endOffset": 119
-                },
-                "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.0\\res\\values-v21\\values-v21.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 281,
-                        "endColumn": 68,
-                        "endOffset": 345
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 3,
-                    "startColumn": 4,
-                    "startOffset": 124,
                     "endColumn": 90,
-                    "endOffset": 210
+                    "endOffset": 141
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -42,14 +23,14 @@
             },
             {
                 "to": {
-                    "startLine": 4,
+                    "startLine": 3,
                     "startColumn": 4,
-                    "startOffset": 215,
+                    "startOffset": 146,
                     "endColumn": 102,
-                    "endOffset": 313
+                    "endOffset": 244
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -61,14 +42,14 @@
             },
             {
                 "to": {
-                    "startLine": 5,
+                    "startLine": 4,
                     "startColumn": 4,
-                    "startOffset": 318,
+                    "startOffset": 249,
                     "endColumn": 102,
-                    "endOffset": 416
+                    "endOffset": 347
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -80,14 +61,14 @@
             },
             {
                 "to": {
-                    "startLine": 6,
+                    "startLine": 5,
                     "startColumn": 4,
-                    "startOffset": 421,
+                    "startOffset": 352,
                     "endColumn": 104,
-                    "endOffset": 521
+                    "endOffset": 452
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -99,14 +80,14 @@
             },
             {
                 "to": {
-                    "startLine": 7,
+                    "startLine": 6,
                     "startColumn": 4,
-                    "startOffset": 526,
+                    "startOffset": 457,
                     "endColumn": 106,
-                    "endOffset": 628
+                    "endOffset": 559
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -118,14 +99,14 @@
             },
             {
                 "to": {
-                    "startLine": 8,
+                    "startLine": 7,
                     "startColumn": 4,
-                    "startOffset": 633,
+                    "startOffset": 564,
                     "endColumn": 108,
-                    "endOffset": 737
+                    "endOffset": 668
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -137,14 +118,14 @@
             },
             {
                 "to": {
-                    "startLine": 9,
+                    "startLine": 8,
                     "startColumn": 4,
-                    "startOffset": 742,
+                    "startOffset": 673,
                     "endColumn": 108,
-                    "endOffset": 846
+                    "endOffset": 777
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
@@ -156,14 +137,14 @@
             },
             {
                 "to": {
-                    "startLine": 10,
+                    "startLine": 9,
                     "startColumn": 4,
-                    "startOffset": 851,
+                    "startOffset": 782,
                     "endColumn": 108,
-                    "endOffset": 955
+                    "endOffset": 886
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
@@ -175,14 +156,14 @@
             },
             {
                 "to": {
-                    "startLine": 11,
+                    "startLine": 10,
                     "startColumn": 4,
-                    "startOffset": 960,
+                    "startOffset": 891,
                     "endColumn": 108,
-                    "endOffset": 1064
+                    "endOffset": 995
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
@@ -194,14 +175,14 @@
             },
             {
                 "to": {
-                    "startLine": 12,
+                    "startLine": 11,
                     "startColumn": 4,
-                    "startOffset": 1069,
+                    "startOffset": 1000,
                     "endColumn": 108,
-                    "endOffset": 1173
+                    "endOffset": 1104
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
@@ -213,14 +194,14 @@
             },
             {
                 "to": {
-                    "startLine": 13,
+                    "startLine": 12,
                     "startColumn": 4,
-                    "startOffset": 1178,
+                    "startOffset": 1109,
                     "endColumn": 106,
-                    "endOffset": 1280
+                    "endOffset": 1211
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
@@ -232,14 +213,14 @@
             },
             {
                 "to": {
-                    "startLine": 14,
+                    "startLine": 13,
                     "startColumn": 4,
-                    "startOffset": 1285,
+                    "startOffset": 1216,
                     "endColumn": 102,
-                    "endOffset": 1383
+                    "endOffset": 1314
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
@@ -251,14 +232,14 @@
             },
             {
                 "to": {
-                    "startLine": 15,
+                    "startLine": 14,
                     "startColumn": 4,
-                    "startOffset": 1388,
+                    "startOffset": 1319,
                     "endColumn": 118,
-                    "endOffset": 1502
+                    "endOffset": 1433
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
@@ -270,15 +251,15 @@
             },
             {
                 "to": {
-                    "startLine": 16,
+                    "startLine": 15,
                     "startColumn": 4,
-                    "startOffset": 1507,
-                    "endLine": 17,
+                    "startOffset": 1438,
+                    "endLine": 16,
                     "endColumn": 12,
-                    "endOffset": 1657
+                    "endOffset": 1588
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
@@ -291,15 +272,15 @@
             },
             {
                 "to": {
-                    "startLine": 18,
+                    "startLine": 17,
                     "startColumn": 4,
-                    "startOffset": 1662,
-                    "endLine": 19,
+                    "startOffset": 1593,
+                    "endLine": 18,
                     "endColumn": 12,
-                    "endOffset": 1812
+                    "endOffset": 1743
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 4,
@@ -312,14 +293,14 @@
             },
             {
                 "to": {
-                    "startLine": 20,
+                    "startLine": 19,
                     "startColumn": 4,
-                    "startOffset": 1817,
+                    "startOffset": 1748,
                     "endColumn": 104,
-                    "endOffset": 1917
+                    "endOffset": 1848
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 19,
                         "startColumn": 4,
@@ -331,14 +312,14 @@
             },
             {
                 "to": {
-                    "startLine": 21,
+                    "startLine": 20,
                     "startColumn": 4,
-                    "startOffset": 1922,
+                    "startOffset": 1853,
                     "endColumn": 120,
-                    "endOffset": 2038
+                    "endOffset": 1969
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 20,
                         "startColumn": 4,
@@ -350,14 +331,14 @@
             },
             {
                 "to": {
-                    "startLine": 22,
+                    "startLine": 21,
                     "startColumn": 4,
-                    "startOffset": 2043,
+                    "startOffset": 1974,
                     "endColumn": 100,
-                    "endOffset": 2139
+                    "endOffset": 2070
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 21,
                         "startColumn": 4,
@@ -369,15 +350,15 @@
             },
             {
                 "to": {
-                    "startLine": 23,
+                    "startLine": 22,
                     "startColumn": 4,
-                    "startOffset": 2144,
-                    "endLine": 24,
+                    "startOffset": 2075,
+                    "endLine": 23,
                     "endColumn": 12,
-                    "endOffset": 2286
+                    "endOffset": 2217
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 22,
                         "startColumn": 4,
@@ -390,15 +371,15 @@
             },
             {
                 "to": {
-                    "startLine": 25,
+                    "startLine": 24,
                     "startColumn": 4,
-                    "startOffset": 2291,
-                    "endLine": 26,
+                    "startOffset": 2222,
+                    "endLine": 25,
                     "endColumn": 12,
-                    "endOffset": 2427
+                    "endOffset": 2358
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 24,
                         "startColumn": 4,
@@ -411,14 +392,14 @@
             },
             {
                 "to": {
-                    "startLine": 27,
+                    "startLine": 26,
                     "startColumn": 4,
-                    "startOffset": 2432,
+                    "startOffset": 2363,
                     "endColumn": 102,
-                    "endOffset": 2530
+                    "endOffset": 2461
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 26,
                         "startColumn": 4,
@@ -430,14 +411,14 @@
             },
             {
                 "to": {
-                    "startLine": 28,
+                    "startLine": 27,
                     "startColumn": 4,
-                    "startOffset": 2535,
+                    "startOffset": 2466,
                     "endColumn": 118,
-                    "endOffset": 2649
+                    "endOffset": 2580
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 27,
                         "startColumn": 4,
@@ -449,14 +430,14 @@
             },
             {
                 "to": {
-                    "startLine": 29,
+                    "startLine": 28,
                     "startColumn": 4,
-                    "startOffset": 2654,
+                    "startOffset": 2585,
                     "endColumn": 106,
-                    "endOffset": 2756
+                    "endOffset": 2687
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 28,
                         "startColumn": 4,
@@ -468,14 +449,14 @@
             },
             {
                 "to": {
-                    "startLine": 30,
+                    "startLine": 29,
                     "startColumn": 4,
-                    "startOffset": 2761,
+                    "startOffset": 2692,
                     "endColumn": 102,
-                    "endOffset": 2859
+                    "endOffset": 2790
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 29,
                         "startColumn": 4,
@@ -487,15 +468,15 @@
             },
             {
                 "to": {
-                    "startLine": 31,
+                    "startLine": 30,
                     "startColumn": 4,
-                    "startOffset": 2864,
-                    "endLine": 32,
+                    "startOffset": 2795,
+                    "endLine": 31,
                     "endColumn": 12,
-                    "endOffset": 3014
+                    "endOffset": 2945
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 30,
                         "startColumn": 4,
@@ -508,15 +489,15 @@
             },
             {
                 "to": {
-                    "startLine": 33,
+                    "startLine": 32,
                     "startColumn": 4,
-                    "startOffset": 3019,
-                    "endLine": 34,
+                    "startOffset": 2950,
+                    "endLine": 33,
                     "endColumn": 12,
-                    "endOffset": 3185
+                    "endOffset": 3116
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 32,
                         "startColumn": 4,
@@ -529,15 +510,15 @@
             },
             {
                 "to": {
-                    "startLine": 35,
+                    "startLine": 34,
                     "startColumn": 4,
-                    "startOffset": 3190,
-                    "endLine": 36,
+                    "startOffset": 3121,
+                    "endLine": 35,
                     "endColumn": 12,
-                    "endOffset": 3334
+                    "endOffset": 3265
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 34,
                         "startColumn": 4,
@@ -550,15 +531,15 @@
             },
             {
                 "to": {
-                    "startLine": 37,
+                    "startLine": 36,
                     "startColumn": 4,
-                    "startOffset": 3339,
-                    "endLine": 38,
+                    "startOffset": 3270,
+                    "endLine": 37,
                     "endColumn": 12,
-                    "endOffset": 3499
+                    "endOffset": 3430
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 36,
                         "startColumn": 4,
@@ -571,15 +552,15 @@
             },
             {
                 "to": {
-                    "startLine": 39,
+                    "startLine": 38,
                     "startColumn": 4,
-                    "startOffset": 3504,
-                    "endLine": 40,
+                    "startOffset": 3435,
+                    "endLine": 39,
                     "endColumn": 12,
-                    "endOffset": 3656
+                    "endOffset": 3587
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 38,
                         "startColumn": 4,
@@ -592,15 +573,15 @@
             },
             {
                 "to": {
-                    "startLine": 41,
+                    "startLine": 40,
                     "startColumn": 4,
-                    "startOffset": 3661,
-                    "endLine": 42,
+                    "startOffset": 3592,
+                    "endLine": 41,
                     "endColumn": 12,
-                    "endOffset": 3807
+                    "endOffset": 3738
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 40,
                         "startColumn": 4,
@@ -613,14 +594,14 @@
             },
             {
                 "to": {
-                    "startLine": 43,
+                    "startLine": 42,
                     "startColumn": 4,
-                    "startOffset": 3812,
+                    "startOffset": 3743,
                     "endColumn": 118,
-                    "endOffset": 3926
+                    "endOffset": 3857
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 42,
                         "startColumn": 4,
@@ -632,15 +613,15 @@
             },
             {
                 "to": {
-                    "startLine": 44,
+                    "startLine": 43,
                     "startColumn": 4,
-                    "startOffset": 3931,
-                    "endLine": 45,
+                    "startOffset": 3862,
+                    "endLine": 44,
                     "endColumn": 12,
-                    "endOffset": 4075
+                    "endOffset": 4006
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 43,
                         "startColumn": 4,
@@ -653,15 +634,15 @@
             },
             {
                 "to": {
-                    "startLine": 46,
+                    "startLine": 45,
                     "startColumn": 4,
-                    "startOffset": 4080,
-                    "endLine": 47,
+                    "startOffset": 4011,
+                    "endLine": 46,
                     "endColumn": 12,
-                    "endOffset": 4224
+                    "endOffset": 4155
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 45,
                         "startColumn": 4,
@@ -674,14 +655,14 @@
             },
             {
                 "to": {
-                    "startLine": 48,
+                    "startLine": 47,
                     "startColumn": 4,
-                    "startOffset": 4229,
+                    "startOffset": 4160,
                     "endColumn": 111,
-                    "endOffset": 4336
+                    "endOffset": 4267
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 47,
                         "startColumn": 4,
@@ -693,14 +674,14 @@
             },
             {
                 "to": {
-                    "startLine": 49,
+                    "startLine": 48,
                     "startColumn": 4,
-                    "startOffset": 4341,
+                    "startOffset": 4272,
                     "endColumn": 146,
-                    "endOffset": 4483
+                    "endOffset": 4414
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 48,
                         "startColumn": 4,
@@ -712,15 +693,15 @@
             },
             {
                 "to": {
-                    "startLine": 50,
+                    "startLine": 49,
                     "startColumn": 4,
-                    "startOffset": 4488,
-                    "endLine": 51,
+                    "startOffset": 4419,
+                    "endLine": 50,
                     "endColumn": 12,
-                    "endOffset": 4636
+                    "endOffset": 4567
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 49,
                         "startColumn": 4,
@@ -733,15 +714,15 @@
             },
             {
                 "to": {
-                    "startLine": 52,
+                    "startLine": 51,
                     "startColumn": 4,
-                    "startOffset": 4641,
-                    "endLine": 53,
+                    "startOffset": 4572,
+                    "endLine": 52,
                     "endColumn": 12,
-                    "endOffset": 4783
+                    "endOffset": 4714
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 51,
                         "startColumn": 4,
@@ -754,14 +735,14 @@
             },
             {
                 "to": {
-                    "startLine": 54,
+                    "startLine": 53,
                     "startColumn": 4,
-                    "startOffset": 4788,
+                    "startOffset": 4719,
                     "endColumn": 74,
-                    "endOffset": 4858
+                    "endOffset": 4789
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 53,
                         "startColumn": 4,
@@ -773,14 +754,14 @@
             },
             {
                 "to": {
-                    "startLine": 55,
+                    "startLine": 54,
                     "startColumn": 4,
-                    "startOffset": 4863,
+                    "startOffset": 4794,
                     "endColumn": 88,
-                    "endOffset": 4947
+                    "endOffset": 4878
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 54,
                         "startColumn": 4,
@@ -792,14 +773,14 @@
             },
             {
                 "to": {
-                    "startLine": 56,
+                    "startLine": 55,
                     "startColumn": 4,
-                    "startOffset": 4952,
+                    "startOffset": 4883,
                     "endColumn": 86,
-                    "endOffset": 5034
+                    "endOffset": 4965
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 55,
                         "startColumn": 4,
@@ -811,14 +792,14 @@
             },
             {
                 "to": {
-                    "startLine": 57,
+                    "startLine": 56,
                     "startColumn": 4,
-                    "startOffset": 5039,
+                    "startOffset": 4970,
                     "endColumn": 100,
-                    "endOffset": 5135
+                    "endOffset": 5066
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 56,
                         "startColumn": 4,
@@ -830,15 +811,15 @@
             },
             {
                 "to": {
-                    "startLine": 58,
+                    "startLine": 57,
                     "startColumn": 4,
-                    "startOffset": 5140,
-                    "endLine": 101,
+                    "startOffset": 5071,
+                    "endLine": 100,
                     "endColumn": 12,
-                    "endOffset": 8203
+                    "endOffset": 8134
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 57,
                         "startColumn": 4,
@@ -851,15 +832,15 @@
             },
             {
                 "to": {
-                    "startLine": 102,
+                    "startLine": 101,
                     "startColumn": 4,
-                    "startOffset": 8208,
-                    "endLine": 104,
+                    "startOffset": 8139,
+                    "endLine": 103,
                     "endColumn": 12,
-                    "endOffset": 8389
+                    "endOffset": 8320
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 101,
                         "startColumn": 4,
@@ -872,15 +853,15 @@
             },
             {
                 "to": {
-                    "startLine": 105,
+                    "startLine": 104,
                     "startColumn": 4,
-                    "startOffset": 8394,
-                    "endLine": 148,
+                    "startOffset": 8325,
+                    "endLine": 147,
                     "endColumn": 12,
-                    "endOffset": 11469
+                    "endOffset": 11400
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 104,
                         "startColumn": 4,
@@ -893,15 +874,15 @@
             },
             {
                 "to": {
-                    "startLine": 149,
+                    "startLine": 148,
                     "startColumn": 4,
-                    "startOffset": 11474,
-                    "endLine": 151,
+                    "startOffset": 11405,
+                    "endLine": 150,
                     "endColumn": 12,
-                    "endOffset": 11667
+                    "endOffset": 11598
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 148,
                         "startColumn": 4,
@@ -914,15 +895,15 @@
             },
             {
                 "to": {
-                    "startLine": 152,
+                    "startLine": 151,
                     "startColumn": 4,
-                    "startOffset": 11672,
-                    "endLine": 153,
+                    "startOffset": 11603,
+                    "endLine": 152,
                     "endColumn": 12,
-                    "endOffset": 11790
+                    "endOffset": 11721
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 151,
                         "startColumn": 4,
@@ -935,15 +916,15 @@
             },
             {
                 "to": {
-                    "startLine": 154,
+                    "startLine": 153,
                     "startColumn": 4,
-                    "startOffset": 11795,
-                    "endLine": 155,
+                    "startOffset": 11726,
+                    "endLine": 154,
                     "endColumn": 12,
-                    "endOffset": 11913
+                    "endOffset": 11844
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 153,
                         "startColumn": 4,
@@ -956,15 +937,15 @@
             },
             {
                 "to": {
-                    "startLine": 156,
+                    "startLine": 155,
                     "startColumn": 4,
-                    "startOffset": 11918,
-                    "endLine": 157,
+                    "startOffset": 11849,
+                    "endLine": 156,
                     "endColumn": 12,
-                    "endOffset": 12026
+                    "endOffset": 11957
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 155,
                         "startColumn": 4,
@@ -977,15 +958,15 @@
             },
             {
                 "to": {
-                    "startLine": 158,
+                    "startLine": 157,
                     "startColumn": 4,
-                    "startOffset": 12031,
-                    "endLine": 160,
+                    "startOffset": 11962,
+                    "endLine": 159,
                     "endColumn": 12,
-                    "endOffset": 12209
+                    "endOffset": 12140
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 157,
                         "startColumn": 4,
@@ -998,15 +979,15 @@
             },
             {
                 "to": {
-                    "startLine": 161,
+                    "startLine": 160,
                     "startColumn": 4,
-                    "startOffset": 12214,
-                    "endLine": 162,
+                    "startOffset": 12145,
+                    "endLine": 161,
                     "endColumn": 12,
-                    "endOffset": 12340
+                    "endOffset": 12271
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 160,
                         "startColumn": 4,
@@ -1019,15 +1000,15 @@
             },
             {
                 "to": {
-                    "startLine": 163,
+                    "startLine": 162,
                     "startColumn": 4,
-                    "startOffset": 12345,
-                    "endLine": 165,
+                    "startOffset": 12276,
+                    "endLine": 164,
                     "endColumn": 12,
-                    "endOffset": 12541
+                    "endOffset": 12472
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 162,
                         "startColumn": 4,
@@ -1040,14 +1021,14 @@
             },
             {
                 "to": {
-                    "startLine": 166,
+                    "startLine": 165,
                     "startColumn": 4,
-                    "startOffset": 12546,
+                    "startOffset": 12477,
                     "endColumn": 88,
-                    "endOffset": 12630
+                    "endOffset": 12561
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 165,
                         "startColumn": 4,
@@ -1059,14 +1040,14 @@
             },
             {
                 "to": {
-                    "startLine": 167,
+                    "startLine": 166,
                     "startColumn": 4,
-                    "startOffset": 12635,
+                    "startOffset": 12566,
                     "endColumn": 110,
-                    "endOffset": 12741
+                    "endOffset": 12672
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 166,
                         "startColumn": 4,
@@ -1078,14 +1059,14 @@
             },
             {
                 "to": {
-                    "startLine": 168,
+                    "startLine": 167,
                     "startColumn": 4,
-                    "startOffset": 12746,
+                    "startOffset": 12677,
                     "endColumn": 126,
-                    "endOffset": 12868
+                    "endOffset": 12799
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 167,
                         "startColumn": 4,
@@ -1097,14 +1078,14 @@
             },
             {
                 "to": {
-                    "startLine": 169,
+                    "startLine": 168,
                     "startColumn": 4,
-                    "startOffset": 12873,
+                    "startOffset": 12804,
                     "endColumn": 100,
-                    "endOffset": 12969
+                    "endOffset": 12900
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 168,
                         "startColumn": 4,
@@ -1116,14 +1097,14 @@
             },
             {
                 "to": {
-                    "startLine": 170,
+                    "startLine": 169,
                     "startColumn": 4,
-                    "startOffset": 12974,
+                    "startOffset": 12905,
                     "endColumn": 94,
-                    "endOffset": 13064
+                    "endOffset": 12995
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 169,
                         "startColumn": 4,
@@ -1135,14 +1116,14 @@
             },
             {
                 "to": {
-                    "startLine": 171,
+                    "startLine": 170,
                     "startColumn": 4,
-                    "startOffset": 13069,
+                    "startOffset": 13000,
                     "endColumn": 122,
-                    "endOffset": 13187
+                    "endOffset": 13118
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 170,
                         "startColumn": 4,
@@ -1154,14 +1135,14 @@
             },
             {
                 "to": {
-                    "startLine": 172,
+                    "startLine": 171,
                     "startColumn": 4,
-                    "startOffset": 13192,
+                    "startOffset": 13123,
                     "endColumn": 128,
-                    "endOffset": 13316
+                    "endOffset": 13247
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 171,
                         "startColumn": 4,
@@ -1173,14 +1154,14 @@
             },
             {
                 "to": {
-                    "startLine": 173,
+                    "startLine": 172,
                     "startColumn": 4,
-                    "startOffset": 13321,
+                    "startOffset": 13252,
                     "endColumn": 116,
-                    "endOffset": 13433
+                    "endOffset": 13364
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 172,
                         "startColumn": 4,
@@ -1192,15 +1173,15 @@
             },
             {
                 "to": {
-                    "startLine": 174,
+                    "startLine": 173,
                     "startColumn": 4,
-                    "startOffset": 13438,
-                    "endLine": 176,
+                    "startOffset": 13369,
+                    "endLine": 175,
                     "endColumn": 12,
-                    "endOffset": 13610
+                    "endOffset": 13541
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 173,
                         "startColumn": 4,
@@ -1213,14 +1194,14 @@
             },
             {
                 "to": {
-                    "startLine": 177,
+                    "startLine": 176,
                     "startColumn": 4,
-                    "startOffset": 13615,
+                    "startOffset": 13546,
                     "endColumn": 98,
-                    "endOffset": 13709
+                    "endOffset": 13640
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 176,
                         "startColumn": 4,
@@ -1232,15 +1213,15 @@
             },
             {
                 "to": {
-                    "startLine": 178,
+                    "startLine": 177,
                     "startColumn": 4,
-                    "startOffset": 13714,
-                    "endLine": 179,
+                    "startOffset": 13645,
+                    "endLine": 178,
                     "endColumn": 12,
-                    "endOffset": 13844
+                    "endOffset": 13775
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 177,
                         "startColumn": 4,
@@ -1253,15 +1234,15 @@
             },
             {
                 "to": {
-                    "startLine": 180,
+                    "startLine": 179,
                     "startColumn": 4,
-                    "startOffset": 13849,
-                    "endLine": 181,
+                    "startOffset": 13780,
+                    "endLine": 180,
                     "endColumn": 12,
-                    "endOffset": 13987
+                    "endOffset": 13918
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 179,
                         "startColumn": 4,
@@ -1274,15 +1255,15 @@
             },
             {
                 "to": {
-                    "startLine": 182,
+                    "startLine": 181,
                     "startColumn": 4,
-                    "startOffset": 13992,
-                    "endLine": 183,
+                    "startOffset": 13923,
+                    "endLine": 182,
                     "endColumn": 12,
-                    "endOffset": 14122
+                    "endOffset": 14053
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 181,
                         "startColumn": 4,
@@ -1295,15 +1276,15 @@
             },
             {
                 "to": {
-                    "startLine": 184,
+                    "startLine": 183,
                     "startColumn": 4,
-                    "startOffset": 14127,
-                    "endLine": 185,
+                    "startOffset": 14058,
+                    "endLine": 184,
                     "endColumn": 12,
-                    "endOffset": 14241
+                    "endOffset": 14172
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 183,
                         "startColumn": 4,
@@ -1316,15 +1297,15 @@
             },
             {
                 "to": {
-                    "startLine": 186,
+                    "startLine": 185,
                     "startColumn": 4,
-                    "startOffset": 14246,
-                    "endLine": 189,
+                    "startOffset": 14177,
+                    "endLine": 188,
                     "endColumn": 12,
-                    "endOffset": 14442
+                    "endOffset": 14373
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 185,
                         "startColumn": 4,
@@ -1337,15 +1318,15 @@
             },
             {
                 "to": {
-                    "startLine": 190,
+                    "startLine": 189,
                     "startColumn": 4,
-                    "startOffset": 14447,
-                    "endLine": 191,
+                    "startOffset": 14378,
+                    "endLine": 190,
                     "endColumn": 12,
-                    "endOffset": 14561
+                    "endOffset": 14492
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 189,
                         "startColumn": 4,
@@ -1358,14 +1339,14 @@
             },
             {
                 "to": {
-                    "startLine": 192,
+                    "startLine": 191,
                     "startColumn": 4,
-                    "startOffset": 14566,
+                    "startOffset": 14497,
                     "endColumn": 92,
-                    "endOffset": 14654
+                    "endOffset": 14585
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 191,
                         "startColumn": 4,
@@ -1377,14 +1358,14 @@
             },
             {
                 "to": {
-                    "startLine": 193,
+                    "startLine": 192,
                     "startColumn": 4,
-                    "startOffset": 14659,
+                    "startOffset": 14590,
                     "endColumn": 110,
-                    "endOffset": 14765
+                    "endOffset": 14696
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 192,
                         "startColumn": 4,
@@ -1396,14 +1377,14 @@
             },
             {
                 "to": {
-                    "startLine": 194,
+                    "startLine": 193,
                     "startColumn": 4,
-                    "startOffset": 14770,
+                    "startOffset": 14701,
                     "endColumn": 55,
-                    "endOffset": 14821
+                    "endOffset": 14752
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 193,
                         "startColumn": 4,
@@ -1415,15 +1396,15 @@
             },
             {
                 "to": {
-                    "startLine": 195,
+                    "startLine": 194,
                     "startColumn": 4,
-                    "startOffset": 14826,
-                    "endLine": 196,
+                    "startOffset": 14757,
+                    "endLine": 195,
                     "endColumn": 12,
-                    "endOffset": 14928
+                    "endOffset": 14859
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 194,
                         "startColumn": 4,
@@ -1436,15 +1417,15 @@
             },
             {
                 "to": {
-                    "startLine": 197,
+                    "startLine": 196,
                     "startColumn": 4,
-                    "startOffset": 14933,
-                    "endLine": 200,
+                    "startOffset": 14864,
+                    "endLine": 199,
                     "endColumn": 12,
-                    "endOffset": 15123
+                    "endOffset": 15054
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 196,
                         "startColumn": 4,
@@ -1457,15 +1438,15 @@
             },
             {
                 "to": {
-                    "startLine": 201,
+                    "startLine": 200,
                     "startColumn": 4,
-                    "startOffset": 15128,
-                    "endLine": 202,
+                    "startOffset": 15059,
+                    "endLine": 201,
                     "endColumn": 12,
-                    "endOffset": 15234
+                    "endOffset": 15165
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 200,
                         "startColumn": 4,
@@ -1478,15 +1459,15 @@
             },
             {
                 "to": {
-                    "startLine": 203,
+                    "startLine": 202,
                     "startColumn": 4,
-                    "startOffset": 15239,
-                    "endLine": 204,
+                    "startOffset": 15170,
+                    "endLine": 203,
                     "endColumn": 12,
-                    "endOffset": 15367
+                    "endOffset": 15298
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 202,
                         "startColumn": 4,
@@ -1499,14 +1480,14 @@
             },
             {
                 "to": {
-                    "startLine": 205,
+                    "startLine": 204,
                     "startColumn": 4,
-                    "startOffset": 15372,
+                    "startOffset": 15303,
                     "endColumn": 94,
-                    "endOffset": 15462
+                    "endOffset": 15393
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 204,
                         "startColumn": 4,
@@ -1518,14 +1499,14 @@
             },
             {
                 "to": {
-                    "startLine": 206,
+                    "startLine": 205,
                     "startColumn": 4,
-                    "startOffset": 15467,
+                    "startOffset": 15398,
                     "endColumn": 90,
-                    "endOffset": 15553
+                    "endOffset": 15484
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 205,
                         "startColumn": 4,
@@ -1537,14 +1518,14 @@
             },
             {
                 "to": {
-                    "startLine": 207,
+                    "startLine": 206,
                     "startColumn": 4,
-                    "startOffset": 15558,
+                    "startOffset": 15489,
                     "endColumn": 90,
-                    "endOffset": 15644
+                    "endOffset": 15575
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 206,
                         "startColumn": 4,
@@ -1556,14 +1537,14 @@
             },
             {
                 "to": {
-                    "startLine": 208,
+                    "startLine": 207,
                     "startColumn": 4,
-                    "startOffset": 15649,
+                    "startOffset": 15580,
                     "endColumn": 116,
-                    "endOffset": 15761
+                    "endOffset": 15692
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 207,
                         "startColumn": 4,
@@ -1575,15 +1556,15 @@
             },
             {
                 "to": {
-                    "startLine": 209,
+                    "startLine": 208,
                     "startColumn": 4,
-                    "startOffset": 15766,
-                    "endLine": 210,
+                    "startOffset": 15697,
+                    "endLine": 209,
                     "endColumn": 12,
-                    "endOffset": 15900
+                    "endOffset": 15831
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 208,
                         "startColumn": 4,
@@ -1596,15 +1577,15 @@
             },
             {
                 "to": {
-                    "startLine": 211,
+                    "startLine": 210,
                     "startColumn": 4,
-                    "startOffset": 15905,
-                    "endLine": 221,
+                    "startOffset": 15836,
+                    "endLine": 220,
                     "endColumn": 12,
-                    "endOffset": 16659
+                    "endOffset": 16590
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.github.afollestad.material-dialogs\\core\\0.8.5.7\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.afollestad.material-dialogs\\core\\0.8.5.9\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -1617,15 +1598,15 @@
             },
             {
                 "to": {
-                    "startLine": 222,
+                    "startLine": 221,
                     "startColumn": 4,
-                    "startOffset": 16664,
-                    "endLine": 232,
+                    "startOffset": 16595,
+                    "endLine": 231,
                     "endColumn": 12,
-                    "endOffset": 17410
+                    "endOffset": 17341
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.github.afollestad.material-dialogs\\core\\0.8.5.7\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.afollestad.material-dialogs\\core\\0.8.5.9\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
@@ -1638,15 +1619,15 @@
             },
             {
                 "to": {
-                    "startLine": 233,
+                    "startLine": 232,
                     "startColumn": 4,
-                    "startOffset": 17415,
-                    "endLine": 242,
+                    "startOffset": 17346,
+                    "endLine": 241,
                     "endColumn": 12,
-                    "endOffset": 17923
+                    "endOffset": 17854
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 210,
                         "startColumn": 4,
@@ -1659,15 +1640,15 @@
             },
             {
                 "to": {
-                    "startLine": 243,
+                    "startLine": 242,
                     "startColumn": 4,
-                    "startOffset": 17928,
-                    "endLine": 252,
+                    "startOffset": 17859,
+                    "endLine": 251,
                     "endColumn": 12,
-                    "endOffset": 18448
+                    "endOffset": 18379
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 220,
                         "startColumn": 4,
@@ -1680,15 +1661,15 @@
             },
             {
                 "to": {
-                    "startLine": 253,
+                    "startLine": 252,
                     "startColumn": 4,
-                    "startOffset": 18453,
-                    "endLine": 262,
+                    "startOffset": 18384,
+                    "endLine": 261,
                     "endColumn": 12,
-                    "endOffset": 19128
+                    "endOffset": 19059
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 230,
                         "startColumn": 4,
@@ -1701,14 +1682,14 @@
             },
             {
                 "to": {
-                    "startLine": 263,
+                    "startLine": 262,
                     "startColumn": 4,
-                    "startOffset": 19133,
+                    "startOffset": 19064,
                     "endColumn": 56,
-                    "endOffset": 19185
+                    "endOffset": 19116
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 240,
                         "startColumn": 4,
@@ -1720,14 +1701,14 @@
             },
             {
                 "to": {
-                    "startLine": 264,
+                    "startLine": 263,
                     "startColumn": 4,
-                    "startOffset": 19190,
+                    "startOffset": 19121,
                     "endColumn": 57,
-                    "endOffset": 19243
+                    "endOffset": 19174
                 },
                 "from": {
-                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 241,
                         "startColumn": 4,

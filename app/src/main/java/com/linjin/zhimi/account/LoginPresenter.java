@@ -7,7 +7,8 @@ import com.linjin.zhimi.event.LoginSuccessfulEvent;
 import com.linjin.zhimi.rest.ApiCode;
 import com.tinggu.common.utils.LogUtils;
 
-import de.greenrobot.event.EventBus;
+import org.greenrobot.eventbus.EventBus;
+
 import rx.Observable;
 import rx.Subscriber;
 

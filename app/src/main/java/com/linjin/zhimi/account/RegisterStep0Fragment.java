@@ -58,7 +58,7 @@ public class RegisterStep0Fragment extends RegisterStepBaseFragment {
         String password = evPassword.getText().toString();
         presenter.setPhoneAndPassword(phone, password);
         presenter.nextStep();
-//        TrackUtils.getInstance().onEvent("Register_rp_register");
+//        TrackUtils.getInstance().onTrackEvent("Register_rp_register");
     }
     
 

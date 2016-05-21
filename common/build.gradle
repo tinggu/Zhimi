@@ -35,7 +35,7 @@ dependencies {
     // 基于规则的Android UI输入验证库
     compile 'com.mobsandgeeks:android-saripaar:2.0.2'
     //eventbus
-    compile 'de.greenrobot:eventbus:2.4.0'
+    compile 'org.greenrobot:eventbus:3.0.0'
     
     
 //    //七牛sdk

@@ -61,7 +61,7 @@ public class RegisterStep2Fragment extends RegisterStepBaseFragment {
     public void onValidationSucceeded() {
         presenter.setName(evName.getText().toString());
         presenter.nextStep();
-//        TrackUtils.getInstance().onEvent("Register_rp_register");
+//        TrackUtils.getInstance().onTrackEvent("Register_rp_register");
     }
 
 

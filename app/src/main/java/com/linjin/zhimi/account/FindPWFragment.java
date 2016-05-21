@@ -194,7 +194,7 @@ public class FindPWFragment
     public void onClick(View view) {
         int id = view.getId();
         if (id == R.id.btn_reset_password) {
-            TrackUtils.getInstance().onEvent("Register_fp1_next");
+            TrackUtils.getInstance().onTrackEvent("Register_fp1_next");
             validator.validate();
         } else if (id == R.id.tv_get_code) {
             String mobileNum = evPhonenum.getText().toString();
@@ -204,7 +204,7 @@ public class FindPWFragment
             } else if (mobileNum.length() == 11) {
                 countDown();
                 presenter.doGetCheckCode(mobileNum);
-                /*AppProvide.getInstance().onEvent("Register_fp_verification");*/
+                /*AppProvide.getInstance().onTrackEvent("Register_fp_verification");*/
             } else {
                 String message = getContext().getString(R.string.register_error_phone_invalid);
                 showTip(message);

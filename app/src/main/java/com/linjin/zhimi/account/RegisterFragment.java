@@ -207,7 +207,7 @@ public class RegisterFragment
             String url = BandConfig.h5_use_protocol;
             String title = getString(R.string.use_protocol);
             IntentStarter.showProtocal(accuntActivity, url, title);
-            TrackUtils.getInstance().onEvent("Register_declaration");
+            TrackUtils.getInstance().onTrackEvent("Register_declaration");
 
         } else if (id == R.id.tv_get_code) {
             String mobileNum = evPhonenum.getText().toString();
@@ -219,9 +219,9 @@ public class RegisterFragment
                     countDown();
                     presenter.doGetCheckCode(mobileNum);
                     if (isGetcode) {
-                        TrackUtils.getInstance().onEvent("Register_rp_nextsend");
+                        TrackUtils.getInstance().onTrackEvent("Register_rp_nextsend");
                     } else {
-                        /*AppProvide.getInstance().onEvent("Register_rp_verification");*/
+                        /*AppProvide.getInstance().onTrackEvent("Register_rp_verification");*/
                         isGetcode = true;
                     }
                 } else {
@@ -268,7 +268,7 @@ public class RegisterFragment
         String mobileNum = evPhonenum.getText().toString();
         String password = evPassword.getText().toString();
         String code = evValidationCode.getText().toString();
-        TrackUtils.getInstance().onEvent("Register_rp_register");
+        TrackUtils.getInstance().onTrackEvent("Register_rp_register");
 //        TalkingDataAppCpa.onRegister(AppProvide.dataCenter().getUserID());
         getPresenter().doRegister(new AuthCredentials(mobileNum, password, code));
 //        String inviteCode = evInvitationMobile.getText() == null ? "" : evInvitationMobile.getText().toString();

@@ -11,19 +11,19 @@ public final class R {
 		public static final int scale_with_alpha = 0x7f060000;
 	}
 	public static final class attr {
-		public static final int si_animator = 0x7f01013b;
-		public static final int si_animator_reverse = 0x7f01013c;
-		public static final int si_drawable = 0x7f01013d;
-		public static final int si_drawable_unselected = 0x7f01013e;
-		public static final int si_height = 0x7f010139;
-		public static final int si_margin = 0x7f01013a;
-		public static final int si_width = 0x7f010138;
+		public static final int si_animator = 0x7f01013d;
+		public static final int si_animator_reverse = 0x7f01013e;
+		public static final int si_drawable = 0x7f01013f;
+		public static final int si_drawable_unselected = 0x7f010140;
+		public static final int si_height = 0x7f01013b;
+		public static final int si_margin = 0x7f01013c;
+		public static final int si_width = 0x7f01013a;
 	}
 	public static final class drawable {
-		public static final int white_radius = 0x7f02005c;
+		public static final int white_radius = 0x7f02005d;
 	}
 	public static final class styleable {
-		public static final int[] SpriteIndicator = { 0x7f010138, 0x7f010139, 0x7f01013a, 0x7f01013b, 0x7f01013c, 0x7f01013d, 0x7f01013e };
+		public static final int[] SpriteIndicator = { 0x7f01013a, 0x7f01013b, 0x7f01013c, 0x7f01013d, 0x7f01013e, 0x7f01013f, 0x7f010140 };
 		public static final int SpriteIndicator_si_animator = 3;
 		public static final int SpriteIndicator_si_animator_reverse = 4;
 		public static final int SpriteIndicator_si_drawable = 5;

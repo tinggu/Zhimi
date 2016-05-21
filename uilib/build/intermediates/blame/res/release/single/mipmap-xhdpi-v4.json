@@ -28,20 +28,20 @@
         "source": "D:\\GitWork\\Zhimi\\uilib\\src\\main\\res\\mipmap-xhdpi\\switch_bj_bule.png"
     },
     {
-        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\mipmap-xhdpi-v4\\load_progress_12.png",
-        "source": "D:\\GitWork\\Zhimi\\uilib\\src\\main\\res\\mipmap-xhdpi\\load_progress_12.png"
-    },
-    {
         "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\mipmap-xhdpi-v4\\login_icon_delete.png",
         "source": "D:\\GitWork\\Zhimi\\uilib\\src\\main\\res\\mipmap-xhdpi\\login_icon_delete.png"
     },
     {
-        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\mipmap-xhdpi-v4\\switch_bj_white.png",
-        "source": "D:\\GitWork\\Zhimi\\uilib\\src\\main\\res\\mipmap-xhdpi\\switch_bj_white.png"
+        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\mipmap-xhdpi-v4\\load_progress_12.png",
+        "source": "D:\\GitWork\\Zhimi\\uilib\\src\\main\\res\\mipmap-xhdpi\\load_progress_12.png"
     },
     {
         "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\mipmap-xhdpi-v4\\load_progress_5.png",
         "source": "D:\\GitWork\\Zhimi\\uilib\\src\\main\\res\\mipmap-xhdpi\\load_progress_5.png"
+    },
+    {
+        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\mipmap-xhdpi-v4\\switch_bj_white.png",
+        "source": "D:\\GitWork\\Zhimi\\uilib\\src\\main\\res\\mipmap-xhdpi\\switch_bj_white.png"
     },
     {
         "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\mipmap-xhdpi-v4\\load_progress_7.png",
@@ -52,12 +52,12 @@
         "source": "D:\\GitWork\\Zhimi\\uilib\\src\\main\\res\\mipmap-xhdpi\\load_progress_0.png"
     },
     {
-        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\mipmap-xhdpi-v4\\load_progress_10.png",
-        "source": "D:\\GitWork\\Zhimi\\uilib\\src\\main\\res\\mipmap-xhdpi\\load_progress_10.png"
-    },
-    {
         "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\mipmap-xhdpi-v4\\switch_handle.png",
         "source": "D:\\GitWork\\Zhimi\\uilib\\src\\main\\res\\mipmap-xhdpi\\switch_handle.png"
+    },
+    {
+        "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\mipmap-xhdpi-v4\\load_progress_10.png",
+        "source": "D:\\GitWork\\Zhimi\\uilib\\src\\main\\res\\mipmap-xhdpi\\load_progress_10.png"
     },
     {
         "merged": "D:\\GitWork\\Zhimi\\uilib\\build\\intermediates\\res\\merged\\release\\mipmap-xhdpi-v4\\load_progress_2.png",
