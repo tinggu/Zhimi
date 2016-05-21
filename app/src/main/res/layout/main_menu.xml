@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="160dp"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color_menu_bg"
     android:orientation="vertical">
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="66dp"
+        style="@style/MainMenu.Text"
         android:background="@color/color_menu_title_bg"
-        android:textColor="@color/white" />
+        android:drawableRight="@null"
+        android:text="匿题分类"  />
 
     <ListView
         android:layout_width="match_parent"
@@ -20,19 +20,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/color_menu_title_bg"
-
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/tv_card_manager"
-            style="@style/SelfTextView"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="10dp" 
-            android:drawableRight="@mipmap/cell_prev"
-            android:text="身份管理"/>
+            android:id="@+id/tv_new"
+            style="@style/MainMenu.Text"
+            android:text="最新匿题" />
 
-        <View style="@style/Login.View" />
+        <View style="@style/MainMenu.Line" />
+
+        <TextView
+            android:id="@+id/tv_collect"
+            style="@style/MainMenu.Text"
+            android:text="收藏的回答" />
+
+        <View style="@style/MainMenu.Line" />
+
+        <TextView
+            android:id="@+id/tv_draft"
+            style="@style/MainMenu.Text"
+            android:text="回答草稿" />
+
     </LinearLayout>
 </LinearLayout>

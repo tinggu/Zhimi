@@ -2,6 +2,7 @@ package com.linjin.zhimi.widget;
 
 import android.content.Context;
 import android.support.annotation.ColorRes;
+import android.support.annotation.DrawableRes;
 import android.support.annotation.StringRes;
 import android.util.AttributeSet;
 import android.view.View;
@@ -38,6 +39,9 @@ public class TopActionBar extends RelativeLayout {
 
     @Bind(R.id.tv_action)
     TextView tv_action;
+
+    @Bind(R.id.iv_action)
+    ImageView iv_action;
 
     @Bind(R.id.bottom_line)
     View bottom_line;
@@ -98,14 +102,16 @@ public class TopActionBar extends RelativeLayout {
     }
 
     public void setActionText(@StringRes int resid) {
+        tv_action.setVisibility(View.VISIBLE);
         tv_action.setText(resid);
     }
 
     public void setActionText(String text) {
+        tv_action.setVisibility(View.VISIBLE);
         tv_action.setText(text);
     }
 
-    public void showAction() {
+    public void showActionText() {
         tv_action.setVisibility(VISIBLE);
     }
 
@@ -133,6 +139,12 @@ public class TopActionBar extends RelativeLayout {
 
     public void hideAction() {
         tv_action.setVisibility(View.GONE);
+        iv_action.setVisibility(View.GONE);
+    }
+
+    public void setActionImageResource(@DrawableRes int resId) {
+        iv_action.setVisibility(View.VISIBLE);
+        iv_action.setImageResource(resId);
     }
 
     public void setBackType(int type) {
@@ -145,7 +157,7 @@ public class TopActionBar extends RelativeLayout {
         }
     }
 
-    @OnClick({R.id.iv_back, R.id.tv_back, R.id.tv_action})
+    @OnClick({R.id.iv_back, R.id.tv_back, R.id.tv_action, R.id.iv_action})
     public void onClick(View view) {
         int id = view.getId();
         switch (id) {
@@ -157,6 +169,11 @@ public class TopActionBar extends RelativeLayout {
                 break;
 
             case R.id.tv_action:
+                if (actionListener != null) {
+                    actionListener.onAction();
+                }
+                break;
+            case R.id.iv_action:
                 if (actionListener != null) {
                     actionListener.onAction();
                 }

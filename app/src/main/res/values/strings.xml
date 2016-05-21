@@ -4,6 +4,7 @@
     <!--通用-->
     <string name="text_finish">完成</string>
     <string name="text_cancel">取消</string>
+    <string name="text_confirm">确定</string>
     <string name="text_back">返回</string>
     <string name="text_save">保存</string>
     <string name="text_next">下一步</string>

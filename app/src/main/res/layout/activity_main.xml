@@ -8,9 +8,11 @@
     <FrameLayout
         android:id="@+id/fragmentContainer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom"/>
 
     <include 
+        android:id="@+id/bottom"
         layout="@layout/main_bottom_radio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

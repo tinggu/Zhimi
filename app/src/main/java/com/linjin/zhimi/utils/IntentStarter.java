@@ -10,6 +10,7 @@ import com.linjin.zhimi.R;
 import com.linjin.zhimi.account.AccuntActivity;
 import com.linjin.zhimi.main.MainActivity;
 import com.linjin.zhimi.main.WebViewActivity;
+import com.linjin.zhimi.publish.PublishActivity;
 
 /**
  * Description:
@@ -64,6 +65,12 @@ public class IntentStarter {
         }
     }
 
+    public static void showPublish(Activity activity) {
+        Intent i = new Intent(activity, PublishActivity.class);
+        activity.startActivity(i);
+        activity.overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+    }
+
     public static void showProtocal(Activity activity, String url, String title) {
         Intent i = new Intent(activity, WebViewActivity.class);
         i.putExtra(EXTRA_TITLE, title);
@@ -82,6 +89,7 @@ public class IntentStarter {
         intent.putExtra("sms_body", msg);
         activity.startActivity(intent);
     }
+
 
     
 }
