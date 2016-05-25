@@ -1,6 +1,7 @@
 package com.linjin.zhimi.publish;
 
 import android.annotation.SuppressLint;
+import android.util.Log;
 
 import com.cyou.ui.ClearableEditText;
 import com.linjin.zhimi.R;
@@ -39,15 +40,17 @@ public class PublishStep1Fragment extends PublishStepBaseFragment {
         return R.layout.fragment_register_step3;
     }
 
-   
-
 
     @Override
-    public void onValidationSucceeded() {
-//        presenter.setContent(evContent.getText().toString());
-//        presenter.nextStep();
-        
-//        TrackUtils.getInstance().onTrackEvent("Register_rp_register");
+    protected void initView() {
+        super.initView();
+        topActionBar.setTitle("问题内容");
+        Log.i("code", " initView: " + getClass().getName());
+    }
+
+    @Override
+    protected void validate() {
+
     }
 
 

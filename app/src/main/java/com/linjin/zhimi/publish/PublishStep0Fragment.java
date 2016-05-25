@@ -2,8 +2,10 @@ package com.linjin.zhimi.publish;
 
 import android.annotation.SuppressLint;
 import android.support.v7.widget.AppCompatEditText;
+import android.util.Log;
 
 import com.linjin.zhimi.R;
+import com.linjin.zhimi.widget.TopActionBar;
 import com.mobsandgeeks.saripaar.annotation.Length;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import com.mobsandgeeks.saripaar.annotation.Order;
@@ -20,15 +22,7 @@ import butterknife.Bind;
 @SuppressLint("ValidFragment")
 public class PublishStep0Fragment extends PublishStepBaseFragment {
   
-
-    @NotEmpty(messageResId = R.string.login_error_name_empty, sequence = 0)
-    @Length(max = 15, sequence = 1)
-    @Order(0)
-    @Bind(R.id.ev_title)
-    AppCompatEditText evContent;
-
-     
-
+    
     public PublishStep0Fragment(PublshPresenter presenter) {
         super(presenter);
     }
@@ -37,13 +31,20 @@ public class PublishStep0Fragment extends PublishStepBaseFragment {
     protected int getLayoutRes() {
         return R.layout.fragment_publish_step0;
     }
-    
+
     @Override
-    public void onValidationSucceeded() {
-        presenter.setContent(evContent.getText().toString());
-        presenter.nextStep();
-//        TrackUtils.getInstance().onTrackEvent("Register_rp_register");
+    protected void initView() { 
+        super.initView();
+        topActionBar.setTitle("问题属于");
+        Log.i("code", " initView: " + getClass().getName());
     }
+
+    @Override
+    protected void validate() {
+        
+    }
+
+    
 
 
 }

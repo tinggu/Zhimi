@@ -12,6 +12,8 @@
     <color name="red">#F44336</color>
     <color name="blue">#0066FF</color>
     <color name="yellow">#ffce54</color>
+    <color name="grey">#bbbbbb</color>
+    <color name="discovery_bg">#f5f8fa</color>
 
     <color name="color_base">#f3f3f3</color>
     <color name="text_blue">#1da1f2</color>

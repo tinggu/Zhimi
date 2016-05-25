@@ -32,9 +32,7 @@ import butterknife.Bind;
 @SuppressLint("ValidFragment")
 public abstract class PublishStepBaseFragment
         extends BaseMvpFragment<PublicView, PublshPresenter>
-        implements MvpView, Validator.ValidationListener {
-
-    protected Validator validator;
+        implements MvpView {
 
     @Bind(R.id.topActionBar)
     TopActionBar topActionBar;
@@ -47,8 +45,6 @@ public abstract class PublishStepBaseFragment
     }
 
     protected void initView() {
-        validator = new Validator(this);
-        validator.setValidationListener(this);
         
         topActionBar.setBackListener(new TopActionBar.BackListener() {
             @Override
@@ -60,11 +56,13 @@ public abstract class PublishStepBaseFragment
         topActionBar.setActionListener(new TopActionBar.ActionListener() {
             @Override
             public void onAction() {
-                validator.validate();
+                validate();
             }
         });
         Log.i("code", " initView: " + getClass().getName());
     }
+
+    protected abstract void validate();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -96,25 +94,5 @@ public abstract class PublishStepBaseFragment
     public Context getContext() {
         return getActivity();
     }
-
-    @Override
-    public abstract void onValidationSucceeded();
-
-    @Override
-    public void onValidationFailed(List<ValidationError> errors) {
-        for (ValidationError error : errors) {
-//            View view = error.getView();
-//            if (view instanceof EditText) {
-//                view.clearAnimation();
-//                Animation shake = AnimationUtils.loadAnimation(getActivity(), R.anim.shake);
-//                view.startAnimation(shake);
-//            }
-            String message = error.getCollatedErrorMessage(getActivity());
-            LogUtils.e("register", "register error == " + message);
-            toast(message.split("\n")[0]);
-            return;
-        }
-
-    }
-
+    
 }

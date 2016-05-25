@@ -135,7 +135,7 @@ public class CharSideBar extends View {
 
         switch (action) {
             case MotionEvent.ACTION_UP:
-//                setBackgroundDrawable(new ColorDrawable(0x00000000));
+//                setBackgroundDrawable(latest ColorDrawable(0x00000000));
                 choose = -1;//
                 invalidate();
                 if (mTextDialog != null) {

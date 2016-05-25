@@ -20,7 +20,7 @@ public class Constants {
 //    public final static String TD_APP_ID = "842192F1FC1CE49D57D66BCEE4A35BC5";
 
     /**
-     * create new question : select pic
+     * create latest question : select pic
      */
     public final static int REQUEST_CODE_CREATE_FROM_PHOTO = 1;
     public final static int REQUEST_CODE_CREATE_FROM_CAMERA = 2;

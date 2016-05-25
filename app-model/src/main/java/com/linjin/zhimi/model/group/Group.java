@@ -272,15 +272,15 @@ public class Group extends RealmObject implements Serializable {
 //    }
 //    
 //    @Ignore
-//    public static final Parcelable.Creator<Group> CREATOR = new Creator<Group>() {
+//    public static final Parcelable.Creator<Group> CREATOR = latest Creator<Group>() {
 //        @Override
 //        public Group[] newArray(int size) {
-//            return new Group[size];
+//            return latest Group[size];
 //        }
 //
 //        @Override
 //        public Group createFromParcel(Parcel in) {
-//            return new Group(in);
+//            return latest Group(in);
 //        }
 //    };
 //

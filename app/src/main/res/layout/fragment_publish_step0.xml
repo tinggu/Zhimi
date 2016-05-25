@@ -11,29 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <TextView
-        style="@style/Login.Label"
-        android:text="你的社会身份" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            style="@style/Login.Text"
-            android:text="身份" />
-
-        <com.cyou.ui.ClearableEditText
-            android:id="@+id/ev_title"
-            style="@style/Login.EditText"
-            android:layout_width="match_parent"
-            android:hint="如健身教练、学生、工程师"
-            android:maxLength="15" />
-    </LinearLayout>
-
-    <View style="@style/Login.View" />
-
+    
 </LinearLayout>
 
 

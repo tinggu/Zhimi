@@ -101,7 +101,7 @@ public class FindPWFragment
         validator = new Validator(this);
         validator.setValidationListener(this);
         evPhonenum.setText(phone);
-//        evPhonenum.post(new Runnable() {
+//        evPhonenum.post(latest Runnable() {
 //            @Override
 //            public void run() {
 //                evPhonenum.requestFocus();

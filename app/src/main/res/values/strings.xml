@@ -8,6 +8,10 @@
     <string name="text_back">返回</string>
     <string name="text_save">保存</string>
     <string name="text_next">下一步</string>
+    <string name="text_watch">关注的人</string>
+    <string name="text_all">全部</string>
+    
+    <string name="action_watch">关注</string>
 
     <!-- Strings related to login -->
     <string name="prompt_mobile_num">输入登录手机号</string>

@@ -124,7 +124,7 @@ public class CacheUtils {
                 insertOrUpdates(groupList.list);
             }
         });
-//        observable.map(new Func1<GroupList, List<Group>>() {
+//        observable.map(latest Func1<GroupList, List<Group>>() {
 //            @Override
 //            public List<Group> call(GroupList groupList) {
 //                insertOrUpdates(groupList.list);

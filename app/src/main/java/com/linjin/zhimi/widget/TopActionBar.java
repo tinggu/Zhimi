@@ -97,6 +97,7 @@ public class TopActionBar extends RelativeLayout {
     }
 
     public void setBackText(String title) {
+        iv_back.setVisibility(View.GONE);
         tv_back.setVisibility(View.VISIBLE);
         tv_back.setText(title);
     }

@@ -43,7 +43,7 @@ public class RegisterPresenter extends AccuntPresenter<RegisterView> {
 
     public RegisterPresenter(AccuntActivity accuntActivity) {
         this.accuntActivity = accuntActivity;
-//        eh = new EventHandler() {
+//        eh = latest EventHandler() {
 //
 //            @Override
 //            public void afterEvent(int event, int result, Object data) {

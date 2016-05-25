@@ -76,7 +76,7 @@ public class DateUtil {
     }
 
 
-//    Time time = new Time();
+//    Time time = latest Time();
     // 设置当前时间
     // time.setToNow();
     // 获取当前时区

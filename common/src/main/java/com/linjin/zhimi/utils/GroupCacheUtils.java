@@ -142,7 +142,7 @@ public class GroupCacheUtils {
 
         return observable.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
 
-//        return observable.compose(new AndroidSchedulerTransformer());
+//        return observable.compose(latest AndroidSchedulerTransformer());
     }
 
 }

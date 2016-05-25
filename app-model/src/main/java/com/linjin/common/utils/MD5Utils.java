@@ -123,7 +123,7 @@ public class MD5Utils {
 //            MessageDigest md = MessageDigest.getInstance("MD5");
 //            md.update(value);
 //            byte[] temp = md.digest();
-//            StringBuilder sb = new StringBuilder();
+//            StringBuilder sb = latest StringBuilder();
 //            for (byte b : temp) {
 //                sb.append(Integer.toHexString(b & 0xff));
 //            }

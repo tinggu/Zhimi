@@ -84,11 +84,11 @@ public abstract class RealmBaseRecyerViewAdapter<VH extends BaseViewHolder, T ex
      * Updates the RealmResults associated to the Adapter. Useful when the query has been changed.
      * If the query does not change you might consider using the automaticUpdate feature.
      *
-     * @param queryResults the new RealmResults coming from the new query.
+     * @param queryResults the latest RealmResults coming from the latest query.
      */
     public void updateRealmResults(RealmResults<T> queryResults) {
         if (listener != null) {
-            // Making sure that Adapter is refreshed correctly if new RealmResults come from another Realm
+            // Making sure that Adapter is refreshed correctly if latest RealmResults come from another Realm
             if (this.realmResults != null) {
                 this.realmResults.realm.removeChangeListener(listener);
             }

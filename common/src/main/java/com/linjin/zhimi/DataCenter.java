@@ -75,7 +75,7 @@ public class DataCenter {
         Context context = QuickApplication.getInstance();
         try {
             DataInputStream dataInputStream = new DataInputStream(context.openFileInput(USER_FILE_NAME));
-//            user = new User(dataInputStream);
+//            user = latest User(dataInputStream);
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -118,7 +118,7 @@ public class DataCenter {
 //        File file = context.getFileStreamPath(USER_FILE_NAME);
 //        file.deleteOnExit();
 //        //实现3
-//        File file = new File(context.getFilesDir(), USER_FILE_NAME);
+//        File file = latest File(context.getFilesDir(), USER_FILE_NAME);
 //        file.delete();
 
         this.user = null;

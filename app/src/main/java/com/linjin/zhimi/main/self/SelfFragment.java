@@ -72,7 +72,7 @@ public class SelfFragment
 //        Intent intent;
 //        switch (view.getId()) {
 //            case R.id.tv_card_manager:
-//                intent = new Intent(getActivity(), CardManageActivity.class);
+//                intent = latest Intent(getActivity(), CardManageActivity.class);
 //                startActivity(intent);
 //                break;
 //            case R.id.tv_invite:
@@ -85,7 +85,7 @@ public class SelfFragment
 //                IntentStarter.showNoticeInfo(getActivity(), 147, 10);
 //                break;
 //            case R.id.tv_location:
-//                Intent i = new Intent(getActivity(), LocationActivity.class);
+//                Intent i = latest Intent(getActivity(), LocationActivity.class);
 //                startActivity(i);
 //                break;
 //            case R.id.tv_exit:
@@ -158,7 +158,7 @@ public class SelfFragment
 //
 //        float x = ev.getX();
 //        float y = ev.getY();
-//        int[] location = new int[2];
+//        int[] location = latest int[2];
 //        v.getLocationOnScreen(location);
 //        float left = v.getLeft();
 //        float right = left + v.getWidth();

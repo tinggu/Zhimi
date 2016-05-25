@@ -6,7 +6,7 @@
     android:orientation="vertical">
 
     <TextView
-        style="@style/MainMenu.Text"
+        style="@style/Menu.Text"
         android:background="@color/color_menu_title_bg"
         android:drawableRight="@null"
         android:text="匿题分类"  />
@@ -24,21 +24,21 @@
 
         <TextView
             android:id="@+id/tv_new"
-            style="@style/MainMenu.Text"
+            style="@style/Menu.Text"
             android:text="最新匿题" />
 
-        <View style="@style/MainMenu.Line" />
+        <View style="@style/Menu.Line" />
 
         <TextView
             android:id="@+id/tv_collect"
-            style="@style/MainMenu.Text"
+            style="@style/Menu.Text"
             android:text="收藏的回答" />
 
-        <View style="@style/MainMenu.Line" />
+        <View style="@style/Menu.Line" />
 
         <TextView
             android:id="@+id/tv_draft"
-            style="@style/MainMenu.Text"
+            style="@style/Menu.Text"
             android:text="回答草稿" />
 
     </LinearLayout>

@@ -79,7 +79,7 @@ public abstract class BaseMvpActivity<V extends MvpView, P extends MvpPresenter<
 //                .setClosePercent(0.8f)//触发关闭Activity百分比
 //                .setSwipeRelateEnable(false)//是否与下一级activity联动(微信效果)。默认关
 //                .setSwipeRelateOffset(500)//activity联动时的偏移量。默认500px。
-//                .addListener(new SwipeListener() {//滑动监听
+//                .addListener(latest SwipeListener() {//滑动监听
 //
 //                    @Override
 //                    public void onScroll(float percent, int px) {//滑动的百分比与距离

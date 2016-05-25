@@ -23,7 +23,7 @@ public abstract class BaseListenerAdapter<VH extends BaseViewHolder> extends Ada
 //    @Override
 //    public VH onCreateViewHolder(ViewGroup parent, int viewType) {
 //        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item, parent,false);
-//        VH vh = new VH(itemView, mItemClickListener,mItemLongClickListener);
+//        VH vh = latest VH(itemView, mItemClickListener,mItemLongClickListener);
 //        return vh;
 //    }
 

@@ -1,6 +1,7 @@
 package com.linjin.zhimi.publish;
 
 import android.annotation.SuppressLint;
+import android.util.Log;
 
 import com.cyou.ui.ClearableEditText;
 import com.linjin.zhimi.R;
@@ -20,16 +21,7 @@ import butterknife.Bind;
  */
 @SuppressLint("ValidFragment")
 public class PublishStep2Fragment extends PublishStepBaseFragment {
-  
-
-    @NotEmpty(messageResId = R.string.login_error_name_empty, sequence = 0)
-    @Length(max = 15, sequence = 1)
-    @Order(0)
-    @Bind(R.id.ev_title)
-    ClearableEditText evTitle;
-
-     
-
+    
     public PublishStep2Fragment(PublshPresenter presenter) {
         super(presenter);
     }
@@ -39,16 +31,17 @@ public class PublishStep2Fragment extends PublishStepBaseFragment {
         return R.layout.fragment_register_step3;
     }
 
-   
-
 
     @Override
-    public void onValidationSucceeded() {
-//        presenter.setContent(evContent.getText().toString());
-//        presenter.nextStep();
-        
-        
-//        TrackUtils.getInstance().onTrackEvent("Register_rp_register");
+    protected void initView() {
+        super.initView();
+        topActionBar.setTitle("补充描述（选填）");
+        Log.i("code", " initView: " + getClass().getName());
+    }
+
+    @Override
+    protected void validate() {
+
     }
 
 

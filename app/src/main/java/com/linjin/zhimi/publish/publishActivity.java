@@ -69,7 +69,7 @@ public class PublishActivity extends BaseMvpActivity {
     }
 
     public void showPublish2() {
-        PublishStep0Fragment registerFragment = new PublishStep0Fragment(publshPresenter);
+        PublishStep2Fragment registerFragment = new PublishStep2Fragment(publshPresenter);
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.fragmentContainer, registerFragment);
         transaction.addToBackStack("step2");
@@ -83,7 +83,7 @@ public class PublishActivity extends BaseMvpActivity {
                 .content(content)
                 .positiveText(R.string.text_confirm)
                 .negativeText(R.string.text_cancel)
-                .onNegative(new MaterialDialog.SingleButtonCallback() {
+                .onPositive(new MaterialDialog.SingleButtonCallback() {
                     @Override
                     public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
                         finish();

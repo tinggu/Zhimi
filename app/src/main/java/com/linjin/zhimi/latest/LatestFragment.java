@@ -1,4 +1,4 @@
-package com.linjin.zhimi.main.topic;
+package com.linjin.zhimi.latest;
 
 
 import android.os.Bundle;
@@ -9,7 +9,8 @@ import android.view.View;
 
 import com.linjin.zhimi.R;
 import com.linjin.zhimi.base.loadmore.BaseLoadMoreFragment;
-import com.linjin.zhimi.latest.LatestPresenter;
+import com.linjin.zhimi.main.topic.TopicPresenter;
+import com.linjin.zhimi.main.topic.TopicView;
 import com.linjin.zhimi.model.topic.TopicAnswer;
 import com.linjin.zhimi.utils.IntentStarter;
 import com.linjin.zhimi.widget.TopActionBar;
@@ -17,8 +18,8 @@ import com.linjin.zhimi.widget.TopActionBar;
 import butterknife.Bind;
 
 
-public class TopicFragment 
-        extends BaseLoadMoreFragment<SwipeRefreshLayout, TopicAnswer, TopicView, TopicPresenter> {
+public class LatestFragment 
+        extends BaseLoadMoreFragment<SwipeRefreshLayout, TopicAnswer, TopicView, LatestPresenter> {
     
     @Bind(R.id.topActionBar)
     TopActionBar topActionBar;
@@ -29,7 +30,7 @@ public class TopicFragment
     @Bind(R.id.right)
     View right;
     
-//    LatestPresenter
+    
     
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
@@ -38,8 +39,7 @@ public class TopicFragment
     }
     
     private void initView(){
-        topActionBar.setTitle("热门匿题"); 
-        topActionBar.setBackText("提问");
+        topActionBar.setTitle("最新匿题"); 
         topActionBar.hideAction();
         topActionBar.setActionImageResource(R.mipmap.topic_sidebar);
         topActionBar.setBackListener(new TopActionBar.BackListener() {
@@ -102,7 +102,7 @@ public class TopicFragment
     }
 
     @Override
-    public TopicPresenter createPresenter() {
-        return new TopicPresenter();
+    public LatestPresenter createPresenter() {
+        return new LatestPresenter(getActivity());
     }
 }

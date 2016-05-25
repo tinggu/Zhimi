@@ -79,7 +79,7 @@ public class LocalStorageProvider extends DocumentsProvider {
             newFile.createNewFile();
             return newFile.getAbsolutePath();
         } catch (IOException e) {
-            Log.e(LocalStorageProvider.class.getSimpleName(), "Error creating new file " + newFile);
+            Log.e(LocalStorageProvider.class.getSimpleName(), "Error creating latest file " + newFile);
         }
         return null;
     }

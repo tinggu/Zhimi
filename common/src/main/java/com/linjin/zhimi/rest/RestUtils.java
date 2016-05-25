@@ -54,8 +54,8 @@ public class RestUtils implements AppConstants, ParameterKeys, ServerConstants {
         Gson gson = new GsonBuilder()
                 .excludeFieldsWithoutExposeAnnotation()
                 .create();
-//        RestAdapter restAdapter = new RestAdapter.Builder()
-//                .setConverter(new GsonConverter(gson))
+//        RestAdapter restAdapter = latest RestAdapter.Builder()
+//                .setConverter(latest GsonConverter(gson))
 //                .build();
         builder.addConverterFactory(GsonConverterFactory.create(gson));
         builder.baseUrl(API_BASE_URL);//设置远程地址
@@ -167,8 +167,8 @@ public class RestUtils implements AppConstants, ParameterKeys, ServerConstants {
                     .readTimeout(HTTP_READ_TIMEOUT, TimeUnit.MILLISECONDS).
                     addInterceptor(getRequestInterceptor());
             okHttpClient = builder.build();
-//            okHttpClient = new OkHttpClient();
-//            okHttpClient.setCache(new Cache(cacheDir, RESPONSE_CACHE_SIZE));
+//            okHttpClient = latest OkHttpClient();
+//            okHttpClient.setCache(latest Cache(cacheDir, RESPONSE_CACHE_SIZE));
 //            okHttpClient.setConnectTimeout(HTTP_CONNECT_TIMEOUT, TimeUnit.MILLISECONDS);
 //            okHttpClient.setReadTimeout(HTTP_READ_TIMEOUT, TimeUnit.MILLISECONDS);
 //            okHttpClient.interceptors().add(getRequestInterceptor());
