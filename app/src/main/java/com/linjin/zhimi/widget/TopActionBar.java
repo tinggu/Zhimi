@@ -133,7 +133,7 @@ public class TopActionBar extends RelativeLayout {
         bottom_line.setVisibility(GONE);
     }
 
-    public void hideBackAndFinish() {
+    public void hideBack() {
         tv_back.setVisibility(View.GONE);
         iv_back.setVisibility(View.GONE);
     }

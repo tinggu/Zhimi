@@ -2,26 +2,40 @@ package com.linjin.zhimi.main.self;
 
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.cyou.quick.mvp.MvpFragment;
 import com.linjin.zhimi.R;
 import com.linjin.zhimi.model.card.GroupCard;
+import com.linjin.zhimi.widget.TopActionBar;
+
+import butterknife.BindView;
 
 
 public class SelfFragment 
         extends MvpFragment<SelfView, SelfPresenter> 
         implements SelfView{
 
-   
+    @BindView(R.id.topActionBar)
+    TopActionBar topActionBar;
 
-    GroupCard card;
 
-    int initTop = 100;
+//    LatestPresenter
 
-    private View[] items = new View[6];
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        initView();
+    }
 
-    private int indexDown = -1, indexUp = -1, index = -1;
+    private void initView(){
+        topActionBar.setTitle(R.string.radio_dock_4);
+        topActionBar.hideBack();
+        topActionBar.hideAction();
+        topActionBar.setActionImageResource(R.mipmap.topic_sidebar);
+
+    }
 
     @Override
     public SelfPresenter createPresenter() {
@@ -33,12 +47,7 @@ public class SelfFragment
         return R.layout.fragment_self;
     }
 
-    @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-//        initView();
-//        initSelfInfo();
-    }
+   
 
 //    /**
 //     * 个人信息

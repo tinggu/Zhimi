@@ -2,16 +2,17 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SMSSDK/SMSSDK.iml" filepath="$PROJECT_DIR$/SMSSDK/SMSSDK.iml" />
       <module fileurl="file://$PROJECT_DIR$/Zhimi.iml" filepath="$PROJECT_DIR$/Zhimi.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app-model/app-model.iml" filepath="$PROJECT_DIR$/app-model/app-model.iml" />
       <module fileurl="file://$PROJECT_DIR$/base-mvp/base-mvp.iml" filepath="$PROJECT_DIR$/base-mvp/base-mvp.iml" />
       <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/imkit/imkit.iml" filepath="$PROJECT_DIR$/imkit/imkit.iml" />
       <module fileurl="file://$PROJECT_DIR$/mvp-common/mvp-common.iml" filepath="$PROJECT_DIR$/mvp-common/mvp-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/mvp-lce/mvp-lce.iml" filepath="$PROJECT_DIR$/mvp-lce/mvp-lce.iml" />
       <module fileurl="file://$PROJECT_DIR$/mvp-loadmore/mvp-loadmore.iml" filepath="$PROJECT_DIR$/mvp-loadmore/mvp-loadmore.iml" />
       <module fileurl="file://$PROJECT_DIR$/mvp-rx/mvp-rx.iml" filepath="$PROJECT_DIR$/mvp-rx/mvp-rx.iml" />
+      <module fileurl="file://$PROJECT_DIR$/smssdk/SMSSDK.iml" filepath="$PROJECT_DIR$/smssdk/SMSSDK.iml" />
       <module fileurl="file://$PROJECT_DIR$/uilib/uilib.iml" filepath="$PROJECT_DIR$/uilib/uilib.iml" />
       <module fileurl="file://$PROJECT_DIR$/umeng/umeng.iml" filepath="$PROJECT_DIR$/umeng/umeng.iml" />
     </modules>
