@@ -13,7 +13,7 @@ import com.cyou.quick.mvp.MvpBasePresenter;
 import com.cyou.quick.mvp.MvpPresenter;
 import com.linjin.zhimi.R;
 import com.linjin.zhimi.base.BaseMvpActivity;
-import com.linjin.zhimi.main.chat.ChatFragment;
+import com.linjin.zhimi.main.msg.MsgFragment;
 import com.linjin.zhimi.main.discovery.DiscoveryFragment;
 import com.linjin.zhimi.main.self.SelfFragment;
 import com.linjin.zhimi.main.topic.TopicFragment;
@@ -50,7 +50,7 @@ public class MainActivity extends BaseMvpActivity
 
     private TopicFragment topicFragment;
     private DiscoveryFragment discoveryFragment;
-    private ChatFragment chatFragment;
+    private MsgFragment chatFragment;
     private SelfFragment selfFragment;
 
     private int currentTab; // 当前Tab页面索引
@@ -93,12 +93,12 @@ public class MainActivity extends BaseMvpActivity
         if (savedInstanceState != null) { // “内存重启”时调用
             topicFragment = (TopicFragment) fragmentManager.findFragmentByTag("topic");
             discoveryFragment = (DiscoveryFragment) fragmentManager.findFragmentByTag("discovery");
-            chatFragment = (ChatFragment) fragmentManager.findFragmentByTag("chat");
+            chatFragment = (MsgFragment) fragmentManager.findFragmentByTag("chat");
             selfFragment = (SelfFragment) fragmentManager.findFragmentByTag("self");
         } else {
             topicFragment = new TopicFragment();
             discoveryFragment = new DiscoveryFragment();
-            chatFragment = new ChatFragment();
+            chatFragment = new MsgFragment();
             selfFragment = new SelfFragment();
         }
 

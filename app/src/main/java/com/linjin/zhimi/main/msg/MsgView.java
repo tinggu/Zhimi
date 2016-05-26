@@ -1,4 +1,4 @@
-package com.linjin.zhimi.main.chat;
+package com.linjin.zhimi.main.msg;
 
 
 import com.cyou.quick.mvp.loadmore.LoadMoreView;
@@ -11,7 +11,7 @@ import com.cyou.quick.mvp.loadmore.LoadMoreView;
  * Date       : 2015/12/23
  **/
 
-public interface ChatView<M> extends LoadMoreView<M> {
+public interface MsgView<M> extends LoadMoreView<M> {
 
 
 }

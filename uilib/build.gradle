@@ -37,13 +37,8 @@ dependencies {
     //PhotoView
     compile 'com.commit451:PhotoView:1.2.5'
     
-//    //Material Dialog
-//    compile('com.github.afollestad.material-dialogs:core:0.8.5.7@aar') {
-//        transitive = true
-//    }
-
     compile 'com.afollestad.material-dialogs:core:0.8.5.9@aar'
-    compile 'com.afollestad.material-dialogs:commons:0.8.5.9@aar'
+//    compile 'com.afollestad.material-dialogs:commons:0.8.5.9@aar'
     
     // add pickerview
     compile 'com.bigkoo:pickerview:2.0.8'

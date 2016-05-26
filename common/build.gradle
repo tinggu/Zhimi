@@ -22,18 +22,14 @@ dependencies {
     compile project(':base-mvp')
     compile project(':umeng')
     
-//    compile project(':xgpush')
-//    compile project(':umeng-analytics')
-//    compile project(':talkingdata-analytics')
-//    compile project(':tencent-analytics')
-
-    compile files('libs/prettytime-3.2.5.Final.jar')
+//    compile files('libs/prettytime-3.2.5.Final.jar')
 
     //AdapterDelegates
     compile 'com.hannesdorfmann:adapterdelegates2:2.0.0'
     
     // 基于规则的Android UI输入验证库
     compile 'com.mobsandgeeks:android-saripaar:2.0.2'
+    
     //eventbus
     compile 'org.greenrobot:eventbus:3.0.0'
     

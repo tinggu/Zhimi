@@ -1,4 +1,4 @@
-package com.linjin.zhimi.main.chat;
+package com.linjin.zhimi.main.msg;
 
 import com.cyou.quick.mvp.MvpBasePresenter;
 
@@ -10,5 +10,5 @@ import com.cyou.quick.mvp.MvpBasePresenter;
  * Date       : 2016/1/4
  **/
 
-public class ChatPresenter extends MvpBasePresenter {
+public class MsgPresenter extends MvpBasePresenter {
 }

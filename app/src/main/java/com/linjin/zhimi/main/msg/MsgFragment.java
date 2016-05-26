@@ -1,4 +1,4 @@
-package com.linjin.zhimi.main.chat;
+package com.linjin.zhimi.main.msg;
 
 
 import android.os.Bundle;
@@ -13,7 +13,7 @@ import com.linjin.zhimi.widget.TopActionBar;
 import butterknife.BindView;
 
 
-public class ChatFragment extends MvpFragment {
+public class MsgFragment extends MvpFragment {
     @BindView(R.id.topActionBar)
     TopActionBar topActionBar;
 
@@ -36,7 +36,7 @@ public class ChatFragment extends MvpFragment {
 
     @Override
     public MvpPresenter createPresenter() {
-        return new ChatPresenter();
+        return new MsgPresenter();
     }
 
 
