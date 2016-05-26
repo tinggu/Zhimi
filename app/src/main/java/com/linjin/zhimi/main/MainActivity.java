@@ -13,8 +13,8 @@ import com.cyou.quick.mvp.MvpBasePresenter;
 import com.cyou.quick.mvp.MvpPresenter;
 import com.linjin.zhimi.R;
 import com.linjin.zhimi.base.BaseMvpActivity;
-import com.linjin.zhimi.main.msg.MsgFragment;
 import com.linjin.zhimi.main.discovery.DiscoveryFragment;
+import com.linjin.zhimi.main.msg.MsgFragment;
 import com.linjin.zhimi.main.self.SelfFragment;
 import com.linjin.zhimi.main.topic.TopicFragment;
 
@@ -50,7 +50,7 @@ public class MainActivity extends BaseMvpActivity
 
     private TopicFragment topicFragment;
     private DiscoveryFragment discoveryFragment;
-    private MsgFragment chatFragment;
+    private MsgFragment msgFragment;
     private SelfFragment selfFragment;
 
     private int currentTab; // 当前Tab页面索引
@@ -93,19 +93,19 @@ public class MainActivity extends BaseMvpActivity
         if (savedInstanceState != null) { // “内存重启”时调用
             topicFragment = (TopicFragment) fragmentManager.findFragmentByTag("topic");
             discoveryFragment = (DiscoveryFragment) fragmentManager.findFragmentByTag("discovery");
-            chatFragment = (MsgFragment) fragmentManager.findFragmentByTag("chat");
+            msgFragment = (MsgFragment) fragmentManager.findFragmentByTag("msg");
             selfFragment = (SelfFragment) fragmentManager.findFragmentByTag("self");
         } else {
             topicFragment = new TopicFragment();
             discoveryFragment = new DiscoveryFragment();
-            chatFragment = new MsgFragment();
+            msgFragment = new MsgFragment();
             selfFragment = new SelfFragment();
         }
 
 
         fragments.add(topicFragment);
         fragments.add(discoveryFragment);
-        fragments.add(chatFragment);
+        fragments.add(msgFragment);
         fragments.add(selfFragment);
 
         radioButtons = getChildRadions();
@@ -114,7 +114,7 @@ public class MainActivity extends BaseMvpActivity
 
         ft.add(R.id.fragmentContainer, topicFragment, "topic");
         ft.add(R.id.fragmentContainer, discoveryFragment, "discovery");
-        ft.add(R.id.fragmentContainer, chatFragment, "chat");
+        ft.add(R.id.fragmentContainer, msgFragment, "msg");
         ft.add(R.id.fragmentContainer, selfFragment, "self");
 
 //            ft.add(R.id.fragmentContainer, fragments.get(i),fragments.get(i).getClass().getSimpleName());

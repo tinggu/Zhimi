@@ -1,6 +1,16 @@
 package com.linjin.zhimi.main.msg;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
+
 import com.cyou.quick.mvp.MvpBasePresenter;
+import com.linjin.zhimi.ZhiMiApplication;
+import com.linjin.zhimi.main.MainActivity;
+
+import io.rong.imkit.RongIM;
+import io.rong.imlib.RongIMClient;
 
 /**
  * Description:
@@ -11,4 +21,7 @@ import com.cyou.quick.mvp.MvpBasePresenter;
  **/
 
 public class MsgPresenter extends MvpBasePresenter {
+
+   
+  
 }

@@ -3,13 +3,17 @@ package com.linjin.zhimi.utils;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
+import android.support.v4.app.FragmentActivity;
 
 import com.cyou.quick.QuickApplication;
 import com.linjin.zhimi.DataCenter;
 import com.linjin.zhimi.R;
 import com.linjin.zhimi.account.AccuntActivity;
+import com.linjin.zhimi.friend.apply.ApplyActivity;
+import com.linjin.zhimi.friend.find.FindFriendActivity;
 import com.linjin.zhimi.main.MainActivity;
 import com.linjin.zhimi.main.WebViewActivity;
+import com.linjin.zhimi.main.msg.MsgFragment;
 import com.linjin.zhimi.publish.PublishActivity;
 
 /**
@@ -35,6 +39,18 @@ public class IntentStarter {
     public static final String EXTRA_VOTE_ID = "voteid";
     public static final String EXTRA_NOTICE_ID = "noticeid";
 
+    /**
+     * 发送系统短信
+     *
+     * @param activity
+     */
+    public static void sendMessage(Activity activity, final String msg) {
+        Uri smsToUri = Uri.parse("smsto:");
+        Intent intent = new Intent(Intent.ACTION_SENDTO, smsToUri);
+        intent.putExtra("sms_body", msg);
+        activity.startActivity(intent);
+    }
+    
     public static void enter(Activity activity) {
         DataCenter dataCenter = DataCenter.getInstance();
         Intent intent;
@@ -77,19 +93,14 @@ public class IntentStarter {
         i.putExtra(EXTRA_URL, url);
         activity.startActivity(i);
     }
-    
-    /**
-     * 发送系统短信
-     *
-     * @param activity
-     */
-    public static void sendMessage(Activity activity, final String msg) {
-        Uri smsToUri = Uri.parse("smsto:");
-        Intent intent = new Intent(Intent.ACTION_SENDTO, smsToUri);
-        intent.putExtra("sms_body", msg);
-        activity.startActivity(intent);
+
+    public static void showApply(Activity activity) {
+        Intent i = new Intent(activity, ApplyActivity.class);
+        activity.startActivity(i);
     }
-
-
     
+    public static void showFind(FragmentActivity activity) {
+        Intent i = new Intent(activity, FindFriendActivity.class);
+        activity.startActivity(i);
+    }
 }

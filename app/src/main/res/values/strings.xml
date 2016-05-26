@@ -9,6 +9,8 @@
     <string name="text_save">保存</string>
     <string name="text_next">下一步</string>
     <string name="text_watch">关注的人</string>
+    <string name="text_apply">私聊申请</string>
+    <string name="text_find">查找朋友</string>
     <string name="text_all">全部</string>
     
     <string name="action_watch">关注</string>

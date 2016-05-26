@@ -1,9 +1,11 @@
-package com.linjin.zhimi.publish;
+package com.linjin.zhimi.friend.apply;
 
 
 import android.text.TextUtils;
 
 import com.cyou.quick.mvp.MvpBasePresenter;
+import com.linjin.zhimi.publish.PublishActivity;
+import com.linjin.zhimi.publish.PublishView;
 import com.tinggu.common.utils.KeyboardUtils;
 
 /**
@@ -13,7 +15,7 @@ import com.tinggu.common.utils.KeyboardUtils;
  * Author     : wangjia_bi
  * Date       : 2015/6/11 14:53
  */
-public class PublshPresenter extends MvpBasePresenter<PublishView> {
+public class ApplyPresenter extends MvpBasePresenter<PublishView> {
 
     private PublishActivity publishActivity;
     
@@ -31,7 +33,7 @@ public class PublshPresenter extends MvpBasePresenter<PublishView> {
         this.supplement = supplement;
     }
 
-    public PublshPresenter(PublishActivity publishActivity) {
+    public ApplyPresenter(PublishActivity publishActivity) {
         this.publishActivity = publishActivity;
     }
     

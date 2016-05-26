@@ -62,35 +62,7 @@ public class ZhiMiApplication extends CommonApplication {
              * IMKit SDK调用第一步 初始化
              */
             RongIM.init(this);
-
-            /**c
-             * 融云SDK事件监听处理
-             *
-             * 注册相关代码，只需要在主进程里做。
-             */
-//            if (getApplicationInfo().packageName.equals(getCurProcessName(getApplicationContext()))) {
-//
-//                RongCloudEvent.init(this);
-//                DemoContext.init(this);
-//
-//                new ResourceHandler.Builder().enableBitmapCache().setOutputSizeLimit(120).setType("app").build(this);
-//
-//                Thread.setDefaultUncaughtExceptionHandler(new RongExceptionHandler(this));
-//
-//                try {
-//                    RongIM.registerMessageType(AgreedFriendRequestMessage.class);
-//                    RongIM.registerMessageType(RichContentMessage.class);
-//
-//                    RongIM.registerMessageTemplate(new ContactNotificationMessageProvider());
-//
-//                    RongIM.registerMessageTemplate(new RealTimeLocationMessageProvider());
-//                    //@ 消息模板展示
-//                    RongContext.getInstance().registerConversationTemplate(new NewDiscussionConversationProvider());
-//
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                }
-//            }
+            
         }
     }
 

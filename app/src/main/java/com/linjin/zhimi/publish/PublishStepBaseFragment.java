@@ -24,7 +24,7 @@ import butterknife.BindView;
  */
 @SuppressLint("ValidFragment")
 public abstract class PublishStepBaseFragment
-        extends BaseMvpFragment<PublicView, PublshPresenter>
+        extends BaseMvpFragment<PublishView, PublshPresenter>
         implements MvpView {
 
     @BindView(R.id.topActionBar)

@@ -9,7 +9,7 @@ import com.cyou.quick.mvp.MvpView;
  * Author      wangjia_bi
  * Date        2015/6/12 1453
  */
-public interface PublicView extends MvpView {
+public interface PublishView extends MvpView {
 
     void finish();
     

@@ -1,6 +1,5 @@
 package com.linjin.zhimi.utils;
 
-import com.linjin.zhimi.api.CardApi;
 import com.linjin.zhimi.api.GroupApi;
 import com.linjin.zhimi.model.card.GroupCardList;
 import com.linjin.zhimi.model.group.GroupList;
@@ -42,12 +41,6 @@ public class CacheUtils {
 
     public static void refreshCache() {
 //        //TODO 通过增量接口同步数据无需删除本地缓存
-//        Realm realm = Realm.getDefaultInstance();
-//        clearTable(realm, Group.class);
-//        clearTable(realm, GroupCard.class);
-//        realm.close();
-        updateGroupList();
-        updateGroupCard();
     }
 
 //    private void close() {
@@ -133,30 +126,7 @@ public class CacheUtils {
 //        });
     }
 
-    public static void updateGroupCard() {
-
-        CardApi cardApi = RestUtils.createApi(CardApi.class);
-//        Observable<GroupCardList> observable = cardApi.requestGroupCardList();
-        Observable<GroupCardList> observable = applyScheduler(cardApi.requestGroupCardList());
-        observable.subscribe(new Subscriber<GroupCardList>() {
-            @Override
-            public void onCompleted() {
-                LogUtils.i(TAG, "updateGroupList..... onCompleted ");
-            }
-
-            @Override
-            public void onError(Throwable e) {
-                e.printStackTrace();
-                LogUtils.i(TAG, "updateGroupList..... onError ");
-            }
-
-            @Override
-            public void onNext(GroupCardList cardList) {
-                LogUtils.i(TAG, "updateGroupList..... onNext list size : " + cardList.list.size());
-                insertOrUpdates(cardList.list);
-            }
-        });
-    }
+   
 
     private static <E> Observable<E> applyScheduler(Observable<E> observable) {
         return observable.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());

@@ -5,8 +5,7 @@ import android.os.Handler;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.cyou.quick.mvp.MvpBasePresenter;
-import com.cyou.quick.mvp.MvpPresenter;
+import com.cyou.quick.mvp.MvpView;
 import com.linjin.zhimi.R;
 import com.linjin.zhimi.base.BaseMvpActivity;
 import com.linjin.zhimi.utils.IntentStarter;
@@ -19,7 +18,7 @@ import com.linjin.zhimi.utils.IntentStarter;
  * Author     : wangjia_bi
  * Date       : 2016/1/3 16:56
  */
-public class SplashActivity extends BaseMvpActivity {
+public class SplashActivity extends BaseMvpActivity<MvpView, SplashPresenter> {
     private static final String TAG = "SplashActivity";
     private static final int DELAY_TIME = 1500;
 
@@ -42,6 +41,7 @@ public class SplashActivity extends BaseMvpActivity {
 //            CacheUtils.init(DataCenter.getInstance().getUserID());
 //            CacheUtils.refreshCache();
 //        }
+        getPresenter().loginIM();
         showSplash();
 //        com.igexin.sdk.LeanCloudPushManager.getInstance().initialize(this.getApplicationContext());
     }
@@ -83,8 +83,8 @@ public class SplashActivity extends BaseMvpActivity {
 //    }
 
     @Override
-    public MvpPresenter createPresenter() {
-        return new MvpBasePresenter();
+    public SplashPresenter createPresenter() {
+        return new SplashPresenter(this);
     }
 
 }
