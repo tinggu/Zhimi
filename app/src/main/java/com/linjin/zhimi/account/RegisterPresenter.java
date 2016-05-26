@@ -2,12 +2,12 @@ package com.linjin.zhimi.account;
 
 
 import com.cyou.quick.mvp.rx.scheduler.AndroidSchedulerTransformer;
-import com.linjin.zhimi.model.BaseModel;
-import com.linjin.zhimi.model.account.AuthCredentials;
-import com.linjin.zhimi.model.account.UserModel;
 import com.linjin.zhimi.DataCenter;
 import com.linjin.zhimi.api.AccuntApi;
 import com.linjin.zhimi.event.RegisterSuccessfulEvent;
+import com.linjin.zhimi.model.BaseModel;
+import com.linjin.zhimi.model.account.AuthCredentials;
+import com.linjin.zhimi.model.account.UserModel;
 import com.linjin.zhimi.rest.ApiCode;
 import com.tinggu.common.utils.KeyboardUtils;
 
@@ -15,7 +15,7 @@ import org.greenrobot.eventbus.EventBus;
 
 import cn.smssdk.EventHandler;
 import cn.smssdk.SMSSDK;
-import cn.smssdk.SMSSDKInitUtils; 
+import cn.smssdk.SMSSDKInitUtils;
 import rx.Observable;
 import rx.Subscriber;
 import rx.functions.Func1;

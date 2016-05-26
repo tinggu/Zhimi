@@ -13,9 +13,9 @@ import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.cyou.ui.ClearableEditText;
-import com.linjin.zhimi.model.account.AuthCredentials;
 import com.linjin.zhimi.R;
 import com.linjin.zhimi.base.BaseMvpFragment;
+import com.linjin.zhimi.model.account.AuthCredentials;
 import com.linjin.zhimi.widget.TopActionBar;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
@@ -30,7 +30,7 @@ import com.tinggu.common.utils.TrackUtils;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -52,29 +52,29 @@ public class FindPWFragment
     @NotEmpty(messageResId = R.string.login_error_phonenum_empty, sequence = 0)
     @Length(min = 11, max = 11, messageResId = R.string.register_error_phone_invalid, sequence = 1)
     @Order(0)
-    @Bind(R.id.ev_phonenum)
+    @BindView(R.id.ev_phonenum)
     ClearableEditText evPhonenum;
 
     @NotEmpty(messageResId = R.string.login_error_password_empty)
     @Password(messageResId = R.string.register_error_password_invalid)
     @Order(1)
-    @Bind(R.id.ev_password)
+    @BindView(R.id.ev_password)
     ClearableEditText evPassword;
 
     @ConfirmPassword(messageResId = R.string.register_error_password_repeat_wrong)
     @Order(2)
-    @Bind(R.id.ev_password_repeat)
+    @BindView(R.id.ev_password_repeat)
     ClearableEditText evPasswordRepeat;
 
     @Order(3)
     @NotEmpty(messageResId = R.string.validation_code_null)
-    @Bind(R.id.ev_validation_code)
+    @BindView(R.id.ev_validation_code)
     EditText evValidationCode;
 
-    @Bind(R.id.tv_get_code)
+    @BindView(R.id.tv_get_code)
     TextView tvGetCode;
 
-    @Bind(R.id.topActionBar)
+    @BindView(R.id.topActionBar)
     TopActionBar topActionBar;
 
     private int time = RETRY_INTERVAL;

@@ -1,6 +1,5 @@
 package com.linjin.zhimi.main.topic;
 
-import com.cyou.quick.mvp.MvpBasePresenter;
 import com.linjin.zhimi.base.BaseLoadMoreRxPresenter;
 import com.linjin.zhimi.model.topic.TopicAnswer;
 

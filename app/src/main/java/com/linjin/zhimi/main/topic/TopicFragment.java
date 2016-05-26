@@ -9,24 +9,23 @@ import android.view.View;
 
 import com.linjin.zhimi.R;
 import com.linjin.zhimi.base.loadmore.BaseLoadMoreFragment;
-import com.linjin.zhimi.latest.LatestPresenter;
 import com.linjin.zhimi.model.topic.TopicAnswer;
 import com.linjin.zhimi.utils.IntentStarter;
 import com.linjin.zhimi.widget.TopActionBar;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 
 public class TopicFragment 
         extends BaseLoadMoreFragment<SwipeRefreshLayout, TopicAnswer, TopicView, TopicPresenter> {
     
-    @Bind(R.id.topActionBar)
+    @BindView(R.id.topActionBar)
     TopActionBar topActionBar;
 
-    @Bind(R.id.drawerlayout)
+    @BindView(R.id.drawerlayout)
     DrawerLayout drawerLayout;
 
-    @Bind(R.id.right)
+    @BindView(R.id.right)
     View right;
     
 //    LatestPresenter

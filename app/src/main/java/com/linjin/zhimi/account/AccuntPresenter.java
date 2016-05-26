@@ -1,12 +1,12 @@
 package com.linjin.zhimi.account;
 
-import com.linjin.zhimi.model.account.UserModel;
-import com.linjin.zhimi.api.AccuntApi;
-import com.linjin.zhimi.model.account.AuthCredentials;
-import com.linjin.zhimi.rest.RestUtils;
 import com.cyou.quick.mvp.MvpBasePresenter;
 import com.cyou.quick.mvp.MvpView;
 import com.cyou.quick.mvp.rx.scheduler.AndroidSchedulerTransformer;
+import com.linjin.zhimi.api.AccuntApi;
+import com.linjin.zhimi.model.account.AuthCredentials;
+import com.linjin.zhimi.model.account.UserModel;
+import com.linjin.zhimi.rest.RestUtils;
 
 import rx.Observable;
 import rx.Subscriber;

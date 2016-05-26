@@ -18,7 +18,7 @@ import com.tinggu.common.utils.LogUtils;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 /**
  * Description:
@@ -34,7 +34,7 @@ public abstract class RegisterStepBaseFragment
 
     protected Validator validator;
 
-    @Bind(R.id.topActionBar)
+    @BindView(R.id.topActionBar)
     TopActionBar topActionBar;
 
     protected RegisterPresenter presenter;

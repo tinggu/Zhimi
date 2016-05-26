@@ -12,16 +12,16 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
-import android.widget.TextView; 
+import android.widget.TextView;
+
+import com.cyou.quick.QuickActivity;
+import com.linjin.zhimi.R;
+import com.linjin.zhimi.widget.TopActionBar;
 import com.tinggu.common.utils.LogUtils;
 import com.tinggu.common.utils.NetWorkUtils;
 import com.tinggu.common.utils.TrackUtils;
-import com.cyou.quick.QuickActivity;
 
-import butterknife.Bind;
-
-import com.linjin.zhimi.R;
-import com.linjin.zhimi.widget.TopActionBar;
+import butterknife.BindView;
 
 /**
  * Description:
@@ -35,16 +35,16 @@ public class WebViewActivity extends QuickActivity {
 
     private WebView webView;
 
-    @Bind(R.id.loadingView)
+    @BindView(R.id.loadingView)
     ProgressBar progressBar;
 
-    @Bind(R.id.topActionBar)
+    @BindView(R.id.topActionBar)
     TopActionBar topActionBar;
 
-    @Bind(R.id.errorView)
+    @BindView(R.id.errorView)
     LinearLayout errorView;
 
-    @Bind(R.id.errorTextView)
+    @BindView(R.id.errorTextView)
     TextView errorTextView;
 
     String url;

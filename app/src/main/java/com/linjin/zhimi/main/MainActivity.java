@@ -21,7 +21,7 @@ import com.linjin.zhimi.main.topic.TopicFragment;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 
 public class MainActivity extends BaseMvpActivity
@@ -31,7 +31,7 @@ public class MainActivity extends BaseMvpActivity
 //    @Bind(R.id.bottom_bar)
 //    View bottomBar;
 
-    @Bind(R.id.main_group)
+    @BindView(R.id.main_group)
     public RadioGroup mainGroup;
 
 //    @Bind(R.id.dock_1)
@@ -46,7 +46,7 @@ public class MainActivity extends BaseMvpActivity
 //    @Bind(R.id.dock_4)
 //    public RadioButton dock4;
 
-    private List<Fragment> fragments; 
+    private List<Fragment> fragments;
 
     private TopicFragment topicFragment;
     private DiscoveryFragment discoveryFragment;
@@ -56,7 +56,7 @@ public class MainActivity extends BaseMvpActivity
     private int currentTab; // 当前Tab页面索引
 
     private ArrayList<View> radioButtons;
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,7 +80,7 @@ public class MainActivity extends BaseMvpActivity
         outState.putInt("index", currentTab);
         Log.i(TAG, "onSaveInstanceState: ");
     }
-    
+
 
     private void initView(Bundle savedInstanceState) {
 
@@ -89,31 +89,36 @@ public class MainActivity extends BaseMvpActivity
 
         fragments = new ArrayList<>();
         FragmentManager fragmentManager = getSupportFragmentManager();
-        
-        if(savedInstanceState != null){ // “内存重启”时调用
-            topicFragment = (TopicFragment) fragmentManager.findFragmentByTag(topicFragment.getClass().getSimpleName());
-            discoveryFragment = (DiscoveryFragment) fragmentManager.findFragmentByTag(discoveryFragment.getClass().getSimpleName());
-            chatFragment = (ChatFragment) fragmentManager.findFragmentByTag(chatFragment.getClass().getSimpleName());
-            selfFragment = (SelfFragment) fragmentManager.findFragmentByTag(selfFragment.getClass().getSimpleName());
-        }else{
+
+        if (savedInstanceState != null) { // “内存重启”时调用
+            topicFragment = (TopicFragment) fragmentManager.findFragmentByTag("topic");
+            discoveryFragment = (DiscoveryFragment) fragmentManager.findFragmentByTag("discovery");
+            chatFragment = (ChatFragment) fragmentManager.findFragmentByTag("chat");
+            selfFragment = (SelfFragment) fragmentManager.findFragmentByTag("self");
+        } else {
             topicFragment = new TopicFragment();
             discoveryFragment = new DiscoveryFragment();
             chatFragment = new ChatFragment();
             selfFragment = new SelfFragment();
         }
-       
-        
+
+
         fragments.add(topicFragment);
         fragments.add(discoveryFragment);
         fragments.add(chatFragment);
         fragments.add(selfFragment);
-        
-        radioButtons = getChildRadions(); 
+
+        radioButtons = getChildRadions();
 
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
 
+        ft.add(R.id.fragmentContainer, topicFragment, "topic");
+        ft.add(R.id.fragmentContainer, discoveryFragment, "discovery");
+        ft.add(R.id.fragmentContainer, chatFragment, "chat");
+        ft.add(R.id.fragmentContainer, selfFragment, "self");
+
+//            ft.add(R.id.fragmentContainer, fragments.get(i),fragments.get(i).getClass().getSimpleName());
         for (int i = 0; i < fragments.size(); i++) {
-            ft.add(R.id.fragmentContainer, fragments.get(i),fragments.get(i).getClass().getSimpleName());
             ft.hide(fragments.get(i));
         }
         ft.show(fragments.get(index));
@@ -122,9 +127,9 @@ public class MainActivity extends BaseMvpActivity
         ft.commit();
         mainGroup.setOnCheckedChangeListener(this);
         checkFragment(index);
-        
+
     }
-    
+
     private long mPressedTime = 0;
 
     @Override
@@ -172,7 +177,7 @@ public class MainActivity extends BaseMvpActivity
 
             if (radioButtons.get(i).getId() == checkedId) {
 
-                if(checkedId == currentTab){
+                if (checkedId == currentTab) {
                     return;
                 }
 

@@ -8,15 +8,14 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 
-import com.tinggu.common.utils.TrackUtils;
 import com.cyou.quick.QuickFragment;
+import com.linjin.zhimi.R;
+import com.linjin.zhimi.main.MainActivity;
+import com.tinggu.common.utils.TrackUtils;
 
 import java.util.ArrayList;
 
-import butterknife.Bind;
-
-import com.linjin.zhimi.R;
-import com.linjin.zhimi.main.MainActivity;
+import butterknife.BindView;
 
 /**
  * Description:
@@ -35,7 +34,7 @@ public class IntroFragment extends QuickFragment
 //            R.layout.view_intro_2,
     };
 
-    @Bind(R.id.viewpager)
+    @BindView(R.id.viewpager)
     ViewPager viewPager;
 
 //    @Bind(R.id.indicator)

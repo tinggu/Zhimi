@@ -3,7 +3,6 @@ package com.linjin.zhimi.account;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Handler;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -13,7 +12,7 @@ import com.linjin.zhimi.R;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import com.tinggu.common.utils.NetWorkUtils;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -30,13 +29,13 @@ public class RegisterStep1Fragment extends RegisterStepBaseFragment {
 
 
     @NotEmpty(messageResId = R.string.validation_code_null)
-    @Bind(R.id.ev_validation_code)
+    @BindView(R.id.ev_validation_code)
     EditText evValidationCode;
 
-    @Bind(R.id.tv_tip)
+    @BindView(R.id.tv_tip)
     TextView tvTip;
 
-    @Bind(R.id.tv_get_code)
+    @BindView(R.id.tv_get_code)
     TextView tvGetCode;
 
     private int time;

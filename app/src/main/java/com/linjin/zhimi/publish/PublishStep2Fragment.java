@@ -3,14 +3,7 @@ package com.linjin.zhimi.publish;
 import android.annotation.SuppressLint;
 import android.util.Log;
 
-import com.cyou.ui.ClearableEditText;
 import com.linjin.zhimi.R;
-import com.linjin.zhimi.account.RegisterPresenter;
-import com.mobsandgeeks.saripaar.annotation.Length;
-import com.mobsandgeeks.saripaar.annotation.NotEmpty;
-import com.mobsandgeeks.saripaar.annotation.Order;
-
-import butterknife.Bind;
 
 /**
  * Description:

@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.linjin.zhimi.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -28,22 +28,22 @@ public class TopActionBar extends RelativeLayout {
     public static final byte BACK_IMAGE = 0;
     public static final byte BACK_TXT = 1;
 
-    @Bind(R.id.iv_back)
+    @BindView(R.id.iv_back)
     ImageView iv_back;
 
-    @Bind(R.id.tv_title)
+    @BindView(R.id.tv_title)
     TextView tv_title;
 
-    @Bind(R.id.tv_back)
+    @BindView(R.id.tv_back)
     TextView tv_back;
 
-    @Bind(R.id.tv_action)
+    @BindView(R.id.tv_action)
     TextView tv_action;
 
-    @Bind(R.id.iv_action)
+    @BindView(R.id.iv_action)
     ImageView iv_action;
 
-    @Bind(R.id.bottom_line)
+    @BindView(R.id.bottom_line)
     View bottom_line;
 
     private BackListener backListener;

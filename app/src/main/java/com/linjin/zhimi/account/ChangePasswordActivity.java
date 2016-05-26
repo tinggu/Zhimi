@@ -3,22 +3,21 @@ package com.linjin.zhimi.account;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.afollestad.materialdialogs.MaterialDialog; 
-import com.linjin.zhimi.base.BaseMvpActivity;
-import com.tinggu.common.utils.LogUtils;
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.linjin.zhimi.R;
+import com.linjin.zhimi.base.BaseMvpActivity;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import com.mobsandgeeks.saripaar.annotation.Order;
 import com.mobsandgeeks.saripaar.annotation.Password;
+import com.tinggu.common.utils.LogUtils;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -34,27 +33,25 @@ public class ChangePasswordActivity
     @NotEmpty(messageResId = R.string.login_error_password_empty)
     @Password(min = 6, messageResId = R.string.register_error_password_invalid, sequence = 2)
     @Order(1)
-    @Bind(R.id.enter_old_password)
+    @BindView(R.id.enter_old_password)
     EditText enter_old_password;
 
     @NotEmpty(messageResId = R.string.login_error_password_empty)
     @Password(min = 6, messageResId = R.string.register_error_password_invalid, sequence = 2)
     @Order(2)
-    @Bind(R.id.enter_new_password)
+    @BindView(R.id.enter_new_password)
     EditText enter_new_password;
 
 
-    @Bind(R.id.tv_password_state)
+    @BindView(R.id.tv_password_state)
     TextView tv_password_state;
 
     @NotEmpty(messageResId = R.string.login_error_password_empty)
     @Password(min = 6, messageResId = R.string.register_error_password_invalid, sequence = 2)
     @Order(3)
-    @Bind(R.id.repeat_new_password)
+    @BindView(R.id.repeat_new_password)
     EditText repeat_new_password;
-    @Bind(R.id.iv_back)
-    ImageView iv_back;
-
+    
     Validator validator;
     ChangePasswordPresenter changePasswordPresenter;
 

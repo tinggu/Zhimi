@@ -1,9 +1,9 @@
 package com.linjin.zhimi.account;
 
-import com.linjin.zhimi.model.account.AuthCredentials;
-import com.linjin.zhimi.model.account.UserModel;
 import com.linjin.zhimi.DataCenter;
 import com.linjin.zhimi.event.LoginSuccessfulEvent;
+import com.linjin.zhimi.model.account.AuthCredentials;
+import com.linjin.zhimi.model.account.UserModel;
 import com.linjin.zhimi.rest.ApiCode;
 import com.tinggu.common.utils.LogUtils;
 

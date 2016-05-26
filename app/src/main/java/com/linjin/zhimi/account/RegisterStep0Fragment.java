@@ -4,18 +4,12 @@ import android.annotation.SuppressLint;
 
 import com.cyou.ui.ClearableEditText;
 import com.linjin.zhimi.R;
-import com.linjin.zhimi.widget.TopActionBar;
-import com.mobsandgeeks.saripaar.ValidationError;
-import com.mobsandgeeks.saripaar.Validator;
 import com.mobsandgeeks.saripaar.annotation.Length;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import com.mobsandgeeks.saripaar.annotation.Order;
 import com.mobsandgeeks.saripaar.annotation.Password;
-import com.tinggu.common.utils.LogUtils;
 
-import java.util.List;
-
-import butterknife.Bind;
+import butterknife.BindView;
 
 /**
  * Description:
@@ -30,14 +24,14 @@ public class RegisterStep0Fragment extends RegisterStepBaseFragment {
     @NotEmpty(messageResId = R.string.login_error_phonenum_empty, sequence = 0)
     @Length(min = 11, max = 11, messageResId = R.string.register_error_phone_invalid, sequence = 1)
     @Order(0)
-    @Bind(R.id.ev_phonenum)
+    @BindView(R.id.ev_phonenum)
     ClearableEditText evPhonenum;
 
     @NotEmpty(messageResId = R.string.login_error_password_empty)
     @Password(messageResId = R.string.register_error_password_invalid)
 //    @Length(min = 6, max = 18, messageResId = R.string.register_error_password_invalid, sequence = 0)
     @Order(1)
-    @Bind(R.id.ev_password)
+    @BindView(R.id.ev_password)
     ClearableEditText evPassword;
     
     

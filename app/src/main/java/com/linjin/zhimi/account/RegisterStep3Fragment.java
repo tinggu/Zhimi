@@ -1,7 +1,6 @@
 package com.linjin.zhimi.account;
 
 import android.annotation.SuppressLint;
-import android.widget.RadioGroup;
 
 import com.cyou.ui.ClearableEditText;
 import com.linjin.zhimi.R;
@@ -9,7 +8,7 @@ import com.mobsandgeeks.saripaar.annotation.Length;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import com.mobsandgeeks.saripaar.annotation.Order;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 /**
  * Description:
@@ -25,7 +24,7 @@ public class RegisterStep3Fragment extends RegisterStepBaseFragment {
     @NotEmpty(messageResId = R.string.login_error_name_empty, sequence = 0)
     @Length(max = 15, sequence = 1)
     @Order(0)
-    @Bind(R.id.ev_title)
+    @BindView(R.id.ev_title)
     ClearableEditText evTitle;
 
      

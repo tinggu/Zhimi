@@ -1,7 +1,6 @@
 package com.linjin.zhimi.latest;
 
 
-import android.app.Activity;
 import android.support.v4.app.FragmentActivity;
 
 import com.linjin.zhimi.base.BaseLoadMoreRxPresenter;

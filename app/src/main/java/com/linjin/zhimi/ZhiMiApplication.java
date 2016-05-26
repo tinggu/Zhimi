@@ -1,8 +1,8 @@
 package com.linjin.zhimi;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
 import com.tinggu.common.utils.LogUtils;
 import com.tinggu.common.utils.TrackUtils;
-import com.facebook.drawee.backends.pipeline.Fresco;
 import com.umeng.message.PushAgent;
 
 

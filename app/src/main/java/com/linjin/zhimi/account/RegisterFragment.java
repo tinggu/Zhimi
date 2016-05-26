@@ -11,15 +11,15 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.linjin.zhimi.base.BaseMvpFragment;
-import com.linjin.zhimi.model.account.AuthCredentials;
-import com.tinggu.common.utils.KeyboardUtils;
-import com.tinggu.common.utils.LogUtils;
-import com.tinggu.common.utils.NetWorkUtils;
-import com.tinggu.common.utils.TrackUtils;
 import com.cyou.quick.QuickApplication;
 import com.cyou.ui.ClearableEditText;
 import com.linjin.zhimi.R;
+import com.linjin.zhimi.base.BaseMvpFragment;
+import com.linjin.zhimi.config.BandConfig;
+import com.linjin.zhimi.model.account.AuthCredentials;
+import com.linjin.zhimi.utils.IntentStarter;
+import com.linjin.zhimi.widget.TopActionBar;
+import com.linjin.zhimi.widget.TopSnackBar;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
 import com.mobsandgeeks.saripaar.annotation.ConfirmPassword;
@@ -27,15 +27,15 @@ import com.mobsandgeeks.saripaar.annotation.Length;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import com.mobsandgeeks.saripaar.annotation.Order;
 import com.mobsandgeeks.saripaar.annotation.Password;
+import com.tinggu.common.utils.KeyboardUtils;
+import com.tinggu.common.utils.LogUtils;
+import com.tinggu.common.utils.NetWorkUtils;
+import com.tinggu.common.utils.TrackUtils;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
-import com.linjin.zhimi.config.BandConfig;
-import com.linjin.zhimi.utils.IntentStarter;
-import com.linjin.zhimi.widget.TopActionBar;
-import com.linjin.zhimi.widget.TopSnackBar;
 
 /**
  * Description:
@@ -55,32 +55,32 @@ public class RegisterFragment
     @NotEmpty(messageResId = R.string.login_error_phonenum_empty, sequence = 0)
     @Length(min = 11, max = 11, messageResId = R.string.register_error_phone_invalid, sequence = 1)
     @Order(0)
-    @Bind(R.id.ev_phonenum)
+    @BindView(R.id.ev_phonenum)
     ClearableEditText evPhonenum;
 
     @NotEmpty(messageResId = R.string.login_error_password_empty)
     @Password(messageResId = R.string.register_error_password_invalid)
     @Order(1)
-    @Bind(R.id.ev_password)
+    @BindView(R.id.ev_password)
     ClearableEditText evPassword;
 
     @ConfirmPassword(messageResId = R.string.register_error_password_repeat_wrong)
     @Order(2)
-    @Bind(R.id.ev_password_repeat)
+    @BindView(R.id.ev_password_repeat)
     ClearableEditText evPasswordRepeat;
 
     @Order(3)
     @NotEmpty(messageResId = R.string.validation_code_null)
-    @Bind(R.id.ev_validation_code)
+    @BindView(R.id.ev_validation_code)
     EditText evValidationCode;
 
-    @Bind(R.id.tv_get_code)
+    @BindView(R.id.tv_get_code)
     TextView tvGetCode;
 
-    @Bind(R.id.topSnackBar)
+    @BindView(R.id.topSnackBar)
     TopSnackBar topSnackBar;
 
-    @Bind(R.id.topActionBar)
+    @BindView(R.id.topActionBar)
     TopActionBar topActionBar;
 
     private int time = RETRY_INTERVAL;

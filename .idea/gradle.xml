@@ -14,6 +14,10 @@
             <option value="$PROJECT_DIR$/app-model" />
             <option value="$PROJECT_DIR$/base-mvp" />
             <option value="$PROJECT_DIR$/common" />
+            <option value="$PROJECT_DIR$/mvp-common" />
+            <option value="$PROJECT_DIR$/mvp-lce" />
+            <option value="$PROJECT_DIR$/mvp-loadmore" />
+            <option value="$PROJECT_DIR$/mvp-rx" />
             <option value="$PROJECT_DIR$/uilib" />
             <option value="$PROJECT_DIR$/umeng" />
           </set>
@@ -26,6 +30,10 @@
             <option value="$PROJECT_DIR$/app-model" />
             <option value="$PROJECT_DIR$/base-mvp" />
             <option value="$PROJECT_DIR$/common" />
+            <option value="$PROJECT_DIR$/mvp-common" />
+            <option value="$PROJECT_DIR$/mvp-lce" />
+            <option value="$PROJECT_DIR$/mvp-loadmore" />
+            <option value="$PROJECT_DIR$/mvp-rx" />
             <option value="$PROJECT_DIR$/uilib" />
             <option value="$PROJECT_DIR$/umeng" />
           </set>

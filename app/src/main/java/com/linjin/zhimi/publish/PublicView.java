@@ -1,7 +1,6 @@
 package com.linjin.zhimi.publish;
 
 import com.cyou.quick.mvp.MvpView;
-import com.linjin.zhimi.account.LoginView;
 
 /**
  * Description

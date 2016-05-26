@@ -1,1 +1,1 @@
-include ':app', ':base-mvp', ':app-model', ':common', ':umeng', ':uilib', ':SMSSDK'
+include ':app', ':base-mvp', ':app-model', ':common', ':umeng', ':uilib', ':SMSSDK', ':mvp-common', ':mvp-lce', ':mvp-rx', ':mvp-loadmore'

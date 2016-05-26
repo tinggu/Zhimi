@@ -18,14 +18,8 @@ android {
 }
 
 dependencies {
-    provided 'com.android.support:appcompat-v7:' + rootProject.ext.appcompat7Version
-    provided 'com.android.support:recyclerview-v7:' + rootProject.ext.appcompat7Version
-    provided 'com.android.support:design:' + rootProject.ext.appcompat7Version
-   
     //MVP框架
-    compile 'com.github.tinggu.QuickMVP:mvp-common:' + rootProject.ext.QuickMvpVersion
-    compile 'com.github.tinggu.QuickMVP:mvp-lce:' + rootProject.ext.QuickMvpVersion
-    compile 'com.github.tinggu.QuickMVP:mvp-rx:' + rootProject.ext.QuickMvpVersion
+    compile project(':mvp-loadmore')
 
     // add packer-helper
     compile 'com.mcxiaoke.gradle:packer-helper:1.0.2'

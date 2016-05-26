@@ -6,9 +6,9 @@ import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.cyou.ui.ClearableEditText;
-import com.linjin.zhimi.model.account.AuthCredentials;
 import com.linjin.zhimi.R;
 import com.linjin.zhimi.base.BaseMvpFragment;
+import com.linjin.zhimi.model.account.AuthCredentials;
 import com.linjin.zhimi.widget.TopActionBar;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
@@ -24,7 +24,7 @@ import com.umeng.message.UmengRegistrar;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -44,17 +44,17 @@ public class LoginFragment
     @NotEmpty(messageResId = R.string.login_error_phonenum_empty, sequence = 0)
     @Length(min = 11, max = 11, messageResId = R.string.register_error_phone_invalid, sequence = 1)
     @Order(0)
-    @Bind(R.id.ev_phonenum)
+    @BindView(R.id.ev_phonenum)
     ClearableEditText evPhonenum;
 
     @NotEmpty(messageResId = R.string.login_error_password_empty)
     @Password(min = 6, messageResId = R.string.register_error_password_invalid, sequence = 2)
     @Order(1)
-    @Bind(R.id.ev_password)
+    @BindView(R.id.ev_password)
     ClearableEditText evPassword;
 
 
-    @Bind(R.id.topActionBar)
+    @BindView(R.id.topActionBar)
     TopActionBar topActionBar;
 
     private Validator validator;

@@ -10,17 +10,10 @@ import android.view.View;
 
 import com.cyou.quick.mvp.MvpView;
 import com.linjin.zhimi.R;
-import com.linjin.zhimi.account.RegisterPresenter;
-import com.linjin.zhimi.account.RegisterView;
 import com.linjin.zhimi.base.BaseMvpFragment;
 import com.linjin.zhimi.widget.TopActionBar;
-import com.mobsandgeeks.saripaar.ValidationError;
-import com.mobsandgeeks.saripaar.Validator;
-import com.tinggu.common.utils.LogUtils;
 
-import java.util.List;
-
-import butterknife.Bind;
+import butterknife.BindView;
 
 /**
  * Description:
@@ -34,7 +27,7 @@ public abstract class PublishStepBaseFragment
         extends BaseMvpFragment<PublicView, PublshPresenter>
         implements MvpView {
 
-    @Bind(R.id.topActionBar)
+    @BindView(R.id.topActionBar)
     TopActionBar topActionBar;
 
     protected PublshPresenter presenter;

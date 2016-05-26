@@ -13,7 +13,7 @@ import com.linjin.zhimi.utils.PhotoUtils;
 import com.linjin.zhimi.widget.SelectPicPopWindow;
 import com.tinggu.common.utils.LogUtils;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -30,7 +30,7 @@ public class RegisterStep4Fragment extends RegisterStepBaseFragment implements P
     private Uri headUri;
     private boolean isUpdatePic;
 
-    @Bind(R.id.img_avatar)
+    @BindView(R.id.img_avatar)
     ImageView imgAvatar;
 
 
