@@ -1,1 +1,1 @@
-include ':app', ':base-mvp', ':app-model', ':common', ':umeng', ':uilib', ':smssdk', ':mvp-common', ':mvp-lce', ':mvp-rx', ':mvp-loadmore', ':imkit'
+include ':app', ':app-model', ':common', ':umeng', ':uilib', ':smssdk', ':mvp-common', ':mvp-lce', ':mvp-rx', ':mvp-loadmore', ':imkit'

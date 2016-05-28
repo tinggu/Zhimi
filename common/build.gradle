@@ -19,7 +19,7 @@ android {
 
 dependencies {
     compile project(':app-model')
-    compile project(':base-mvp')
+    compile project(':mvp-loadmore')
     compile project(':umeng')
     
 //    compile files('libs/prettytime-3.2.5.Final.jar')
