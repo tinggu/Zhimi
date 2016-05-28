@@ -13,7 +13,7 @@ import com.linjin.zhimi.friend.apply.ApplyActivity;
 import com.linjin.zhimi.friend.find.FindFriendActivity;
 import com.linjin.zhimi.main.MainActivity;
 import com.linjin.zhimi.main.WebViewActivity;
-import com.linjin.zhimi.publish.Publish1Activity;
+import com.linjin.zhimi.publish.PublishActivity;
 
 /**
  * Description:
@@ -81,7 +81,7 @@ public class IntentStarter {
     }
 
     public static void showPublish(Activity activity) {
-        Intent i = new Intent(activity, Publish1Activity.class);
+        Intent i = new Intent(activity, PublishActivity.class);
         activity.startActivity(i);
         activity.overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
     }
