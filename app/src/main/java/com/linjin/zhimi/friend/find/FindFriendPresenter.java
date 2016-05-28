@@ -5,7 +5,7 @@ import android.text.TextUtils;
 
 import com.cyou.quick.mvp.MvpBasePresenter;
 import com.linjin.zhimi.publish.PublishView;
-import com.linjin.zhimi.publish.PublishActivity;
+import com.linjin.zhimi.publish.Publish1Activity;
 import com.tinggu.common.utils.KeyboardUtils;
 
 /**
@@ -17,7 +17,7 @@ import com.tinggu.common.utils.KeyboardUtils;
  */
 public class FindFriendPresenter extends MvpBasePresenter<PublishView> {
 
-    private PublishActivity publishActivity;
+    private Publish1Activity publish1Activity;
     
     private int currStep;
     
@@ -33,17 +33,17 @@ public class FindFriendPresenter extends MvpBasePresenter<PublishView> {
         this.supplement = supplement;
     }
 
-    public FindFriendPresenter(PublishActivity publishActivity) {
-        this.publishActivity = publishActivity;
+    public FindFriendPresenter(Publish1Activity publish1Activity) {
+        this.publish1Activity = publish1Activity;
     }
     
     public void back() {
         if(currStep == 0){
             if(!TextUtils.isEmpty(content)){
-                publishActivity.showGiveUpDialog();
+                publish1Activity.showGiveUpDialog();
                 return;
             }
-            publishActivity.finish();
+            publish1Activity.finish();
             return;
         }
         currStep--;
@@ -54,10 +54,10 @@ public class FindFriendPresenter extends MvpBasePresenter<PublishView> {
     public void nextStep() {
         switch (currStep) {
             case 1:
-                publishActivity.showPublish1();
+                publish1Activity.showPublish1();
                 break;
             case 2:
-                publishActivity.showPublish2();
+                publish1Activity.showPublish2();
                 break;
         }
         currStep++;

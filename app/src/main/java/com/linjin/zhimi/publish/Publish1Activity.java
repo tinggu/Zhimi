@@ -21,7 +21,7 @@ import cn.smssdk.SMSSDKInitUtils;
  * Author     : wangjia_bi
  * Date       : 2015/6/8 15:29
  */
-public class PublishActivity extends BaseMvpActivity {
+public class Publish1Activity extends BaseMvpActivity {
 
     public DialogUtils dialogUtils;
 

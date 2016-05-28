@@ -15,7 +15,7 @@ import com.tinggu.common.utils.KeyboardUtils;
  */
 public class PublshPresenter extends MvpBasePresenter<PublishView> {
 
-    private PublishActivity publishActivity;
+    private Publish1Activity publish1Activity;
     
     private int currStep;
     
@@ -31,17 +31,17 @@ public class PublshPresenter extends MvpBasePresenter<PublishView> {
         this.supplement = supplement;
     }
 
-    public PublshPresenter(PublishActivity publishActivity) {
-        this.publishActivity = publishActivity;
+    public PublshPresenter(Publish1Activity publish1Activity) {
+        this.publish1Activity = publish1Activity;
     }
     
     public void back() {
         if(currStep == 0){
             if(!TextUtils.isEmpty(content)){
-                publishActivity.showGiveUpDialog();
+                publish1Activity.showGiveUpDialog();
                 return;
             }
-            publishActivity.finish();
+            publish1Activity.finish();
             return;
         }
         currStep--;
@@ -52,10 +52,10 @@ public class PublshPresenter extends MvpBasePresenter<PublishView> {
     public void nextStep() {
         switch (currStep) {
             case 1:
-                publishActivity.showPublish1();
+                publish1Activity.showPublish1();
                 break;
             case 2:
-                publishActivity.showPublish2();
+                publish1Activity.showPublish2();
                 break;
         }
         currStep++;
