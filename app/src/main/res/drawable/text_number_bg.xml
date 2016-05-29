@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle"
+    android:useLevel="false">
+
+    <!-- 圆角 -->
+    <corners android:radius="20dp" /><!-- 设置圆角半径 -->
+
+    <!-- 大小 -->
+    <size
+        android:width="20dp"
+        android:height="20dp" /><!-- 宽度和高度 -->
+
+    <solid android:color="@color/number_bg" />
+</shape>

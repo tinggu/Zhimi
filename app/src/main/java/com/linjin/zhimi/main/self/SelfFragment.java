@@ -1,24 +1,62 @@
 package com.linjin.zhimi.main.self;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.cyou.quick.mvp.MvpFragment;
 import com.linjin.zhimi.R;
-import com.linjin.zhimi.model.card.GroupCard;
+import com.linjin.zhimi.edit.EditActivity;
 import com.linjin.zhimi.widget.TopActionBar;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 
-public class SelfFragment 
-        extends MvpFragment<SelfView, SelfPresenter> 
-        implements SelfView{
+public class SelfFragment
+        extends MvpFragment<SelfView, SelfPresenter>
+        implements SelfView {
 
     @BindView(R.id.topActionBar)
     TopActionBar topActionBar;
+    @BindView(R.id.tv_name)
+    TextView tvName;
+    @BindView(R.id.tv_zmnumber)
+    TextView tvZmnumber;
+    @BindView(R.id.tv_local)
+    TextView tvLocal;
+    
+    @BindView(R.id.ll_self)
+    LinearLayout llSelf;
+    @BindView(R.id.ll_people)
+    LinearLayout llPeople;
+    @BindView(R.id.tv_thumb)
+    TextView tvThumb;
+    @BindView(R.id.tv_watch)
+    TextView tvWatch;
+    @BindView(R.id.tv_watched)
+    TextView tvWatched;
+    @BindView(R.id.tv_comment)
+    TextView tvComment;
+    @BindView(R.id.tv_answer_number)
+    TextView tvAnswerNumber;
+    @BindView(R.id.item_my_answer)
+    LinearLayout itemMyAnswer;
+    @BindView(R.id.tv_topic_number)
+    TextView tvTopicNumber;
+    @BindView(R.id.item_watch_topic)
+    LinearLayout itemWatchTopic;
+    @BindView(R.id.item_date_talent)
+    LinearLayout itemDateTalent;
+    @BindView(R.id.item_my_order)
+    LinearLayout itemMyOrder;
+    @BindView(R.id.btn_add_skill)
+    Button btnAddSkill;
 
 
 //    LatestPresenter
@@ -29,11 +67,11 @@ public class SelfFragment
         initView();
     }
 
-    private void initView(){
+    private void initView() {
         topActionBar.setTitle(R.string.radio_dock_4);
         topActionBar.hideBack();
         topActionBar.hideAction();
-        topActionBar.setActionImageResource(R.mipmap.topic_sidebar);
+//        topActionBar.setActionImageResource(R.mipmap.topic_sidebar);
 
     }
 
@@ -46,137 +84,38 @@ public class SelfFragment
     protected int getLayoutRes() {
         return R.layout.fragment_self;
     }
-
-   
-
-//    /**
-//     * 个人信息
-//     */
-//    private void initSelfInfo() {
-//        Realm realm = Realm.getDefaultInstance();
-//        List<GroupCard> cards = CacheUtils.findAll(realm, GroupCard.class);
-//        if (cards != null && cards.size() > 0) {
-//            card = cards.get(0);
-//            sdSelfHeader.setImageURI(Uri.parse(card.getImageUrl()));
-//            tvSelfName.setText(card.getCardName());
-//        }
-//    }
-//
-//    private void initView() {
-//        tvText.setAlpha(0f);
-//        svContent.setHeader(image);
-//        svContent.setOnScrollOffsetListener(this);
-//        svContent.setOnSubViewTouchEvent(this);
-//
-//        items[0] = tvCardManager;
-//        items[1] = tvInvite;
-//        items[2] = tvNotice;
-//        items[3] = tvNoticeInfo;
-//        items[4] = tvLocation;
-//        items[5] = tvExit;
-//    }
-//
-//    @OnClick({R.id.tv_invite, R.id.tv_card_manager, R.id.tv_exit, R.id.tv_notice, R.id.tv_notice_info, R.id.tv_location})
-//    public void onItemOnclick(View view) {
-//        Intent intent;
-//        switch (view.getId()) {
-//            case R.id.tv_card_manager:
+    
+//    @BindView(R.id.btn_edit)
+//    Button btnEdit;
+//    @BindView(R.id.btn_setting)
+//    Button btnSetting;
+    
+    @OnClick({R.id.item_my_answer, R.id.item_watch_topic, R.id.item_date_talent, R.id.item_my_order, 
+            R.id.btn_add_skill, R.id.btn_edit, R.id.btn_setting})
+    public void onItemOnclick(View view) {
+        Intent intent;
+        switch (view.getId()) {
+            case R.id.item_my_answer:
 //                intent = latest Intent(getActivity(), CardManageActivity.class);
 //                startActivity(intent);
-//                break;
-//            case R.id.tv_invite:
+                break;
+            case R.id.item_watch_topic:
 //                IntentStarter.showGroupSelect(getActivity());
-//                break;
-//            case R.id.tv_notice:
+                break;
+            case R.id.item_date_talent:
 //                IntentStarter.showNoticeCreate(getActivity(), 147);
-//                break;
-//            case R.id.tv_notice_info:
+                break;
+            case R.id.item_my_order:
 //                IntentStarter.showNoticeInfo(getActivity(), 147, 10);
 //                break;
-//            case R.id.tv_location:
-//                Intent i = latest Intent(getActivity(), LocationActivity.class);
-//                startActivity(i);
-//                break;
-//            case R.id.tv_exit:
-//                //退出当前账号逻辑
-////                GeTuiUtils.unBindPush(getActivity(), DataCenter.getInstance().getUserID());
-//
-//                break;
-//        }
-//    }
-//
-//    @Override
-//    public void onScrollOffset(boolean pull, int offset) {
-//        if (!pull) {
-//            tvText.setAlpha(0f);
-//            return;
-//        }
-//        float alpha = 0f;
-//        int top = initTop + offset / 2;
-//        if (offset < 30) {
-//            tvText.setAlpha(0f);
-//        } else {
-//            alpha = offset * 1f / 100;
-//        }
-//        tvText.setAlpha(alpha);
-//        tvText.layout(0, top, tvText.getWidth(), top + tvText.getHeight());
-//    }
-//
-//    @Override
-//    public void onPushScrollOffset(int pushOffset) {
-//        if (pushOffset > ScreenUtils.dip2px(130)) {
-//            tvTopbar.setText(card.getCardName());
-//        } else {
-//            tvTopbar.setText(getResources().getText(R.string.person));
-//        }
-//    }
-//
-//    @Override
-//    public void onSubView(int action, MotionEvent ev) {
-//        if (MotionEvent.ACTION_DOWN == action) {
-//            for (int i = 0; i < items.length; i++) {
-//                if (inViewRect(items[i], ev)) {
-//                    indexDown = i;
-//                }
-//            }
-//        }
-//        if (MotionEvent.ACTION_UP == action) {
-//            for (int i = 0; i < items.length; i++) {
-//                if (inViewRect(items[i], ev)) {
-//                    indexUp = i;
-//                    LogUtils.i("onSubView", "indexUp " + indexUp + indexDown);
-//                }
-//            }
-//            if (indexDown == indexUp && indexDown != -1) {
-//                index = indexDown;
-//            }
-//            LogUtils.i("onSubView", " " + indexDown + " " + indexUp + index);
-//            if (-1 != index) {
-//                onItemOnclick(items[index]);
-//            }
-//            indexDown = indexUp = index = -1;
-//        }
-//    }
-//
-//    /**
-//     * 触点是否在view范围内
-//     *
-//     * @return
-//     */
-//    public boolean inViewRect(final View v, final MotionEvent ev) {
-//
-//        float x = ev.getX();
-//        float y = ev.getY();
-//        int[] location = latest int[2];
-//        v.getLocationOnScreen(location);
-//        float left = v.getLeft();
-//        float right = left + v.getWidth();
-//        float top = v.getTop() + llTtems.getTop();
-//        float bottom = top + v.getHeight();
-//
-//        if (x > left && x < right && y > top && y < bottom) {
-//            return true;
-//        }
-//        return false;
-//    }
+            case R.id.btn_edit:
+                intent =  new Intent(getActivity(), EditActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.btn_setting:
+                
+                break;
+        }
+    } 
+    
 }

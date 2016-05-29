@@ -25,6 +25,7 @@
 
     <!--用户管理-->
     <dimen name="text_size_little_title">16sp</dimen>
+    <dimen name="item_height">46dp</dimen>
 
     <!--主页-->
     <dimen name="main_menu_width">180dp</dimen>

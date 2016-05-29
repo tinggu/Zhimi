@@ -1,4 +1,4 @@
-package com.linjin.zhimi.main.self.edit;
+package com.linjin.zhimi.edit;
 
 
 import android.os.Bundle;

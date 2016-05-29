@@ -13,9 +13,12 @@
     <color name="blue">#0066FF</color>
     <color name="yellow">#ffce54</color>
     <color name="grey">#bbbbbb</color>
+    <color name="edit_text_grey">#8899a6</color>
+    <color name="edit_button_grey">#658daa</color>
     <color name="color_base">#f5f8fa</color>
     <color name="apply_bg">#759590</color>
- 
+    <color name="number_bg">#ebeef1</color>
+    
     <color name="text_blue">#1da1f2</color>
     <color name="text_grey">#555555</color>
     <color name="text_hint_color">#787878</color>

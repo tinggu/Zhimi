@@ -9,7 +9,6 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/SMSSDK" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/app-model" />
             <option value="$PROJECT_DIR$/common" />
@@ -18,6 +17,7 @@
             <option value="$PROJECT_DIR$/mvp-lce" />
             <option value="$PROJECT_DIR$/mvp-loadmore" />
             <option value="$PROJECT_DIR$/mvp-rx" />
+            <option value="$PROJECT_DIR$/smssdk" />
             <option value="$PROJECT_DIR$/uilib" />
             <option value="$PROJECT_DIR$/umeng" />
           </set>
@@ -25,7 +25,6 @@
         <option name="myModules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/SMSSDK" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/app-model" />
             <option value="$PROJECT_DIR$/common" />
@@ -34,6 +33,7 @@
             <option value="$PROJECT_DIR$/mvp-lce" />
             <option value="$PROJECT_DIR$/mvp-loadmore" />
             <option value="$PROJECT_DIR$/mvp-rx" />
+            <option value="$PROJECT_DIR$/smssdk" />
             <option value="$PROJECT_DIR$/uilib" />
             <option value="$PROJECT_DIR$/umeng" />
           </set>

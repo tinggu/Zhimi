@@ -1,4 +1,4 @@
-package com.linjin.zhimi.main.self.edit;
+package com.linjin.zhimi.edit;
 
 
 import android.os.Bundle;
@@ -14,7 +14,7 @@ import com.linjin.zhimi.widget.TopActionBar;
 import butterknife.BindView;
 
 
-public class EditFragment 
+public class EditTitleFragment 
         extends MvpFragment<SelfView, SelfPresenter> 
         implements SelfView{
 

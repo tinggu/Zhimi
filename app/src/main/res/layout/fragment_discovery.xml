@@ -25,7 +25,7 @@
     <LinearLayout
         android:id="@+id/item_watch"
         android:layout_width="match_parent"
-        android:layout_height="46dp"
+        android:layout_height="@dimen/item_height"
         android:background="@color/white"
         android:orientation="horizontal">
 
@@ -55,7 +55,7 @@
     <LinearLayout
         android:id="@+id/item_message"
         android:layout_width="match_parent"
-        android:layout_height="46dp"
+        android:layout_height="@dimen/item_height"
         android:background="@color/white"
         android:orientation="horizontal">
 
@@ -70,7 +70,7 @@
         <TextView
             style="@style/Main.Item"
             android:layout_weight="1"
-            android:text="@string/text_watch" />
+            android:text="@string/text_mesage" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -91,7 +91,7 @@
     <LinearLayout
         android:id="@+id/item_nearby"
         android:layout_width="match_parent"
-        android:layout_height="46dp"
+        android:layout_height="@dimen/item_height"
         android:background="@color/white"
         android:orientation="horizontal">
 
@@ -106,7 +106,7 @@
         <TextView
             style="@style/Main.Item"
             android:layout_weight="1"
-            android:text="@string/text_watch" />
+            android:text="@string/text_location" />
 
         <TextView
             style="@style/Main.Item"

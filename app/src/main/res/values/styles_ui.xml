@@ -29,7 +29,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginTop">40dp</item>
         <item name="android:layout_marginBottom">14dp</item>
-        <item name="android:textSize">24dp</item>
+        <item name="android:textSize">24sp</item>
         <item name="android:layout_marginLeft">@dimen/left_right_padding</item>
         <item name="android:textColor">@color/text_blue</item>
 
@@ -158,5 +158,50 @@
         <item name="android:windowContentOverlay">@null</item>
     </style>
 
+    <style name="Edit">
+        <item name="android:textSize">16sp</item>
+    </style>
 
+    <style name="Edit.Button">
+        <item name="android:background">@drawable/selector_round_btn</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_width">80dp</item>
+        <item name="android:layout_height">30dp</item>
+    </style>
+
+    <style name="Edit.Button.Grey">
+        <item name="android:background">@drawable/selector_round_grey_btn</item> 
+    </style>
+     
+
+    <style name="Edit.Label">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item> 
+        <item name="android:textSize">16sp</item> 
+        <item name="android:textColor">@color/black</item>
+
+    </style>
+
+    <style name="Edit.Text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item> 
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/edit_text_grey</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="Edit.SmallText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/edit_text_grey</item>
+        <item name="android:singleLine">true</item> 
+    </style>
+
+    <style name="Edit.View">
+        <item name="android:background">@color/color_divider</item>
+        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_height">35dp</item> 
+        <item name="android:layout_gravity">center_vertical</item> 
+    </style>
 </resources>

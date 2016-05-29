@@ -9,12 +9,22 @@
     <string name="text_save">保存</string>
     <string name="text_next">下一步</string>
     <string name="text_watch">关注的人</string>
+    <string name="text_location">附近达人</string>
+    <string name="text_mesage">消息通知</string>
     <string name="text_apply">私聊申请</string>
     <string name="text_find">查找朋友</string>
     <string name="text_all">全部</string>
     <string name="text_edit">编辑资料</string>
     <string name="text_setting">设置</string>
+    <string name="text_tlak">私聊</string>
     
+    <string name="text_my_answer">我的回答</string>
+    <string name="text_watch_topic">关注的匿题</string>
+    <string name="text_date_talent">我约的达人</string>
+    <string name="text_my_order">我的订单</string>
+    <string name="text_my_skill">擅长的技艺</string>
+
+    <string name="action_add_skill">添加一项</string>
     <string name="action_watch">关注</string>
 
     <!-- Strings related to login -->
