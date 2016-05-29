@@ -1,28 +1,59 @@
 package com.linjin.zhimi.edit;
 
 
+import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
-import com.cyou.quick.mvp.MvpFragment;
+import com.facebook.drawee.view.SimpleDraweeView;
 import com.linjin.zhimi.R;
-import com.linjin.zhimi.main.self.SelfPresenter;
-import com.linjin.zhimi.main.self.SelfView;
+import com.linjin.zhimi.base.BaseMvpFragment;
+import com.linjin.zhimi.setting.SettingActivity;
+import com.linjin.zhimi.utils.PhotoUtils;
 import com.linjin.zhimi.widget.TopActionBar;
+import com.tinggu.common.utils.KeyboardUtils;
+import com.tinggu.common.utils.LogUtils;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 
-public class EditFragment 
-        extends MvpFragment<SelfView, SelfPresenter> 
-        implements SelfView{
+public class EditFragment extends BaseMvpFragment implements PhotoUtils.RefreshImage {
+
+    PhotoUtils photoUtils = new PhotoUtils();
+    private Uri headUri;
+    private boolean isUpdatePic;
 
     @BindView(R.id.topActionBar)
     TopActionBar topActionBar;
+    @BindView(R.id.iv_avatar)
+    SimpleDraweeView ivAvatar;
+    @BindView(R.id.tv_title)
+    TextView tvTitle;
+    @BindView(R.id.item_title)
+    LinearLayout itemTitle;
+    @BindView(R.id.tv_name)
+    TextView tvName;
+    @BindView(R.id.item_name)
+    LinearLayout itemName;
+    @BindView(R.id.tv_sex)
+    TextView tvSex;
+    @BindView(R.id.item_sex)
+    LinearLayout itemSex;
+    @BindView(R.id.tv_birthday)
+    TextView tvBirthday;
+    @BindView(R.id.item_birthday)
+    LinearLayout itemBirthday;
+    @BindView(R.id.tv_location)
+    TextView tvLocation;
+    @BindView(R.id.item_location)
+    LinearLayout itemLocation;
 
-
-//    LatestPresenter
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
@@ -30,154 +61,69 @@ public class EditFragment
         initView();
     }
 
-    private void initView(){
+    private void initView() {
         topActionBar.setTitle(R.string.text_edit);
-        topActionBar.hideBack();
+        topActionBar.setBackListener(new TopActionBar.BackListener() {
+            @Override
+            public void onBack() {
+                KeyboardUtils.callBackKeyClick();
+            }
+        });
         topActionBar.hideAction();
-        topActionBar.setActionImageResource(R.mipmap.topic_sidebar);
-
     }
 
     @Override
-    public SelfPresenter createPresenter() {
-        return new SelfPresenter();
+    public EditPresenter createPresenter() {
+        return new EditPresenter();
     }
 
     @Override
     protected int getLayoutRes() {
-        return R.layout.fragment_self;
+        return R.layout.fragment_edit;
     }
 
-   
 
-//    /**
-//     * 个人信息
-//     */
-//    private void initSelfInfo() {
-//        Realm realm = Realm.getDefaultInstance();
-//        List<GroupCard> cards = CacheUtils.findAll(realm, GroupCard.class);
-//        if (cards != null && cards.size() > 0) {
-//            card = cards.get(0);
-//            sdSelfHeader.setImageURI(Uri.parse(card.getImageUrl()));
-//            tvSelfName.setText(card.getCardName());
-//        }
-//    }
-//
-//    private void initView() {
-//        tvText.setAlpha(0f);
-//        svContent.setHeader(image);
-//        svContent.setOnScrollOffsetListener(this);
-//        svContent.setOnSubViewTouchEvent(this);
-//
-//        items[0] = tvCardManager;
-//        items[1] = tvInvite;
-//        items[2] = tvNotice;
-//        items[3] = tvNoticeInfo;
-//        items[4] = tvLocation;
-//        items[5] = tvExit;
-//    }
-//
-//    @OnClick({R.id.tv_invite, R.id.tv_card_manager, R.id.tv_exit, R.id.tv_notice, R.id.tv_notice_info, R.id.tv_location})
-//    public void onItemOnclick(View view) {
-//        Intent intent;
-//        switch (view.getId()) {
-//            case R.id.tv_card_manager:
+    @OnClick({R.id.iv_avatar, R.id.item_title, R.id.item_name, R.id.item_sex,
+            R.id.item_birthday, R.id.item_location})
+    public void onItemOnclick(View view) {
+        Intent intent;
+        switch (view.getId()) {
+            case R.id.iv_avatar:
 //                intent = latest Intent(getActivity(), CardManageActivity.class);
 //                startActivity(intent);
-//                break;
-//            case R.id.tv_invite:
+                break;
+            case R.id.item_title:
 //                IntentStarter.showGroupSelect(getActivity());
-//                break;
-//            case R.id.tv_notice:
+                break;
+            case R.id.item_name:
 //                IntentStarter.showNoticeCreate(getActivity(), 147);
-//                break;
-//            case R.id.tv_notice_info:
+                break;
+            case R.id.item_sex:
 //                IntentStarter.showNoticeInfo(getActivity(), 147, 10);
 //                break;
-//            case R.id.tv_location:
-//                Intent i = latest Intent(getActivity(), LocationActivity.class);
-//                startActivity(i);
-//                break;
-//            case R.id.tv_exit:
-//                //退出当前账号逻辑
-////                GeTuiUtils.unBindPush(getActivity(), DataCenter.getInstance().getUserID());
-//
-//                break;
-//        }
-//    }
-//
-//    @Override
-//    public void onScrollOffset(boolean pull, int offset) {
-//        if (!pull) {
-//            tvText.setAlpha(0f);
-//            return;
-//        }
-//        float alpha = 0f;
-//        int top = initTop + offset / 2;
-//        if (offset < 30) {
-//            tvText.setAlpha(0f);
-//        } else {
-//            alpha = offset * 1f / 100;
-//        }
-//        tvText.setAlpha(alpha);
-//        tvText.layout(0, top, tvText.getWidth(), top + tvText.getHeight());
-//    }
-//
-//    @Override
-//    public void onPushScrollOffset(int pushOffset) {
-//        if (pushOffset > ScreenUtils.dip2px(130)) {
-//            tvTopbar.setText(card.getCardName());
-//        } else {
-//            tvTopbar.setText(getResources().getText(R.string.person));
-//        }
-//    }
-//
-//    @Override
-//    public void onSubView(int action, MotionEvent ev) {
-//        if (MotionEvent.ACTION_DOWN == action) {
-//            for (int i = 0; i < items.length; i++) {
-//                if (inViewRect(items[i], ev)) {
-//                    indexDown = i;
-//                }
-//            }
-//        }
-//        if (MotionEvent.ACTION_UP == action) {
-//            for (int i = 0; i < items.length; i++) {
-//                if (inViewRect(items[i], ev)) {
-//                    indexUp = i;
-//                    LogUtils.i("onSubView", "indexUp " + indexUp + indexDown);
-//                }
-//            }
-//            if (indexDown == indexUp && indexDown != -1) {
-//                index = indexDown;
-//            }
-//            LogUtils.i("onSubView", " " + indexDown + " " + indexUp + index);
-//            if (-1 != index) {
-//                onItemOnclick(items[index]);
-//            }
-//            indexDown = indexUp = index = -1;
-//        }
-//    }
-//
-//    /**
-//     * 触点是否在view范围内
-//     *
-//     * @return
-//     */
-//    public boolean inViewRect(final View v, final MotionEvent ev) {
-//
-//        float x = ev.getX();
-//        float y = ev.getY();
-//        int[] location = latest int[2];
-//        v.getLocationOnScreen(location);
-//        float left = v.getLeft();
-//        float right = left + v.getWidth();
-//        float top = v.getTop() + llTtems.getTop();
-//        float bottom = top + v.getHeight();
-//
-//        if (x > left && x < right && y > top && y < bottom) {
-//            return true;
-//        }
-//        return false;
-//    }
+            case R.id.item_birthday:
+                intent = new Intent(getActivity(), EditActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.item_location:
+                intent = new Intent(getActivity(), SettingActivity.class);
+                startActivity(intent);
+                break;
+        }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+        LogUtils.i("header", "requestCode = " + requestCode);
+        if (Activity.RESULT_OK != resultCode) {
+            return;
+        }
+        photoUtils.setBitmapFromResult(getActivity(), this, requestCode, data, PhotoUtils.HEAD_PIC);
+    }
+
+    @Override
+    public void refresh(Uri uri) {
+
+    }
 }

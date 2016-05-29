@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.cyou.quick.mvp.MvpFragment;
 import com.linjin.zhimi.R;
 import com.linjin.zhimi.edit.EditActivity;
+import com.linjin.zhimi.setting.SettingActivity;
 import com.linjin.zhimi.widget.TopActionBar;
 
 import butterknife.BindView;
@@ -113,7 +114,8 @@ public class SelfFragment
                 startActivity(intent);
                 break;
             case R.id.btn_setting:
-                
+                intent =  new Intent(getActivity(), SettingActivity.class);
+                startActivity(intent);
                 break;
         }
     } 

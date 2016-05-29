@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_base"
+    android:orientation="vertical">
+
+    <com.linjin.zhimi.widget.TopActionBar
+        android:id="@+id/topActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <include layout="@layout/self_top" />
+
+    <LinearLayout
+        android:id="@+id/item_my_answer"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_height"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/Main.Item"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_weight="1"
+            android:text="@string/text_my_answer" />
+
+        <TextView
+            android:id="@+id/tv_answer_number"
+            style="@style/Main.Item"
+            android:background="@drawable/text_number_bg"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="@color/edit_text_grey"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="15dp"
+            android:src="@mipmap/cell_prev" />
+    </LinearLayout>
+
+    <View style="@style/Login.View" />
+
+    <LinearLayout
+        android:id="@+id/item_watch_topic"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_height"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/Main.Item"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_weight="1"
+            android:text="@string/text_watch_topic" />
+
+        <TextView
+            android:id="@+id/tv_topic_number"
+            style="@style/Main.Item"
+            android:background="@drawable/text_number_bg"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="@color/edit_text_grey"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="15dp"
+            android:src="@mipmap/cell_prev" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/item_date_talent"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_height"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/Main.Item"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_weight="1"
+            android:text="@string/text_date_talent" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="15dp"
+            android:src="@mipmap/cell_prev" />
+    </LinearLayout>
+
+    <View style="@style/Login.View" />
+
+    <LinearLayout
+        android:id="@+id/item_my_order"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_height"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/Main.Item"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_weight="1"
+            android:text="@string/text_my_order" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="15dp"
+            android:src="@mipmap/cell_prev" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_height"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/Main.Item"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_weight="1"
+            android:text="@string/text_my_skill" />
+
+        <Button
+            android:id="@+id/btn_add_skill"
+            style="@style/Edit.Button"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="15dp"
+            android:text="@string/action_add_skill" />
+    </LinearLayout>
+</LinearLayout>
