@@ -1,4 +1,4 @@
-package com.linjin.zhimi.account;
+package com.linjin.zhimi.account.login;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -59,10 +59,10 @@ public class LoginFragment
 
     private Validator validator;
 
-    private AccuntActivity accuntActivity;
+    private LoginActivity loginActivity;
 
-    public LoginFragment(AccuntActivity accuntActivity) {
-        this.accuntActivity = accuntActivity;
+    public LoginFragment(LoginActivity loginActivity) {
+        this.loginActivity = loginActivity;
     }
 
     private void initView() {
@@ -105,7 +105,7 @@ public class LoginFragment
             LogUtils.d("login", "click login");
             validator.validate();
         } else if (id == R.id.tv_findpassword) {
-            accuntActivity.showFindPassword(evPhonenum.getText().toString());
+            loginActivity.showFindPassword(evPhonenum.getText().toString());
             TrackUtils.getInstance().onTrackEvent("Register_forgotpassword");
         }
     }
@@ -119,12 +119,12 @@ public class LoginFragment
 
     @Override
     public void showLoading() {
-        accuntActivity.dialogUtils.showLoading(getActivity(), "登录中，请稍后...");
+        loginActivity.dialogUtils.showLoading(getActivity(), "登录中，请稍后...");
     }
 
     @Override
     public void hideLoading() {
-        accuntActivity.dialogUtils.hideLoading();
+        loginActivity.dialogUtils.hideLoading();
     }
 
 

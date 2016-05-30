@@ -1,4 +1,4 @@
-package com.linjin.zhimi.account;
+package com.linjin.zhimi.account.changpw;
 
 import android.os.Bundle;
 import android.view.View;

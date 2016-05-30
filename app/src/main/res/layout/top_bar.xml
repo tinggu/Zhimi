@@ -5,7 +5,7 @@
     android:layout_height="@dimen/topbar_height"
     android:layout_alignParentTop="true"
     android:background="@color/white"
-    tools:context=".account.AccuntActivity">
+    tools:context=".account.login.LoginActivity">
 
     <ImageView
         android:id="@+id/iv_back"

@@ -1,4 +1,4 @@
-package com.linjin.zhimi.account;
+package com.linjin.zhimi.account.login;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,14 @@ import com.cyou.quick.mvp.MvpBasePresenter;
 import com.cyou.quick.mvp.MvpPresenter;
 import com.linjin.zhimi.DataCenter;
 import com.linjin.zhimi.R;
+import com.linjin.zhimi.account.findpw.FindPasswordFragment;
+import com.linjin.zhimi.account.findpw.SelectFragment;
+import com.linjin.zhimi.account.register.RegisterPresenter;
+import com.linjin.zhimi.account.register.RegisterStep0Fragment;
+import com.linjin.zhimi.account.register.RegisterStep1Fragment;
+import com.linjin.zhimi.account.register.RegisterStep2Fragment;
+import com.linjin.zhimi.account.register.RegisterStep3Fragment;
+import com.linjin.zhimi.account.register.RegisterStep4Fragment;
 import com.linjin.zhimi.base.BaseMvpActivity;
 import com.linjin.zhimi.event.FindPWSuccessfulEvent;
 import com.linjin.zhimi.event.LoginSuccessfulEvent;
@@ -31,7 +39,7 @@ import cn.smssdk.SMSSDKInitUtils;
  * Author     : wangjia_bi
  * Date       : 2015/6/8 15:29
  */
-public class AccuntActivity extends BaseMvpActivity {
+public class LoginActivity extends BaseMvpActivity {
 
     public DialogUtils dialogUtils;
 
@@ -56,7 +64,7 @@ public class AccuntActivity extends BaseMvpActivity {
 //    protected void onNewIntent(Intent intent) {
 //        super.onNewIntent(intent);
 //        if (DataCenter.getInstance().getUserToken() != null) {
-//            IntentStarter.showMain(AccuntActivity.this);
+//            IntentStarter.showMain(LoginActivity.this);
 //        }
 //    }
 
@@ -129,7 +137,7 @@ public class AccuntActivity extends BaseMvpActivity {
     }
 
     public void showFindPassword(String phone) {
-        FindPWFragment findPWFragment = new FindPWFragment(phone);
+        FindPasswordFragment findPWFragment = new FindPasswordFragment(phone);
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.addToBackStack(null)
                 .add(R.id.fragmentContainer, findPWFragment)
@@ -176,7 +184,7 @@ public class AccuntActivity extends BaseMvpActivity {
 
     private void enterMain() {
         finish();
-        IntentStarter.showMain(AccuntActivity.this);
+        IntentStarter.showMain(LoginActivity.this);
     }
 
     @Override

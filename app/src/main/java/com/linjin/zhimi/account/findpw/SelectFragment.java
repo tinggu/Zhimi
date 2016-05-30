@@ -1,4 +1,4 @@
-package com.linjin.zhimi.account;
+package com.linjin.zhimi.account.findpw;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -8,6 +8,7 @@ import android.view.View;
 import com.cyou.quick.mvp.MvpBasePresenter;
 import com.cyou.quick.mvp.MvpPresenter;
 import com.linjin.zhimi.R;
+import com.linjin.zhimi.account.login.LoginActivity;
 import com.linjin.zhimi.base.BaseMvpFragment;
 import com.linjin.zhimi.utils.IntentStarter;
 
@@ -17,10 +18,10 @@ import butterknife.OnClick;
 @SuppressLint("ValidFragment")
 public class SelectFragment extends BaseMvpFragment {
 
-    private AccuntActivity accuntActivity;
+    private LoginActivity loginActivity;
 
-    public SelectFragment(AccuntActivity accuntActivity) {
-        this.accuntActivity = accuntActivity;
+    public SelectFragment(LoginActivity loginActivity) {
+        this.loginActivity = loginActivity;
     }
 
     @Override
@@ -47,10 +48,10 @@ public class SelectFragment extends BaseMvpFragment {
     void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_register:
-                accuntActivity.showRegister0();
+                loginActivity.showRegister0();
                 break;
             case R.id.btn_login:
-//                accuntActivity.showLogin();
+//                loginActivity.showLogin();
                 IntentStarter.showMain(getActivity());
                 break;
         }

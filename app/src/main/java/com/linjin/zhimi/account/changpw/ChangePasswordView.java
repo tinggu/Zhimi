@@ -1,4 +1,4 @@
-package com.linjin.zhimi.account;
+package com.linjin.zhimi.account.changpw;
 
 import com.cyou.quick.mvp.MvpView;
 

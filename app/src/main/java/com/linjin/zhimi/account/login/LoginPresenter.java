@@ -1,6 +1,7 @@
-package com.linjin.zhimi.account;
+package com.linjin.zhimi.account.login;
 
 import com.linjin.zhimi.DataCenter;
+import com.linjin.zhimi.account.AccuntPresenter;
 import com.linjin.zhimi.event.LoginSuccessfulEvent;
 import com.linjin.zhimi.model.account.AuthCredentials;
 import com.linjin.zhimi.model.account.UserModel;

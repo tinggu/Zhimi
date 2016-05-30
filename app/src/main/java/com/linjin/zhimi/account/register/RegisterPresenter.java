@@ -1,8 +1,10 @@
-package com.linjin.zhimi.account;
+package com.linjin.zhimi.account.register;
 
 
 import com.cyou.quick.mvp.rx.scheduler.AndroidSchedulerTransformer;
 import com.linjin.zhimi.DataCenter;
+import com.linjin.zhimi.account.login.LoginActivity;
+import com.linjin.zhimi.account.AccuntPresenter;
 import com.linjin.zhimi.api.AccuntApi;
 import com.linjin.zhimi.event.RegisterSuccessfulEvent;
 import com.linjin.zhimi.model.BaseModel;
@@ -29,7 +31,7 @@ import rx.functions.Func1;
  */
 public class RegisterPresenter extends AccuntPresenter<RegisterView> {
 
-    private AccuntActivity accuntActivity;
+    private LoginActivity loginActivity;
     private EventHandler eh;
     private int currStep;
     //    String username;
@@ -41,8 +43,8 @@ public class RegisterPresenter extends AccuntPresenter<RegisterView> {
     String devicetoken;
     private String zone = "+86";
 
-    public RegisterPresenter(AccuntActivity accuntActivity) {
-        this.accuntActivity = accuntActivity;
+    public RegisterPresenter(LoginActivity loginActivity) {
+        this.loginActivity = loginActivity;
 //        eh = latest EventHandler() {
 //
 //            @Override
@@ -97,16 +99,16 @@ public class RegisterPresenter extends AccuntPresenter<RegisterView> {
     public void nextStep() {
         switch (currStep) {
             case 1:
-                accuntActivity.showRegister1();
+                loginActivity.showRegister1();
                 break;
             case 2:
-                accuntActivity.showRegister2();
+                loginActivity.showRegister2();
                 break;
             case 3:
-                accuntActivity.showRegister3();
+                loginActivity.showRegister3();
                 break;
             case 4:
-                accuntActivity.showRegister4();
+                loginActivity.showRegister4();
                 break;
         }
         currStep++;

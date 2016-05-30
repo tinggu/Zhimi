@@ -1,4 +1,4 @@
-package com.linjin.zhimi.account;
+package com.linjin.zhimi.account.register;
 
 import android.annotation.SuppressLint;
 

@@ -14,7 +14,7 @@ public class SettingActivity extends BaseMvpActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
-
+        showStting();
     }
 
     void showStting() {
@@ -24,7 +24,7 @@ public class SettingActivity extends BaseMvpActivity {
 //        trasection.addToBackStack("edit");
         trasection.commit();
     }
-    
+
 
     @Override
     public MvpBasePresenter createPresenter() {

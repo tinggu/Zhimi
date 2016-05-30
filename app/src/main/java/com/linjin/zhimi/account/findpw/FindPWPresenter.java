@@ -1,7 +1,8 @@
-package com.linjin.zhimi.account;
+package com.linjin.zhimi.account.findpw;
 
 import com.cyou.quick.mvp.rx.scheduler.AndroidSchedulerTransformer;
 import com.linjin.zhimi.DataCenter;
+import com.linjin.zhimi.account.AccuntPresenter;
 import com.linjin.zhimi.api.AccuntApi;
 import com.linjin.zhimi.event.FindPWSuccessfulEvent;
 import com.linjin.zhimi.event.LoginSuccessfulEvent;
@@ -25,7 +26,7 @@ import rx.functions.Func1;
  * Author     : wangjia_bi
  * Date       : 2015/6/8 15:34
  */
-public class FindPWPresenter extends AccuntPresenter<FindPWView> {
+public class FindPWPresenter extends AccuntPresenter<FindPasswordView> {
 
     private AccuntApi accuntApi = RestUtils.createApi(AccuntApi.class);
 //    private String checkCode;

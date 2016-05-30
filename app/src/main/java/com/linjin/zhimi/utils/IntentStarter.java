@@ -8,7 +8,7 @@ import android.support.v4.app.FragmentActivity;
 import com.cyou.quick.QuickApplication;
 import com.linjin.zhimi.DataCenter;
 import com.linjin.zhimi.R;
-import com.linjin.zhimi.account.AccuntActivity;
+import com.linjin.zhimi.account.login.LoginActivity;
 import com.linjin.zhimi.friend.apply.ApplyActivity;
 import com.linjin.zhimi.friend.find.FindFriendActivity;
 import com.linjin.zhimi.main.MainActivity;
@@ -56,7 +56,7 @@ public class IntentStarter {
         if (dataCenter.hasUser()) {
             intent = new Intent(activity, MainActivity.class);
         } else {
-            intent = new Intent(activity, AccuntActivity.class);
+            intent = new Intent(activity, LoginActivity.class);
         }
         activity.startActivity(intent);
     }
@@ -69,12 +69,12 @@ public class IntentStarter {
     
     public static void showLogin(Activity activity) {
         if (activity != null) {
-            Intent i = new Intent(activity, AccuntActivity.class);
+            Intent i = new Intent(activity, LoginActivity.class);
             activity.startActivity(i);
             activity.overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             activity.finish();
         } else {
-            Intent i = new Intent(QuickApplication.getInstance(), AccuntActivity.class);
+            Intent i = new Intent(QuickApplication.getInstance(), LoginActivity.class);
             i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             QuickApplication.getInstance().startActivity(i);
         }
