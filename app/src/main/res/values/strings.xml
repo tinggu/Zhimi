@@ -26,7 +26,8 @@
     <string name="text_account">账号与安全</string>
     <string name="text_black_list">黑名单</string>
     <string name="text_receive_message">接收新消息和通知</string>
-
+    <string name="item_account">账号</string>
+    
     <string name="action_add_skill">添加一项</string>
     <string name="action_watch">关注</string>
     <string name="action_exit">退出知觅</string>
@@ -72,7 +73,7 @@
     <string name="register_error_password_repeat_wrong">重复输入密码不匹配</string>
     <string name="register_error_validation_code_wrong">验证码错误</string>
     <string name="validation_code_count_down">已发送(%ss)</string>
-    <string name="no_network_connection">当前无网络连接，请检查您的网络设置</string>
+    
     
     <!--String related to change password -->
     <string name="changepassword_oldnumber_hint">输入旧密码</string>
@@ -83,6 +84,7 @@
     <string name="commit_change_password">提交修改</string>
 
     <!-- Strings related to find password -->
+    <string name="find_password">密码找回</string>
     <string name="findPW_password">重设密码（6-20位）</string>
     <string name="findPW_reset_password">确认</string>
     <string name="findPW_loading">重设中，请稍后...</string>

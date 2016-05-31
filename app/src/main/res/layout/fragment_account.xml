@@ -11,7 +11,7 @@
         android:layout_height="wrap_content" />
 
     <LinearLayout
-        android:id="@+id/item_account"
+       
         android:layout_width="match_parent"
         android:layout_height="@dimen/item_height"
         android:layout_marginTop="10dp"
@@ -23,22 +23,24 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:layout_weight="1"
-            android:text="@string/text_account" />
+            android:text="@string/item_account" />
 
+        <TextView
+            android:id="@+id/tv_account"
+            style="@style/Main.Item" 
+            android:gravity="center"
+            android:text="13488705863"
+            android:textColor="@color/edit_text_grey"
+            android:textSize="12sp"
+            android:layout_marginRight="20dp"/>
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_margin="15dp"
-            android:src="@mipmap/cell_prev" />
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/item_black_list"
+        android:id="@+id/item_change_password"
         android:layout_width="match_parent"
         android:layout_height="@dimen/item_height"
-
+        android:layout_marginTop="10dp"
         android:background="@color/white"
         android:orientation="horizontal">
 
@@ -47,7 +49,7 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:layout_weight="1"
-            android:text="@string/text_black_list" />
+            android:text="@string/change_password_word_title" />
 
 
         <ImageView
@@ -59,11 +61,12 @@
     </LinearLayout>
 
     <View style="@style/Login.View" />
-
+    
     <LinearLayout
+        android:id="@+id/item_find_password"
         android:layout_width="match_parent"
         android:layout_height="@dimen/item_height"
-        android:layout_marginTop="10dp"
+
         android:background="@color/white"
         android:orientation="horizontal">
 
@@ -72,25 +75,20 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:layout_weight="1"
-            android:text="@string/text_receive_message" />
+            android:text="@string/find_password" />
 
-        <com.cyou.ui.slideswitch.SlideSwitch
-            android:id="@+id/switch_message"
+
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="15dp" />
-
+            android:layout_gravity="center_vertical"
+            android:layout_margin="15dp"
+            android:src="@mipmap/cell_prev" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btn_login"
-        style="@style/Login.Button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:layout_marginBottom="40dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="25dp"
-        android:text="@string/action_exit" />
+   
+
+  
+
+  
 </LinearLayout>

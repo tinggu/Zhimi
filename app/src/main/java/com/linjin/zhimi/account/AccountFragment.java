@@ -1,11 +1,9 @@
-package com.linjin.zhimi.setting;
+package com.linjin.zhimi.account;
 
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
@@ -18,10 +16,9 @@ import com.linjin.zhimi.widget.TopActionBar;
 import com.tinggu.common.utils.KeyboardUtils;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 
-public class SettingFragment extends BaseMvpFragment {
+public class AccountFragment extends BaseMvpFragment {
 
     @BindView(R.id.topActionBar)
     TopActionBar topActionBar;
