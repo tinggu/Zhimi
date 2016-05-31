@@ -226,7 +226,7 @@ public class RegisterFragment
                         isGetcode = true;
                     }
                 } else {
-                    showTip(getContext().getString(R.string.no_network_connection));
+                    showTip(getContext().getString(R.string.net_error));
                 }
 
             } else {

@@ -1,12 +1,10 @@
 package com.linjin.zhimi.setting;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.LinearLayout;
 
 import com.cyou.quick.mvp.MvpBasePresenter;
@@ -14,25 +12,23 @@ import com.cyou.ui.slideswitch.OnToggleStateChangeListener;
 import com.cyou.ui.slideswitch.SlideSwitch;
 import com.linjin.zhimi.R;
 import com.linjin.zhimi.base.BaseMvpFragment;
+import com.linjin.zhimi.edit.EditActivity;
+import com.linjin.zhimi.utils.IntentStarter;
 import com.linjin.zhimi.widget.TopActionBar;
 import com.tinggu.common.utils.KeyboardUtils;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 
 public class SettingFragment extends BaseMvpFragment {
 
     @BindView(R.id.topActionBar)
     TopActionBar topActionBar;
-    @BindView(R.id.item_account)
-    LinearLayout itemAccount;
-    @BindView(R.id.item_black_list)
-    LinearLayout itemBlackList;
+    
+
     @BindView(R.id.switch_message)
     SlideSwitch switchMessage;
-    @BindView(R.id.btn_login)
-    Button btnLogin;
 
 
     @Override
@@ -53,7 +49,7 @@ public class SettingFragment extends BaseMvpFragment {
         switchMessage.setOnToggleStateChangeListener(new OnToggleStateChangeListener() {
             @Override
             public void onToggleStateChange(boolean state) {
-                
+
             }
         });
     }
@@ -68,5 +64,21 @@ public class SettingFragment extends BaseMvpFragment {
         return R.layout.fragment_setting;
     }
 
-     
+    @OnClick({R.id.item_black_list, R.id.item_account, R.id.btn_logout})
+    public void onItemOnclick(View view) {
+        Intent intent;
+        switch (view.getId()) {
+
+            case R.id.item_black_list:
+//                IntentStarter.showNoticeInfo(getActivity(), 147, 10);
+//                break;
+            case R.id.item_account:
+               
+                break;
+            case R.id.btn_logout:
+                IntentStarter.showLogin(null);
+                break;
+        }
+    }
+
 }

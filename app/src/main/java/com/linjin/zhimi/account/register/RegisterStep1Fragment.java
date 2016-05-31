@@ -106,7 +106,7 @@ public class RegisterStep1Fragment extends RegisterStepBaseFragment {
         if (id == R.id.tv_get_code) {
 
             if (!NetWorkUtils.isNetConnected(QuickApplication.getInstance())) {
-                toast(getContext().getString(R.string.no_network_connection));
+                toast(getContext().getString(R.string.net_error));
             } else {
                 presenter.getVerificationCode();
                 countDown();
