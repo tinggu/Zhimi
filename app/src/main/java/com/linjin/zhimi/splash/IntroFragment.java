@@ -11,7 +11,7 @@ import android.view.View;
 import com.cyou.quick.QuickFragment;
 import com.linjin.zhimi.R;
 import com.linjin.zhimi.main.MainActivity;
-import com.tinggu.common.utils.TrackUtils;
+import com.linjin.zhimi.utils.TrackUtils;
 
 import java.util.ArrayList;
 

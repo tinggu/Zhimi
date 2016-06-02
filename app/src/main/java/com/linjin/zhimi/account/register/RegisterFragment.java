@@ -28,10 +28,10 @@ import com.mobsandgeeks.saripaar.annotation.Length;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import com.mobsandgeeks.saripaar.annotation.Order;
 import com.mobsandgeeks.saripaar.annotation.Password;
-import com.tinggu.common.utils.KeyboardUtils;
-import com.tinggu.common.utils.LogUtils;
-import com.tinggu.common.utils.NetWorkUtils;
-import com.tinggu.common.utils.TrackUtils;
+import com.linjin.zhimi.utils.KeyboardUtils;
+import com.linjin.zhimi.utils.LogUtils;
+import com.linjin.zhimi.utils.NetWorkUtils;
+import com.linjin.zhimi.utils.TrackUtils;
 
 import java.util.List;
 

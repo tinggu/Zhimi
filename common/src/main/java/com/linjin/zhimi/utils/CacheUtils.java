@@ -1,10 +1,8 @@
 package com.linjin.zhimi.utils;
 
 import com.linjin.zhimi.api.GroupApi;
-import com.linjin.zhimi.model.card.GroupCardList;
 import com.linjin.zhimi.model.group.GroupList;
 import com.linjin.zhimi.rest.RestUtils;
-import com.tinggu.common.utils.LogUtils;
 import com.cyou.quick.QuickApplication;
 
 import java.util.List;

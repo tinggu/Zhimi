@@ -11,7 +11,7 @@ import com.linjin.zhimi.model.account.AuthCredentials;
 import com.linjin.zhimi.model.account.UserModel;
 import com.linjin.zhimi.rest.ApiCode;
 import com.linjin.zhimi.rest.RestUtils;
-import com.tinggu.common.utils.LogUtils;
+import com.linjin.zhimi.utils.LogUtils;
 
 import org.greenrobot.eventbus.EventBus;
 

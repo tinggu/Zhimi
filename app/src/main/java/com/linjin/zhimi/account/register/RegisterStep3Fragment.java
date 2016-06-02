@@ -19,16 +19,13 @@ import butterknife.BindView;
  */
 @SuppressLint("ValidFragment")
 public class RegisterStep3Fragment extends RegisterStepBaseFragment {
-  
-
-    @NotEmpty(messageResId = R.string.login_error_name_empty, sequence = 0)
+    
+    @NotEmpty(messageResId = R.string.login_error_title_empty, sequence = 0)
     @Length(max = 15, sequence = 1)
     @Order(0)
     @BindView(R.id.ev_title)
     ClearableEditText evTitle;
-
-     
-
+    
     public RegisterStep3Fragment(RegisterPresenter presenter) {
         super(presenter);
     }
@@ -37,8 +34,6 @@ public class RegisterStep3Fragment extends RegisterStepBaseFragment {
     protected int getLayoutRes() {
         return R.layout.fragment_register_step3;
     }
-
-   
 
 
     @Override

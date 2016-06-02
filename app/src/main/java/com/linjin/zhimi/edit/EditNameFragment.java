@@ -1,53 +1,42 @@
 package com.linjin.zhimi.edit;
 
 
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.view.View;
+import android.widget.EditText;
 
-import com.cyou.quick.mvp.MvpFragment;
 import com.linjin.zhimi.R;
-import com.linjin.zhimi.base.BaseMvpFragment;
-import com.linjin.zhimi.base.lce.BaseMvpLceView;
-import com.linjin.zhimi.main.self.SelfPresenter;
-import com.linjin.zhimi.main.self.SelfView;
-import com.linjin.zhimi.widget.TopActionBar;
-import com.tinggu.common.utils.KeyboardUtils;
+import com.mobsandgeeks.saripaar.annotation.Length;
+import com.mobsandgeeks.saripaar.annotation.NotEmpty;
+import com.mobsandgeeks.saripaar.annotation.Order;
 
 import butterknife.BindView;
 
 
-public class EditNameFragment  extends BaseMvpFragment {
+public class EditNameFragment extends EditBaseFragment {
 
-    @BindView(R.id.topActionBar)
-    TopActionBar topActionBar;
+    @NotEmpty(messageResId = R.string.login_error_title_empty, sequence = 0)
+    @Length(max = 15, sequence = 1)
+    @Order(0)
+    @BindView(R.id.editText)
+    EditText editText;
 
-
-    @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        initView();
-    }
-
-    private void initView(){
-        topActionBar.setTitle(R.string.text_edit);
-        topActionBar.setBackListener(new TopActionBar.BackListener() {
-            @Override
-            public void onBack() {
-                KeyboardUtils.callBackKeyClick();
-            }
-        });
-        topActionBar.hideAction();
+    public EditNameFragment(EditPresenter presenter) {
+        super(presenter);
     }
 
     @Override
-    public SelfPresenter createPresenter() {
-        return new SelfPresenter();
+    protected void initView(){
+        super.initView();
+        topActionBar.setTitle(R.string.text_title);
+    }
+
+    @Override
+    public void onValidationSucceeded() {
+        
     }
 
     @Override
     protected int getLayoutRes() {
         return R.layout.fragment_edit_name;
     }
-    
+
 }

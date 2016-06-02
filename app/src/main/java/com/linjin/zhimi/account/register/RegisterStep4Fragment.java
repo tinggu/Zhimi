@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import com.linjin.zhimi.R;
 import com.linjin.zhimi.utils.PhotoUtils;
 import com.linjin.zhimi.widget.SelectPicPopWindow;
-import com.tinggu.common.utils.LogUtils;
+import com.linjin.zhimi.utils.LogUtils;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -29,13 +29,11 @@ public class RegisterStep4Fragment extends RegisterStepBaseFragment implements P
     PhotoUtils photoUtils = new PhotoUtils();
     private Uri headUri;
     private boolean isUpdatePic;
-
+    SelectPicPopWindow selectPicPW;
+    
     @BindView(R.id.img_avatar)
     ImageView imgAvatar;
-
-
-    SelectPicPopWindow selectPicPW;
-
+    
     public RegisterStep4Fragment(RegisterPresenter presenter) {
         super(presenter);
     }

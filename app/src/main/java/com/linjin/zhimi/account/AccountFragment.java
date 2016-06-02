@@ -13,7 +13,7 @@ import com.cyou.ui.slideswitch.SlideSwitch;
 import com.linjin.zhimi.R;
 import com.linjin.zhimi.base.BaseMvpFragment;
 import com.linjin.zhimi.widget.TopActionBar;
-import com.tinggu.common.utils.KeyboardUtils;
+import com.linjin.zhimi.utils.KeyboardUtils;
 
 import butterknife.BindView;
 

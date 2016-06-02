@@ -17,9 +17,9 @@ import android.widget.TextView;
 import com.cyou.quick.QuickActivity;
 import com.linjin.zhimi.R;
 import com.linjin.zhimi.widget.TopActionBar;
-import com.tinggu.common.utils.LogUtils;
-import com.tinggu.common.utils.NetWorkUtils;
-import com.tinggu.common.utils.TrackUtils;
+import com.linjin.zhimi.utils.LogUtils;
+import com.linjin.zhimi.utils.NetWorkUtils;
+import com.linjin.zhimi.utils.TrackUtils;
 
 import butterknife.BindView;
 

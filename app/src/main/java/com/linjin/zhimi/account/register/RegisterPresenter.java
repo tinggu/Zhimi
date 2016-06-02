@@ -11,7 +11,7 @@ import com.linjin.zhimi.model.BaseModel;
 import com.linjin.zhimi.model.account.AuthCredentials;
 import com.linjin.zhimi.model.account.UserModel;
 import com.linjin.zhimi.rest.ApiCode;
-import com.tinggu.common.utils.KeyboardUtils;
+import com.linjin.zhimi.utils.KeyboardUtils;
 
 import org.greenrobot.eventbus.EventBus;
 

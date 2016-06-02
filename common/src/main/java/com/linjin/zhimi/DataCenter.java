@@ -5,7 +5,7 @@ import android.text.TextUtils;
 
 import com.linjin.zhimi.model.ConstantsModel;
 import com.linjin.zhimi.model.account.User;
-import com.tinggu.common.utils.LogUtils;
+import com.linjin.zhimi.utils.LogUtils;
 import com.cyou.quick.QuickApplication;
 
 import java.io.DataInputStream;
@@ -193,6 +193,8 @@ public class DataCenter {
 //        LogUtils.d("mobilephone", "saveUserMobile mobileNum " + mobileNum.toString());
 //    }
 
+    
+//    public 
 
     public String getUserID() {
         if (user == null || TextUtils.isEmpty(user.getUid()))

@@ -8,6 +8,8 @@
     <string name="text_back">返回</string>
     <string name="text_save">保存</string>
     <string name="text_next">下一步</string>
+    <string name="text_name">姓名</string>
+    <string name="text_title">身份</string>
     <string name="text_watch">关注的人</string>
     <string name="text_location">附近达人</string>
     <string name="text_mesage">消息通知</string>
@@ -49,6 +51,7 @@
     <string name="login_error_password_error">登录密码错误</string>
     <string name="login_error_phonenum_empty">手机号不能为空</string>
     <string name="login_error_name_empty">名字不能为空</string>
+    <string name="login_error_title_empty">身份不能为空</string>
     <string name="login_error_password_empty">密码不能为空</string>
 
     <string name="login_phonenumber_hint">手机号码</string>

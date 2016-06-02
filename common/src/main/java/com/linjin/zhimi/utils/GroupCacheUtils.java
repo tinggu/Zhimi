@@ -5,7 +5,6 @@ import android.support.v4.util.LongSparseArray;
 import com.linjin.zhimi.api.GroupMemberApi;
 import com.linjin.zhimi.model.card.GroupCardList;
 import com.linjin.zhimi.rest.RestUtils;
-import com.tinggu.common.utils.LogUtils;
 import com.cyou.quick.QuickApplication;
 
 import java.util.List;

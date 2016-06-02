@@ -25,7 +25,7 @@ import com.linjin.zhimi.event.RegisterSuccessfulEvent;
 import com.linjin.zhimi.utils.CacheUtils;
 import com.linjin.zhimi.utils.DialogUtils;
 import com.linjin.zhimi.utils.IntentStarter;
-import com.tinggu.common.utils.LogUtils;
+import com.linjin.zhimi.utils.LogUtils;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;

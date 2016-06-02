@@ -11,7 +11,7 @@ import com.linjin.zhimi.model.BaseModel;
 import com.linjin.zhimi.rest.ApiCode;
 import com.linjin.zhimi.utils.DialogUtils;
 import com.linjin.zhimi.utils.IntentStarter;
-import com.tinggu.common.utils.RetrofitErrorFilter;
+import com.linjin.zhimi.utils.RetrofitErrorFilter;
 
 public class BaseLoadMoreRxPresenter<V extends LoadMoreView<M>, M> extends LoadMoreRxPresenter<V, M> {
 

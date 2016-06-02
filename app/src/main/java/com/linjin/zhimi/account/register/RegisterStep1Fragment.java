@@ -10,7 +10,7 @@ import android.widget.TextView;
 import com.cyou.quick.QuickApplication;
 import com.linjin.zhimi.R;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
-import com.tinggu.common.utils.NetWorkUtils;
+import com.linjin.zhimi.utils.NetWorkUtils;
 
 import butterknife.BindView;
 import butterknife.OnClick;

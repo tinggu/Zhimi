@@ -8,13 +8,12 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.cyou.quick.mvp.MvpView;
 import com.linjin.zhimi.R;
 import com.linjin.zhimi.base.BaseMvpFragment;
+import com.linjin.zhimi.utils.LogUtils;
 import com.linjin.zhimi.widget.TopActionBar;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
-import com.tinggu.common.utils.LogUtils;
 
 import java.util.List;
 
@@ -30,7 +29,7 @@ import butterknife.BindView;
 @SuppressLint("ValidFragment")
 public abstract class RegisterStepBaseFragment
         extends BaseMvpFragment<RegisterView, RegisterPresenter>
-        implements MvpView, Validator.ValidationListener {
+        implements Validator.ValidationListener {
 
     protected Validator validator;
 
@@ -47,7 +46,7 @@ public abstract class RegisterStepBaseFragment
     protected void initView() {
         validator = new Validator(this);
         validator.setValidationListener(this);
-        
+
         topActionBar.setBackListener(new TopActionBar.BackListener() {
             @Override
             public void onBack() {

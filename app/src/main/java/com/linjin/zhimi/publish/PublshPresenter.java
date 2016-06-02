@@ -4,7 +4,7 @@ package com.linjin.zhimi.publish;
 import android.text.TextUtils;
 
 import com.cyou.quick.mvp.MvpBasePresenter;
-import com.tinggu.common.utils.KeyboardUtils;
+import com.linjin.zhimi.utils.KeyboardUtils;
 
 /**
  * Description:

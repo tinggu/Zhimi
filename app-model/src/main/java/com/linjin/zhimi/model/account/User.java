@@ -3,6 +3,8 @@ package com.linjin.zhimi.model.account;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import io.realm.RealmObject;
+
 /**
  * Description:
  * Copyright  : Copyright (c) 2015
@@ -10,7 +12,7 @@ import com.google.gson.annotations.SerializedName;
  * Author     : liujianguang
  * Date       : 2016/1/5 18:45
  */
-public class User {
+public class User extends RealmObject {
     //    private static final long serialVersionUID = 1L;
     @Expose
     @SerializedName("uid")
@@ -32,6 +34,9 @@ public class User {
     @SerializedName("location")
     private String location;
 
+    @Expose
+    @SerializedName("birthday")
+    private String birthday;
 
     @Expose
     @SerializedName("title")
@@ -243,5 +248,13 @@ public class User {
 
     public void setIsIdentity(byte isIdentity) {
         this.isIdentity = isIdentity;
+    }
+
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
     }
 }

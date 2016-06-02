@@ -6,7 +6,7 @@ import android.text.TextUtils;
 import com.cyou.quick.mvp.MvpBasePresenter;
 import com.linjin.zhimi.publish.PublishActivity;
 import com.linjin.zhimi.publish.PublishView;
-import com.tinggu.common.utils.KeyboardUtils;
+import com.linjin.zhimi.utils.KeyboardUtils;
 
 /**
  * Description:

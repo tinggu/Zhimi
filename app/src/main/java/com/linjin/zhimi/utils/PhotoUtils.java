@@ -9,8 +9,6 @@ import android.os.Environment;
 import android.provider.MediaStore;
 
 import com.linjin.zhimi.AppConstants;
-import com.tinggu.common.utils.FileUtils;
-import com.tinggu.common.utils.LogUtils;
 
 import java.io.File;
 import java.io.IOException;

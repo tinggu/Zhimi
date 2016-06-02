@@ -4,8 +4,8 @@ import android.app.ActivityManager;
 import android.content.Context;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
-import com.tinggu.common.utils.LogUtils;
-import com.tinggu.common.utils.TrackUtils;
+import com.linjin.zhimi.utils.LogUtils;
+import com.linjin.zhimi.utils.TrackUtils;
 import com.umeng.message.PushAgent;
 
 import io.rong.imkit.RongIM;
