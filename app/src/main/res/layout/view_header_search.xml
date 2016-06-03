@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="@color/white"
+    android:gravity="center">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_alignParentTop="true"
+        android:background="@color/color_line" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/et_search_height"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="9dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="9dp"
+        android:background="@drawable/et_rounded_rectangle" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+
+        <EditText
+            android:id="@+id/et_search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:background="@drawable/md_transparent"
+            android:hint="zhi"
+            android:singleLine="true"
+            android:textColor="@color/text_base_color"
+            android:textColorHint="@color/color_search_text"
+            android:textSize="@dimen/search_text_size" />
+
+        <ImageView
+            android:id="@+id/iv_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/msg_add_search" />
+
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_alignParentBottom="true"
+        android:background="@color/color_line" />
+</FrameLayout>

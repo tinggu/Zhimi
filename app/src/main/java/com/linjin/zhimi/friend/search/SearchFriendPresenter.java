@@ -1,10 +1,9 @@
-package com.linjin.zhimi.friend.find;
+package com.linjin.zhimi.friend.search;
 
 
 import android.text.TextUtils;
 
 import com.cyou.quick.mvp.MvpBasePresenter;
-import com.linjin.zhimi.publish.PublishView;
 import com.linjin.zhimi.publish.PublishActivity;
 import com.linjin.zhimi.utils.KeyboardUtils;
 
@@ -15,7 +14,7 @@ import com.linjin.zhimi.utils.KeyboardUtils;
  * Author     : wangjia_bi
  * Date       : 2015/6/11 14:53
  */
-public class FindFriendPresenter extends MvpBasePresenter<PublishView> {
+public class SearchFriendPresenter extends MvpBasePresenter<SearchFriendView> {
 
     private PublishActivity publishActivity;
     
@@ -33,7 +32,7 @@ public class FindFriendPresenter extends MvpBasePresenter<PublishView> {
         this.supplement = supplement;
     }
 
-    public FindFriendPresenter(PublishActivity publishActivity) {
+    public SearchFriendPresenter(PublishActivity publishActivity) {
         this.publishActivity = publishActivity;
     }
     

@@ -46,7 +46,7 @@
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".friend.find.FindFriendActivity"
+            android:name=".friend.search.SearchFriendActivity"
             android:screenOrientation="portrait" />
 
         <activity

@@ -10,7 +10,7 @@ import com.linjin.zhimi.DataCenter;
 import com.linjin.zhimi.R;
 import com.linjin.zhimi.account.login.LoginActivity;
 import com.linjin.zhimi.friend.apply.ApplyActivity;
-import com.linjin.zhimi.friend.find.FindFriendActivity;
+import com.linjin.zhimi.friend.search.SearchFriendActivity;
 import com.linjin.zhimi.main.MainActivity;
 import com.linjin.zhimi.main.WebViewActivity;
 import com.linjin.zhimi.publish.PublishActivity;
@@ -99,7 +99,7 @@ public class IntentStarter {
     }
     
     public static void showFind(FragmentActivity activity) {
-        Intent i = new Intent(activity, FindFriendActivity.class);
+        Intent i = new Intent(activity, SearchFriendActivity.class);
         activity.startActivity(i);
     }
 }

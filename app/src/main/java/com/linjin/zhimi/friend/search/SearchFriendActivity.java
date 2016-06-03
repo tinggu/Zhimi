@@ -1,4 +1,4 @@
-package com.linjin.zhimi.friend.find;
+package com.linjin.zhimi.friend.search;
 
 import android.os.Bundle;
 
@@ -17,7 +17,7 @@ import butterknife.BindView;
  * Author     : wangjia_bi
  * Date       : 2015/6/8 15:29
  */
-public class FindFriendActivity extends BaseMvpActivity {
+public class SearchFriendActivity extends BaseMvpActivity {
 
     @BindView(R.id.topActionBar)
     TopActionBar topActionBar;
@@ -25,7 +25,7 @@ public class FindFriendActivity extends BaseMvpActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_find_friend);
+        setContentView(R.layout.activity_search_friend);
         initView();
     }
 

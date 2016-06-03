@@ -1,4 +1,4 @@
-package com.linjin.zhimi.friend.find;
+package com.linjin.zhimi.friend.search;
 
 import com.cyou.quick.mvp.MvpView;
 
@@ -9,7 +9,7 @@ import com.cyou.quick.mvp.MvpView;
  * Author      wangjia_bi
  * Date        2015/6/12 1453
  */
-public interface FindFriendView extends MvpView {
+public interface SearchFriendView extends MvpView {
 
     void finish();
     
