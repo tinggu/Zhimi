@@ -1,4 +1,4 @@
-package com.linjin.zhimi.main.topic.topicDetails;
+package com.linjin.zhimi.answer;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
@@ -22,7 +22,7 @@ import cn.smssdk.SMSSDKInitUtils;
  * Author     : wangjia_bi
  * Date       : 2015/6/8 15:29
  */
-public class TopicDetailsActivity extends BaseMvpActivity {
+public class AnswerDetailsActivity extends BaseMvpActivity {
 
     public DialogUtils dialogUtils;
 

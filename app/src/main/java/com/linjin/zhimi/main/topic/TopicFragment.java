@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.linjin.zhimi.R;
@@ -16,9 +17,9 @@ import com.linjin.zhimi.widget.TopActionBar;
 import butterknife.BindView;
 
 
-public class TopicFragment 
+public class TopicFragment
         extends BaseLoadMoreFragment<SwipeRefreshLayout, TopicAnswer, TopicView, TopicPresenter> {
-    
+
     @BindView(R.id.topActionBar)
     TopActionBar topActionBar;
 
@@ -27,17 +28,20 @@ public class TopicFragment
 
     @BindView(R.id.right)
     View right;
-    
+
+    @BindView(R.id.right)
+    RecyclerView recyclerView;
+
 //    LatestPresenter
-    
+
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         initView();
     }
-    
-    private void initView(){
-        topActionBar.setTitle("热门匿题"); 
+
+    private void initView() {
+        topActionBar.setTitle("热门匿题");
         topActionBar.setBackText("提问");
         topActionBar.hideAction();
         topActionBar.setActionImageResource(R.mipmap.topic_sidebar);
@@ -54,7 +58,15 @@ public class TopicFragment
             }
         });
     }
-    
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (right != null) {
+            drawerLayout.closeDrawer(right);
+        }
+    }
+
     @Override
     protected int getLayoutRes() {
         return R.layout.fragment_topic;

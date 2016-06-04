@@ -12,7 +12,7 @@ import com.linjin.zhimi.account.login.LoginActivity;
 import com.linjin.zhimi.friend.apply.ApplyActivity;
 import com.linjin.zhimi.friend.search.SearchFriendActivity;
 import com.linjin.zhimi.main.MainActivity;
-import com.linjin.zhimi.main.WebViewActivity;
+import com.linjin.zhimi.activity.WebViewActivity;
 import com.linjin.zhimi.publish.PublishActivity;
 
 /**

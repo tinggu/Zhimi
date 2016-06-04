@@ -11,5 +11,5 @@
         android:width="20dp"
         android:height="20dp" /><!-- 宽度和高度 -->
 
-    <solid android:color="@color/number_bg" />
+    <solid android:color="@color/bg_number" />
 </shape>

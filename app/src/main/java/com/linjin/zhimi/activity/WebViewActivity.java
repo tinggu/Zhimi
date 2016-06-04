@@ -1,4 +1,4 @@
-package com.linjin.zhimi.main;
+package com.linjin.zhimi.activity;
 
 import android.content.Intent;
 import android.graphics.Bitmap;

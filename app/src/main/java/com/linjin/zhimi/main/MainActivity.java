@@ -14,9 +14,16 @@ import com.cyou.quick.mvp.MvpPresenter;
 import com.linjin.zhimi.R;
 import com.linjin.zhimi.base.BaseMvpActivity;
 import com.linjin.zhimi.main.discovery.DiscoveryFragment;
+import com.linjin.zhimi.main.menu.MenuEventCollent;
+import com.linjin.zhimi.main.menu.MenuEventDraft;
+import com.linjin.zhimi.main.menu.MenuEventLast;
 import com.linjin.zhimi.main.msg.MsgFragment;
 import com.linjin.zhimi.main.self.SelfFragment;
 import com.linjin.zhimi.main.topic.TopicFragment;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,6 +69,13 @@ public class MainActivity extends BaseMvpActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView(savedInstanceState);
+        EventBus.getDefault().register(this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
     }
 
     @Override
@@ -203,5 +217,18 @@ public class MainActivity extends BaseMvpActivity
         return childs;
     }
 
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onEventLast(MenuEventLast eventLast) {
 
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onEventCollent(MenuEventCollent eventCollent) {
+
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onEventDraft(MenuEventDraft eventDraft) {
+
+    }
 }

@@ -1,15 +1,15 @@
-package com.linjin.zhimi.latest;
+package com.linjin.zhimi.topic;
 
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 
 import com.cyou.quick.mvp.MvpBasePresenter;
 import com.cyou.quick.mvp.MvpPresenter;
 import com.linjin.zhimi.R;
 import com.linjin.zhimi.base.BaseMvpActivity;
-import com.linjin.zhimi.utils.DialogUtils;
-
-import cn.smssdk.SMSSDKInitUtils;
+import com.linjin.zhimi.topic.latest.LatestFragment;
+import com.linjin.zhimi.topic.summary.SummaryFragment;
 
 /**
  * Description:
@@ -18,18 +18,13 @@ import cn.smssdk.SMSSDKInitUtils;
  * Author     : wangjia_bi
  * Date       : 2015/6/8 15:29
  */
-public class TopicListActivity extends BaseMvpActivity {
+public class TopicActivity extends BaseMvpActivity {
 
-    public DialogUtils dialogUtils;
-
-    private LatestPresenter latestPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_topic_list);
-//        EventBus.getDefault().register(this);
-        dialogUtils = new DialogUtils();
+        setContentView(R.layout.activity_topic);
 
         showLatest();
     }
@@ -40,21 +35,32 @@ public class TopicListActivity extends BaseMvpActivity {
     }
 
 
-    @Override
-    public void onDestroy() {
-        dialogUtils.hideLoading();
-//        EventBus.getDefault().unregister(this);
-        super.onDestroy();
+//    @Override
+//    public void onDestroy() {
+//        dialogUtils.hideLoading();
+////        EventBus.getDefault().unregister(this);
+//        super.onDestroy();
+//    }
+
+    public void showSummary() {
+        SummaryFragment summaryFragment = new SummaryFragment();
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+
+        transaction.replace(R.id.fragmentContainer, summaryFragment);
+        transaction.commit();
     }
 
     public void showLatest() {
-        SMSSDKInitUtils.initSDK(this); 
+
         LatestFragment latestFragment = new LatestFragment();
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.fragmentContainer, latestFragment);
         transaction.commit();
     }
 
-   
+    public void clearFragment() {
+        FragmentManager fm = getSupportFragmentManager();
+    
+    }
 
 }

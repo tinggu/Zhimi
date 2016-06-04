@@ -11,7 +11,8 @@
         android:drawableRight="@null"
         android:text="匿题分类"  />
 
-    <ListView
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_menu"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" />
@@ -23,23 +24,23 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/tv_new"
+            android:id="@+id/tv_last"
             style="@style/Menu.Text"
-            android:text="最新匿题" />
+            android:text="@string/text_last_topic" />
 
         <View style="@style/Menu.Line" />
 
         <TextView
             android:id="@+id/tv_collect"
             style="@style/Menu.Text"
-            android:text="收藏的回答" />
+            android:text="@string/text_collect_answe" />
 
         <View style="@style/Menu.Line" />
 
         <TextView
             android:id="@+id/tv_draft"
             style="@style/Menu.Text"
-            android:text="回答草稿" />
+            android:text="@string/text_draft" />
 
     </LinearLayout>
 </LinearLayout>

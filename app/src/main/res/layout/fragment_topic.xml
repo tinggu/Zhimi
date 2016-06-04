@@ -44,7 +44,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="right">
 
-        <include layout="@layout/main_menu" />
+        <include layout="@layout/view_draw_menu" />
         
     </FrameLayout>
 

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <com.linjin.zhimi.widget.TopActionBar
+        android:id="@+id/topActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:id="@+id/item_account"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:background="@color/color_base"
+        android:orientation="horizontal">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/iv_avatar"
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15sp"
+            android:paddingTop="10dp" />
+
+        <TextView
+            style="@style/Main.Item"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="@string/text_account" />
+
+
+        <Button
+            android:id="@+id/btn_topic_details"
+            style="@style/Login.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="15dp"
+            android:background="@drawable/selector_round_register_btn"
+            android:src="@mipmap/cell_prev"
+            android:text="@string/text_topic_details"
+            android:textColor="@color/text_hint_color" />
+    </LinearLayout>
+
+    <WebView
+        android:id="@+id/wv_summary"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <include
+        android:id="@+id/bottom"
+        layout="@layout/view_bottom_topic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>
