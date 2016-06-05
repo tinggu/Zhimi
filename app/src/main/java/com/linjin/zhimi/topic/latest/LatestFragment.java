@@ -8,7 +8,7 @@ import android.view.View;
 
 import com.linjin.zhimi.R;
 import com.linjin.zhimi.base.loadmore.BaseLoadMoreFragment;
-import com.linjin.zhimi.main.topic.TopicView;
+import com.linjin.zhimi.main.topic.TopicListView;
 import com.linjin.zhimi.model.topic.TopicAnswer;
 import com.linjin.zhimi.utils.KeyboardUtils;
 import com.linjin.zhimi.widget.TopActionBar;
@@ -17,7 +17,7 @@ import butterknife.BindView;
 
 
 public class LatestFragment
-        extends BaseLoadMoreFragment<SwipeRefreshLayout, TopicAnswer, TopicView, LatestPresenter> {
+        extends BaseLoadMoreFragment<SwipeRefreshLayout, TopicAnswer, TopicListView, LatestPresenter> {
 
     @BindView(R.id.topActionBar)
     TopActionBar topActionBar;

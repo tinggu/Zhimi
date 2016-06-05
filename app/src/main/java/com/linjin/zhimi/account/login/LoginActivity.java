@@ -77,19 +77,19 @@ public class LoginActivity extends BaseMvpActivity {
 
     public void showSelect() {
         SelectFragment selectFragment = new SelectFragment(this);
-        FragmentTransaction trasection = getSupportFragmentManager().beginTransaction();
-        trasection.replace(R.id.fragmentContainer, selectFragment);
-//        trasection.addToBackStack("select");
-        trasection.commit();
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragmentContainer, selectFragment);
+//        transaction.addToBackStack("select");
+        transaction.commit();
     }
 
 
     public void showLogin() {
         LoginFragment loginFragment = new LoginFragment(this);
-        FragmentTransaction trasection = getSupportFragmentManager().beginTransaction();
-        trasection.replace(R.id.fragmentContainer, loginFragment);
-        trasection.addToBackStack("login");
-        trasection.commit();
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragmentContainer, loginFragment);
+        transaction.addToBackStack("login");
+        transaction.commit();
     }
 
     public void showRegister0() {

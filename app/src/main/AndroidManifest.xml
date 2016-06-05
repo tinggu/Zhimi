@@ -35,6 +35,10 @@
             android:screenOrientation="portrait" />
 
         <activity
+            android:name=".topic.TopicActivity"
+            android:screenOrientation="portrait" />
+        
+        <activity
             android:name=".publish.PublishActivity"
             android:launchMode="singleTask"
             android:noHistory="true"

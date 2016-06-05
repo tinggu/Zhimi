@@ -1,4 +1,4 @@
-package com.linjin.zhimi.topic.latest;
+package com.linjin.zhimi.topic.details;
 
 
 import android.support.v4.app.FragmentActivity;
@@ -14,11 +14,11 @@ import com.linjin.zhimi.model.topic.TopicAnswer;
  * Author     : wangjia_bi
  * Date       : 2015/6/11 14:53
  */
-public class LatestPresenter extends BaseLoadMoreRxPresenter<TopicListView, TopicAnswer> {
+public class DetailsPresenter extends BaseLoadMoreRxPresenter<TopicListView, TopicAnswer> {
 
     FragmentActivity activity;
 
-    public LatestPresenter(FragmentActivity activity) {
+    public DetailsPresenter(FragmentActivity activity) {
         this.activity = activity;
     }
 }

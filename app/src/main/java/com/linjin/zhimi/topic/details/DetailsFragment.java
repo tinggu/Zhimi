@@ -19,7 +19,7 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 
-public class DetallsFragment extends BaseMvpFragment {
+public class DetailsFragment extends BaseMvpFragment {
 
     @BindView(R.id.topActionBar)
     TopActionBar topActionBar;

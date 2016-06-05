@@ -8,5 +8,11 @@ package com.linjin.zhimi.topic;
  * Date       : 2016/6/4 10:37
  */
 public interface TopicFlag {
+    String FLAG = "flag";
     String FLAG_SUMMARY = "summary";
+    String FLAG_DRAFT = "draft";
+    String FLAG_DETAILS = "details";
+    String FLAG_LAST = "last";
+    String FLAG_COLLENT = "collent";
+//    String FLAG_ = "summary";
 }

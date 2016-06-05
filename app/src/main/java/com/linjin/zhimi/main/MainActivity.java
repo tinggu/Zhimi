@@ -1,5 +1,6 @@
 package com.linjin.zhimi.main;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -20,6 +21,8 @@ import com.linjin.zhimi.main.menu.MenuEventLast;
 import com.linjin.zhimi.main.msg.MsgFragment;
 import com.linjin.zhimi.main.self.SelfFragment;
 import com.linjin.zhimi.main.topic.TopicFragment;
+import com.linjin.zhimi.topic.TopicActivity;
+import com.linjin.zhimi.topic.TopicFlag;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -219,16 +222,22 @@ public class MainActivity extends BaseMvpActivity
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEventLast(MenuEventLast eventLast) {
-
+        Intent intent = new Intent(this, TopicActivity.class);
+        intent.putExtra(TopicFlag.FLAG,TopicFlag.FLAG_LAST);
+        startActivity(intent);
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEventCollent(MenuEventCollent eventCollent) {
-
+        Intent intent = new Intent(this, TopicActivity.class);
+        intent.putExtra(TopicFlag.FLAG,TopicFlag.FLAG_COLLENT);
+        startActivity(intent);
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEventDraft(MenuEventDraft eventDraft) {
-
+        Intent intent = new Intent(this, TopicActivity.class);
+        intent.putExtra(TopicFlag.FLAG,TopicFlag.FLAG_DRAFT);
+        startActivity(intent);
     }
 }

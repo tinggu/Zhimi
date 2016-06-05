@@ -1,7 +1,6 @@
 package com.linjin.zhimi.main.topic;
 
-
-import com.cyou.quick.mvp.loadmore.LoadMoreView;
+import com.linjin.zhimi.base.BaseLoadMoreRxPresenter;
 import com.linjin.zhimi.model.topic.TopicAnswer;
 
 /**
@@ -9,10 +8,8 @@ import com.linjin.zhimi.model.topic.TopicAnswer;
  * Copyright  : Copyright (c) 2015
  * Company    : 北京畅游天下网络科技有限公司
  * Author     : liujianguang
- * Date       : 2015/12/23
+ * Date       : 2016/1/4
  **/
 
-public interface TopicView extends LoadMoreView<TopicAnswer> {
-
-
+public class TopicListPresenter extends BaseLoadMoreRxPresenter<TopicListView, TopicAnswer> {
 }

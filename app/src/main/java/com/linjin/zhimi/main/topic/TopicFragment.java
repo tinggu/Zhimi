@@ -18,7 +18,7 @@ import butterknife.BindView;
 
 
 public class TopicFragment
-        extends BaseLoadMoreFragment<SwipeRefreshLayout, TopicAnswer, TopicView, TopicPresenter> {
+        extends BaseLoadMoreFragment<SwipeRefreshLayout, TopicAnswer, TopicListView, TopicListPresenter> {
 
     @BindView(R.id.topActionBar)
     TopActionBar topActionBar;
@@ -113,7 +113,7 @@ public class TopicFragment
     }
 
     @Override
-    public TopicPresenter createPresenter() {
-        return new TopicPresenter();
+    public TopicListPresenter createPresenter() {
+        return new TopicListPresenter();
     }
 }
