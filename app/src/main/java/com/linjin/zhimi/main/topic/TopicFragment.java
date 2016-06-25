@@ -5,11 +5,16 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 
 import com.linjin.zhimi.R;
+import com.linjin.zhimi.base.adapter.HeaderListAdapter;
 import com.linjin.zhimi.base.loadmore.BaseLoadMoreFragment;
+import com.linjin.zhimi.base.view.RefreshableRecyclerView;
+import com.linjin.zhimi.model.topic.Topic;
 import com.linjin.zhimi.model.topic.TopicAnswer;
 import com.linjin.zhimi.utils.IntentStarter;
 import com.linjin.zhimi.widget.TopActionBar;
@@ -29,9 +34,10 @@ public class TopicFragment
     @BindView(R.id.right)
     View right;
 
-    @BindView(R.id.right)
-    RecyclerView recyclerView;
+    @BindView(R.id.recyclerView)
+    RefreshableRecyclerView recyclerView;
 
+    HeaderListAdapter<Topic> adapter;
 //    LatestPresenter
 
     @Override
@@ -57,6 +63,14 @@ public class TopicFragment
                 drawerLayout.openDrawer(right);
             }
         });
+
+        RecyclerView.LayoutManager manager = new LinearLayoutManager(getContext());
+        View headView = LayoutInflater.from(getContext())
+                .inflate(R.layout.item_banner, null);
+        adapter = new HeaderListAdapter<>();
+        adapter.setHeaderView(headView);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(manager);
     }
 
     @Override

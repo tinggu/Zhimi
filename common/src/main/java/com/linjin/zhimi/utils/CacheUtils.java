@@ -1,9 +1,9 @@
 package com.linjin.zhimi.utils;
 
+import com.cyou.quick.QuickApplication;
 import com.linjin.zhimi.api.GroupApi;
 import com.linjin.zhimi.model.group.GroupList;
 import com.linjin.zhimi.rest.RestUtils;
-import com.cyou.quick.QuickApplication;
 
 import java.util.List;
 
@@ -27,11 +27,11 @@ public class CacheUtils {
 
     public static final String TAG = "CacheUtils";
 
-    public static void init(String userid) {
-        LogUtils.i(TAG, "initRealm " + userid);
-            RealmConfiguration config = new RealmConfiguration.Builder(QuickApplication.getInstance())
-                    .name("db_" + userid + ".realm").build();
-            Realm.setDefaultConfiguration(config);
+    public static void init() {
+        LogUtils.i(TAG, "initRealm");
+        RealmConfiguration config = new RealmConfiguration.Builder(QuickApplication.getInstance())
+                .name("db_zm.realm").build();
+        Realm.setDefaultConfiguration(config);
     }
 
 
@@ -75,59 +75,10 @@ public class CacheUtils {
         realm.close();
     }
 
-    public static <E extends RealmObject> void deleteAll(Realm realm, RealmResults<E> objects) {
-        realm.beginTransaction();
-        objects.clear();
-        realm.commitTransaction();
-    }
-
-    public static <E extends RealmObject> void clearTable(Realm realm, Class<E> clazz) {
-        realm.beginTransaction();
-        realm.clear(clazz);
-        realm.commitTransaction();
-    }
-
     public static <E extends RealmObject> void delete(Realm realm, E object) {
         realm.beginTransaction();
-        object.removeFromRealm();
+        object.deleteFromRealm();
         realm.commitTransaction();
     }
-
-    public static void updateGroupList() {
-        GroupApi groupApi = RestUtils.createApi(GroupApi.class);
-//        Observable<GroupList> observable = groupApi.requestGroupList(0);
-        Observable<GroupList> observable = applyScheduler(groupApi.requestGroupList(0));
-        observable.subscribe(new Subscriber<GroupList>() {
-            @Override
-            public void onCompleted() {
-                LogUtils.i(TAG, "updateGroupList..... onCompleted ");
-            }
-
-            @Override
-            public void onError(Throwable e) {
-                e.printStackTrace();
-                LogUtils.i(TAG, "updateGroupList..... onError " + e.toString());
-            }
-
-            @Override
-            public void onNext(GroupList groupList) {
-                LogUtils.i(TAG, "updateGroupList..... onNext " + groupList.list.size());
-                insertOrUpdates(groupList.list);
-            }
-        });
-//        observable.map(latest Func1<GroupList, List<Group>>() {
-//            @Override
-//            public List<Group> call(GroupList groupList) {
-//                insertOrUpdates(groupList.list);
-//                return groupList.list;
-//            }
-//        });
-    }
-
-   
-
-    private static <E> Observable<E> applyScheduler(Observable<E> observable) {
-        return observable.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-    }
-
+    
 }

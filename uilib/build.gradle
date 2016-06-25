@@ -23,13 +23,11 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:' + rootProject.ext.appcompat7Version
-    compile 'com.android.support:recyclerview-v7:' + rootProject.ext.appcompat7Version
-
     compile project(':common')
     //switch button
     //    compile 'com.kyleduo.switchbutton:library:1.2.8'
-    
+    //RecyclerViewHeader
+    compile 'com.bartoszlipinski:recyclerviewheader2:2.0.1'
     //Fresco
     compile "com.facebook.fresco:fresco:0.9.0"
     compile 'com.facebook.fresco:imagepipeline-okhttp:0.9.0'

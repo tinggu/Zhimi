@@ -2,6 +2,9 @@ package com.linjin.zhimi.base.adapter;
 
 import android.view.View;
 
+import com.linjin.zhimi.base.listener.ItemClickListener;
+import com.linjin.zhimi.base.listener.ItemLongClickListener;
+
 import static android.support.v7.widget.RecyclerView.Adapter;
 import static android.support.v7.widget.RecyclerView.ViewHolder;
 import static android.view.View.OnClickListener;
@@ -41,15 +44,15 @@ public abstract class BaseListenerAdapter<VH extends BaseViewHolder> extends Ada
         this.mItemLongClickListener = listener;
     }
 
-    public static class BaseViewHolder 
-            extends ViewHolder 
+    public static class BaseViewHolder
+            extends ViewHolder
             implements OnClickListener, OnLongClickListener {
 
         private ItemClickListener mItemClickListener;
         private ItemLongClickListener mItemLongClickListener;
 
-        public BaseViewHolder(View itemView, 
-                              ItemClickListener itemClickListener, 
+        public BaseViewHolder(View itemView,
+                              ItemClickListener itemClickListener,
                               ItemLongClickListener itemLongClickListener) {
             super(itemView);
             this.mItemClickListener = itemClickListener;

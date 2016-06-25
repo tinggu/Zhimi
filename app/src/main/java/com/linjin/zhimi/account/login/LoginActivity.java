@@ -32,6 +32,7 @@ import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
 import cn.smssdk.SMSSDKInitUtils;
+
 /**
  * Description:
  * Copyright  : Copyright (c) 2015
@@ -173,8 +174,9 @@ public class LoginActivity extends BaseMvpActivity {
     }
 
     private void refreshCache() {
+        CacheUtils.init();
         if (DataCenter.getInstance().hasUser()) {
-            CacheUtils.init(DataCenter.getInstance().getUserID());
+
             CacheUtils.refreshCache();
         } else {
             LogUtils.e("user 为空初始化失败");

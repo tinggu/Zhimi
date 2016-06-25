@@ -31,9 +31,10 @@ public abstract class RealmBaseRecyerViewAdapter<VH extends BaseViewHolder, T ex
         this.inflater = LayoutInflater.from(context);
         this.listener = (!automaticUpdate) ? null : new RealmChangeListener() {
             @Override
-            public void onChange() {
+            public void onChange(Object element) {
                 notifyDataSetChanged();
             }
+            
         };
 
         if (listener != null && realmResults != null) {
@@ -92,8 +93,8 @@ public abstract class RealmBaseRecyerViewAdapter<VH extends BaseViewHolder, T ex
             if (this.realmResults != null) {
                 this.realmResults.realm.removeChangeListener(listener);
             }
-            if (queryResults != null) {
-                queryResults.realm.addChangeListener(listener);
+            if (queryResults != null) { 
+                queryResults.realm.addListener(listener);
             }
         }
 

@@ -7,6 +7,7 @@ import com.linjin.zhimi.model.ConstantsModel;
 import com.linjin.zhimi.model.account.User;
 import com.linjin.zhimi.utils.LogUtils;
 import com.cyou.quick.QuickApplication;
+import com.linjin.zhimi.utils.SharedPreferencesUtils;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -18,6 +19,9 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 public class DataCenter {
+    public static final String KEY_USER_ID = "userId";
+    public static final String KEY_FIRST = "isFirst";
+    
     public static final String USER_FILE_NAME = "user.dat";
     public static final String CONSTANTS_FILE_NAME = "constants.dat";
     private static DataCenter dataCenter;
@@ -26,7 +30,8 @@ public class DataCenter {
 
     private User user;
     private ConstantsModel constants;
-
+    private SharedPreferencesUtils spu ;
+    
     public static DataCenter getInstance() {
         if (dataCenter == null) {
             synchronized (DataCenter.class) {
@@ -39,6 +44,7 @@ public class DataCenter {
     }
 
     private DataCenter() {
+        spu = SharedPreferencesUtils.getInstance(QuickApplication.getInstance());
         reset();
     }
 
@@ -225,14 +231,7 @@ public class DataCenter {
     public boolean hasUser() {
         return user != null;
     }
-
-    public boolean isFirstIn() {
-        return true;
-    }
-
-    public void saveFirstIn() { 
-    }
-
+    
     public void initConstants() {
       
         //读取产生异常，返回null
@@ -279,5 +278,23 @@ public class DataCenter {
             return "";
         }
        return constants.getPrefixImgUrl();
+    }
+    
+    public String readUserId() { 
+        String userId = (String) spu.getParam(SharedPreferencesUtils.Type.STRRING, KEY_USER_ID, ""); 
+       return userId;
+    }
+
+    public void saveUserId(User user) {
+        spu.setParam(SharedPreferencesUtils.Type.STRRING, KEY_USER_ID, user.getUid());
+    }
+
+    public boolean isFirstIn() {
+        Boolean save = (boolean) spu.getParam(SharedPreferencesUtils.Type.BOOLEAN, KEY_FIRST, Boolean.FALSE);
+        return !save;
+    }
+
+    public void saveFirstIn() {
+        spu.setParam(SharedPreferencesUtils.Type.BOOLEAN, KEY_FIRST, Boolean.TRUE);
     }
 }

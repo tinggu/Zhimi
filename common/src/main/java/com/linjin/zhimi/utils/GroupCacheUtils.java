@@ -104,7 +104,7 @@ public class GroupCacheUtils {
 
     public <E extends RealmObject> void delete(Realm realm, E object) {
         realm.beginTransaction();
-        object.removeFromRealm();
+        object.deleteFromRealm();
         realm.commitTransaction();
     }
 
