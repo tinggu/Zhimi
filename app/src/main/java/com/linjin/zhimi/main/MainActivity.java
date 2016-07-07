@@ -3,17 +3,16 @@ package com.linjin.zhimi.main;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.cyou.app.mvp.BaseMvpActivity;
 import com.cyou.quick.mvp.MvpBasePresenter;
 import com.cyou.quick.mvp.MvpPresenter;
 import com.linjin.zhimi.R;
-import com.linjin.zhimi.base.BaseMvpActivity;
 import com.linjin.zhimi.main.discovery.DiscoveryFragment;
 import com.linjin.zhimi.main.menu.MenuEventCollent;
 import com.linjin.zhimi.main.menu.MenuEventDraft;
@@ -32,29 +31,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import me.yokeyword.fragmentation.SupportFragment;
 
 
 public class MainActivity extends BaseMvpActivity
         implements RadioGroup.OnCheckedChangeListener {
 
     private static final String TAG = "MainActivity";
-//    @Bind(R.id.bottom_bar)
-//    View bottomBar;
+
+    public static final int FIRST = 0;
+    public static final int SECOND = 1;
+    public static final int THIRD = 2;
+    public static final int FOURTH = 3;
+
 
     @BindView(R.id.main_group)
     public RadioGroup mainGroup;
 
-//    @Bind(R.id.dock_1)
-//    public RadioButton dock1;
-//
-//    @Bind(R.id.dock_2)
-//    public RadioButton dock2;
-//
-//    @Bind(R.id.dock_3)
-//    public RadioButton dock3;
-//
-//    @Bind(R.id.dock_4)
-//    public RadioButton dock4;
+    private SupportFragment[] mFragments = new SupportFragment[4];
 
     private List<Fragment> fragments;
 
@@ -63,7 +57,7 @@ public class MainActivity extends BaseMvpActivity
     private MsgFragment msgFragment;
     private SelfFragment selfFragment;
 
-    private int currentTab; // 当前Tab页面索引
+    private int prePosition; // 当前Tab页面索引
 
     private ArrayList<View> radioButtons;
 
@@ -71,8 +65,10 @@ public class MainActivity extends BaseMvpActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        initView(savedInstanceState);
         EventBus.getDefault().register(this);
+
+
+        initView(savedInstanceState);
     }
 
     @Override
@@ -94,56 +90,81 @@ public class MainActivity extends BaseMvpActivity
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putInt("index", currentTab);
+        outState.putInt("index", prePosition);
         Log.i(TAG, "onSaveInstanceState: ");
     }
 
 
     private void initView(Bundle savedInstanceState) {
 
-        //定位底部tab,默认定位0，即群列表页
+//        //定位底部tab,默认定位0，即群列表页
         int index = getIntent().getIntExtra("index", 0);
+//        
+//        fragments = new ArrayList<>();
+//        FragmentManager fragmentManager = getSupportFragmentManager();
+//
+//        if (savedInstanceState != null) { // “内存重启”时调用
+//            topicFragment = (TopicFragment) fragmentManager.findFragmentByTag("topic");
+//            discoveryFragment = (DiscoveryFragment) fragmentManager.findFragmentByTag("discovery");
+//            msgFragment = (MsgFragment) fragmentManager.findFragmentByTag("msg");
+//            selfFragment = (SelfFragment) fragmentManager.findFragmentByTag("self");
+//        } else {
+//            topicFragment = new TopicFragment();
+//            discoveryFragment = new DiscoveryFragment();
+//            msgFragment = new MsgFragment();
+//            selfFragment = new SelfFragment();
+//        }
+//
+//
+//        fragments.add(topicFragment);
+//        fragments.add(discoveryFragment);
+//        fragments.add(msgFragment);
+//        fragments.add(selfFragment);
+//
+//        radioButtons = getChildRadions();
+//
+//        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+//
+//        ft.add(R.id.fragmentContainer, topicFragment, "topic");
+//        ft.add(R.id.fragmentContainer, discoveryFragment, "discovery");
+//        ft.add(R.id.fragmentContainer, msgFragment, "msg");
+//        ft.add(R.id.fragmentContainer, selfFragment, "self");
+//
+////            ft.add(R.id.fragmentContainer, fragments.get(i),fragments.get(i).getClass().getSimpleName());
+//        for (int i = 0; i < fragments.size(); i++) {
+//            ft.hide(fragments.get(i));
+//        }
+//        ft.show(fragments.get(index));
+//        //ft.add(fragmentContentId, fragments.get(index));
+//
+//        ft.commit();
 
-        fragments = new ArrayList<>();
-        FragmentManager fragmentManager = getSupportFragmentManager();
 
-        if (savedInstanceState != null) { // “内存重启”时调用
-            topicFragment = (TopicFragment) fragmentManager.findFragmentByTag("topic");
-            discoveryFragment = (DiscoveryFragment) fragmentManager.findFragmentByTag("discovery");
-            msgFragment = (MsgFragment) fragmentManager.findFragmentByTag("msg");
-            selfFragment = (SelfFragment) fragmentManager.findFragmentByTag("self");
+        if (savedInstanceState == null) {
+            mFragments[FIRST] = TopicFragment.newInstance();
+            mFragments[SECOND] = DiscoveryFragment.newInstance();
+            mFragments[THIRD] = MsgFragment.newInstance();
+            mFragments[FOURTH] = SelfFragment.newInstance();
+
+            loadMultipleRootFragment(R.id.fl_container, FIRST,
+                    mFragments[FIRST],
+                    mFragments[SECOND],
+                    mFragments[THIRD],
+                    mFragments[FOURTH]);
         } else {
-            topicFragment = new TopicFragment();
-            discoveryFragment = new DiscoveryFragment();
-            msgFragment = new MsgFragment();
-            selfFragment = new SelfFragment();
+            // 这里库已经做了Fragment恢复,所有不需要额外的处理了, 不会出现重叠问题
+
+            // 这里我们需要拿到mFragments的引用,也可以通过getSupportFragmentManager.getFragments()自行进行判断查找(效率更高些),用下面的方法查找更方便些
+            mFragments[FIRST] = findFragment(TopicFragment.class);
+            mFragments[SECOND] = findFragment(DiscoveryFragment.class);
+            mFragments[THIRD] = findFragment(MsgFragment.class);
+            mFragments[FOURTH] = findFragment(SelfFragment.class);
         }
 
 
-        fragments.add(topicFragment);
-        fragments.add(discoveryFragment);
-        fragments.add(msgFragment);
-        fragments.add(selfFragment);
-
-        radioButtons = getChildRadions();
-
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-
-        ft.add(R.id.fragmentContainer, topicFragment, "topic");
-        ft.add(R.id.fragmentContainer, discoveryFragment, "discovery");
-        ft.add(R.id.fragmentContainer, msgFragment, "msg");
-        ft.add(R.id.fragmentContainer, selfFragment, "self");
-
-//            ft.add(R.id.fragmentContainer, fragments.get(i),fragments.get(i).getClass().getSimpleName());
-        for (int i = 0; i < fragments.size(); i++) {
-            ft.hide(fragments.get(i));
-        }
-        ft.show(fragments.get(index));
-        //ft.add(fragmentContentId, fragments.get(index));
-
-        ft.commit();
         mainGroup.setOnCheckedChangeListener(this);
-        checkFragment(index);
+        
+//        checkFragment(index);
 
     }
 
@@ -160,52 +181,69 @@ public class MainActivity extends BaseMvpActivity
         }
     }
 
-    public void checkFragment(int i) {
-        switch (i) {
-            case 0:
-                mainGroup.check(R.id.dock_1);
-                break;
-            case 1:
-                mainGroup.check(R.id.dock_2);
-                break;
-            case 2:
-                mainGroup.check(R.id.dock_3);
-                break;
-            case 3:
-                mainGroup.check(R.id.dock_4);
-                break;
-        }
-    }
+//    public void checkFragment(int i) {
+//        switch (i) {
+//            case 0:
+//                mainGroup.check(R.id.dock_1);
+//                break;
+//            case 1:
+//                mainGroup.check(R.id.dock_2);
+//                break;
+//            case 2:
+//                mainGroup.check(R.id.dock_3);
+//                break;
+//            case 3:
+//                mainGroup.check(R.id.dock_4);
+//                break;
+//        }
+//    }
 
+
+    private int getClickId(int checkedId) {
+        if (checkedId == R.id.dock_1) {
+            return FIRST;
+        } else if (checkedId == R.id.dock_2) {
+            return SECOND;
+        } else if (checkedId == R.id.dock_3) {
+            return THIRD;
+        } else if (checkedId == R.id.dock_4) {
+            return FOURTH;
+        }
+        return FIRST;
+    }
 
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
-        //将radioButton筛选出来
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        for (int i = 0; i < radioButtons.size(); i++) {
-
-            Fragment fragment = fragments.get(i);
-
-            if (i > currentTab) {
-                ft.setCustomAnimations(R.anim.slide_left_in, R.anim.slide_right_out);
-            } else {
-                ft.setCustomAnimations(R.anim.slide_right_in, R.anim.slide_left_out);
-            }
-
-            if (radioButtons.get(i).getId() == checkedId) {
-
-                if (checkedId == currentTab) {
-                    return;
-                }
-
-                ft.show(fragment);
-                currentTab = i;
-            } else {
-                ft.hide(fragment);
-            }
-        }
-
-        ft.commitAllowingStateLoss();
+        
+        int position = getClickId(checkedId);
+        showHideFragment(mFragments[position], mFragments[prePosition]);
+        prePosition = position;
+//        //将radioButton筛选出来
+//        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+//        for (int i = 0; i < radioButtons.size(); i++) {
+//
+//            Fragment fragment = fragments.get(i);
+//
+//            if (i > prePosition) {
+//                ft.setCustomAnimations(R.anim.slide_left_in, R.anim.slide_right_out);
+//            } else {
+//                ft.setCustomAnimations(R.anim.slide_right_in, R.anim.slide_left_out);
+//            }
+//
+//            if (radioButtons.get(i).getId() == checkedId) {
+//
+//                if (checkedId == prePosition) {
+//                    return;
+//                }
+//
+//                ft.show(fragment);
+//                prePosition = i;
+//            } else {
+//                ft.hide(fragment);
+//            }
+//        }
+//
+//        ft.commitAllowingStateLoss();
     }
 
 
@@ -223,21 +261,21 @@ public class MainActivity extends BaseMvpActivity
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEventLast(MenuEventLast eventLast) {
         Intent intent = new Intent(this, TopicActivity.class);
-        intent.putExtra(TopicFlag.FLAG,TopicFlag.FLAG_LAST);
+        intent.putExtra(TopicFlag.FLAG, TopicFlag.FLAG_LAST);
         startActivity(intent);
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEventCollent(MenuEventCollent eventCollent) {
         Intent intent = new Intent(this, TopicActivity.class);
-        intent.putExtra(TopicFlag.FLAG,TopicFlag.FLAG_COLLENT);
+        intent.putExtra(TopicFlag.FLAG, TopicFlag.FLAG_COLLENT);
         startActivity(intent);
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEventDraft(MenuEventDraft eventDraft) {
         Intent intent = new Intent(this, TopicActivity.class);
-        intent.putExtra(TopicFlag.FLAG,TopicFlag.FLAG_DRAFT);
+        intent.putExtra(TopicFlag.FLAG, TopicFlag.FLAG_DRAFT);
         startActivity(intent);
     }
 }

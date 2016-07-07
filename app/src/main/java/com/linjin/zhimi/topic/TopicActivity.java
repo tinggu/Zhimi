@@ -4,8 +4,8 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 
-import com.linjin.zhimi.R;
-import com.linjin.zhimi.base.BaseMvpActivity;
+import com.cyou.app.mvp.BaseMvpActivity;
+import com.linjin.zhimi.R; 
 import com.linjin.zhimi.topic.details.DetailsFragment;
 import com.linjin.zhimi.topic.draft.DraftFragment;
 import com.linjin.zhimi.topic.latest.LatestFragment;

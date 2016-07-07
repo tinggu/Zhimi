@@ -2,12 +2,10 @@ package com.linjin.zhimi.splash;
 
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.Window;
-import android.view.WindowManager;
 
+import com.cyou.app.mvp.BaseMvpActivity;
 import com.cyou.quick.mvp.MvpView;
-import com.linjin.zhimi.R;
-import com.linjin.zhimi.base.BaseMvpActivity;
+import com.linjin.zhimi.R; 
 import com.linjin.zhimi.utils.IntentStarter;
 
 
@@ -27,9 +25,9 @@ public class SplashActivity extends BaseMvpActivity<MvpView, SplashPresenter> {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //设置全屏
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+//        requestWindowFeature(Window.FEATURE_NO_TITLE);
+//        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+//                WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         super.onCreate(savedInstanceState);
 

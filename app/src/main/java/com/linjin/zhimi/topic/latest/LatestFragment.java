@@ -6,8 +6,8 @@ import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
 
+import com.cyou.app.mvp.base.BaseLoadMoreFragment;
 import com.linjin.zhimi.R;
-import com.linjin.zhimi.base.loadmore.BaseLoadMoreFragment;
 import com.linjin.zhimi.main.topic.TopicListView;
 import com.linjin.zhimi.model.topic.TopicAnswer;
 import com.linjin.zhimi.utils.KeyboardUtils;

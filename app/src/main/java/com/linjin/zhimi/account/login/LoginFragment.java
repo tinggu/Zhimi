@@ -5,10 +5,16 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 
+import com.cyou.app.mvp.BaseMvpFragment;
 import com.cyou.ui.ClearableEditText;
+import com.linjin.zhimi.LoginActivity;
 import com.linjin.zhimi.R;
-import com.linjin.zhimi.base.BaseMvpFragment;
+import com.linjin.zhimi.account.findpw.FindPasswordFragment;
 import com.linjin.zhimi.model.account.AuthCredentials;
+import com.linjin.zhimi.utils.KeyboardUtils;
+import com.linjin.zhimi.utils.LogUtils;
+import com.linjin.zhimi.utils.NetWorkUtils;
+import com.linjin.zhimi.utils.TrackUtils;
 import com.linjin.zhimi.widget.TopActionBar;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
@@ -16,10 +22,6 @@ import com.mobsandgeeks.saripaar.annotation.Length;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import com.mobsandgeeks.saripaar.annotation.Order;
 import com.mobsandgeeks.saripaar.annotation.Password;
-import com.linjin.zhimi.utils.KeyboardUtils;
-import com.linjin.zhimi.utils.LogUtils;
-import com.linjin.zhimi.utils.NetWorkUtils;
-import com.linjin.zhimi.utils.TrackUtils;
 import com.umeng.message.UmengRegistrar;
 
 import java.util.List;
@@ -52,19 +54,23 @@ public class LoginFragment
     @Order(1)
     @BindView(R.id.ev_password)
     ClearableEditText evPassword;
-
-
+    
     @BindView(R.id.topActionBar)
     TopActionBar topActionBar;
 
     private Validator validator;
 
-    private LoginActivity loginActivity;
+//    private LoginActivity loginActivity;
 
-    public LoginFragment(LoginActivity loginActivity) {
-        this.loginActivity = loginActivity;
+    public static LoginFragment newInstance( ) {
+
+        Bundle args = new Bundle();
+
+        LoginFragment fragment = new LoginFragment( );
+        fragment.setArguments(args);
+        return fragment;
     }
-
+    
     private void initView() {
         topActionBar.setTitle("登录知觅");
         topActionBar.hideAction();
@@ -104,11 +110,15 @@ public class LoginFragment
             }
             LogUtils.d("login", "click login");
             validator.validate();
-        } else if (id == R.id.tv_findpassword) {
-            loginActivity.showFindPassword(evPhonenum.getText().toString());
-            TrackUtils.getInstance().onTrackEvent("Register_forgotpassword");
+        } else if (id == R.id.tv_findpassword) { 
+            start(FindPasswordFragment.newInstance(evPhonenum.getText().toString()));
         }
     }
+
+//    @OnClick(R.id.btn_login)
+//    public void enterLogin(View view){
+//        
+//    }
 
 
     @Override
@@ -119,12 +129,12 @@ public class LoginFragment
 
     @Override
     public void showLoading() {
-        loginActivity.dialogUtils.showLoading(getActivity(), "登录中，请稍后...");
+        LoginActivity.dialogUtils.showLoading(getActivity(), "登录中，请稍后...");
     }
 
     @Override
     public void hideLoading() {
-        loginActivity.dialogUtils.hideLoading();
+        LoginActivity.dialogUtils.hideLoading();
     }
 
 

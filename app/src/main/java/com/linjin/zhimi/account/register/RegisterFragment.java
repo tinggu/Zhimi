@@ -11,14 +11,18 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.cyou.app.mvp.BaseMvpFragment;
 import com.cyou.quick.QuickApplication;
 import com.cyou.ui.ClearableEditText;
+import com.linjin.zhimi.LoginActivity;
 import com.linjin.zhimi.R;
-import com.linjin.zhimi.account.login.LoginActivity;
-import com.linjin.zhimi.base.BaseMvpFragment;
 import com.linjin.zhimi.config.BandConfig;
 import com.linjin.zhimi.model.account.AuthCredentials;
 import com.linjin.zhimi.utils.IntentStarter;
+import com.linjin.zhimi.utils.KeyboardUtils;
+import com.linjin.zhimi.utils.LogUtils;
+import com.linjin.zhimi.utils.NetWorkUtils;
+import com.linjin.zhimi.utils.TrackUtils;
 import com.linjin.zhimi.widget.TopActionBar;
 import com.linjin.zhimi.widget.TopSnackBar;
 import com.mobsandgeeks.saripaar.ValidationError;
@@ -28,10 +32,6 @@ import com.mobsandgeeks.saripaar.annotation.Length;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import com.mobsandgeeks.saripaar.annotation.Order;
 import com.mobsandgeeks.saripaar.annotation.Password;
-import com.linjin.zhimi.utils.KeyboardUtils;
-import com.linjin.zhimi.utils.LogUtils;
-import com.linjin.zhimi.utils.NetWorkUtils;
-import com.linjin.zhimi.utils.TrackUtils;
 
 import java.util.List;
 

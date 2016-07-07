@@ -3,9 +3,9 @@ package com.linjin.zhimi.base;
 import android.text.TextUtils;
 import android.widget.Toast;
 
-import com.cyou.quick.QuickApplication;
-import com.cyou.quick.mvp.loadmore.LoadMoreRxPresenter;
-import com.cyou.quick.mvp.loadmore.LoadMoreView;
+import com.cyou.app.mvp.loadmore.LoadMoreRxPresenter;
+import com.cyou.app.mvp.loadmore.LoadMoreView;
+import com.cyou.quick.QuickApplication; 
 import com.linjin.zhimi.DataCenter;
 import com.linjin.zhimi.model.BaseModel;
 import com.linjin.zhimi.rest.ApiCode;

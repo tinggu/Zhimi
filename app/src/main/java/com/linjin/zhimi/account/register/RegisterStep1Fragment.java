@@ -2,6 +2,7 @@ package com.linjin.zhimi.account.register;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.EditText;
@@ -9,8 +10,8 @@ import android.widget.TextView;
 
 import com.cyou.quick.QuickApplication;
 import com.linjin.zhimi.R;
-import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import com.linjin.zhimi.utils.NetWorkUtils;
+import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -41,7 +42,15 @@ public class RegisterStep1Fragment extends RegisterStepBaseFragment {
     private int time;
     private boolean isFinsh;
 
-    public RegisterStep1Fragment(RegisterPresenter presenter) {
+    public static RegisterStep1Fragment newInstance(RegisterPresenter presenter) {
+        Bundle args = new Bundle();
+        RegisterStep1Fragment fragment = new RegisterStep1Fragment(presenter);
+
+        fragment.setArguments(args);
+        return fragment;
+    }
+    
+    private RegisterStep1Fragment(RegisterPresenter presenter) {
         super(presenter);
     }
 

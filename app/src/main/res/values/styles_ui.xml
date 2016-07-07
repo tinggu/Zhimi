@@ -1,5 +1,4 @@
-<resources
-    xmlns:fresco="http://schemas.android.com/apk/res-auto">
+<resources>
 
     <style name="Tip">
         <item name="android:textSize">15sp</item>

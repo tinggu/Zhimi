@@ -12,10 +12,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.cyou.app.mvp.BaseMvpFragment;
 import com.cyou.ui.ClearableEditText;
 import com.linjin.zhimi.R;
-import com.linjin.zhimi.base.BaseMvpFragment;
 import com.linjin.zhimi.model.account.AuthCredentials;
+import com.linjin.zhimi.utils.KeyboardUtils;
+import com.linjin.zhimi.utils.LogUtils;
+import com.linjin.zhimi.utils.TrackUtils;
 import com.linjin.zhimi.widget.TopActionBar;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
@@ -24,9 +27,6 @@ import com.mobsandgeeks.saripaar.annotation.Length;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import com.mobsandgeeks.saripaar.annotation.Order;
 import com.mobsandgeeks.saripaar.annotation.Password;
-import com.linjin.zhimi.utils.KeyboardUtils;
-import com.linjin.zhimi.utils.LogUtils;
-import com.linjin.zhimi.utils.TrackUtils;
 
 import java.util.List;
 
@@ -84,8 +84,17 @@ public class FindPasswordFragment
 
     String phone;
 
-    public FindPasswordFragment(String phone) {
+    public static FindPasswordFragment newInstance(String phone) {
 
+        Bundle args = new Bundle();
+
+        FindPasswordFragment fragment = new FindPasswordFragment(phone);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+
+    private FindPasswordFragment(String phone) {
         this.phone = phone;
     }
 
@@ -93,7 +102,7 @@ public class FindPasswordFragment
         topActionBar.setTitle("密码找回");
         topActionBar.setBackListener(new TopActionBar.BackListener() {
             @Override
-            public void onBack() { 
+            public void onBack() {
                 KeyboardUtils.callBackKeyClick();
             }
         });

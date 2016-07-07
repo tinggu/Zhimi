@@ -4,9 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.cyou.quick.mvp.MvpFragment;
@@ -16,7 +14,6 @@ import com.linjin.zhimi.utils.IntentStarter;
 import com.linjin.zhimi.widget.TopActionBar;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 
@@ -34,7 +31,12 @@ public class DiscoveryFragment extends MvpFragment {
     RecyclerView recyclerView;
 
 
-//    LatestPresenter
+    public static DiscoveryFragment newInstance() {
+        Bundle args = new Bundle();
+        DiscoveryFragment fragment = new DiscoveryFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
@@ -77,4 +79,5 @@ public class DiscoveryFragment extends MvpFragment {
                 break;
         }
     }
+    
 }

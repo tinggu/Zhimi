@@ -2,9 +2,9 @@ package com.linjin.zhimi.account.changpw;
 
 import android.widget.Toast;
 
+import com.cyou.app.mvp.rx.scheduler.AndroidSchedulerTransformer;
 import com.cyou.quick.QuickApplication;
 import com.cyou.quick.mvp.MvpBasePresenter;
-import com.cyou.quick.mvp.rx.scheduler.AndroidSchedulerTransformer;
 import com.linjin.common.utils.MD5Utils;
 import com.linjin.zhimi.DataCenter;
 import com.linjin.zhimi.api.AccuntApi;

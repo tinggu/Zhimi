@@ -35,7 +35,7 @@ public class MvpBasePresenter<V extends MvpView> implements MvpPresenter<V> {
 
     @Override
     public void attachView(V view) {
-        viewRef = new WeakReference<V>(view);
+        viewRef = new WeakReference<>(view);
     }
 
     /**

@@ -10,10 +10,10 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.cyou.app.mvp.BaseMvpFragment;
 import com.cyou.quick.mvp.MvpBasePresenter;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.linjin.zhimi.R;
-import com.linjin.zhimi.base.BaseMvpFragment;
 import com.linjin.zhimi.topic.TopicPresenter;
 import com.linjin.zhimi.utils.IntentStarter;
 import com.linjin.zhimi.utils.KeyboardUtils;

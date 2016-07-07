@@ -4,14 +4,15 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
 
 import com.linjin.zhimi.R;
+import com.linjin.zhimi.utils.LogUtils;
 import com.linjin.zhimi.utils.PhotoUtils;
 import com.linjin.zhimi.widget.SelectPicPopWindow;
-import com.linjin.zhimi.utils.LogUtils;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -33,8 +34,16 @@ public class RegisterStep4Fragment extends RegisterStepBaseFragment implements P
     
     @BindView(R.id.img_avatar)
     ImageView imgAvatar;
+
+    public static RegisterStep4Fragment newInstance(RegisterPresenter presenter) {
+        Bundle args = new Bundle();
+        RegisterStep4Fragment fragment = new RegisterStep4Fragment(presenter);
+
+        fragment.setArguments(args);
+        return fragment;
+    }
     
-    public RegisterStep4Fragment(RegisterPresenter presenter) {
+    private RegisterStep4Fragment(RegisterPresenter presenter) {
         super(presenter);
     }
 

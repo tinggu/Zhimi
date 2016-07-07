@@ -1,9 +1,9 @@
 package com.linjin.zhimi.account.register;
 
 
-import com.cyou.quick.mvp.rx.scheduler.AndroidSchedulerTransformer;
+import com.cyou.app.mvp.rx.scheduler.AndroidSchedulerTransformer;
 import com.linjin.zhimi.DataCenter;
-import com.linjin.zhimi.account.login.LoginActivity;
+import com.linjin.zhimi.LoginActivity;
 import com.linjin.zhimi.account.AccuntPresenter;
 import com.linjin.zhimi.api.AccuntApi;
 import com.linjin.zhimi.event.RegisterSuccessfulEvent;

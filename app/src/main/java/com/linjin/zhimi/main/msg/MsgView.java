@@ -1,7 +1,7 @@
 package com.linjin.zhimi.main.msg;
 
 
-import com.cyou.quick.mvp.loadmore.LoadMoreView;
+import com.cyou.app.mvp.loadmore.LoadMoreView;
 
 /**
  * Description:

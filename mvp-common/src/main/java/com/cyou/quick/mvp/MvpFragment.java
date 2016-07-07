@@ -16,33 +16,21 @@
 
 package com.cyou.quick.mvp;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.cyou.quick.QuickFragment;
-import com.cyou.quick.mvp.delegate.FragmentMvpDelegate;
-import com.cyou.quick.mvp.delegate.FragmentMvpDelegateImpl;
-import com.cyou.quick.mvp.delegate.MvpDelegateCallback;
 
-/**
- * A {@link QuickFragment} that uses an {@link MvpPresenter} to implement a Model-View-Presenter
- * architecture
- *
- * @author Hannes Dorfmann
- * @since 1.0.0
- */
+
 public abstract class MvpFragment<V extends MvpView, P extends MvpPresenter<V>>
-        extends QuickFragment
-        implements MvpDelegateCallback<V, P>, MvpView {
-
-    protected FragmentMvpDelegate<V, P> mvpDelegate;
+        extends QuickFragment implements IMvp<V, P>, MvpView {
 
     /**
      * The presenter for this view. Will be instantiated with {@link #createPresenter()}
      */
     protected P presenter;
+    
 
     /**
      * Creates a new presenter instance, if needed. Will reuse the previous presenter instance if
@@ -51,27 +39,13 @@ public abstract class MvpFragment<V extends MvpView, P extends MvpPresenter<V>>
      */
     public abstract P createPresenter();
 
-    /**
-     * * Get the mvp delegate. This is internally used for creating presenter, attaching and
-     * detaching view from presenter.
-     * <p/>
-     * <p>
-     * <b>Please note that only one instance of mvp delegate should be used per fragment
-     * instance</b>.
-     * </p>
-     * <p/>
-     * <p>
-     * Only override this method if you really know what you are doing.
-     * </p>
-     *
-     * @return {@link FragmentMvpDelegateImpl}
-     */
-    protected FragmentMvpDelegate<V, P> getMvpDelegate() {
-        if (mvpDelegate == null) {
-            mvpDelegate = new FragmentMvpDelegateImpl<>(this);
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if(getPresenter() == null){
+            setPresenter(createPresenter());
         }
-
-        return mvpDelegate;
+        getPresenter().attachView(getMvpView());
     }
 
     @Override
@@ -94,76 +68,6 @@ public abstract class MvpFragment<V extends MvpView, P extends MvpPresenter<V>>
         return (V) this;
     }
 
-    @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        getMvpDelegate().onViewCreated(view, savedInstanceState);
-    }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        getMvpDelegate().onDestroyView();
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        getMvpDelegate().onCreate(savedInstanceState);
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        getMvpDelegate().onDestroy();
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        getMvpDelegate().onPause();
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        getMvpDelegate().onResume();
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        getMvpDelegate().onStart();
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        getMvpDelegate().onStop();
-    }
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        getMvpDelegate().onActivityCreated(savedInstanceState);
-    }
-
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        getMvpDelegate().onAttach(activity);
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        getMvpDelegate().onDetach();
-    }
-
-    @Override
-    public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        getMvpDelegate().onSaveInstanceState(outState);
-    }
 }
 

@@ -1,6 +1,7 @@
 package com.linjin.zhimi.account.register;
 
 import android.annotation.SuppressLint;
+import android.os.Bundle;
 
 import com.cyou.ui.ClearableEditText;
 import com.linjin.zhimi.R;
@@ -25,8 +26,16 @@ public class RegisterStep3Fragment extends RegisterStepBaseFragment {
     @Order(0)
     @BindView(R.id.ev_title)
     ClearableEditText evTitle;
+
+    public static RegisterStep3Fragment newInstance(RegisterPresenter presenter) {
+        Bundle args = new Bundle();
+        RegisterStep3Fragment fragment = new RegisterStep3Fragment(presenter);
+
+        fragment.setArguments(args);
+        return fragment;
+    }
     
-    public RegisterStep3Fragment(RegisterPresenter presenter) {
+    private RegisterStep3Fragment(RegisterPresenter presenter) {
         super(presenter);
     }
 

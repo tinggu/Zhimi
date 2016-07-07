@@ -1,17 +1,23 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.neenbedankt.android-apt' 
+apply plugin: 'android-apt'
 apply plugin: 'packer'
 
 def verName = "0.0.1"
 def verCode = 1
 
 packer {
+    // 是否检查Gradle配置中的signingConfig，默认不检查
+    checkSigningConfig = false
+    // 是否检查Gradle配置中的zipAlignEnabled，默认不检查
+    checkZipAlign = false
+
     // 指定渠道打包输出目录
     archiveOutput = file(new File("E:\\FTP_download\\Band", verName))
     // 指定渠道打包输出文件名格式
     archiveNameFormat = 'BandV${versionName}${buildType}.${flavorName}'
     // 指定渠道打包需要修改的AndroidManifest文件项
     manifestMatcher = ['UMENG_CHANNEL', 'test']
+
 //    // 指定是否使用build版本号自增
 //    buildNumberAuto = true
 //    // 指定使用版本号自增的buildType，默认是全部
@@ -78,17 +84,21 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile project(':smssdk')
     compile project(':uilib')
+    compile project(':smssdk')
     compile project(':imkit')
+    
     //内存泄露检查
-    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.3.1'
-    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.3.1'
-
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.4-beta2'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
+    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
+    
     // butterKnife
+    compile 'com.jakewharton:butterknife:8.1.0'
+    apt 'com.jakewharton:butterknife-compiler:8.1.0'
+    
     // add packer-helper
-    compile 'com.mcxiaoke.gradle:packer-helper:1.0.2'
+    compile 'com.mcxiaoke.gradle:packer-helper:1.0.5'
 }
 
 

@@ -19,8 +19,15 @@ android {
 
 dependencies {
     compile project(':app-model')
-    compile project(':mvp-loadmore')
+    compile project(':mvp-common')
     compile project(':umeng')
+
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+
+    compile 'io.reactivex:rxjava:1.1.6'
+    compile 'io.reactivex:rxandroid:1.2.1'
     
 //    compile files('libs/prettytime-3.2.5.Final.jar')
 
@@ -33,16 +40,15 @@ dependencies {
     //eventbus
     compile 'org.greenrobot:eventbus:3.0.0'
     
-    
 //    //七牛sdk
 //    compile 'com.qiniu:qiniu-android-sdk:7.0.9'
     
 //    //右划返回
-//    compile 'com.jude:swipebackhelper:2.1.5'
+//    compile 'com.jude:swipebackhelper:2.1.5' 
+
+//    //内存泄露检查
+//    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.4-beta2'
+//    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
+//    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
     
-    //检查内存泄露
-    provided 'com.squareup.leakcanary:leakcanary-android-no-op:1.3.1'
-    
-    // add packer-helper
-    compile 'com.mcxiaoke.gradle:packer-helper:1.0.2'
 }

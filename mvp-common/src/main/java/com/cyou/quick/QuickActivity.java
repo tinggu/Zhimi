@@ -1,14 +1,13 @@
 package com.cyou.quick;
 
 
-import android.support.v4.app.FragmentActivity;
-
 import butterknife.ButterKnife;
+import me.yokeyword.fragmentation.SupportActivity;
 
 /**
  *
  */
-public class QuickActivity extends FragmentActivity {
+public class QuickActivity extends SupportActivity {
 
     @Override
     public void onContentChanged() {

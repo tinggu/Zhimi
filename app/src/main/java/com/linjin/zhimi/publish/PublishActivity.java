@@ -6,10 +6,10 @@ import android.support.v4.app.FragmentTransaction;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.cyou.app.mvp.BaseMvpActivity;
 import com.cyou.quick.mvp.MvpBasePresenter;
 import com.cyou.quick.mvp.MvpPresenter;
 import com.linjin.zhimi.R;
-import com.linjin.zhimi.base.BaseMvpActivity;
 import com.linjin.zhimi.utils.DialogUtils;
 
 import cn.smssdk.SMSSDKInitUtils;

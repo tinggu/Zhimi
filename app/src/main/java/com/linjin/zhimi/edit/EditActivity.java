@@ -3,11 +3,9 @@ package com.linjin.zhimi.edit;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
-import android.widget.Toast;
 
-import com.cyou.ui.wheelView.ChangeAddressDialog;
-import com.linjin.zhimi.R;
-import com.linjin.zhimi.base.BaseMvpActivity;
+import com.cyou.app.mvp.BaseMvpActivity;
+import com.linjin.zhimi.R; 
 
 public class EditActivity extends BaseMvpActivity<EditView, EditPresenter> {
 

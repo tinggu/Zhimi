@@ -8,10 +8,8 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
+import com.cyou.app.mvp.BaseMvpFragment;
 import com.linjin.zhimi.R;
-import com.linjin.zhimi.account.register.RegisterPresenter;
-import com.linjin.zhimi.account.register.RegisterView;
-import com.linjin.zhimi.base.BaseMvpFragment;
 import com.linjin.zhimi.utils.LogUtils;
 import com.linjin.zhimi.widget.TopActionBar;
 import com.mobsandgeeks.saripaar.ValidationError;

@@ -1,8 +1,8 @@
 package com.linjin.zhimi.account;
 
+import com.cyou.app.mvp.rx.scheduler.AndroidSchedulerTransformer;
 import com.cyou.quick.mvp.MvpBasePresenter;
 import com.cyou.quick.mvp.MvpView;
-import com.cyou.quick.mvp.rx.scheduler.AndroidSchedulerTransformer;
 import com.linjin.zhimi.api.AccuntApi;
 import com.linjin.zhimi.model.account.AuthCredentials;
 import com.linjin.zhimi.model.account.UserModel;

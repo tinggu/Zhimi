@@ -18,8 +18,15 @@ import butterknife.OnClick;
 public class MsgFragment extends MvpFragment {
     
     @BindView(R.id.topActionBar)
-    TopActionBar topActionBar; 
+    TopActionBar topActionBar;
 
+    public static MsgFragment newInstance() {
+        Bundle args = new Bundle();
+        MsgFragment fragment = new MsgFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
+    
    @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);

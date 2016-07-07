@@ -60,7 +60,12 @@ public class SelfFragment
     Button btnAddSkill;
 
 
-//    LatestPresenter
+    public static SelfFragment newInstance() {
+        Bundle args = new Bundle();
+        SelfFragment fragment = new SelfFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {

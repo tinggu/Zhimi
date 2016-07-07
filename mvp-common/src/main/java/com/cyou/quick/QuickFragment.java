@@ -18,14 +18,16 @@ package com.cyou.quick;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import butterknife.ButterKnife;
+import com.squareup.leakcanary.RefWatcher;
 
-public abstract class QuickFragment extends Fragment {
+import butterknife.ButterKnife;
+import me.yokeyword.fragmentation.SupportFragment;
+
+public abstract class QuickFragment extends SupportFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
@@ -42,14 +44,11 @@ public abstract class QuickFragment extends Fragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        QuickApplication.getInstance().getRefWatcher().watch(this);
+        RefWatcher refWatcher = QuickApplication.getInstance().getRefWatcher();
+        if (refWatcher != null) {
+            refWatcher.watch(this);
+        }
     }
-
-//    @Override
-//    public void onDestroyView() {
-//        super.onDestroyView();
-//        ButterKnife.unbind(this);
-//    }
 
     /**
      * Return the layout resource like R.layout.my_layout
@@ -58,4 +57,5 @@ public abstract class QuickFragment extends Fragment {
      */
     @LayoutRes
     protected abstract int getLayoutRes();
+
 }

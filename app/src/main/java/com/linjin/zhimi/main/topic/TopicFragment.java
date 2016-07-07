@@ -10,9 +10,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 
+import com.cyou.app.mvp.base.BaseLoadMoreFragment;
 import com.linjin.zhimi.R;
 import com.linjin.zhimi.base.adapter.HeaderListAdapter;
-import com.linjin.zhimi.base.loadmore.BaseLoadMoreFragment;
 import com.linjin.zhimi.base.view.RefreshableRecyclerView;
 import com.linjin.zhimi.model.topic.Topic;
 import com.linjin.zhimi.model.topic.TopicAnswer;
@@ -40,6 +40,15 @@ public class TopicFragment
     HeaderListAdapter<Topic> adapter;
 //    LatestPresenter
 
+    public static TopicFragment newInstance() {
+
+        Bundle args = new Bundle();
+
+        TopicFragment fragment = new TopicFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
+    
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);

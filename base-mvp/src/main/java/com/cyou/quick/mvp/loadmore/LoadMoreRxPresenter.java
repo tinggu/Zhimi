@@ -1,6 +1,6 @@
 package com.cyou.quick.mvp.loadmore;
 
-import com.cyou.quick.mvp.rx.lce.MvpLceRxPresenter;
+import com.cyou.app.mvp.rx.lce.MvpLceRxPresenter;
 
 import rx.Observable;
 import rx.Subscriber;

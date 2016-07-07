@@ -1,9 +1,6 @@
 package com.linjin.zhimi.edit;
 
 
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.view.View;
 import android.widget.EditText;
 
 import com.linjin.zhimi.R;

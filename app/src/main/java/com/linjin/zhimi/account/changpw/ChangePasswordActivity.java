@@ -6,14 +6,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.cyou.app.mvp.BaseMvpActivity;
 import com.linjin.zhimi.R;
-import com.linjin.zhimi.base.BaseMvpActivity;
+import com.linjin.zhimi.utils.LogUtils;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import com.mobsandgeeks.saripaar.annotation.Order;
 import com.mobsandgeeks.saripaar.annotation.Password;
-import com.linjin.zhimi.utils.LogUtils;
 
 import java.util.List;
 

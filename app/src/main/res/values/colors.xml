@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#13709D</color>
-    <color name="colorPrimaryDark">#13709D</color>
+    <color name="colorPrimaryDark">#044260</color>
     <color name="colorAccent">#13709D</color>
-
+    
     <color name="text_base_color">#181b1d</color>
     <color name="color_half">#60000000</color>
-
+    
+    <color name="tab_unselect">#c9c9c9</color>
+    
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
     <color name="red">#F44336</color>

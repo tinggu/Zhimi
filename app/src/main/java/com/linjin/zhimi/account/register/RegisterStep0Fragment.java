@@ -1,6 +1,7 @@
 package com.linjin.zhimi.account.register;
 
 import android.annotation.SuppressLint;
+import android.os.Bundle;
 
 import com.cyou.ui.ClearableEditText;
 import com.linjin.zhimi.R;
@@ -33,9 +34,17 @@ public class RegisterStep0Fragment extends RegisterStepBaseFragment {
     @Order(1)
     @BindView(R.id.ev_password)
     ClearableEditText evPassword;
+
+
+    public static RegisterStep0Fragment newInstance(RegisterPresenter presenter) {
+        Bundle args = new Bundle();
+        RegisterStep0Fragment fragment = new RegisterStep0Fragment(presenter);
+        
+        fragment.setArguments(args);
+        return fragment;
+    }
     
-    
-    public RegisterStep0Fragment(RegisterPresenter presenter) {
+    private RegisterStep0Fragment(RegisterPresenter presenter) {
         super(presenter);
     }
 

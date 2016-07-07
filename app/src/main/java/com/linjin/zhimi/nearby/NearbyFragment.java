@@ -6,11 +6,11 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 
+import com.cyou.app.mvp.BaseMvpFragment;
 import com.cyou.quick.mvp.MvpBasePresenter;
 import com.cyou.ui.slideswitch.OnToggleStateChangeListener;
 import com.cyou.ui.slideswitch.SlideSwitch;
 import com.linjin.zhimi.R;
-import com.linjin.zhimi.base.BaseMvpFragment;
 import com.linjin.zhimi.utils.IntentStarter;
 import com.linjin.zhimi.utils.KeyboardUtils;
 import com.linjin.zhimi.widget.TopActionBar;

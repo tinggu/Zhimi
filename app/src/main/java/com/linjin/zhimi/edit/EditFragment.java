@@ -12,13 +12,13 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.cyou.app.mvp.BaseMvpFragment;
 import com.cyou.ui.wheelView.ChangeAddressDialog;
 import com.cyou.ui.wheelView.ChangeBirthDialog;
 import com.cyou.ui.wheelView.ChangeSexDialog;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.linjin.zhimi.DataCenter;
-import com.linjin.zhimi.R;
-import com.linjin.zhimi.base.BaseMvpFragment;
+import com.linjin.zhimi.R; 
 import com.linjin.zhimi.model.account.User;
 import com.linjin.zhimi.utils.CacheUtils;
 import com.linjin.zhimi.utils.KeyboardUtils;

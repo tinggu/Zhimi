@@ -16,6 +16,7 @@ import com.linjin.zhimi.utils.TrackUtils;
 import java.util.ArrayList;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 /**
  * Description:
@@ -77,10 +78,9 @@ public class IntroFragment extends QuickFragment
 //        indicator.setViewPager(viewPager);
     }
 
-    @Override
+    @OnClick({R.id.btn_register, R.id.btn_login})
     public void onClick(View v) {
-        Context context = getActivity();
-//        getContext();
+        Context context = getActivity(); 
         Intent i = new Intent(context, MainActivity.class);
         context.startActivity(i);
     }

@@ -3,34 +3,33 @@ package com.linjin.zhimi;
 import android.app.ActivityManager;
 import android.content.Context;
 
+import com.cyou.quick.QuickApplication;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.linjin.zhimi.utils.LogUtils;
 import com.linjin.zhimi.utils.TrackUtils;
+import com.squareup.leakcanary.LeakCanary;
 import com.umeng.message.PushAgent;
 
 import io.rong.imkit.RongIM;
 
 
-public class ZhiMiApplication extends CommonApplication {
+public class ZhiMiApplication extends QuickApplication {
     private static final String TAG = "BandApplication";
-
-    /**
-     * 内存泄露监测对象
-     */
-
+    
     @Override
     public void onCreate() {
         super.onCreate();
+        mRefWatcher = LeakCanary.install(this);
         init();
     }
 
     private void init() {
         initLog();
-        
+
         DataCenter.getInstance().init();
 
         initRongIM();
-        
+
         Fresco.initialize(this);
 
         TrackUtils.getInstance().init();
@@ -44,13 +43,13 @@ public class ZhiMiApplication extends CommonApplication {
         LogUtils.init("band", Constants.DEBUG);
         LogUtils.i("DEBUG", "DEBUG= " + Constants.DEBUG);
     }
-    
-    private void initPush(){
+
+    private void initPush() {
         PushAgent mPushAgent = PushAgent.getInstance(this);
         mPushAgent.enable();
     }
-    
-    private void initRongIM(){
+
+    private void initRongIM() {
         /**
          * OnCreate 会被多个进程重入，这段保护代码，确保只有您需要使用 RongIM 的进程和 Push 进程执行了 init。
          * io.rong.push 为融云 push 进程名称，不可修改。
@@ -62,7 +61,7 @@ public class ZhiMiApplication extends CommonApplication {
              * IMKit SDK调用第一步 初始化
              */
             RongIM.init(this);
-            
+
         }
     }
 
@@ -88,5 +87,5 @@ public class ZhiMiApplication extends CommonApplication {
         }
         return null;
     }
-    
+
 }

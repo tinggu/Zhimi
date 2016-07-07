@@ -1,6 +1,7 @@
 package com.linjin.zhimi.account.register;
 
 import android.annotation.SuppressLint;
+import android.os.Bundle;
 import android.widget.RadioGroup;
 
 import com.cyou.ui.ClearableEditText;
@@ -31,7 +32,15 @@ public class RegisterStep2Fragment extends RegisterStepBaseFragment {
     @BindView(R.id.rg_sex)
     RadioGroup radiogroup;
 
-    public RegisterStep2Fragment(RegisterPresenter presenter) {
+    public static RegisterStep2Fragment newInstance(RegisterPresenter presenter) {
+        Bundle args = new Bundle();
+        RegisterStep2Fragment fragment = new RegisterStep2Fragment(presenter);
+
+        fragment.setArguments(args);
+        return fragment;
+    }
+    
+    private RegisterStep2Fragment(RegisterPresenter presenter) {
         super(presenter);
     }
 
