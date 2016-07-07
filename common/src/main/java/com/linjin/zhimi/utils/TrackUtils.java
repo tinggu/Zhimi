@@ -6,11 +6,13 @@ import android.content.pm.PackageManager;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.linjin.zhimi.Constants;
 import com.cyou.quick.QuickApplication;
-import com.umeng.analytics.MobclickAgent;
 
 import java.util.HashMap;
+
+import com.linjin.zhimi.Constants;
+import com.umeng.analytics.AnalyticsConfig;
+import com.umeng.analytics.MobclickAgent;
 
 /**
  * Description:
@@ -46,10 +48,8 @@ public class TrackUtils {
         /** 设置是否对日志信息进行加密, 默认false(不加密) */
 //        AnalyticsConfig.enableEncrypt(true);
         /** 禁止默认的页面统计方式，这样将不会再自动统计Activity */
-        MobclickAgent.openActivityDurationTrack(false);
+//        MobclickAgent.openActivityDurationTrack(false);
 
-//        //talkingdata 初始化
-//        TCAgent.init(context, Constants.TD_APP_ID, getAppMetaData(context, "UMENG_CHANNEL"));
 
     }
 
@@ -64,16 +64,11 @@ public class TrackUtils {
     //
     public void onResume(Context context) {
         MobclickAgent.onResume(context);
-//        if (context instanceof Activity) {
-//            TCAgent.onResume((Activity) context);
-//        }
+
     }
 
     public void onPause(Context context) {
         MobclickAgent.onPause(context);
-//        if (context instanceof Activity) {
-//            TCAgent.onPause((Activity) context);
-//        }
     }
 
     public void exit(Context context) {
@@ -83,17 +78,14 @@ public class TrackUtils {
 
     public void onPageStart(String name) {
         MobclickAgent.onPageStart(name);
-//        TCAgent.onPageStart(context, name);
     }
 
     public void onPageEnd(String name) {
         MobclickAgent.onPageEnd(name);
-//        TCAgent.onPageEnd(context, name);
     }
 
     public void onTrackEvent(String eventId) {
         MobclickAgent.onEvent(context, eventId);
-//        TCAgent.onTrackEvent(context, eventId);
     }
 
     public void onTrackEvent(String eventId, HashMap<String, String> map) {

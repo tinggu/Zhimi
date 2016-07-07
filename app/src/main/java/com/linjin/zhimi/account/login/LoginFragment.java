@@ -14,7 +14,6 @@ import com.linjin.zhimi.model.account.AuthCredentials;
 import com.linjin.zhimi.utils.KeyboardUtils;
 import com.linjin.zhimi.utils.LogUtils;
 import com.linjin.zhimi.utils.NetWorkUtils;
-import com.linjin.zhimi.utils.TrackUtils;
 import com.linjin.zhimi.widget.TopActionBar;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
@@ -22,12 +21,13 @@ import com.mobsandgeeks.saripaar.annotation.Length;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import com.mobsandgeeks.saripaar.annotation.Order;
 import com.mobsandgeeks.saripaar.annotation.Password;
-import com.umeng.message.UmengRegistrar;
 
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+
+import com.umeng.message.UmengRegistrar;
 
 /**
  * Description:

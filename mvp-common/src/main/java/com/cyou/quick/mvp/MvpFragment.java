@@ -30,7 +30,7 @@ public abstract class MvpFragment<V extends MvpView, P extends MvpPresenter<V>>
      * The presenter for this view. Will be instantiated with {@link #createPresenter()}
      */
     protected P presenter;
-    
+
 
     /**
      * Creates a new presenter instance, if needed. Will reuse the previous presenter instance if
@@ -41,8 +41,8 @@ public abstract class MvpFragment<V extends MvpView, P extends MvpPresenter<V>>
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if(getPresenter() == null){
+        super.onViewCreated(view, savedInstanceState);
+        if (getPresenter() == null) {
             setPresenter(createPresenter());
         }
         getPresenter().attachView(getMvpView());

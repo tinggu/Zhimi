@@ -2,7 +2,6 @@
 
 buildscript {
     repositories {
-        mavenCentral()
         jcenter()
     }
 
@@ -29,13 +28,13 @@ task clean(type: Delete) {
 ext {
     compileSdkVersion = 24
     buildToolsVersion = '24.0.0'
-    minSdkVersion = 14
+    minSdkVersion = 15
     targetSdkVersion = 22
 
     javaSourceCompatibility = JavaVersion.VERSION_1_7
     javaTargetCompatibility = JavaVersion.VERSION_1_7
 
     // Libraries
-    appcompat7Version = '23.4.0'
+    appcompat7Version = '24.0.0'
     butterknifey = '8.1.0' 
 }

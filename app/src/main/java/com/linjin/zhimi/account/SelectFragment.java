@@ -1,8 +1,10 @@
-package com.linjin.zhimi.account.findpw;
+package com.linjin.zhimi.account;
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 
 import com.cyou.app.mvp.BaseMvpFragment;
 import com.cyou.quick.mvp.MvpBasePresenter;
@@ -12,15 +14,17 @@ import com.linjin.zhimi.account.register.RegisterPresenter;
 import com.linjin.zhimi.account.register.RegisterStep0Fragment;
 import com.linjin.zhimi.utils.IntentStarter;
 
+import butterknife.BindView;
 import butterknife.OnClick;
  
 public class SelectFragment extends BaseMvpFragment {
     
     private static final String TAG = "SelectFragment";
     private RegisterPresenter regPresenter;
-
+    
     public static SelectFragment newInstance(RegisterPresenter regPresenter) {
         Bundle args = new Bundle();
+        Log.i(TAG, "newInstance: SelectFragment");
         SelectFragment fragment = new SelectFragment();
         fragment.regPresenter = regPresenter;
         fragment.setArguments(args);
@@ -36,7 +40,13 @@ public class SelectFragment extends BaseMvpFragment {
     public MvpPresenter createPresenter() {
         return new MvpBasePresenter();
     }
-    
+
+//    @Override
+//    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+//        super.onViewCreated(view, savedInstanceState);
+//        Log.i(TAG, "onViewCreated: selectFragment");
+//    }
+
     @OnClick({R.id.btn_register, R.id.btn_login})
     void onClick(View view) {
         Log.i(TAG, "onClick: " + view.getId());

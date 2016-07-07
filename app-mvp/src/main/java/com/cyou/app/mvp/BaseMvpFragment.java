@@ -1,15 +1,10 @@
 package com.cyou.app.mvp;
 
-import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.widget.Toast;
 
 import com.cyou.quick.mvp.MvpBasePresenter;
 import com.cyou.quick.mvp.MvpFragment;
 import com.cyou.quick.mvp.MvpView;
-import com.cyou.quick.mvp.delegate.FragmentMvpDelegate;
-import com.cyou.quick.mvp.delegate.MvpDelegateCallback;
-import com.linjin.zhimi.base.delegate.BaseFragamentDelegateImpl;
 import com.linjin.zhimi.utils.TrackUtils;
 
 import io.realm.Realm;

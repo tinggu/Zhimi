@@ -2,13 +2,14 @@ package com.linjin.zhimi;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.cyou.app.mvp.BaseMvpActivity;
 import com.cyou.quick.QuickApplication;
 import com.cyou.quick.mvp.MvpBasePresenter;
 import com.cyou.quick.mvp.MvpPresenter;
-import com.linjin.zhimi.account.findpw.SelectFragment;
+import com.linjin.zhimi.account.SelectFragment;
 import com.linjin.zhimi.account.register.RegisterPresenter;
 import com.linjin.zhimi.account.register.RegisterStep1Fragment;
 import com.linjin.zhimi.account.register.RegisterStep2Fragment;
@@ -19,8 +20,7 @@ import com.linjin.zhimi.event.LoginSuccessfulEvent;
 import com.linjin.zhimi.event.RegisterSuccessfulEvent;
 import com.linjin.zhimi.utils.CacheUtils;
 import com.linjin.zhimi.utils.DialogUtils;
-import com.linjin.zhimi.utils.IntentStarter;
-import com.linjin.zhimi.utils.LogUtils;
+import com.linjin.zhimi.utils.IntentStarter; 
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -35,21 +35,25 @@ import org.greenrobot.eventbus.ThreadMode;
  */
 public class LoginActivity extends BaseMvpActivity {
 
+    private static final String TAG = "login";
+
     public static DialogUtils dialogUtils;
 
     private RegisterPresenter regPresenter;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        Log.i(TAG, "onCreate: login");
         setContentView(R.layout.activity_accunt);
         EventBus.getDefault().register(this);
         dialogUtils = new DialogUtils();
         regPresenter = new RegisterPresenter(this);
         if (savedInstanceState == null) {
+//            Log.i(TAG, "onCreate: savedInstanceState == null");
             loadRootFragment(R.id.fl_container, SelectFragment.newInstance(regPresenter));
         }
-//        start(SelectFragment.newInstance(regPresenter));
     }
 
     @Override
@@ -72,8 +76,6 @@ public class LoginActivity extends BaseMvpActivity {
         super.onDestroy();
     }
 
- 
-
     public void showRegister1() {
         start(RegisterStep1Fragment.newInstance(regPresenter));
     }
@@ -93,19 +95,11 @@ public class LoginActivity extends BaseMvpActivity {
         start(registerFragment4);
     }
 
-//    public void showFindPassword(String phone) {
-//        FindPasswordFragment findPWFragment = new FindPasswordFragment(phone);
-//        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-//        transaction.addToBackStack(null)
-//                .add(R.id.fragmentContainer, findPWFragment)
-//                .commit();
-//    }
-
     //登录成功事件
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEvent(LoginSuccessfulEvent event) {
         refreshCache();
-        LogUtils.i("login", "LoginSuccessfulEvent");
+        Log.i(TAG, "LoginSuccessfulEvent");
         Toast.makeText(QuickApplication.getInstance(), "登录成功！", Toast.LENGTH_LONG).show();
         enterMain();
     }
@@ -114,7 +108,7 @@ public class LoginActivity extends BaseMvpActivity {
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEvent(RegisterSuccessfulEvent event) {
         refreshCache();
-        LogUtils.i("login", "RegisterSuccessfulEvent");
+        Log.i(TAG, "RegisterSuccessfulEvent");
         //强制创建默认身份
         IntentStarter.enter(this);
         Toast.makeText(QuickApplication.getInstance(), "注册成功！", Toast.LENGTH_LONG).show();
@@ -124,7 +118,7 @@ public class LoginActivity extends BaseMvpActivity {
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEvent(FindPWSuccessfulEvent event) {
         refreshCache();
-        LogUtils.i("login", "FindPWSuccessfulEvent");
+        Log.i(TAG, "FindPWSuccessfulEvent");
         Toast.makeText(QuickApplication.getInstance(), "密码已找回，请注意保管！", Toast.LENGTH_LONG).show();
         enterMain();
     }
@@ -135,10 +129,9 @@ public class LoginActivity extends BaseMvpActivity {
 
             CacheUtils.refreshCache();
         } else {
-            LogUtils.e("user 为空初始化失败");
+            Log.e(TAG, "user 为空初始化失败");
         }
     }
-
 
     private void enterMain() {
         finish();

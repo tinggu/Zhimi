@@ -21,7 +21,6 @@ import com.linjin.zhimi.widget.TopActionBar;
 
 import butterknife.BindView;
 
-
 public class TopicFragment
         extends BaseLoadMoreFragment<SwipeRefreshLayout, TopicAnswer, TopicListView, TopicListPresenter> {
 
@@ -41,9 +40,7 @@ public class TopicFragment
 //    LatestPresenter
 
     public static TopicFragment newInstance() {
-
         Bundle args = new Bundle();
-
         TopicFragment fragment = new TopicFragment();
         fragment.setArguments(args);
         return fragment;

@@ -50,24 +50,23 @@ public class MainActivity extends BaseMvpActivity
 
     private SupportFragment[] mFragments = new SupportFragment[4];
 
-    private List<Fragment> fragments;
-
-    private TopicFragment topicFragment;
-    private DiscoveryFragment discoveryFragment;
-    private MsgFragment msgFragment;
-    private SelfFragment selfFragment;
+//    private List<Fragment> fragments;
+//
+//    private TopicFragment topicFragment;
+//    private DiscoveryFragment discoveryFragment;
+//    private MsgFragment msgFragment;
+//    private SelfFragment selfFragment;
 
     private int prePosition; // 当前Tab页面索引
 
-    private ArrayList<View> radioButtons;
+//    private ArrayList<View> radioButtons;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Log.i(TAG, "onCreate: ");
         EventBus.getDefault().register(this);
-
-
         initView(savedInstanceState);
     }
 
@@ -141,6 +140,7 @@ public class MainActivity extends BaseMvpActivity
 
 
         if (savedInstanceState == null) {
+            Log.i(TAG, "initView: savedInstanceState == null");
             mFragments[FIRST] = TopicFragment.newInstance();
             mFragments[SECOND] = DiscoveryFragment.newInstance();
             mFragments[THIRD] = MsgFragment.newInstance();
@@ -152,6 +152,7 @@ public class MainActivity extends BaseMvpActivity
                     mFragments[THIRD],
                     mFragments[FOURTH]);
         } else {
+            Log.i(TAG, "initView: savedInstanceState != null");
             // 这里库已经做了Fragment恢复,所有不需要额外的处理了, 不会出现重叠问题
 
             // 这里我们需要拿到mFragments的引用,也可以通过getSupportFragmentManager.getFragments()自行进行判断查找(效率更高些),用下面的方法查找更方便些
