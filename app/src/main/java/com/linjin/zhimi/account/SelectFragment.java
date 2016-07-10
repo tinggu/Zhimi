@@ -20,13 +20,11 @@ import butterknife.OnClick;
 public class SelectFragment extends BaseMvpFragment {
     
     private static final String TAG = "SelectFragment";
-    private RegisterPresenter regPresenter;
     
-    public static SelectFragment newInstance(RegisterPresenter regPresenter) {
+    public static SelectFragment newInstance() {
         Bundle args = new Bundle();
         Log.i(TAG, "newInstance: SelectFragment");
         SelectFragment fragment = new SelectFragment();
-        fragment.regPresenter = regPresenter;
         fragment.setArguments(args);
         return fragment;
     }
@@ -52,7 +50,7 @@ public class SelectFragment extends BaseMvpFragment {
         Log.i(TAG, "onClick: " + view.getId());
         int id = view.getId();
         if (id == R.id.btn_register) { 
-            start(RegisterStep0Fragment.newInstance(regPresenter));
+            start(RegisterStep0Fragment.newInstance());
         } else if (id == R.id.btn_login) {
 //            start(LoginFragment.newInstance());
             IntentStarter.showMain(getActivity());

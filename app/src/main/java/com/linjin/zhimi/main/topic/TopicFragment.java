@@ -1,6 +1,7 @@
 package com.linjin.zhimi.main.topic;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.DrawerLayout;
@@ -16,6 +17,7 @@ import com.linjin.zhimi.base.adapter.HeaderListAdapter;
 import com.linjin.zhimi.base.view.RefreshableRecyclerView;
 import com.linjin.zhimi.model.topic.Topic;
 import com.linjin.zhimi.model.topic.TopicAnswer;
+import com.linjin.zhimi.publish.PublishActivity;
 import com.linjin.zhimi.utils.IntentStarter;
 import com.linjin.zhimi.widget.TopActionBar;
 
@@ -60,7 +62,9 @@ public class TopicFragment
         topActionBar.setBackListener(new TopActionBar.BackListener() {
             @Override
             public void onBack() {
-                IntentStarter.showPublish(getActivity());
+                Intent i = new Intent(getActivity(), PublishActivity.class);
+                startActivity(i);
+//                IntentStarter.showPublish(getActivity());
             }
         });
         topActionBar.setActionListener(new TopActionBar.ActionListener() {

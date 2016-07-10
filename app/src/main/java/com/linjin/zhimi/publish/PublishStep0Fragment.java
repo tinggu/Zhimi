@@ -1,6 +1,7 @@
 package com.linjin.zhimi.publish;
 
 import android.annotation.SuppressLint;
+import android.os.Bundle;
 import android.util.Log;
 
 import com.linjin.zhimi.R;
@@ -14,10 +15,13 @@ import com.linjin.zhimi.R;
  */
 @SuppressLint("ValidFragment")
 public class PublishStep0Fragment extends PublishStepBaseFragment {
-  
-    
-    public PublishStep0Fragment(PublshPresenter presenter) {
-        super(presenter);
+
+    public static PublishStep0Fragment newInstance(PublshPresenter presenter) {
+        Bundle args = new Bundle();
+        PublishStep0Fragment fragment = new PublishStep0Fragment();
+        fragment.setArguments(args);
+        fragment.setPresenter(presenter);
+        return fragment;
     }
 
     @Override
@@ -26,7 +30,7 @@ public class PublishStep0Fragment extends PublishStepBaseFragment {
     }
 
     @Override
-    protected void initView() { 
+    protected void initView() {
         super.initView();
         topActionBar.setTitle("问题属于");
         Log.i("code", " initView: " + getClass().getName());
@@ -34,10 +38,7 @@ public class PublishStep0Fragment extends PublishStepBaseFragment {
 
     @Override
     protected void validate() {
-        
+
     }
-
-    
-
 
 }

@@ -32,17 +32,13 @@ public class RegisterStep2Fragment extends RegisterStepBaseFragment {
     @BindView(R.id.rg_sex)
     RadioGroup radiogroup;
 
-    public static RegisterStep2Fragment newInstance(RegisterPresenter presenter) {
+    public static RegisterStep2Fragment newInstance() {
         Bundle args = new Bundle();
-        RegisterStep2Fragment fragment = new RegisterStep2Fragment(presenter);
-
+        RegisterStep2Fragment fragment = new RegisterStep2Fragment();
         fragment.setArguments(args);
         return fragment;
     }
     
-    private RegisterStep2Fragment(RegisterPresenter presenter) {
-        super(presenter);
-    }
 
     @Override
     protected int getLayoutRes() {

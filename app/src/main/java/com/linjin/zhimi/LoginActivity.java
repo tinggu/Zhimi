@@ -7,9 +7,9 @@ import android.widget.Toast;
 
 import com.cyou.app.mvp.BaseMvpActivity;
 import com.cyou.quick.QuickApplication;
-import com.cyou.quick.mvp.MvpBasePresenter;
-import com.cyou.quick.mvp.MvpPresenter;
 import com.linjin.zhimi.account.SelectFragment;
+import com.linjin.zhimi.account.login.LoginPresenter;
+import com.linjin.zhimi.account.login.LoginView;
 import com.linjin.zhimi.account.register.RegisterPresenter;
 import com.linjin.zhimi.account.register.RegisterStep1Fragment;
 import com.linjin.zhimi.account.register.RegisterStep2Fragment;
@@ -20,7 +20,7 @@ import com.linjin.zhimi.event.LoginSuccessfulEvent;
 import com.linjin.zhimi.event.RegisterSuccessfulEvent;
 import com.linjin.zhimi.utils.CacheUtils;
 import com.linjin.zhimi.utils.DialogUtils;
-import com.linjin.zhimi.utils.IntentStarter; 
+import com.linjin.zhimi.utils.IntentStarter;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -33,32 +33,29 @@ import org.greenrobot.eventbus.ThreadMode;
  * Author     : wangjia_bi
  * Date       : 2015/6/8 15:29
  */
-public class LoginActivity extends BaseMvpActivity {
+public class LoginActivity extends BaseMvpActivity<LoginView, LoginPresenter> {
 
     private static final String TAG = "login";
 
     public static DialogUtils dialogUtils;
-
-    private RegisterPresenter regPresenter;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        Log.i(TAG, "onCreate: login");
-        setContentView(R.layout.activity_accunt);
+        setContentView(R.layout.activity_container_fragment);
         EventBus.getDefault().register(this);
         dialogUtils = new DialogUtils();
-        regPresenter = new RegisterPresenter(this);
         if (savedInstanceState == null) {
 //            Log.i(TAG, "onCreate: savedInstanceState == null");
-            loadRootFragment(R.id.fl_container, SelectFragment.newInstance(regPresenter));
+            loadRootFragment(R.id.fl_container, SelectFragment.newInstance());
         }
     }
 
     @Override
-    public MvpPresenter createPresenter() {
-        return new MvpBasePresenter();
+    public LoginPresenter createPresenter() {
+        return new LoginPresenter();
     }
 
 //    @Override
@@ -75,26 +72,7 @@ public class LoginActivity extends BaseMvpActivity {
         EventBus.getDefault().unregister(this);
         super.onDestroy();
     }
-
-    public void showRegister1() {
-        start(RegisterStep1Fragment.newInstance(regPresenter));
-    }
-
-    public void showRegister2() {
-        start(RegisterStep2Fragment.newInstance(regPresenter));
-    }
-
-    public void showRegister3() {
-        start(RegisterStep3Fragment.newInstance(regPresenter));
-    }
-
-    RegisterStep4Fragment registerFragment4;
-
-    public void showRegister4() {
-        registerFragment4 = RegisterStep4Fragment.newInstance(regPresenter);
-        start(registerFragment4);
-    }
-
+    
     //登录成功事件
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEvent(LoginSuccessfulEvent event) {
@@ -140,9 +118,9 @@ public class LoginActivity extends BaseMvpActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (registerFragment4 != null) {
-            registerFragment4.onActivityResult(requestCode, resultCode, data);
-        }
-
+        getTopFragment().onActivityResult(requestCode, resultCode, data);
+//        if (registerFragment4 != null) {
+//            registerFragment4.onActivityResult(requestCode, resultCode, data);
+//        }
     }
 }

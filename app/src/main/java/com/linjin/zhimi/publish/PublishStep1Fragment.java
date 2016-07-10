@@ -1,6 +1,7 @@
 package com.linjin.zhimi.publish;
 
 import android.annotation.SuppressLint;
+import android.os.Bundle;
 import android.util.Log;
 
 import com.cyou.ui.ClearableEditText;
@@ -20,7 +21,14 @@ import butterknife.BindView;
  */
 @SuppressLint("ValidFragment")
 public class PublishStep1Fragment extends PublishStepBaseFragment {
-  
+
+    public static PublishStep1Fragment newInstance(PublshPresenter presenter) {
+        Bundle args = new Bundle();
+        PublishStep1Fragment fragment = new PublishStep1Fragment();
+        fragment.setArguments(args);
+        fragment.setPresenter(presenter);
+        return fragment;
+    }
 
     @NotEmpty(messageResId = R.string.login_error_name_empty, sequence = 0)
     @Length(max = 15, sequence = 1)
@@ -28,15 +36,10 @@ public class PublishStep1Fragment extends PublishStepBaseFragment {
     @BindView(R.id.ev_title)
     ClearableEditText evTitle;
 
-     
-
-    public PublishStep1Fragment(PublshPresenter presenter) {
-        super(presenter);
-    }
 
     @Override
     protected int getLayoutRes() {
-        return R.layout.fragment_register_step3;
+        return R.layout.fragment_publish_step1;
     }
 
 

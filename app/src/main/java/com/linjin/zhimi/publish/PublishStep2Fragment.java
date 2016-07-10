@@ -1,6 +1,7 @@
 package com.linjin.zhimi.publish;
 
 import android.annotation.SuppressLint;
+import android.os.Bundle;
 import android.util.Log;
 
 import com.linjin.zhimi.R;
@@ -14,14 +15,18 @@ import com.linjin.zhimi.R;
  */
 @SuppressLint("ValidFragment")
 public class PublishStep2Fragment extends PublishStepBaseFragment {
-    
-    public PublishStep2Fragment(PublshPresenter presenter) {
-        super(presenter);
+
+    public static PublishStep2Fragment newInstance(PublshPresenter presenter) {
+        Bundle args = new Bundle();
+        PublishStep2Fragment fragment = new PublishStep2Fragment();
+        fragment.setArguments(args);
+        fragment.setPresenter(presenter);
+        return fragment;
     }
 
     @Override
     protected int getLayoutRes() {
-        return R.layout.fragment_register_step3;
+        return R.layout.fragment_publish_step2;
     }
 
 

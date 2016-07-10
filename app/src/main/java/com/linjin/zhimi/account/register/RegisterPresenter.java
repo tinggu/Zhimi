@@ -3,7 +3,6 @@ package com.linjin.zhimi.account.register;
 
 import com.cyou.app.mvp.rx.scheduler.AndroidSchedulerTransformer;
 import com.linjin.zhimi.DataCenter;
-import com.linjin.zhimi.LoginActivity;
 import com.linjin.zhimi.account.AccuntPresenter;
 import com.linjin.zhimi.api.AccuntApi;
 import com.linjin.zhimi.event.RegisterSuccessfulEvent;
@@ -31,7 +30,7 @@ import rx.functions.Func1;
  */
 public class RegisterPresenter extends AccuntPresenter<RegisterView> {
 
-    private LoginActivity loginActivity;
+    //    private LoginActivity loginActivity;
     private EventHandler eh;
     private int currStep;
     //    String username;
@@ -43,8 +42,7 @@ public class RegisterPresenter extends AccuntPresenter<RegisterView> {
     String devicetoken;
     private String zone = "+86";
 
-    public RegisterPresenter(LoginActivity loginActivity) {
-        this.loginActivity = loginActivity;
+    public RegisterPresenter() {
 //        eh = latest EventHandler() {
 //
 //            @Override
@@ -89,7 +87,7 @@ public class RegisterPresenter extends AccuntPresenter<RegisterView> {
     public void setTitle(String title) {
         this.title = title;
     }
-    
+
     public void back() {
         currStep--;
         KeyboardUtils.callBackKeyClick();
@@ -99,16 +97,16 @@ public class RegisterPresenter extends AccuntPresenter<RegisterView> {
     public void nextStep() {
         switch (currStep) {
             case 1:
-                loginActivity.showRegister1();
+                getView().showRegister1();
                 break;
             case 2:
-                loginActivity.showRegister2();
+                getView().showRegister2();
                 break;
             case 3:
-                loginActivity.showRegister3();
+                getView().showRegister3();
                 break;
             case 4:
-                loginActivity.showRegister4();
+                getView().showRegister4();
                 break;
         }
         currStep++;
@@ -180,16 +178,16 @@ public class RegisterPresenter extends AccuntPresenter<RegisterView> {
         });
     }
 
-    public void doRegister(){
-        
+    public void doRegister() {
+
     }
-    
+
     public void doRegister(AuthCredentials credentials) {
         if (isViewAttached())
             getView().showLoading();
         super.doBase(credentials);
     }
-    
+
 
     @Override
     public Subscriber<UserModel> createSubscriber() {
@@ -242,5 +240,4 @@ public class RegisterPresenter extends AccuntPresenter<RegisterView> {
     }
 
 
-   
 }

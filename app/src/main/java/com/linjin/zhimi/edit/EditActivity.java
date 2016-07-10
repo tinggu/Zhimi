@@ -13,7 +13,7 @@ public class EditActivity extends BaseMvpActivity<EditView, EditPresenter> {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit);
+        setContentView(R.layout.activity_container_fragment);
         editPresenter = new EditPresenter(this);
         showEdit();
     }

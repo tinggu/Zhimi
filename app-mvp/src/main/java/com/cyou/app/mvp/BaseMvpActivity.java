@@ -20,8 +20,7 @@ import io.realm.Realm;
 
 public abstract class BaseMvpActivity<V extends MvpView, P extends MvpPresenter<V>>
         extends MvpActivity<V, P> {
-
-    private static final String TAG = "BaseMvpActivity";
+    
     protected Realm realm; 
     
     @Override

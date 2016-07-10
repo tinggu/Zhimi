@@ -13,6 +13,9 @@ public interface PublishView extends MvpView {
 
     void finish();
     
-//    void showGiveUpDialog();
+    void showGiveUpDialog();
 
+    void showPublish1();
+
+    void showPublish2();
 }

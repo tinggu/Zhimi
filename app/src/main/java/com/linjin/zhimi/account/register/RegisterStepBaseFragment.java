@@ -29,20 +29,15 @@ import butterknife.BindView;
 @SuppressLint("ValidFragment")
 public abstract class RegisterStepBaseFragment
         extends BaseMvpFragment<RegisterView, RegisterPresenter>
-        implements Validator.ValidationListener {
+        implements Validator.ValidationListener,RegisterView {
 
     protected Validator validator;
 
     @BindView(R.id.topActionBar)
     TopActionBar topActionBar;
 
-    protected RegisterPresenter presenter;
-
-
-    public RegisterStepBaseFragment(RegisterPresenter presenter) {
-        this.presenter = presenter;
-    }
-
+    protected static RegisterPresenter presenter;
+    
     protected void initView() {
         validator = new Validator(this);
         validator.setValidationListener(this);
@@ -86,7 +81,8 @@ public abstract class RegisterStepBaseFragment
     }
 
     @Override
-    public RegisterPresenter createPresenter() {
+    public RegisterPresenter getPresenter() {
+        createPresenter().attachView(getMvpView());
         return presenter;
     }
 
@@ -112,6 +108,54 @@ public abstract class RegisterStepBaseFragment
             return;
         }
 
+    }
+
+    @Override
+    public void showRegister1() {
+        start(RegisterStep1Fragment.newInstance());
+    }
+
+    @Override
+    public void showRegister2() {
+        start(RegisterStep2Fragment.newInstance());
+    }
+
+    @Override
+    public void showRegister3() {
+        start(RegisterStep3Fragment.newInstance());
+    }
+    
+    @Override
+    public void showRegister4() { 
+        start(RegisterStep4Fragment.newInstance());
+    }
+
+    @Override
+    public void finish() {
+
+    }
+
+    @Override
+    public void showTip(String message) {
+
+    }
+
+    @Override
+    public void showLoading() {
+
+    }
+
+    @Override
+    public void hideLoading() {
+
+    }
+
+    @Override
+    public RegisterPresenter createPresenter() {
+        if(presenter == null){
+            presenter = new RegisterPresenter();
+        }
+        return presenter;
     }
 
 }

@@ -42,18 +42,13 @@ public class RegisterStep1Fragment extends RegisterStepBaseFragment {
     private int time;
     private boolean isFinsh;
 
-    public static RegisterStep1Fragment newInstance(RegisterPresenter presenter) {
+    public static RegisterStep1Fragment newInstance() {
         Bundle args = new Bundle();
-        RegisterStep1Fragment fragment = new RegisterStep1Fragment(presenter);
-
+        RegisterStep1Fragment fragment = new RegisterStep1Fragment();
         fragment.setArguments(args);
         return fragment;
     }
     
-    private RegisterStep1Fragment(RegisterPresenter presenter) {
-        super(presenter);
-    }
-
     @Override
     protected void initView() {
         super.initView();

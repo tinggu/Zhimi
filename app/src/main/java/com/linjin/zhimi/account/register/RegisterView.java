@@ -13,4 +13,12 @@ public interface RegisterView extends LoginView {
 
     void finish();
 
+    void showRegister1();
+
+    void showRegister2();
+
+    void showRegister3();
+
+    void showRegister4();
+
 }

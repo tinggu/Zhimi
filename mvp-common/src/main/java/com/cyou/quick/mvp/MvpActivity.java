@@ -24,13 +24,14 @@ import com.cyou.quick.QuickActivity;
 public abstract class MvpActivity<V extends MvpView, P extends MvpPresenter<V>>
         extends QuickActivity
         implements IMvp<V, P>, MvpView {
- 
+    
+    public static final String TAG = "MvpActivity";
     protected P presenter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if(getPresenter() == null){
+        if (getPresenter() == null) {
             setPresenter(createPresenter());
         }
         getPresenter().attachView(getMvpView());
@@ -43,7 +44,7 @@ public abstract class MvpActivity<V extends MvpView, P extends MvpPresenter<V>>
      */
     public abstract P createPresenter();
 
-    
+
     @Override
     public P getPresenter() {
         return presenter;

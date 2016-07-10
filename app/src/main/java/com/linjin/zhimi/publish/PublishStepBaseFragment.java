@@ -10,7 +10,7 @@ import android.view.View;
 
 import com.cyou.app.mvp.BaseMvpFragment;
 import com.cyou.quick.mvp.MvpView;
-import com.linjin.zhimi.R; 
+import com.linjin.zhimi.R;
 import com.linjin.zhimi.widget.TopActionBar;
 
 import butterknife.BindView;
@@ -30,39 +30,12 @@ public abstract class PublishStepBaseFragment
     @BindView(R.id.topActionBar)
     TopActionBar topActionBar;
 
-    protected PublshPresenter presenter;
-
-
-    public PublishStepBaseFragment(PublshPresenter presenter) {
-        this.presenter = presenter;
-    }
-
-    protected void initView() {
-        
-        topActionBar.setBackListener(new TopActionBar.BackListener() {
-            @Override
-            public void onBack() {
-                presenter.back();
-
-            }
-        });
-        topActionBar.setActionListener(new TopActionBar.ActionListener() {
-            @Override
-            public void onAction() {
-                validate();
-            }
-        });
-        Log.i("code", " initView: " + getClass().getName());
-    }
-
-    protected abstract void validate();
-
+    
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRetainInstance(true);
     }
-
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
@@ -81,11 +54,32 @@ public abstract class PublishStepBaseFragment
 
     @Override
     public PublshPresenter createPresenter() {
-        return presenter;
+        return getPresenter();
     }
 
+    protected void initView() {
+
+        topActionBar.setBackListener(new TopActionBar.BackListener() {
+            @Override
+            public void onBack() {
+                getPresenter().back();
+
+            }
+        });
+        topActionBar.setActionListener(new TopActionBar.ActionListener() {
+            @Override
+            public void onAction() {
+                validate();
+            }
+        });
+        Log.i("code", " initView: " + getClass().getName());
+    }
+    
+
+    protected abstract void validate();
+    
     public Context getContext() {
         return getActivity();
     }
-    
+
 }

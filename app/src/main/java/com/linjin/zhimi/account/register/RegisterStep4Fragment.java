@@ -31,20 +31,15 @@ public class RegisterStep4Fragment extends RegisterStepBaseFragment implements P
     private Uri headUri;
     private boolean isUpdatePic;
     SelectPicPopWindow selectPicPW;
-    
+
     @BindView(R.id.img_avatar)
     ImageView imgAvatar;
 
-    public static RegisterStep4Fragment newInstance(RegisterPresenter presenter) {
+    public static RegisterStep4Fragment newInstance() {
         Bundle args = new Bundle();
-        RegisterStep4Fragment fragment = new RegisterStep4Fragment(presenter);
-
+        RegisterStep4Fragment fragment = new RegisterStep4Fragment();
         fragment.setArguments(args);
         return fragment;
-    }
-    
-    private RegisterStep4Fragment(RegisterPresenter presenter) {
-        super(presenter);
     }
 
     @Override

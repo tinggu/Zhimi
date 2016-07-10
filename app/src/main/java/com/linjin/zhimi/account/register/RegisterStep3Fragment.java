@@ -27,17 +27,13 @@ public class RegisterStep3Fragment extends RegisterStepBaseFragment {
     @BindView(R.id.ev_title)
     ClearableEditText evTitle;
 
-    public static RegisterStep3Fragment newInstance(RegisterPresenter presenter) {
+    public static RegisterStep3Fragment newInstance() {
         Bundle args = new Bundle();
-        RegisterStep3Fragment fragment = new RegisterStep3Fragment(presenter);
-
+        RegisterStep3Fragment fragment = new RegisterStep3Fragment();
         fragment.setArguments(args);
         return fragment;
     }
     
-    private RegisterStep3Fragment(RegisterPresenter presenter) {
-        super(presenter);
-    }
 
     @Override
     protected int getLayoutRes() {

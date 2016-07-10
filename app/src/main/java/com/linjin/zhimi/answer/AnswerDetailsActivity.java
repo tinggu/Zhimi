@@ -26,16 +26,13 @@ public class AnswerDetailsActivity extends BaseMvpActivity {
 
     public DialogUtils dialogUtils;
 
-    private PublshPresenter publshPresenter;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_accunt);
+        setContentView(R.layout.activity_container_fragment);
         EventBus.getDefault().register(this);
         dialogUtils = new DialogUtils();
-
-        showPublish0();
+ 
     }
 
     @Override
@@ -51,30 +48,30 @@ public class AnswerDetailsActivity extends BaseMvpActivity {
         super.onDestroy();
     }
     
-    public void showPublish0() {
-        SMSSDKInitUtils.initSDK(this);
-        PublishStep0Fragment registerFragment = new PublishStep0Fragment(publshPresenter);
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.fragmentContainer, registerFragment);
-        transaction.addToBackStack("step0");
-        transaction.commit();
-    }
-
-    public void showPublish1() {
-        PublishStep0Fragment registerFragment = new PublishStep0Fragment(publshPresenter);
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.fragmentContainer, registerFragment);
-        transaction.addToBackStack("step1");
-        transaction.commit();
-    }
-
-    public void showPublish2() {
-        PublishStep0Fragment registerFragment = new PublishStep0Fragment(publshPresenter);
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.fragmentContainer, registerFragment);
-        transaction.addToBackStack("step2");
-        transaction.commit();
-    }
+//    public void showPublish0() {
+//        SMSSDKInitUtils.initSDK(this);
+//        PublishStep0Fragment registerFragment = new PublishStep0Fragment();
+//        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+//        transaction.replace(R.id.fragmentContainer, registerFragment);
+//        transaction.addToBackStack("step0");
+//        transaction.commit();
+//    }
+//
+//    public void showPublish1() {
+//        PublishStep0Fragment registerFragment = new PublishStep0Fragment(publshPresenter);
+//        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+//        transaction.replace(R.id.fragmentContainer, registerFragment);
+//        transaction.addToBackStack("step1");
+//        transaction.commit();
+//    }
+//
+//    public void showPublish2() {
+//        PublishStep0Fragment registerFragment = new PublishStep0Fragment(publshPresenter);
+//        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+//        transaction.replace(R.id.fragmentContainer, registerFragment);
+//        transaction.addToBackStack("step2");
+//        transaction.commit();
+//    }
 
    
 }

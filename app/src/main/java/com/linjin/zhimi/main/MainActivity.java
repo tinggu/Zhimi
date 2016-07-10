@@ -97,48 +97,8 @@ public class MainActivity extends BaseMvpActivity
     private void initView(Bundle savedInstanceState) {
 
 //        //定位底部tab,默认定位0，即群列表页
-        int index = getIntent().getIntExtra("index", 0);
-//        
-//        fragments = new ArrayList<>();
-//        FragmentManager fragmentManager = getSupportFragmentManager();
-//
-//        if (savedInstanceState != null) { // “内存重启”时调用
-//            topicFragment = (TopicFragment) fragmentManager.findFragmentByTag("topic");
-//            discoveryFragment = (DiscoveryFragment) fragmentManager.findFragmentByTag("discovery");
-//            msgFragment = (MsgFragment) fragmentManager.findFragmentByTag("msg");
-//            selfFragment = (SelfFragment) fragmentManager.findFragmentByTag("self");
-//        } else {
-//            topicFragment = new TopicFragment();
-//            discoveryFragment = new DiscoveryFragment();
-//            msgFragment = new MsgFragment();
-//            selfFragment = new SelfFragment();
-//        }
-//
-//
-//        fragments.add(topicFragment);
-//        fragments.add(discoveryFragment);
-//        fragments.add(msgFragment);
-//        fragments.add(selfFragment);
-//
-//        radioButtons = getChildRadions();
-//
-//        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-//
-//        ft.add(R.id.fragmentContainer, topicFragment, "topic");
-//        ft.add(R.id.fragmentContainer, discoveryFragment, "discovery");
-//        ft.add(R.id.fragmentContainer, msgFragment, "msg");
-//        ft.add(R.id.fragmentContainer, selfFragment, "self");
-//
-////            ft.add(R.id.fragmentContainer, fragments.get(i),fragments.get(i).getClass().getSimpleName());
-//        for (int i = 0; i < fragments.size(); i++) {
-//            ft.hide(fragments.get(i));
-//        }
-//        ft.show(fragments.get(index));
-//        //ft.add(fragmentContentId, fragments.get(index));
-//
-//        ft.commit();
-
-
+//        int index = getIntent().getIntExtra("index", 0);
+        
         if (savedInstanceState == null) {
             Log.i(TAG, "initView: savedInstanceState == null");
             mFragments[FIRST] = TopicFragment.newInstance();

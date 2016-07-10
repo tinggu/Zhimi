@@ -1,6 +1,7 @@
 package com.linjin.zhimi.publish;
 
 
+import android.os.Bundle;
 import android.text.TextUtils;
 
 import com.cyou.quick.mvp.MvpBasePresenter;
@@ -14,13 +15,13 @@ import com.linjin.zhimi.utils.KeyboardUtils;
  * Date       : 2015/6/11 14:53
  */
 public class PublshPresenter extends MvpBasePresenter<PublishView> {
+    
+//    private PublishActivity publishActivity;
 
-    private PublishActivity publishActivity;
-    
     private int currStep;
-    
+
     private String content;
-    
+
     private String supplement;
 
     public void setContent(String content) {
@@ -31,17 +32,17 @@ public class PublshPresenter extends MvpBasePresenter<PublishView> {
         this.supplement = supplement;
     }
 
-    public PublshPresenter(PublishActivity publishActivity) {
-        this.publishActivity = publishActivity;
-    }
-    
+//    public PublshPresenter(PublishActivity publishActivity) {
+//        this.publishActivity = publishActivity;
+//    }
+
     public void back() {
-        if(currStep == 0){
-            if(!TextUtils.isEmpty(content)){
-                publishActivity.showGiveUpDialog();
+        if (currStep == 0) {
+            if (!TextUtils.isEmpty(content)) {
+                getView().showGiveUpDialog();
                 return;
             }
-            publishActivity.finish();
+            getView().finish();
             return;
         }
         currStep--;
@@ -52,10 +53,10 @@ public class PublshPresenter extends MvpBasePresenter<PublishView> {
     public void nextStep() {
         switch (currStep) {
             case 1:
-                publishActivity.showPublish1();
+                getView().showPublish1();
                 break;
             case 2:
-                publishActivity.showPublish2();
+                getView().showPublish2();
                 break;
         }
         currStep++;

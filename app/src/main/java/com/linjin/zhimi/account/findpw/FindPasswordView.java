@@ -1,6 +1,6 @@
 package com.linjin.zhimi.account.findpw;
 
-import com.linjin.zhimi.account.register.RegisterView;
+import com.linjin.zhimi.account.login.LoginView;
 
 /**
  * Description:
@@ -9,6 +9,6 @@ import com.linjin.zhimi.account.register.RegisterView;
  * Author     : wangjia_bi
  * Date       : 2015/6/8 14:55
  */
-public interface FindPasswordView extends RegisterView {
-
+public interface FindPasswordView extends LoginView {
+    void finish();
 }

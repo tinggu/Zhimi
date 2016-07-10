@@ -2,17 +2,12 @@ package com.linjin.zhimi.publish;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v4.app.FragmentTransaction;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.cyou.app.mvp.BaseMvpActivity;
-import com.cyou.quick.mvp.MvpBasePresenter;
-import com.cyou.quick.mvp.MvpPresenter;
 import com.linjin.zhimi.R;
 import com.linjin.zhimi.utils.DialogUtils;
-
-import cn.smssdk.SMSSDKInitUtils;
 
 /**
  * Description:
@@ -21,25 +16,25 @@ import cn.smssdk.SMSSDKInitUtils;
  * Author     : wangjia_bi
  * Date       : 2015/6/8 15:29
  */
-public class PublishActivity extends BaseMvpActivity {
+public class PublishActivity extends BaseMvpActivity<PublishView, PublshPresenter> implements PublishView {
 
     public DialogUtils dialogUtils;
 
-    private PublshPresenter publshPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_accunt);
-//        EventBus.getDefault().register(this);
+        setContentView(R.layout.activity_container_fragment);
         dialogUtils = new DialogUtils();
-
-        showPublish0();
+        if (savedInstanceState == null) {
+//            Log.i(TAG, "onCreate: savedInstanceState == null");
+            loadRootFragment(R.id.fl_container, PublishStep0Fragment.newInstance(getPresenter()));
+        }
     }
 
     @Override
-    public MvpPresenter createPresenter() {
-        return new MvpBasePresenter();
+    public PublshPresenter createPresenter() {
+        return new PublshPresenter();
     }
 
 
@@ -50,32 +45,18 @@ public class PublishActivity extends BaseMvpActivity {
         super.onDestroy();
     }
 
-    public void showPublish0() {
-        SMSSDKInitUtils.initSDK(this);
-        publshPresenter = new PublshPresenter(this);
-        PublishStep0Fragment registerFragment = new PublishStep0Fragment(publshPresenter);
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.fragmentContainer, registerFragment);
-        transaction.addToBackStack("step0");
-        transaction.commit();
-    }
 
+    @Override
     public void showPublish1() {
-        PublishStep0Fragment registerFragment = new PublishStep0Fragment(publshPresenter);
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.fragmentContainer, registerFragment);
-        transaction.addToBackStack("step1");
-        transaction.commit();
+        start(PublishStep1Fragment.newInstance(getPresenter()));
     }
 
+    @Override
     public void showPublish2() {
-        PublishStep2Fragment registerFragment = new PublishStep2Fragment(publshPresenter);
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.fragmentContainer, registerFragment);
-        transaction.addToBackStack("step2");
-        transaction.commit();
+        start(PublishStep2Fragment.newInstance(getPresenter()));
     }
 
+    @Override
     public void showGiveUpDialog() {
         String content = "放弃创建匿题吗？";
         new MaterialDialog.Builder(this)

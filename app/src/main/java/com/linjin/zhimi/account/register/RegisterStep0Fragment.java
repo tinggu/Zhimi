@@ -36,19 +36,13 @@ public class RegisterStep0Fragment extends RegisterStepBaseFragment {
     ClearableEditText evPassword;
 
 
-    public static RegisterStep0Fragment newInstance(RegisterPresenter presenter) {
+    public static RegisterStep0Fragment newInstance() {
         Bundle args = new Bundle();
-        RegisterStep0Fragment fragment = new RegisterStep0Fragment(presenter);
-        
+        RegisterStep0Fragment fragment = new RegisterStep0Fragment();
         fragment.setArguments(args);
         return fragment;
     }
     
-    private RegisterStep0Fragment(RegisterPresenter presenter) {
-        super(presenter);
-    }
-
-
     @Override
     protected int getLayoutRes() {
         return R.layout.fragment_register_step0;
@@ -63,6 +57,7 @@ public class RegisterStep0Fragment extends RegisterStepBaseFragment {
         presenter.nextStep();
 //        TrackUtils.getInstance().onTrackEvent("Register_rp_register");
     }
-    
 
+
+    
 }
