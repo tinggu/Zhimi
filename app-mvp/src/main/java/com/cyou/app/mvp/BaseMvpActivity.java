@@ -8,7 +8,7 @@ import com.cyou.quick.mvp.MvpPresenter;
 import com.cyou.quick.mvp.MvpView;
 import com.cyou.common.utils.TrackUtils;
 
-import io.realm.Realm;
+//import io.realm.Realm;
 
 /**
  * Description:
@@ -21,7 +21,7 @@ import io.realm.Realm;
 public abstract class BaseMvpActivity<V extends MvpView, P extends MvpPresenter<V>>
         extends MvpActivity<V, P> {
     
-    protected Realm realm; 
+//    protected Realm realm; 
     
     @Override
     public void onResume() {
@@ -40,9 +40,9 @@ public abstract class BaseMvpActivity<V extends MvpView, P extends MvpPresenter<
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (realm != null) {
-            realm.close();
-        }
+//        if (realm != null) {
+//            realm.close();
+//        }
     }
 
     protected void toast(String str) {

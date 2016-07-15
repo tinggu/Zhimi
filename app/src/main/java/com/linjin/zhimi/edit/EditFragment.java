@@ -13,24 +13,23 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.cyou.app.mvp.BaseMvpFragment;
+import com.cyou.common.utils.KeyboardUtils;
+import com.cyou.common.utils.LogUtils;
 import com.cyou.ui.wheelView.ChangeAddressDialog;
 import com.cyou.ui.wheelView.ChangeBirthDialog;
 import com.cyou.ui.wheelView.ChangeSexDialog;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.linjin.zhimi.DataCenter;
-import com.linjin.zhimi.R; 
+import com.linjin.zhimi.R;
 import com.linjin.zhimi.model.account.User;
-import com.cyou.common.utils.CacheUtils;
-import com.cyou.common.utils.KeyboardUtils;
-import com.cyou.common.utils.LogUtils;
 import com.linjin.zhimi.utils.PhotoUtils;
 import com.linjin.zhimi.widget.SelectPicPopWindow;
 import com.linjin.zhimi.widget.TopActionBar;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-import io.realm.Realm;
-import io.realm.RealmResults;
+//import io.realm.Realm;
+//import io.realm.RealmResults;
 
 
 public class EditFragment extends BaseMvpFragment<EditView, EditPresenter>
@@ -79,9 +78,9 @@ public class EditFragment extends BaseMvpFragment<EditView, EditPresenter>
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        realm = Realm.getDefaultInstance();
-        RealmResults<User> users = CacheUtils.findAll(realm, User.class);
-        user = users.first();
+//        realm = Realm.getDefaultInstance();
+//        RealmResults<User> users = CacheUtils.findAll(realm, User.class);
+//        user = users.first();
         initView();
     }
 

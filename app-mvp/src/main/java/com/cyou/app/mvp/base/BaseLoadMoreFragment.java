@@ -9,8 +9,6 @@ import com.cyou.app.mvp.lce.MvpLceFragment;
 import com.cyou.app.mvp.loadmore.LoadMoreView;
 import com.cyou.quick.mvp.MvpPresenter; 
 
-import io.realm.Realm;
-
 /**
  * Description:
  * Copyright  : Copyright (c) 2015
@@ -21,8 +19,6 @@ import io.realm.Realm;
 public abstract class BaseLoadMoreFragment<CV extends View, M, V extends LoadMoreView<M>, P extends MvpPresenter<V>>
         extends MvpLceFragment<CV, M, V, P> implements LoadMoreView<M> {
     public static final String TAG = "LoadMore";
-
-    protected Realm realm;
 
    
     @Override
@@ -71,9 +67,9 @@ public abstract class BaseLoadMoreFragment<CV extends View, M, V extends LoadMor
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        if (realm != null) {
-            realm.close();
-        }
+//        if (realm != null) {
+//            realm.close();
+//        }
     }
 
     protected void toast(String str) {

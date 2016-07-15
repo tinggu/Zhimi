@@ -46,7 +46,7 @@
         <service
             android:name="io.rong.imlib.ipc.RongService"
             android:exported="true"
-            android:process=":ipc"></service>
+            android:process=":ipc"/>
 
         <service android:name="io.rong.imlib.ReConnectService" />
 
@@ -96,15 +96,15 @@
         <!--必选： SDK 核心功能-->
         <service
             android:name="io.rong.push.core.PushRegistrationService"
-            android:exported="false"></service>
+            android:exported="false"/>
         <service
             android:name="io.rong.push.PushService"
             android:exported="false"
-            android:process="io.rong.push"></service>
+            android:process="io.rong.push"/>
 
         <service
             android:name="io.rong.push.core.MessageHandleService"
-            android:exported="true"></service>
+            android:exported="true"/>
 
         <receiver
             android:name="io.rong.push.PushReceiver"

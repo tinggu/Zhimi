@@ -3,16 +3,14 @@ package com.linjin.zhimi.model.account;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import io.realm.RealmObject;
-
 /**
  * Description:
  * Copyright  : Copyright (c) 2015
  * Company    : 北京畅游天下网络科技有限公司
- * Author     : liujianguang
+ * Author     : wangjia
  * Date       : 2016/1/5 18:45
  */
-public class User extends RealmObject {
+public class User   {
     //    private static final long serialVersionUID = 1L;
     @Expose
     @SerializedName("uid")

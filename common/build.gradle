@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-apply plugin: 'realm-android'
+//apply plugin: 'realm-android'
 apply plugin: 'me.tatarka.retrolambda'
 
 android {
@@ -29,8 +29,6 @@ retrolambda {
 }
 
 dependencies {
-    compile 'com.android.support:recyclerview-v7:' + rootProject.ext.appcompat7Version
-    
     compile project(':quick-mvp')
     compile project(':umeng')
 
@@ -52,7 +50,7 @@ dependencies {
     compile 'com.mobsandgeeks:android-saripaar:2.0.2'
     
     //eventbus
-    provided 'de.greenrobot:eventbus-annotation-processor:3.0.0-beta1'
+//    provided 'de.greenrobot:eventbus-annotation-processor:3.0.0-beta1'
     compile 'org.greenrobot:eventbus:3.0.0'
     
 //    //七牛sdk

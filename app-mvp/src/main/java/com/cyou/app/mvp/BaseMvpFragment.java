@@ -7,7 +7,7 @@ import com.cyou.quick.mvp.MvpFragment;
 import com.cyou.quick.mvp.MvpView;
 import com.cyou.common.utils.TrackUtils;
 
-import io.realm.Realm;
+//import io.realm.Realm;
 
 /**
  * Description:
@@ -19,7 +19,7 @@ import io.realm.Realm;
 public abstract class BaseMvpFragment<V extends MvpView, P extends MvpBasePresenter<V>>
         extends MvpFragment<V, P> {
 
-    protected Realm realm;
+//    protected Realm realm;
     
     @Override
     public void onResume() {
@@ -37,9 +37,9 @@ public abstract class BaseMvpFragment<V extends MvpView, P extends MvpBasePresen
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        if (realm != null) {
-            realm.close();
-        }
+//        if (realm != null) {
+//            realm.close();
+//        }
     }
 
     protected void toast(String str) {

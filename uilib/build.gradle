@@ -28,9 +28,9 @@ android {
 }
 
 dependencies {
-    
     compile project(':app-mvp')
     
+    compile 'com.android.support:recyclerview-v7:' + rootProject.ext.appcompat7Version
     //switch button
     //    compile 'com.kyleduo.switchbutton:library:1.2.8'
     
@@ -50,7 +50,6 @@ dependencies {
     
     // add pickerview
     compile 'com.bigkoo:pickerview:2.0.8'
-    compile 'de.hdodenhof:circleimageview:2.0.0'
 
     //pager indicator
     compile 'me.relex:circleindicator:1.2.1@aar'

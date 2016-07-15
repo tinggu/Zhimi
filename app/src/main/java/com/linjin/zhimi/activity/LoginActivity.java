@@ -15,7 +15,6 @@ import com.linjin.zhimi.account.login.LoginView;
 import com.linjin.zhimi.event.FindPWSuccessfulEvent;
 import com.linjin.zhimi.event.LoginSuccessfulEvent;
 import com.linjin.zhimi.event.RegisterSuccessfulEvent;
-import com.cyou.common.utils.CacheUtils;
 import com.linjin.zhimi.utils.IntentStarter;
 
 import org.greenrobot.eventbus.EventBus;
@@ -98,10 +97,9 @@ public class LoginActivity extends BaseMvpActivity<LoginView, LoginPresenter> {
     }
 
     private void refreshCache() {
-        CacheUtils.init();
+//        CacheUtils.init();
         if (DataCenter.getInstance().hasUser()) {
 
-            CacheUtils.refreshCache();
         } else {
             Log.e(TAG, "user 为空初始化失败");
         }
