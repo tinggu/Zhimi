@@ -7,7 +7,6 @@ import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.cyou.app.mvp.BaseMvpActivity;
 import com.linjin.zhimi.R;
-import com.linjin.zhimi.utils.DialogUtils;
 
 /**
  * Description:
@@ -16,16 +15,14 @@ import com.linjin.zhimi.utils.DialogUtils;
  * Author     : wangjia_bi
  * Date       : 2015/6/8 15:29
  */
-public class PublishActivity extends BaseMvpActivity<PublishView, PublshPresenter> implements PublishView {
-
-    public DialogUtils dialogUtils;
+public class PublishActivity extends BaseMvpActivity<PublishView, PublshPresenter>
+        implements PublishView  {
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_container_fragment);
-        dialogUtils = new DialogUtils();
         if (savedInstanceState == null) {
 //            Log.i(TAG, "onCreate: savedInstanceState == null");
             loadRootFragment(R.id.fl_container, PublishStep0Fragment.newInstance(getPresenter()));
@@ -40,11 +37,9 @@ public class PublishActivity extends BaseMvpActivity<PublishView, PublshPresente
 
     @Override
     public void onDestroy() {
-        dialogUtils.hideLoading();
 //        EventBus.getDefault().unregister(this);
         super.onDestroy();
     }
-
 
     @Override
     public void showPublish1() {
@@ -56,8 +51,13 @@ public class PublishActivity extends BaseMvpActivity<PublishView, PublshPresente
         start(PublishStep2Fragment.newInstance(getPresenter()));
     }
 
+//    @Override
+//    public void finish() {
+//         finish();
+//    }
+
     @Override
-    public void showGiveUpDialog() {
+    public   void showGiveUpDialog() {
         String content = "放弃创建匿题吗？";
         new MaterialDialog.Builder(this)
 //                    .title(R.string.title)
@@ -72,6 +72,4 @@ public class PublishActivity extends BaseMvpActivity<PublishView, PublshPresente
                 })
                 .show();
     }
-
-
 }

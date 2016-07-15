@@ -12,7 +12,7 @@ import com.cyou.ui.slideswitch.OnToggleStateChangeListener;
 import com.cyou.ui.slideswitch.SlideSwitch;
 import com.linjin.zhimi.R; 
 import com.linjin.zhimi.utils.IntentStarter;
-import com.linjin.zhimi.utils.KeyboardUtils;
+import com.cyou.common.utils.KeyboardUtils;
 import com.linjin.zhimi.widget.TopActionBar;
 
 import butterknife.BindView;

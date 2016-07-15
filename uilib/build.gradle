@@ -20,10 +20,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    compileOptions {
+        sourceCompatibility rootProject.ext.javaSourceCompatibility
+        targetCompatibility rootProject.ext.javaTargetCompatibility
+    }
 }
 
 dependencies {
-    compile 'com.android.support:recyclerview-v7:' + rootProject.ext.appcompat7Version
+    
     compile project(':app-mvp')
     
     //switch button
@@ -46,7 +51,7 @@ dependencies {
     // add pickerview
     compile 'com.bigkoo:pickerview:2.0.8'
     compile 'de.hdodenhof:circleimageview:2.0.0'
-    
+
     //pager indicator
-    compile 'com.github.tinggu:SpriteIndicator:0.4'
+    compile 'me.relex:circleindicator:1.2.1@aar'
 }

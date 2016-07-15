@@ -12,7 +12,7 @@ import com.cyou.ui.slideswitch.OnToggleStateChangeListener;
 import com.cyou.ui.slideswitch.SlideSwitch;
 import com.linjin.zhimi.R;
 import com.linjin.zhimi.utils.IntentStarter;
-import com.linjin.zhimi.utils.KeyboardUtils;
+import com.cyou.common.utils.KeyboardUtils;
 import com.linjin.zhimi.widget.TopActionBar;
 
 import butterknife.BindView;
@@ -20,6 +20,13 @@ import butterknife.OnClick;
 
 
 public class DetailsFragment extends BaseMvpFragment {
+
+    public static DetailsFragment newInstance() {
+        Bundle args = new Bundle();
+        DetailsFragment fragment = new DetailsFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
 
     @BindView(R.id.topActionBar)
     TopActionBar topActionBar;

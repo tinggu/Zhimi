@@ -2,7 +2,7 @@ package com.linjin.zhimi.splash;
 
 import android.view.View;
 
-import com.linjin.zhimi.base.AbstractViewPagerAdapter;
+import com.cyou.common.base.adapter.AbstractViewPagerAdapter;
 
 import java.util.List;
 

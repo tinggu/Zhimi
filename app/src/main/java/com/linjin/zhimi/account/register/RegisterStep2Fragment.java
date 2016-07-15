@@ -21,16 +21,6 @@ import butterknife.BindView;
  */
 @SuppressLint("ValidFragment")
 public class RegisterStep2Fragment extends RegisterStepBaseFragment {
-  
-
-    @NotEmpty(messageResId = R.string.login_error_name_empty, sequence = 0)
-    @Length(max = 10, sequence = 1)
-    @Order(0)
-    @BindView(R.id.ev_name)
-    ClearableEditText evName;
-
-    @BindView(R.id.rg_sex)
-    RadioGroup radiogroup;
 
     public static RegisterStep2Fragment newInstance() {
         Bundle args = new Bundle();
@@ -39,7 +29,15 @@ public class RegisterStep2Fragment extends RegisterStepBaseFragment {
         return fragment;
     }
     
+    @NotEmpty(messageResId = R.string.login_error_name_empty, sequence = 0)
+    @Length(max = 10, sequence = 1)
+    @Order(0)
+    @BindView(R.id.ev_name)
+    ClearableEditText evName;
 
+    @BindView(R.id.rg_sex)
+    RadioGroup radiogroup;
+    
     @Override
     protected int getLayoutRes() {
         return R.layout.fragment_register_step2;
@@ -52,9 +50,9 @@ public class RegisterStep2Fragment extends RegisterStepBaseFragment {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if(checkedId == R.id.rb_male){
-                    presenter.setSex(1);
+                    registerPresenter.setSex(1);
                 }else  if (checkedId == R.id.rb_female){
-                    presenter.setSex(0);
+                    registerPresenter.setSex(0);
                 }
             }
         });
@@ -63,8 +61,8 @@ public class RegisterStep2Fragment extends RegisterStepBaseFragment {
 
     @Override
     public void onValidationSucceeded() {
-        presenter.setName(evName.getText().toString());
-        presenter.nextStep();
+        registerPresenter.setName(evName.getText().toString());
+        registerPresenter.nextStep();
 //        TrackUtils.getInstance().onTrackEvent("Register_rp_register");
     }
 

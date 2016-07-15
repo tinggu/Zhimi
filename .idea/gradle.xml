@@ -10,11 +10,10 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/app-model" />
             <option value="$PROJECT_DIR$/app-mvp" />
             <option value="$PROJECT_DIR$/common" />
             <option value="$PROJECT_DIR$/imkit" />
-            <option value="$PROJECT_DIR$/mvp-common" />
+            <option value="$PROJECT_DIR$/quick-mvp" />
             <option value="$PROJECT_DIR$/smssdk" />
             <option value="$PROJECT_DIR$/uilib" />
             <option value="$PROJECT_DIR$/umeng" />
@@ -24,11 +23,10 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/app-model" />
             <option value="$PROJECT_DIR$/app-mvp" />
             <option value="$PROJECT_DIR$/common" />
             <option value="$PROJECT_DIR$/imkit" />
-            <option value="$PROJECT_DIR$/mvp-common" />
+            <option value="$PROJECT_DIR$/quick-mvp" />
             <option value="$PROJECT_DIR$/smssdk" />
             <option value="$PROJECT_DIR$/uilib" />
             <option value="$PROJECT_DIR$/umeng" />

@@ -57,7 +57,7 @@
         <attr name="siBorderWidth" format="dimension" />
         <attr name="siBorderAlpha" format="float" />
         <attr name="siForeground" format="integer|reference" />
-        <!-- Rounded Image View -->
+        <!-- Rounded ImageListBean View -->
         <attr name="siRadius" format="dimension" />
         <!--BubbleImageView-->
         <attr name="siArrowPosition" />

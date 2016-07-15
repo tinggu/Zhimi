@@ -1,7 +1,6 @@
 package com.linjin.zhimi.account.register;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -10,7 +9,7 @@ import android.view.View;
 
 import com.cyou.app.mvp.BaseMvpFragment;
 import com.linjin.zhimi.R;
-import com.linjin.zhimi.utils.LogUtils;
+import com.cyou.common.utils.LogUtils;
 import com.linjin.zhimi.widget.TopActionBar;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
@@ -29,14 +28,14 @@ import butterknife.BindView;
 @SuppressLint("ValidFragment")
 public abstract class RegisterStepBaseFragment
         extends BaseMvpFragment<RegisterView, RegisterPresenter>
-        implements Validator.ValidationListener,RegisterView {
+        implements Validator.ValidationListener, RegisterView {
 
+    protected static RegisterPresenter registerPresenter;
+    
     protected Validator validator;
 
     @BindView(R.id.topActionBar)
     TopActionBar topActionBar;
-
-    protected static RegisterPresenter presenter;
     
     protected void initView() {
         validator = new Validator(this);
@@ -45,7 +44,7 @@ public abstract class RegisterStepBaseFragment
         topActionBar.setBackListener(new TopActionBar.BackListener() {
             @Override
             public void onBack() {
-                presenter.back();
+                registerPresenter.back();
 
             }
         });
@@ -58,11 +57,11 @@ public abstract class RegisterStepBaseFragment
         Log.i("code", " initView: " + getClass().getName());
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setRetainInstance(true);
-    }
+//    @Override
+//    public void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setRetainInstance(true);
+//    }
 
 
     @Override
@@ -81,15 +80,19 @@ public abstract class RegisterStepBaseFragment
     }
 
     @Override
+    public RegisterPresenter createPresenter() {
+        if (registerPresenter == null) {
+            registerPresenter = new RegisterPresenter();
+        }
+        return registerPresenter;
+    }
+    
+    @Override
     public RegisterPresenter getPresenter() {
         createPresenter().attachView(getMvpView());
-        return presenter;
+        return registerPresenter;
     }
-
-    public Context getContext() {
-        return getActivity();
-    }
-
+    
     @Override
     public abstract void onValidationSucceeded();
 
@@ -124,15 +127,15 @@ public abstract class RegisterStepBaseFragment
     public void showRegister3() {
         start(RegisterStep3Fragment.newInstance());
     }
-    
+
     @Override
-    public void showRegister4() { 
+    public void showRegister4() {
         start(RegisterStep4Fragment.newInstance());
     }
 
     @Override
     public void finish() {
-
+        getActivity().finish();
     }
 
     @Override
@@ -149,13 +152,5 @@ public abstract class RegisterStepBaseFragment
     public void hideLoading() {
 
     }
-
-    @Override
-    public RegisterPresenter createPresenter() {
-        if(presenter == null){
-            presenter = new RegisterPresenter();
-        }
-        return presenter;
-    }
-
+    
 }

@@ -2,8 +2,6 @@ package com.linjin.zhimi.main;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.View;
 import android.widget.RadioButton;
@@ -28,7 +26,6 @@ import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import me.yokeyword.fragmentation.SupportFragment;
@@ -101,6 +98,8 @@ public class MainActivity extends BaseMvpActivity
         
         if (savedInstanceState == null) {
             Log.i(TAG, "initView: savedInstanceState == null");
+            
+            
             mFragments[FIRST] = TopicFragment.newInstance();
             mFragments[SECOND] = DiscoveryFragment.newInstance();
             mFragments[THIRD] = MsgFragment.newInstance();

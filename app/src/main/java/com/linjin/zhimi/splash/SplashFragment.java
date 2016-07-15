@@ -2,7 +2,7 @@ package com.linjin.zhimi.splash;
 
 import com.cyou.quick.QuickFragment;
 import com.linjin.zhimi.R;
-import com.linjin.zhimi.utils.TrackUtils;
+import com.cyou.common.utils.TrackUtils;
 
 
 /**

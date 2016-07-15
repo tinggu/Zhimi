@@ -21,12 +21,6 @@ import butterknife.BindView;
 @SuppressLint("ValidFragment")
 public class RegisterStep3Fragment extends RegisterStepBaseFragment {
     
-    @NotEmpty(messageResId = R.string.login_error_title_empty, sequence = 0)
-    @Length(max = 15, sequence = 1)
-    @Order(0)
-    @BindView(R.id.ev_title)
-    ClearableEditText evTitle;
-
     public static RegisterStep3Fragment newInstance() {
         Bundle args = new Bundle();
         RegisterStep3Fragment fragment = new RegisterStep3Fragment();
@@ -34,7 +28,12 @@ public class RegisterStep3Fragment extends RegisterStepBaseFragment {
         return fragment;
     }
     
-
+    @NotEmpty(messageResId = R.string.login_error_title_empty, sequence = 0)
+    @Length(max = 15, sequence = 1)
+    @Order(0)
+    @BindView(R.id.ev_title)
+    ClearableEditText evTitle;
+    
     @Override
     protected int getLayoutRes() {
         return R.layout.fragment_register_step3;
@@ -43,8 +42,8 @@ public class RegisterStep3Fragment extends RegisterStepBaseFragment {
 
     @Override
     public void onValidationSucceeded() {
-        presenter.setTitle(evTitle.getText().toString());
-        presenter.nextStep();
+        registerPresenter.setTitle(evTitle.getText().toString());
+        registerPresenter.nextStep();
 //        TrackUtils.getInstance().onTrackEvent("Register_rp_register");
     }
 

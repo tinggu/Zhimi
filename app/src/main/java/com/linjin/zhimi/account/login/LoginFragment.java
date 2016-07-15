@@ -7,13 +7,13 @@ import android.view.View;
 
 import com.cyou.app.mvp.BaseMvpFragment;
 import com.cyou.ui.ClearableEditText;
-import com.linjin.zhimi.LoginActivity;
 import com.linjin.zhimi.R;
 import com.linjin.zhimi.account.findpw.FindPasswordFragment;
 import com.linjin.zhimi.model.account.AuthCredentials;
-import com.linjin.zhimi.utils.KeyboardUtils;
-import com.linjin.zhimi.utils.LogUtils;
-import com.linjin.zhimi.utils.NetWorkUtils;
+import com.linjin.zhimi.utils.DialogUtils;
+import com.cyou.common.utils.KeyboardUtils;
+import com.cyou.common.utils.LogUtils;
+import com.cyou.common.utils.NetWorkUtils;
 import com.linjin.zhimi.widget.TopActionBar;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
@@ -21,13 +21,12 @@ import com.mobsandgeeks.saripaar.annotation.Length;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import com.mobsandgeeks.saripaar.annotation.Order;
 import com.mobsandgeeks.saripaar.annotation.Password;
+import com.umeng.message.UmengRegistrar;
 
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-
-import com.umeng.message.UmengRegistrar;
 
 /**
  * Description:
@@ -40,7 +39,7 @@ import com.umeng.message.UmengRegistrar;
 public class LoginFragment
         extends BaseMvpFragment<LoginView, LoginPresenter>
         implements LoginView, Validator.ValidationListener {
-    
+
     private static final String TAG = "LoginFragment";
 
     @NotEmpty(messageResId = R.string.login_error_phonenum_empty, sequence = 0)
@@ -54,23 +53,24 @@ public class LoginFragment
     @Order(1)
     @BindView(R.id.ev_password)
     ClearableEditText evPassword;
-    
+
     @BindView(R.id.topActionBar)
     TopActionBar topActionBar;
 
     private Validator validator;
+    private DialogUtils dialogUtils;
 
 //    private LoginActivity loginActivity;
 
-    public static LoginFragment newInstance( ) {
+    public static LoginFragment newInstance() {
 
         Bundle args = new Bundle();
 
-        LoginFragment fragment = new LoginFragment( );
+        LoginFragment fragment = new LoginFragment();
         fragment.setArguments(args);
         return fragment;
     }
-    
+
     private void initView() {
         topActionBar.setTitle("登录知觅");
         topActionBar.hideAction();
@@ -82,6 +82,7 @@ public class LoginFragment
         });
         validator = new Validator(this);
         validator.setValidationListener(this);
+        dialogUtils = new DialogUtils(getActivity());
     }
 
     @Override
@@ -110,7 +111,7 @@ public class LoginFragment
             }
             LogUtils.d("login", "click login");
             validator.validate();
-        } else if (id == R.id.tv_findpassword) { 
+        } else if (id == R.id.tv_findpassword) {
             start(FindPasswordFragment.newInstance(evPhonenum.getText().toString()));
         }
     }
@@ -129,12 +130,12 @@ public class LoginFragment
 
     @Override
     public void showLoading() {
-        LoginActivity.dialogUtils.showLoading(getActivity(), "登录中，请稍后...");
+         dialogUtils.showLoading(  "登录中，请稍后...");
     }
 
     @Override
     public void hideLoading() {
-        LoginActivity.dialogUtils.hideLoading();
+         dialogUtils.hideLoading();
     }
 
 

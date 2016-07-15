@@ -6,7 +6,7 @@ import com.cyou.quick.QuickApplication;
 import com.cyou.quick.mvp.MvpActivity;
 import com.cyou.quick.mvp.MvpPresenter;
 import com.cyou.quick.mvp.MvpView;
-import com.linjin.zhimi.utils.TrackUtils;
+import com.cyou.common.utils.TrackUtils;
 
 import io.realm.Realm;
 

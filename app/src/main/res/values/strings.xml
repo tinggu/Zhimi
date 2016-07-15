@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">知觅</string>
 
-    <!--通用-->
+    <!--注册-->
     <string name="text_finish">完成</string>
     <string name="text_cancel">取消</string>
     <string name="text_confirm">确定</string>
@@ -21,8 +21,30 @@
     <string name="text_setting">设置</string>
     <string name="text_tlak">私聊</string>
     <string name="text_thumb">赞</string>
+
+    <!--主页底部导航-->
+    <string name="topbar_title_main">主页</string>
+    <string name="radio_dock_1">匿题</string>
+    <string name="radio_dock_2">发现</string>
+    <string name="radio_dock_3">私聊</string>
+    <string name="radio_dock_4">我的</string>
+    <string name="text_collect">收藏</string>
+    <string name="text_share">分享</string>
+    <string name="text_comment">评论</string>
     
+    <string name="text_collect_answe">收藏的回答</string>
+    <string name="text_draft">回答草稿</string>
+
+    <string name="text_latest_topic">最新匿题</string>
     <string name="text_my_answer">我的回答</string>
+    <string name="text_my_draft">我的草稿</string>
+    <string name="text_my_collect">我的收藏</string>
+
+    <string name="text_topic_feed">匿题动态</string>
+    <string name="text_message_notification">消息通知</string>
+    <string name="text_interaction">互动</string>
+    <string name="text_nearby_talent">附近达人</string>
+
     <string name="text_watch_topic">关注的匿题</string>
     <string name="text_date_talent">我约的达人</string>
     <string name="text_my_order">我的订单</string>
@@ -102,19 +124,5 @@
     <string name="loading">载入中</string>
     <!-- error -->
     <string name="error_hint">点击页面刷新</string>
-
-
-    <!--主页底部导航-->
-    <string name="topbar_title_main">主页</string>
-    <string name="radio_dock_1">匿题</string>
-    <string name="radio_dock_2">发现</string>
-    <string name="radio_dock_3">私聊</string>
-    <string name="radio_dock_4">我的</string>
-    <string name="text_collect">收藏</string>
-    <string name="text_share">分享</string>
-    <string name="text_comment">评论</string>
-    <string name="text_last_topic">最新匿题</string>
-    <string name="text_collect_answe">收藏的回答</string>
-    <string name="text_draft">回答草稿</string>
 
 </resources>

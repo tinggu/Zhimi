@@ -2,15 +2,15 @@ package com.linjin.zhimi.account.register;
 
 
 import com.cyou.app.mvp.rx.scheduler.AndroidSchedulerTransformer;
+import com.cyou.common.entity.BaseBean;
 import com.linjin.zhimi.DataCenter;
 import com.linjin.zhimi.account.AccuntPresenter;
 import com.linjin.zhimi.api.AccuntApi;
 import com.linjin.zhimi.event.RegisterSuccessfulEvent;
-import com.linjin.zhimi.model.BaseModel;
 import com.linjin.zhimi.model.account.AuthCredentials;
 import com.linjin.zhimi.model.account.UserModel;
 import com.linjin.zhimi.rest.ApiCode;
-import com.linjin.zhimi.utils.KeyboardUtils;
+import com.cyou.common.utils.KeyboardUtils;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -119,7 +119,7 @@ public class RegisterPresenter extends AccuntPresenter<RegisterView> {
     public void doGetCheckCode(String mobileNum) {
 
 
-        Subscriber<BaseModel> subscriber = new Subscriber<BaseModel>() {
+        Subscriber<BaseBean> subscriber = new Subscriber<BaseBean>() {
             @Override
             public void onCompleted() {
 
@@ -135,7 +135,7 @@ public class RegisterPresenter extends AccuntPresenter<RegisterView> {
             }
 
             @Override
-            public void onNext(BaseModel code) {
+            public void onNext(BaseBean code) {
                 if (isViewAttached() && code.getCode() != ApiCode.SUCCESS_CODE) {
                     getView().showTip("错误码:" + code.getCode());
                 }
@@ -143,15 +143,15 @@ public class RegisterPresenter extends AccuntPresenter<RegisterView> {
             }
         };
 
-        Observable<BaseModel> observable = accuntApi.getCheckCode(mobileNum, AccuntApi.TYPE_REGISTER);
-        observable.compose(new AndroidSchedulerTransformer<BaseModel>()).subscribe(subscriber);
+        Observable<BaseBean> observable = accuntApi.getCheckCode(mobileNum, AccuntApi.TYPE_REGISTER);
+        observable.compose(new AndroidSchedulerTransformer<BaseBean>()).subscribe(subscriber);
 //        AppProvide.applyScheduler()  .subscribe(subscriber);
 
     }
 
     public void checkCode(String code) {
-        Observable<BaseModel> observable = accuntApi.checkCode(SMSSDKInitUtils.APPKEY, code, zone, phone);
-        observable.compose(new AndroidSchedulerTransformer<BaseModel>()).subscribe(new Subscriber<BaseModel>() {
+        Observable<BaseBean> observable = accuntApi.checkCode(SMSSDKInitUtils.APPKEY, code, zone, phone);
+        observable.compose(new AndroidSchedulerTransformer<BaseBean>()).subscribe(new Subscriber<BaseBean>() {
 
             @Override
             public void onCompleted() {
@@ -165,7 +165,7 @@ public class RegisterPresenter extends AccuntPresenter<RegisterView> {
             }
 
             @Override
-            public void onNext(BaseModel model) {
+            public void onNext(BaseBean model) {
                 if (model.getCode() == ApiCode.SUCCESS_CODE) {
                     nextStep();
                 } else {

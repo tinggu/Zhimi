@@ -14,8 +14,8 @@ import com.cyou.ui.wheelView.wheel.widget.views.OnWheelChangedListener;
 import com.cyou.ui.wheelView.wheel.widget.views.OnWheelScrollListener;
 import com.cyou.ui.wheelView.wheel.widget.views.WheelView;
 import com.linjin.zhimi.model.Area;
-import com.linjin.zhimi.utils.AreaUtils;
-import com.linjin.zhimi.utils.LogUtils;
+import com.cyou.common.utils.AreaUtils;
+import com.cyou.common.utils.LogUtils;
 
 import java.util.List;
 

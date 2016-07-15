@@ -19,8 +19,14 @@ import butterknife.BindView;
  * Author     : wangjia_bi
  * Date       : 2015/6/11 14:43
  */
-@SuppressLint("ValidFragment")
 public class RegisterStep0Fragment extends RegisterStepBaseFragment {
+
+    public static RegisterStep0Fragment newInstance() {
+        Bundle args = new Bundle();
+        RegisterStep0Fragment fragment = new RegisterStep0Fragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
     
     @NotEmpty(messageResId = R.string.login_error_phonenum_empty, sequence = 0)
     @Length(min = 11, max = 11, messageResId = R.string.register_error_phone_invalid, sequence = 1)
@@ -34,14 +40,6 @@ public class RegisterStep0Fragment extends RegisterStepBaseFragment {
     @Order(1)
     @BindView(R.id.ev_password)
     ClearableEditText evPassword;
-
-
-    public static RegisterStep0Fragment newInstance() {
-        Bundle args = new Bundle();
-        RegisterStep0Fragment fragment = new RegisterStep0Fragment();
-        fragment.setArguments(args);
-        return fragment;
-    }
     
     @Override
     protected int getLayoutRes() {
@@ -53,8 +51,8 @@ public class RegisterStep0Fragment extends RegisterStepBaseFragment {
     public void onValidationSucceeded() {
         String phone = evPhonenum.getText().toString();
         String password = evPassword.getText().toString();
-        presenter.setPhoneAndPassword(phone, password);
-        presenter.nextStep();
+        registerPresenter.setPhoneAndPassword(phone, password);
+        registerPresenter.nextStep();
 //        TrackUtils.getInstance().onTrackEvent("Register_rp_register");
     }
 

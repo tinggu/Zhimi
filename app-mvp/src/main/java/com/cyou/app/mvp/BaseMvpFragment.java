@@ -5,7 +5,7 @@ import android.widget.Toast;
 import com.cyou.quick.mvp.MvpBasePresenter;
 import com.cyou.quick.mvp.MvpFragment;
 import com.cyou.quick.mvp.MvpView;
-import com.linjin.zhimi.utils.TrackUtils;
+import com.cyou.common.utils.TrackUtils;
 
 import io.realm.Realm;
 

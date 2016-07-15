@@ -1,7 +1,6 @@
 package com.linjin.zhimi.publish;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -9,7 +8,6 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import com.cyou.app.mvp.BaseMvpFragment;
-import com.cyou.quick.mvp.MvpView;
 import com.linjin.zhimi.R;
 import com.linjin.zhimi.widget.TopActionBar;
 
@@ -22,20 +20,17 @@ import butterknife.BindView;
  * Author     : wangjia_bi
  * Date       : 2015/6/11 14:43
  */
-@SuppressLint("ValidFragment")
 public abstract class PublishStepBaseFragment
-        extends BaseMvpFragment<PublishView, PublshPresenter>
-        implements MvpView {
-
+        extends BaseMvpFragment<PublishView, PublshPresenter> {
+            
     @BindView(R.id.topActionBar)
     TopActionBar topActionBar;
-
     
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setRetainInstance(true);
-    }
+//    @Override
+//    public void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setRetainInstance(true);
+//    }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
@@ -54,11 +49,26 @@ public abstract class PublishStepBaseFragment
 
     @Override
     public PublshPresenter createPresenter() {
-        return getPresenter();
+//        if (publshPresenter == null) {
+//            publshPresenter = new PublshPresenter();
+//        }
+//        return publshPresenter;
+        return presenter;
     }
 
-    protected void initView() {
+    @Override
+    public PublishView getMvpView() {
+        return presenter.getView();
+    }
 
+    //    @Override
+//    public PublshPresenter getPresenter() {
+//        createPresenter().attachView(getMvpView());
+//        return publshPresenter;
+//    }
+
+
+    protected void initView() {
         topActionBar.setBackListener(new TopActionBar.BackListener() {
             @Override
             public void onBack() {
@@ -74,12 +84,9 @@ public abstract class PublishStepBaseFragment
         });
         Log.i("code", " initView: " + getClass().getName());
     }
-    
+
 
     protected abstract void validate();
-    
-    public Context getContext() {
-        return getActivity();
-    }
+
 
 }

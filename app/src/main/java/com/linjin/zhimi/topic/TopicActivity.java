@@ -5,10 +5,11 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 
 import com.cyou.app.mvp.BaseMvpActivity;
-import com.linjin.zhimi.R; 
+import com.cyou.common.base.BaseTitleBarListFragment;
+import com.linjin.zhimi.R;
+import com.linjin.zhimi.main.topic.TopicItemVH;
 import com.linjin.zhimi.topic.details.DetailsFragment;
 import com.linjin.zhimi.topic.draft.DraftFragment;
-import com.linjin.zhimi.topic.latest.LatestFragment;
 import com.linjin.zhimi.topic.summary.SummaryFragment;
 
 /**
@@ -24,17 +25,17 @@ public class TopicActivity extends BaseMvpActivity<TopicView, TopicPresenter> {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Bundle extras = getIntent().getExtras();
+        setContentView(R.layout.activity_container_fragment);
+        if (savedInstanceState == null) {
+            Bundle extras = getIntent().getExtras();
 
-        if (extras.containsKey(TopicFlag.FLAG)) {
-            setContentView(R.layout.activity_topic);
-            show(extras.getString(TopicFlag.FLAG));
-        } else {
-            finish();
+            if (extras.containsKey(TopicFlag.FLAG)) {
+
+                show(extras.getString(TopicFlag.FLAG));
+            } else {
+                finish();
+            }
         }
-
-
-        showLatest();
     }
 
     private void show(String flag) {
@@ -44,6 +45,7 @@ public class TopicActivity extends BaseMvpActivity<TopicView, TopicPresenter> {
         } else if (TopicFlag.FLAG_DETAILS.equals(flag)) {
 
         } else if (TopicFlag.FLAG_DRAFT.equals(flag)) {
+            showLatest();
         } else {
             finish();
         }
@@ -63,36 +65,41 @@ public class TopicActivity extends BaseMvpActivity<TopicView, TopicPresenter> {
 //    }
 
     public void showSummary() {
-        SummaryFragment summaryFragment = new SummaryFragment(getPresenter());
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        SummaryFragment summaryFragment = SummaryFragment.newInstance();
 
-        transaction.replace(R.id.fragmentContainer, summaryFragment);
-        transaction.commit();
+        if (getTopFragment() == null) {
+            loadRootFragment(R.id.fl_container, summaryFragment);
+        } else {
+            start(summaryFragment);
+        }
+
+
     }
 
     public void showDetails(boolean isAddBack) {
         DetailsFragment detailsFragment = new DetailsFragment();
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.fragmentContainer, detailsFragment);
-        if(isAddBack){
+        if (isAddBack) {
             transaction.addToBackStack("login");
         }
         transaction.commit();
     }
 
     public void showDraft() {
-        DraftFragment draftFragment = new DraftFragment();
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.fragmentContainer, draftFragment);
-        transaction.commit();
+        start(BaseTitleBarListFragment.newInstance(TopicItemVH.class, getString(R.string.text_my_draft)));
+//        DraftFragment draftFragment = new DraftFragment();
+//        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+//        transaction.replace(R.id.fragmentContainer, draftFragment);
+//        transaction.commit();
     }
 
     public void showLatest() {
-
-        LatestFragment latestFragment = new LatestFragment();
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.fragmentContainer, latestFragment);
-        transaction.commit();
+        start(BaseTitleBarListFragment.newInstance(TopicItemVH.class, getString(R.string.text_latest_topic)));
+//        LatestFragment latestFragment = new LatestFragment();
+//        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+//        transaction.replace(R.id.fragmentContainer, latestFragment);
+//        transaction.commit();
     }
 
     public void clearFragment() {

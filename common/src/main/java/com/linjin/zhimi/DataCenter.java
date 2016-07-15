@@ -5,9 +5,9 @@ import android.text.TextUtils;
 
 import com.linjin.zhimi.model.ConstantsModel;
 import com.linjin.zhimi.model.account.User;
-import com.linjin.zhimi.utils.LogUtils;
+import com.cyou.common.utils.LogUtils;
 import com.cyou.quick.QuickApplication;
-import com.linjin.zhimi.utils.SharedPreferencesUtils;
+import com.cyou.common.utils.SharedPreferencesUtils;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;

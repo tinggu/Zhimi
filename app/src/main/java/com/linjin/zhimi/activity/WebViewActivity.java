@@ -16,9 +16,9 @@ import android.widget.TextView;
 
 import com.cyou.quick.QuickActivity;
 import com.linjin.zhimi.R;
-import com.linjin.zhimi.utils.LogUtils;
-import com.linjin.zhimi.utils.NetWorkUtils;
-import com.linjin.zhimi.utils.TrackUtils;
+import com.cyou.common.utils.LogUtils;
+import com.cyou.common.utils.NetWorkUtils;
+import com.cyou.common.utils.TrackUtils;
 import com.linjin.zhimi.widget.TopActionBar;
 
 import butterknife.BindView;
@@ -27,7 +27,7 @@ import butterknife.BindView;
  * Description:
  * Copyright  : Copyright (c) 2015
  * Company    : 北京畅游天下网络科技有限公司
- * Author     : liujianguang
+ * Author     : wangjia
  * Date       : 2016/1/6
  **/
 

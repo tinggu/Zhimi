@@ -48,3 +48,6 @@ captures/
 libs/
 src/androidTest/
 src/main/res/drawable/
+src/main/java/
+src/main/res/drawable-xhdpi/
+src/main/res/layout/

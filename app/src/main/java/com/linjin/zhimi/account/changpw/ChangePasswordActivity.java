@@ -8,7 +8,7 @@ import android.widget.TextView;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.cyou.app.mvp.BaseMvpActivity;
 import com.linjin.zhimi.R;
-import com.linjin.zhimi.utils.LogUtils;
+import com.cyou.common.utils.LogUtils;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
@@ -20,9 +20,6 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.OnClick;
 
-/**
- * Created by nidingya on 2015/8/5.
- */
 public class ChangePasswordActivity 
         extends BaseMvpActivity<ChangePasswordView, ChangePasswordPresenter> 
         implements ChangePasswordView, Validator.ValidationListener {

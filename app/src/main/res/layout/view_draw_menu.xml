@@ -26,7 +26,7 @@
         <TextView
             android:id="@+id/tv_last"
             style="@style/Menu.Text"
-            android:text="@string/text_last_topic" />
+            android:text="@string/text_latest_topic" />
 
         <View style="@style/Menu.Line" />
 

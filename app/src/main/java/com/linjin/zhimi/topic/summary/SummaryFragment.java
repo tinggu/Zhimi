@@ -14,9 +14,8 @@ import com.cyou.app.mvp.BaseMvpFragment;
 import com.cyou.quick.mvp.MvpBasePresenter;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.linjin.zhimi.R;
-import com.linjin.zhimi.topic.TopicPresenter;
 import com.linjin.zhimi.utils.IntentStarter;
-import com.linjin.zhimi.utils.KeyboardUtils;
+import com.cyou.common.utils.KeyboardUtils;
 import com.linjin.zhimi.widget.TopActionBar;
 
 import butterknife.BindView;
@@ -25,32 +24,43 @@ import butterknife.OnClick;
 
 public class SummaryFragment extends BaseMvpFragment {
 
+    public static SummaryFragment newInstance() {
+        Bundle args = new Bundle();
+        SummaryFragment fragment = new SummaryFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
+    
     @BindView(R.id.topActionBar)
     TopActionBar topActionBar;
+    
     @BindView(R.id.iv_avatar)
     SimpleDraweeView ivAvatar;
+    
     @BindView(R.id.btn_topic_details)
     Button btnTopicDetails;
+    
     @BindView(R.id.item_account)
     LinearLayout itemAccount;
+    
     @BindView(R.id.wv_summary)
     WebView wvSummary;
+    
     @BindView(R.id.dock_thumb)
     TextView dockThumb;
+    
     @BindView(R.id.dock_collect)
     TextView dockCollect;
+    
     @BindView(R.id.dock_share)
     TextView dockShare;
+    
     @BindView(R.id.dock_comment)
     TextView dockComment;
 
     private String topicId;
-
-    TopicPresenter topicPresenter;
+ 
     
-    public SummaryFragment(TopicPresenter topicPresenter){
-     this.topicPresenter = topicPresenter;   
-    }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
@@ -91,7 +101,7 @@ public class SummaryFragment extends BaseMvpFragment {
 //                IntentStarter.showNoticeInfo(getActivity(), 147, 10);
 //                break;
             case R.id.btn_topic_details:
-                topicPresenter.showDetails();
+//                topicPresenter.showDetails();
                 break;
             case R.id.dock_thumb:
                 IntentStarter.showLogin(null);

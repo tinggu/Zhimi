@@ -1,7 +1,7 @@
 package com.linjin.zhimi.edit;
 
 import com.cyou.quick.mvp.MvpBasePresenter;
-import com.linjin.zhimi.utils.KeyboardUtils;
+import com.cyou.common.utils.KeyboardUtils;
 
 public class EditPresenter extends MvpBasePresenter<EditView> {
     EditActivity editActivity;

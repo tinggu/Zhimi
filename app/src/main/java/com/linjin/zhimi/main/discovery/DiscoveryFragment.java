@@ -48,8 +48,6 @@ public class DiscoveryFragment extends MvpFragment {
         topActionBar.setTitle(R.string.radio_dock_2);
         topActionBar.hideBack();
         topActionBar.hideAction();
-        topActionBar.setActionImageResource(R.mipmap.topic_sidebar);
-
     }
 
     @Override

@@ -18,15 +18,14 @@ import butterknife.BindView;
  * Company    : 北京畅游天下网络科技有限公司
  * Author     : wangjia_bi
  * Date       : 2015/6/11 14:43
- */
-@SuppressLint("ValidFragment")
+ */ 
 public class PublishStep1Fragment extends PublishStepBaseFragment {
 
-    public static PublishStep1Fragment newInstance(PublshPresenter presenter) {
+    public static PublishStep1Fragment newInstance(PublshPresenter publshPresenter) {
         Bundle args = new Bundle();
         PublishStep1Fragment fragment = new PublishStep1Fragment();
         fragment.setArguments(args);
-        fragment.setPresenter(presenter);
+        fragment.presenter = publshPresenter;
         return fragment;
     }
 

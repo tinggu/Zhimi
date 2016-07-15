@@ -2,6 +2,7 @@ package com.linjin.zhimi.utils;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.support.annotation.StringRes;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -14,27 +15,31 @@ import com.linjin.zhimi.R;
  * Description:
  * Copyright  : Copyright (c) 2015
  * Company    : 北京畅游天下网络科技有限公司
- * Author     : liujianguang
+ * Author     : wangjia
  * Date       : 2016/1/5
  **/
 
 public class DialogUtils {
 
     Dialog mDialog;
+    Activity activity;
 
-    public void showLoading(Activity activity, int content) {
-        CharSequence message = activity.getText(content);
-        showLoading(activity, message);
+    public DialogUtils(Activity activity) {
+        this.activity = activity;
+    }
+
+    public void showLoading(@StringRes int resId) {
+        CharSequence message = activity.getText(resId);
+        showLoading(message);
     }
 
     /**
      * 得到自定义的loadingDialog
      *
-     * @param activity
      * @param msg
      * @return
      */
-    public void showLoading(Activity activity, CharSequence msg) {
+    public void showLoading(CharSequence msg) {
         if (mDialog != null && mDialog.isShowing()) {
             mDialog.dismiss();
         } else {

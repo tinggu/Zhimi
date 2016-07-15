@@ -1,6 +1,5 @@
 package com.linjin.zhimi.account.findpw;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
@@ -16,9 +15,9 @@ import com.cyou.app.mvp.BaseMvpFragment;
 import com.cyou.ui.ClearableEditText;
 import com.linjin.zhimi.R;
 import com.linjin.zhimi.model.account.AuthCredentials;
-import com.linjin.zhimi.utils.KeyboardUtils;
-import com.linjin.zhimi.utils.LogUtils;
-import com.linjin.zhimi.utils.TrackUtils;
+import com.cyou.common.utils.KeyboardUtils;
+import com.cyou.common.utils.LogUtils;
+import com.cyou.common.utils.TrackUtils;
 import com.linjin.zhimi.widget.TopActionBar;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
@@ -39,8 +38,7 @@ import butterknife.OnClick;
  * Company    : 北京畅游天下网络科技有限公司
  * Author     : wangjia_bi
  * Date       : 2015/6/11 14:43
- */
-@SuppressLint("ValidFragment")
+ */ 
 public class FindPasswordFragment
         extends BaseMvpFragment<FindPasswordView, FindPWPresenter>
         implements FindPasswordView, Validator.ValidationListener {

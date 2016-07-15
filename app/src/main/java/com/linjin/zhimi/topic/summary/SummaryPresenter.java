@@ -3,8 +3,7 @@ package com.linjin.zhimi.topic.summary;
 
 import android.support.v4.app.FragmentActivity;
 
-import com.linjin.zhimi.base.BaseLoadMoreRxPresenter;
-import com.linjin.zhimi.main.topic.TopicListView;
+import com.cyou.quick.mvp.MvpBasePresenter;
 import com.linjin.zhimi.model.topic.TopicAnswer;
 
 /**
@@ -14,7 +13,7 @@ import com.linjin.zhimi.model.topic.TopicAnswer;
  * Author     : wangjia_bi
  * Date       : 2015/6/11 14:53
  */
-public class SummaryPresenter extends BaseLoadMoreRxPresenter<TopicListView, TopicAnswer> {
+public class SummaryPresenter extends MvpBasePresenter {
 
     FragmentActivity activity;
 

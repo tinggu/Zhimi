@@ -7,7 +7,7 @@ import android.support.v4.app.FragmentActivity;
 
 import com.cyou.quick.QuickApplication;
 import com.linjin.zhimi.DataCenter;
-import com.linjin.zhimi.LoginActivity;
+import com.linjin.zhimi.activity.LoginActivity;
 import com.linjin.zhimi.R;
 import com.linjin.zhimi.activity.WebViewActivity;
 import com.linjin.zhimi.friend.apply.ApplyActivity;

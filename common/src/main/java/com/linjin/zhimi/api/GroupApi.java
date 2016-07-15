@@ -1,6 +1,6 @@
 package com.linjin.zhimi.api;
 
-import com.linjin.zhimi.model.BaseModel;
+import com.cyou.common.entity.BaseBean;
 import com.linjin.zhimi.model.group.Group;
 import com.linjin.zhimi.model.group.GroupList;
 import com.linjin.zhimi.model.group.create.GroupCreate;
@@ -77,14 +77,14 @@ public interface GroupApi {
      */
     @FormUrlEncoded
     @POST("/updateGroup")
-    Observable<BaseModel> updateGroup(@Field("groupId") long groupId,
-                                      @Field("name") String name,
-                                      @Field("bgImg") String bgImg,
-                                      @Field("openType") byte openType,
-                                      @Field("category") int category,
-                                      @Field("des") String des,
-                                      @Field("searchType") byte searchType,
-                                      @Field("checkType") byte checkType);
+    Observable<BaseBean> updateGroup(@Field("groupId") long groupId,
+                                     @Field("name") String name,
+                                     @Field("bgImg") String bgImg,
+                                     @Field("openType") byte openType,
+                                     @Field("category") int category,
+                                     @Field("des") String des,
+                                     @Field("searchType") byte searchType,
+                                     @Field("checkType") byte checkType);
 
     /**
      * 修改群 (设置信息)
@@ -96,10 +96,10 @@ public interface GroupApi {
      */
     @FormUrlEncoded
     @POST("/updateGroup")
-    Observable<BaseModel> updateGroup(@Field("groupId") long groupId,
-                                      @Field("des") String des,
-                                      @Field("searchType") byte searchType,
-                                      @Field("checkType") byte checkType);
+    Observable<BaseBean> updateGroup(@Field("groupId") long groupId,
+                                     @Field("des") String des,
+                                     @Field("searchType") byte searchType,
+                                     @Field("checkType") byte checkType);
 
     /**
      * 申请加入群
@@ -110,7 +110,7 @@ public interface GroupApi {
      */
     @FormUrlEncoded
     @POST("/joinGroup")
-    Observable<BaseModel> applyJoinGroup(@Field("groupId") long groupId, @Field("identityId") long identityId);
+    Observable<BaseBean> applyJoinGroup(@Field("groupId") long groupId, @Field("identityId") long identityId);
 
     /**
      * 通过群审核
@@ -121,6 +121,6 @@ public interface GroupApi {
      */
     @FormUrlEncoded
     @POST("/passGroup")
-    Observable<BaseModel> passGroup(@Field("groupId") long groupId, @Field("userId") long userId);
+    Observable<BaseBean> passGroup(@Field("groupId") long groupId, @Field("userId") long userId);
 
 }

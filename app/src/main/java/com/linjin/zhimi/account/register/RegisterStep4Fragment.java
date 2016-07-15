@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.linjin.zhimi.R;
-import com.linjin.zhimi.utils.LogUtils;
+import com.cyou.common.utils.LogUtils;
 import com.linjin.zhimi.utils.PhotoUtils;
 import com.linjin.zhimi.widget.SelectPicPopWindow;
 
@@ -27,6 +27,13 @@ import butterknife.OnClick;
 @SuppressLint("ValidFragment")
 public class RegisterStep4Fragment extends RegisterStepBaseFragment implements PhotoUtils.RefreshImage {
 
+    public static RegisterStep4Fragment newInstance() {
+        Bundle args = new Bundle();
+        RegisterStep4Fragment fragment = new RegisterStep4Fragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
+    
     PhotoUtils photoUtils = new PhotoUtils();
     private Uri headUri;
     private boolean isUpdatePic;
@@ -34,14 +41,7 @@ public class RegisterStep4Fragment extends RegisterStepBaseFragment implements P
 
     @BindView(R.id.img_avatar)
     ImageView imgAvatar;
-
-    public static RegisterStep4Fragment newInstance() {
-        Bundle args = new Bundle();
-        RegisterStep4Fragment fragment = new RegisterStep4Fragment();
-        fragment.setArguments(args);
-        return fragment;
-    }
-
+    
     @Override
     protected int getLayoutRes() {
         return R.layout.fragment_register_step4;
@@ -55,7 +55,7 @@ public class RegisterStep4Fragment extends RegisterStepBaseFragment implements P
 
     @Override
     public void onValidationSucceeded() {
-        presenter.nextStep();
+        registerPresenter.nextStep();
 //        TrackUtils.getInstance().onTrackEvent("Register_rp_register");
     }
 
@@ -97,7 +97,7 @@ public class RegisterStep4Fragment extends RegisterStepBaseFragment implements P
             showSwitchPicDlg();
 
         } else if (id == R.id.btn_login) {
-            presenter.doRegister();
+            registerPresenter.doRegister();
         }
     }
 

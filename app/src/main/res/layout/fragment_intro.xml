@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <me.tinggu.spriteindicator.SpriteIndicator
+    <me.relex.circleindicator.CircleIndicator
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/indicator"
         android:layout_width="match_parent"
@@ -17,11 +17,11 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="20dp"
-        app:si_animator="@animator/indicator_animator"
-        app:si_animator_reverse="@animator/indicator_animator_reverse"
-        app:si_height="13dp"
-        app:si_margin="10dp"
-        app:si_width="13dp" />
+        app:ci_animator="@animator/indicator_animator"
+        app:ci_animator_reverse="@animator/indicator_animator_reverse"
+        app:ci_height="13dp"
+        app:ci_margin="10dp"
+        app:ci_width="13dp" />
 
 
 </RelativeLayout>

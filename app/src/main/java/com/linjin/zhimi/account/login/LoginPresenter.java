@@ -6,7 +6,7 @@ import com.linjin.zhimi.event.LoginSuccessfulEvent;
 import com.linjin.zhimi.model.account.AuthCredentials;
 import com.linjin.zhimi.model.account.UserModel;
 import com.linjin.zhimi.rest.ApiCode;
-import com.linjin.zhimi.utils.LogUtils;
+import com.cyou.common.utils.LogUtils;
 
 import org.greenrobot.eventbus.EventBus;
 

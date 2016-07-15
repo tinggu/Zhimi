@@ -5,7 +5,7 @@ import android.widget.Toast;
 import com.cyou.app.mvp.rx.scheduler.AndroidSchedulerTransformer;
 import com.cyou.quick.QuickApplication;
 import com.cyou.quick.mvp.MvpBasePresenter;
-import com.linjin.common.utils.MD5Utils;
+import com.cyou.common.utils.MD5Utils;
 import com.linjin.zhimi.DataCenter;
 import com.linjin.zhimi.api.AccuntApi;
 import com.linjin.zhimi.model.account.UserModel;

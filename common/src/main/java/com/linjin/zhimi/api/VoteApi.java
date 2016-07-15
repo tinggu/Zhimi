@@ -1,6 +1,6 @@
 package com.linjin.zhimi.api;
 
-import com.linjin.zhimi.model.BaseModel;
+import com.cyou.common.entity.BaseBean;
 import com.linjin.zhimi.model.vote.VoteCreate;
 import com.linjin.zhimi.model.vote.VoteInfo;
 
@@ -41,9 +41,9 @@ public interface VoteApi {
      */
     @FormUrlEncoded
     @POST("/voteItem")
-    Observable<BaseModel> doVote(@Field("groupId") long groupId,
-                                 @Field("voteId") long voteId,
-                                 @Field("itemIds") String itemIds);
+    Observable<BaseBean> doVote(@Field("groupId") long groupId,
+                                @Field("voteId") long voteId,
+                                @Field("itemIds") String itemIds);
 
     /**
      * 创建投票信息

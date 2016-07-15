@@ -2,6 +2,8 @@ apply plugin: 'com.android.application'
 apply plugin: 'android-apt'
 apply plugin: 'packer'
 
+apply plugin: 'me.tatarka.retrolambda'
+
 def verName = "0.0.1"
 def verCode = 1
 
@@ -15,6 +17,7 @@ packer {
     archiveOutput = file(new File("E:\\FTP_download\\Band", verName))
     // 指定渠道打包输出文件名格式
     archiveNameFormat = 'BandV${versionName}${buildType}.${flavorName}'
+    
     // 指定渠道打包需要修改的AndroidManifest文件项
     manifestMatcher = ['UMENG_CHANNEL', 'test']
 
@@ -39,8 +42,10 @@ android {
         // dex突破65535的限制
         multiDexEnabled true
 
-        // 默认是umeng的渠道
-        manifestPlaceholders = [UMENG_CHANNEL_VALUE: "test"]
+//        jackOptions {
+//            enabled true
+//        } 
+        
 //        //设置支持的SO库架构
 //        ndk {
 //            //设置支持的SO库架构
@@ -52,6 +57,8 @@ android {
     dexOptions {
         jumboMode true
         incremental true
+        maxProcessCount 4
+        javaMaxHeapSize "4g"
     }
 
     // 移除lint检查的error
@@ -81,21 +88,26 @@ android {
             signingConfig signingConfigs.release
         }
     }
+
+    compileOptions {
+        sourceCompatibility rootProject.ext.javaSourceCompatibility
+        targetCompatibility rootProject.ext.javaTargetCompatibility
+    }
 }
 
 dependencies {
     compile project(':uilib')
     compile project(':smssdk')
     compile project(':imkit')
-    
+
     //内存泄露检查
     debugCompile 'com.squareup.leakcanary:leakcanary-android:1.4-beta2'
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
     testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
-    
+
     // butterKnife
     apt 'com.jakewharton:butterknife-compiler:8.1.0'
-    
+
     // add packer-helper
     compile 'com.mcxiaoke.gradle:packer-helper:1.0.5'
 }

@@ -5,8 +5,8 @@ import android.content.Context;
 
 import com.cyou.quick.QuickApplication;
 import com.facebook.drawee.backends.pipeline.Fresco;
-import com.linjin.zhimi.utils.LogUtils;
-import com.linjin.zhimi.utils.TrackUtils;
+import com.cyou.common.utils.LogUtils;
+import com.cyou.common.utils.TrackUtils;
 import com.squareup.leakcanary.LeakCanary;
 import com.umeng.message.PushAgent;
 

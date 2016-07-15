@@ -1,17 +1,17 @@
 package com.linjin.zhimi.account.findpw;
 
 import com.cyou.app.mvp.rx.scheduler.AndroidSchedulerTransformer;
+import com.cyou.common.entity.BaseBean;
 import com.linjin.zhimi.DataCenter;
 import com.linjin.zhimi.account.AccuntPresenter;
 import com.linjin.zhimi.api.AccuntApi;
 import com.linjin.zhimi.event.FindPWSuccessfulEvent;
 import com.linjin.zhimi.event.LoginSuccessfulEvent;
-import com.linjin.zhimi.model.BaseModel;
 import com.linjin.zhimi.model.account.AuthCredentials;
 import com.linjin.zhimi.model.account.UserModel;
 import com.linjin.zhimi.rest.ApiCode;
 import com.linjin.zhimi.rest.RestUtils;
-import com.linjin.zhimi.utils.LogUtils;
+import com.cyou.common.utils.LogUtils;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -33,7 +33,7 @@ public class FindPWPresenter extends AccuntPresenter<FindPasswordView> {
 
     public void doGetCheckCode(String mobileNum) {
 
-        Subscriber<BaseModel> subscriber = new Subscriber<BaseModel>() {
+        Subscriber<BaseBean> subscriber = new Subscriber<BaseBean>() {
             @Override
             public void onCompleted() {
 
@@ -47,15 +47,15 @@ public class FindPWPresenter extends AccuntPresenter<FindPasswordView> {
             }
 
             @Override
-            public void onNext(BaseModel code) {
+            public void onNext(BaseBean code) {
                 if (isViewAttached() && code.getCode() != ApiCode.SUCCESS_CODE) {
                     getView().showTip(ApiCode.getMsg(code.getCode()));
                 }
 //                checkCode = code.getCheckCode();
             }
         };
-        Observable<BaseModel> observable = accuntApi.getCheckCode(mobileNum, AccuntApi.TYPE_FIND_PASSWORD);
-        observable.compose(new AndroidSchedulerTransformer<BaseModel>()).subscribe(subscriber);
+        Observable<BaseBean> observable = accuntApi.getCheckCode(mobileNum, AccuntApi.TYPE_FIND_PASSWORD);
+        observable.compose(new AndroidSchedulerTransformer<BaseBean>()).subscribe(subscriber);
 //        AppProvide.applyScheduler(accuntApi.getCheckCode(mobileNum, AccuntApi.TYPE_FIND_PASSWORD))
 //                .subscribe(subscriber);
     }

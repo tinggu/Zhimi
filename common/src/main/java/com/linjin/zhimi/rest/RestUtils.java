@@ -3,13 +3,13 @@ package com.linjin.zhimi.rest;
 import android.content.Context;
 import android.text.TextUtils;
 
-import com.linjin.zhimi.AppConstants;
+import com.cyou.common.utils.AppConstants;
 import com.linjin.zhimi.Constants;
 import com.linjin.zhimi.DataCenter;
 import com.linjin.zhimi.ServerConstants;
-import com.linjin.zhimi.utils.DeviceUtils;
-import com.linjin.zhimi.utils.LogUtils;
-import com.linjin.common.utils.MD5Utils;
+import com.cyou.common.utils.DeviceUtils;
+import com.cyou.common.utils.LogUtils;
+import com.cyou.common.utils.MD5Utils;
 import com.cyou.quick.QuickApplication;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

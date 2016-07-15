@@ -12,15 +12,14 @@ import com.linjin.zhimi.R;
  * Company    : 北京畅游天下网络科技有限公司
  * Author     : wangjia_bi
  * Date       : 2015/6/11 14:43
- */
-@SuppressLint("ValidFragment")
+ */ 
 public class PublishStep0Fragment extends PublishStepBaseFragment {
-
-    public static PublishStep0Fragment newInstance(PublshPresenter presenter) {
+    
+    public static PublishStep0Fragment newInstance(PublshPresenter publshPresenter) {
         Bundle args = new Bundle();
         PublishStep0Fragment fragment = new PublishStep0Fragment();
         fragment.setArguments(args);
-        fragment.setPresenter(presenter);
+        fragment.presenter = publshPresenter;
         return fragment;
     }
 
