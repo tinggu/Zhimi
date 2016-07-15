@@ -22,7 +22,7 @@ public class BaseTitleBarListFragment extends QuickFragment {
   public   TopActionBar topActionBar;
     
     @BindView(R.id.trecyclerView)
-    public  TRecyclerView tRecyclerView;
+    public TRecyclerView typeRecyclerView;
 
     /**
      * @param vh 传入VH的类名
@@ -49,7 +49,7 @@ public class BaseTitleBarListFragment extends QuickFragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        tRecyclerView.setView(TUtil.forName(getArguments().getString(C.VH_CLASS)));
+        typeRecyclerView.setView(TUtil.forName(getArguments().getString(C.VH_CLASS)));
         topActionBar.setTitle(getArguments().getString(C.TITLE));
         topActionBar.hideAction();
 //        topActionBar.setActionImageResource(R.mipmap.topic_sidebar);
@@ -65,7 +65,7 @@ public class BaseTitleBarListFragment extends QuickFragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        if (tRecyclerView != null) tRecyclerView.fetch();
+        if (typeRecyclerView != null) typeRecyclerView.fetch();
     }
 
 //    public void setHeadView(Class<? extends BaseViewHolder> vh) {

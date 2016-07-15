@@ -52,7 +52,7 @@ public class TopicFragment
         initView();
         if (savedInstanceState == null) {
             listFragment = BaseListFragment.newInstance(TopicItemVH.class, "topic");
-            listFragment.tRecyclerView.setHeadView(CommonHeaderVH.class);
+            listFragment.typeRecyclerView.setHeadView(CommonHeaderVH.class);
             loadRootFragment(R.id.fl_container, listFragment);
         }
     }

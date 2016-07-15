@@ -32,9 +32,13 @@ import butterknife.ButterKnife;
 import rx.functions.Action1;
 
 /**
- * @author Administrator
+ * Description:  Create by wangjia_bi on 2016/7/15 21:10
+ * Copyright  : Copyright (c) 2015
+ * Company    : 北京畅游天下网络科技有限公司
+ * Author     : wangjia_bi
+ * Date       : 2016/7/15 21:10
  */
-public class TRecyclerView<T extends ListBean> extends LinearLayout {
+public class TRecyclerView <T extends ListBean> extends LinearLayout {
 
     @BindView(R.id.swiperefresh)
     SwipeRefreshLayout swiperefresh;

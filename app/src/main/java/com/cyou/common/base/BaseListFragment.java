@@ -15,7 +15,7 @@ import me.yokeyword.fragmentation.SupportFragment;
 
 public class BaseListFragment extends SupportFragment {
 
-    public TRecyclerView tRecyclerView;
+    public TRecyclerView typeRecyclerView;
 
     /**
      * @param vh 传入VH的类名
@@ -32,19 +32,19 @@ public class BaseListFragment extends SupportFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        tRecyclerView = new TRecyclerView(getContext());
-        tRecyclerView.setView(TUtil.forName(getArguments().getString(C.VH_CLASS)));
-        return tRecyclerView;
+        typeRecyclerView = new TRecyclerView(getContext());
+        typeRecyclerView.setView(TUtil.forName(getArguments().getString(C.VH_CLASS)));
+        return typeRecyclerView;
     }
 
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        if (tRecyclerView != null) tRecyclerView.fetch();
+        if (typeRecyclerView != null) typeRecyclerView.fetch();
     }
 
     public void setHeadView(Class<? extends BaseViewHolder> vh){
-        tRecyclerView.setHeadView(vh);
+        typeRecyclerView.setHeadView(vh);
     }
 }
