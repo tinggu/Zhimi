@@ -11,7 +11,7 @@ buildscript {
 //        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.3'
         
 //        classpath "io.realm:realm-gradle-plugin:1.1.0"
-        classpath 'me.tatarka:gradle-retrolambda:3.2.5'
+//        classpath 'me.tatarka:gradle-retrolambda:3.2.5'
         
         classpath 'com.mcxiaoke.gradle:packer-ng:1.0.5'
     }
@@ -33,8 +33,8 @@ ext {
     minSdkVersion = 15
     targetSdkVersion = 24
 
-    javaSourceCompatibility = JavaVersion.VERSION_1_8
-    javaTargetCompatibility = JavaVersion.VERSION_1_8
+    javaSourceCompatibility = JavaVersion.VERSION_1_7
+    javaTargetCompatibility = JavaVersion.VERSION_1_7
 
     // Libraries
     appcompat7Version = '24.0.0'

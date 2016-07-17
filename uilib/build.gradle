@@ -1,15 +1,10 @@
 apply plugin: 'com.android.library'
-apply plugin: 'me.tatarka.retrolambda'
+//apply plugin: 'me.tatarka.retrolambda'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
-
-    compileOptions {
-        sourceCompatibility rootProject.ext.javaSourceCompatibility
-        targetCompatibility rootProject.ext.javaTargetCompatibility
-    }
-
+    
     defaultConfig {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion

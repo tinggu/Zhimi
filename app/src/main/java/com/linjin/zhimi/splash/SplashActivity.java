@@ -47,14 +47,14 @@ public class SplashActivity extends BaseMvpActivity<MvpView, SplashPresenter> {
     private void showSplash() {
         SplashFragment splashFragment = new SplashFragment();
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fragmentContainer, splashFragment).commit();
+                .replace(R.id.fl_container, splashFragment).commit();
     }
 
     private void showIntro() {
         IntroFragment introFragment = new IntroFragment();
         // 极地的概率抛出异常
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fragmentContainer, introFragment).commitAllowingStateLoss();
+                .replace(R.id.fl_container, introFragment).commitAllowingStateLoss();
     }
 
     Runnable runnable;

@@ -38,7 +38,7 @@ import rx.functions.Action1;
  * Author     : wangjia_bi
  * Date       : 2016/7/15 21:10
  */
-public class TRecyclerView <T extends ListBean> extends LinearLayout {
+public class TRecyclerView<T extends ListBean> extends LinearLayout {
 
     @BindView(R.id.swiperefresh)
     SwipeRefreshLayout swiperefresh;
@@ -91,7 +91,12 @@ public class TRecyclerView <T extends ListBean> extends LinearLayout {
     private void initView(Context context) {
         swiperefresh.setColorSchemeResources(android.R.color.holo_blue_bright);
         swiperefresh.setEnabled(isRefreshable);
-        swiperefresh.setOnRefreshListener(() -> reFetch());
+        swiperefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                reFetch();
+            }
+        });
         recyclerview.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(context);
         recyclerview.setLayoutManager(mLayoutManager);
@@ -116,9 +121,30 @@ public class TRecyclerView <T extends ListBean> extends LinearLayout {
                 lastVisibleItem = mLayoutManager.findLastVisibleItemPosition();
             }
         });
-        mRxManager.on(C.EVENT_DEL_ITEM, (arg0) -> mCommAdapter.removeItem((Integer) arg0));
-        mRxManager.on(C.EVENT_UPDATE_ITEM, (arg0) -> mCommAdapter.upDateItem(((UpDateData) arg0).i, ((UpDateData) arg0).oj));
-        ll_emptyview.setOnClickListener((view -> reFetch()));
+        mRxManager.on(C.EVENT_DEL_ITEM, new Action1<Object>() {
+
+            @Override
+            public void call(Object arg0) {
+                mCommAdapter.removeItem((Integer) arg0);
+            }
+
+        });
+
+        mRxManager.on(C.EVENT_UPDATE_ITEM, new Action1<Object>() {
+            @Override
+            public void call(Object arg0) {
+                mCommAdapter.upDateItem(((UpDateData) arg0).i,((UpDateData) arg0).oj);
+            }
+
+        });
+//        mRxManager.on(C.EVENT_UPDATE_ITEM, (arg0) -> mCommAdapter.upDateItem(((UpDateData) arg0).i, ((UpDateData) arg0).oj));
+
+        ll_emptyview.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                reFetch();
+            }
+        });
     }
 
     public CoreAdapter getAdapter() {
@@ -376,5 +402,7 @@ public class TRecyclerView <T extends ListBean> extends LinearLayout {
             mItemList.add(position, item);
             notifyItemChanged(position);
         }
+
+        
     }
 }

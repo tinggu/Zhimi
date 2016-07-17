@@ -21,7 +21,7 @@ public class NearbyActivity extends BaseMvpActivity {
     void showStting() {
         SettingFragment settingFragment = new SettingFragment();
         FragmentTransaction trasection = getSupportFragmentManager().beginTransaction();
-        trasection.replace(R.id.fragmentContainer, settingFragment);
+        trasection.replace(R.id.fl_container, settingFragment);
 //        trasection.addToBackStack("edit");
         trasection.commit();
     }

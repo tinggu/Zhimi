@@ -79,7 +79,7 @@ public class TopicActivity extends BaseMvpActivity<TopicView, TopicPresenter> {
     public void showDetails(boolean isAddBack) {
         DetailsFragment detailsFragment = new DetailsFragment();
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.fragmentContainer, detailsFragment);
+        transaction.replace(R.id.fl_container, detailsFragment);
         if (isAddBack) {
             transaction.addToBackStack("login");
         }
@@ -90,7 +90,7 @@ public class TopicActivity extends BaseMvpActivity<TopicView, TopicPresenter> {
         start(BaseTitleBarListFragment.newInstance(TopicItemVH.class, getString(R.string.text_my_draft)));
 //        DraftFragment draftFragment = new DraftFragment();
 //        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-//        transaction.replace(R.id.fragmentContainer, draftFragment);
+//        transaction.replace(R.id.fl_container, draftFragment);
 //        transaction.commit();
     }
 
@@ -98,7 +98,7 @@ public class TopicActivity extends BaseMvpActivity<TopicView, TopicPresenter> {
         start(BaseTitleBarListFragment.newInstance(TopicItemVH.class, getString(R.string.text_latest_topic)));
 //        LatestFragment latestFragment = new LatestFragment();
 //        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-//        transaction.replace(R.id.fragmentContainer, latestFragment);
+//        transaction.replace(R.id.fl_container, latestFragment);
 //        transaction.commit();
     }
 

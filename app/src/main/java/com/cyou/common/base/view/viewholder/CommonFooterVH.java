@@ -17,7 +17,7 @@ public class CommonFooterVH extends BaseViewHolder<Object> {
     @BindView(R.id.tv_state)
     public TextView tv_state;
 
-    public static final int LAYOUT_TYPE = R.layout.common_footer_item_layout;
+    public static final int LAYOUT_TYPE = R.layout.common_list_footer_view;
 //    public static final int LAYOUT_TYPE = 1;
 
     public CommonFooterVH(View view) {

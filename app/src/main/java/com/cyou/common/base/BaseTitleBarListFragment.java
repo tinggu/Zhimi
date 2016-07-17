@@ -53,7 +53,12 @@ public class BaseTitleBarListFragment extends QuickFragment {
         topActionBar.setTitle(getArguments().getString(C.TITLE));
         topActionBar.hideAction();
 //        topActionBar.setActionImageResource(R.mipmap.topic_sidebar);
-        topActionBar.setBackListener(KeyboardUtils::callBackKeyClick);
+        topActionBar.setBackListener(new TopActionBar.BackListener() {
+            @Override
+            public void onBack() {
+                KeyboardUtils.callBackKeyClick();
+            }
+        });
     }
 
     @Override

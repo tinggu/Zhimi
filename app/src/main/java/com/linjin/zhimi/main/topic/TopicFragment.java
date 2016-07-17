@@ -76,12 +76,20 @@ public class TopicFragment
 
     public void showCategoryAction() {
         topActionBar.setActionImageResource(R.mipmap.topic_sidebar);
-        topActionBar.setBackListener(() -> {
-            Intent i = new Intent(getActivity(), PublishActivity.class);
-            startActivity(i);
+        topActionBar.setBackListener(new TopActionBar.BackListener() {
+            @Override
+            public void onBack() {
+                Intent i = new Intent(getActivity(), PublishActivity.class);
+                startActivity(i);
 //                IntentStarter.showPublish(getActivity());
+            }
         });
-        topActionBar.setActionListener(() -> drawerLayout.openDrawer(right));
+        topActionBar.setActionListener(new TopActionBar.ActionListener() {
+            @Override
+            public void onAction() {
+                drawerLayout.openDrawer(right);
+            }
+        });
     }
 
     @Override

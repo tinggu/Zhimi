@@ -29,14 +29,14 @@ public class EditActivity extends BaseMvpActivity<EditView, EditPresenter> {
     public void showEdit() {
         editFragment = new EditFragment(editPresenter);
         FragmentTransaction trasection = getSupportFragmentManager().beginTransaction();
-        trasection.replace(R.id.fragmentContainer, editFragment); 
+        trasection.replace(R.id.fl_container, editFragment); 
         trasection.commit();
     }
 
     public void showEditName() {
         EditNameFragment editFragment = new EditNameFragment(editPresenter);
         FragmentTransaction trasection = getSupportFragmentManager().beginTransaction();
-        trasection.replace(R.id.fragmentContainer, editFragment);
+        trasection.replace(R.id.fl_container, editFragment);
         trasection.addToBackStack("name");
         trasection.commit();
     }
@@ -44,7 +44,7 @@ public class EditActivity extends BaseMvpActivity<EditView, EditPresenter> {
     public void showEditTitle() {
         EditTitleFragment editFragment = new EditTitleFragment(editPresenter);
         FragmentTransaction trasection = getSupportFragmentManager().beginTransaction();
-        trasection.replace(R.id.fragmentContainer, editFragment);
+        trasection.replace(R.id.fl_container, editFragment);
         trasection.addToBackStack("title");
         trasection.commit();
     }

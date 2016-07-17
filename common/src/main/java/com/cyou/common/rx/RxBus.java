@@ -44,7 +44,12 @@ public class RxBus {
      * @return
      */
     public RxBus OnEvent(Observable<?> mObservable, Action1<Object> mAction1) {
-        mObservable.observeOn(AndroidSchedulers.mainThread()).subscribe(mAction1, (e) -> e.printStackTrace());
+        mObservable.observeOn(AndroidSchedulers.mainThread()).subscribe(mAction1, new Action1<Throwable>() {
+            @Override
+            public void call(Throwable throwable) {
+                throwable.printStackTrace();
+            }
+        });
         return $();
     }
 

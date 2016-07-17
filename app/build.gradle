@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'android-apt'
 apply plugin: 'packer'
 
-apply plugin: 'me.tatarka.retrolambda'
+//apply plugin: 'me.tatarka.retrolambda'
 
 def verName = "0.0.1"
 def verCode = 1
