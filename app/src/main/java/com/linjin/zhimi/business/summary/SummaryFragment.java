@@ -1,4 +1,4 @@
-package com.linjin.zhimi.topic.summary;
+package com.linjin.zhimi.business.summary;
 
 
 import android.content.Intent;

@@ -10,7 +10,7 @@ import android.view.View;
 
 import com.cyou.quick.QuickFragment;
 import com.linjin.zhimi.R;
-import com.linjin.zhimi.main.MainActivity;
+import com.linjin.zhimi.main.HomeActivity;
 import com.cyou.common.utils.TrackUtils;
 
 import java.util.ArrayList;
@@ -81,7 +81,7 @@ public class IntroFragment extends QuickFragment
     @OnClick({R.id.btn_register, R.id.btn_login})
     public void onClick(View v) {
         Context context = getActivity(); 
-        Intent i = new Intent(context, MainActivity.class);
+        Intent i = new Intent(context, HomeActivity.class);
         context.startActivity(i);
     }
 

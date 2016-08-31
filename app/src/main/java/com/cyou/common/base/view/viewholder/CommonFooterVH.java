@@ -1,5 +1,6 @@
 package com.cyou.common.base.view.viewholder;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -10,7 +11,7 @@ import butterknife.BindView;
 
 
 public class CommonFooterVH extends BaseViewHolder<Object> {
-
+    
     @BindView(R.id.progressbar)
     public ProgressBar progressbar;
 
@@ -22,18 +23,23 @@ public class CommonFooterVH extends BaseViewHolder<Object> {
 
     public CommonFooterVH(View view) {
         super(view);
-//        tv_state = (TextView) view.findViewById(R.id.tv_state);
-//        progressbar = (ProgressBar) view.findViewById(R.id.progressbar);
+        tv_state = (TextView) view.findViewById(R.id.tv_state);
+        progressbar = (ProgressBar) view.findViewById(R.id.progressbar);
+
+        Log.i(TAG, "CommonFooterVH: " + tv_state);
+        Log.i(TAG, "CommonFooterVH: " + progressbar);
     }
 
     @Override
     public int getType() {
+        Log.i(TAG, "getType: " + LAYOUT_TYPE);
         return LAYOUT_TYPE;
     }
 
     @Override
     public void onBindViewHolder(View view, Object o) {
         boolean isHasMore = (null != o);
+        Log.i(TAG, "onBindViewHolder: " + isHasMore);
         progressbar.setVisibility(isHasMore ? View.VISIBLE : View.GONE);
         tv_state.setText(isHasMore ? "正在加载" : "已经到底");
     }

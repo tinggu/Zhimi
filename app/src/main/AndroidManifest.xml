@@ -37,12 +37,12 @@
         </activity>
 
         <activity
-            android:name=".main.MainActivity"
+            android:name=".main.HomeActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".topic.TopicActivity"
+            android:name=".business.BusinessActivity"
             android:screenOrientation="portrait" />
 
         <activity

@@ -47,7 +47,7 @@ public class ChangePasswordPresenter extends MvpBasePresenter<ChangePasswordView
             public void onNext(UserModel changePassword) {
                 if (changePassword.getCode() == ApiCode.SUCCESS_CODE) {
                     Toast.makeText(QuickApplication.getInstance(), "密码修改成功", Toast.LENGTH_SHORT).show();
-                   DataCenter.getInstance().saveUser(changePassword.getUser());
+                   DataCenter.getInstance().saveUser(changePassword.getData());
                 } else {
                     Toast.makeText(QuickApplication.getInstance(), "密码修改失败", Toast.LENGTH_SHORT).show();
 

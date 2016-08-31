@@ -77,15 +77,15 @@ public class DataCenter {
 
     public void initUser() {
         reset();
-        //读取产生异常，返回null
-        Context context = QuickApplication.getInstance();
-        try {
-            DataInputStream dataInputStream = new DataInputStream(context.openFileInput(USER_FILE_NAME));
-//            user = latest User(dataInputStream);
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+//        //读取产生异常，返回null
+//        Context context = QuickApplication.getInstance();
+//        try {
+//            DataInputStream dataInputStream = new DataInputStream(context.openFileInput(USER_FILE_NAME));
+////            user = latest User(dataInputStream);
+//
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }
 //        user = readObject(USER_FILE_NAME);
         LogUtils.d("token", "readUser " + user);
     }

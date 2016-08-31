@@ -11,4 +11,6 @@ import com.cyou.quick.mvp.MvpBasePresenter;
  **/
 
 public class TopicPresenter extends MvpBasePresenter<TopicView> {
+    
+    
 }

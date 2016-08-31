@@ -1,4 +1,4 @@
-package com.linjin.zhimi.topic.details;
+package com.linjin.zhimi.business.draft;
 
 
 import android.content.Intent;
@@ -10,7 +10,7 @@ import com.cyou.app.mvp.BaseMvpFragment;
 import com.cyou.quick.mvp.MvpBasePresenter;
 import com.cyou.ui.slideswitch.OnToggleStateChangeListener;
 import com.cyou.ui.slideswitch.SlideSwitch;
-import com.linjin.zhimi.R;
+import com.linjin.zhimi.R; 
 import com.linjin.zhimi.utils.IntentStarter;
 import com.cyou.common.utils.KeyboardUtils;
 import com.linjin.zhimi.widget.TopActionBar;
@@ -19,14 +19,7 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 
-public class DetailsFragment extends BaseMvpFragment {
-
-    public static DetailsFragment newInstance() {
-        Bundle args = new Bundle();
-        DetailsFragment fragment = new DetailsFragment();
-        fragment.setArguments(args);
-        return fragment;
-    }
+public class DraftFragment extends BaseMvpFragment {
 
     @BindView(R.id.topActionBar)
     TopActionBar topActionBar;

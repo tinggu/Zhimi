@@ -13,15 +13,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import com.cyou.common.base.ListPresenter;
 import com.cyou.common.base.view.viewholder.BaseViewHolder;
 import com.cyou.common.base.view.viewholder.CommonFooterVH;
-import com.cyou.common.entity.Data;
-import com.cyou.common.entity.ListBean;
+import com.cyou.common.entity.RESTResult;
 import com.cyou.common.rx.RxManager;
 import com.linjin.zhimi.C;
 import com.linjin.zhimi.R;
 
-import java.lang.reflect.ParameterizedType;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -29,6 +28,7 @@ import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import rx.Observable;
 import rx.functions.Action1;
 
 /**
@@ -38,8 +38,8 @@ import rx.functions.Action1;
  * Author     : wangjia_bi
  * Date       : 2016/7/15 21:10
  */
-public class TRecyclerView<T extends ListBean> extends LinearLayout {
-
+public class TRecyclerView<M extends RESTResult> extends LinearLayout {
+    private static final String TAG = "TRecyclerView";
     @BindView(R.id.swiperefresh)
     SwipeRefreshLayout swiperefresh;
 
@@ -51,10 +51,10 @@ public class TRecyclerView<T extends ListBean> extends LinearLayout {
 
     private LinearLayoutManager mLayoutManager;
     private Context context;
-    private CoreAdapter<T> mCommAdapter = new CoreAdapter<>(true);
+    private CoreAdapter<M> mCommAdapter = new CoreAdapter<>(true);
     private int begin = 0;
     private boolean isRefreshable = true, isHasHeadView = false, isEmpty = false;
-    private T model;
+    private ListPresenter model;
     public RxManager mRxManager = new RxManager();
     private Map<String, String> param = new HashMap<>();
 
@@ -133,7 +133,7 @@ public class TRecyclerView<T extends ListBean> extends LinearLayout {
         mRxManager.on(C.EVENT_UPDATE_ITEM, new Action1<Object>() {
             @Override
             public void call(Object arg0) {
-                mCommAdapter.upDateItem(((UpDateData) arg0).i,((UpDateData) arg0).oj);
+                mCommAdapter.upDateItem(((UpDateData) arg0).i, ((UpDateData) arg0).oj);
             }
 
         });
@@ -161,15 +161,19 @@ public class TRecyclerView<T extends ListBean> extends LinearLayout {
         return this;
     }
 
-    public TRecyclerView setHeadView(Class<? extends BaseViewHolder> cla) {
-        if (cla == null) {
+    public TRecyclerView setHeadView(Class<? extends BaseViewHolder> cla, int headType, Object headData) {
+        if (cla == null || headType == 0) {
             isHasHeadView = false;
             this.mCommAdapter.setHeadViewType(0, null, null);
         } else
             try {
-                Object obj = ((Activity) context).getIntent().getSerializableExtra(C.HEAD_DATA);
-                int mHeadViewType = ((cla.getConstructor(View.class).newInstance(new View(context)))).getType();
-                this.mCommAdapter.setHeadViewType(mHeadViewType, cla, obj);
+                if (headData == null) {
+                    headData = ((Activity) context).getIntent().getSerializableExtra(C.HEAD_DATA);
+                }
+                if (headType == 0) {
+                    headType = ((cla.getConstructor(View.class).newInstance(new View(context)))).getType();
+                }
+                this.mCommAdapter.setHeadViewType(headType, cla, headData);
                 isHasHeadView = true;
             } catch (Exception e) {
                 e.printStackTrace();
@@ -190,21 +194,24 @@ public class TRecyclerView<T extends ListBean> extends LinearLayout {
     }
 
     public void setEmpty() {
-        if (!isHasHeadView && !isEmpty) {
+//        if (!isHasHeadView && !isEmpty) {
+        if (!isEmpty) {
             isEmpty = true;
             ll_emptyview.setVisibility(View.VISIBLE);
             swiperefresh.setVisibility(View.GONE);
         }
     }
 
-    public TRecyclerView setView(Class<? extends BaseViewHolder<T>> cla) {
+    public TRecyclerView setView(Class<? extends BaseViewHolder<M>> cla, ListPresenter listPresenter) {
+        Log.i(TAG, "setView: ");
         try {
             BaseViewHolder mIVH = ((BaseViewHolder) (cla.getConstructor(View.class)
                     .newInstance(new View(context))));
             int mType = mIVH.getType();
-            this.model = ((Class<T>) ((ParameterizedType) (cla
-                    .getGenericSuperclass())).getActualTypeArguments()[0])
-                    .newInstance();// 根据类的泛型类型获得model的实例
+//            this.model = ((Class<M>) ((ParameterizedType) (cla
+//                    .getGenericSuperclass())).getActualTypeArguments()[0])
+//                    .newInstance();// 根据类的泛型类型获得model的实例 
+            this.model = listPresenter;
             this.mCommAdapter.setViewType(mType, cla);
         } catch (Exception e) {
             e.printStackTrace();
@@ -212,12 +219,12 @@ public class TRecyclerView<T extends ListBean> extends LinearLayout {
         return this;
     }
 
-    public TRecyclerView setParam(String key, String value) {
-        this.param.put(key, value);
-        return this;
-    }
+//    public TRecyclerView setParam(String key, String value) {
+//        this.param.put(key, value);
+//        return this;
+//    }
 
-    public TRecyclerView setData(List<T> datas) {
+    public TRecyclerView setData(List<M> datas) {
         if (isEmpty) {
             ll_emptyview.setVisibility(View.GONE);
             swiperefresh.setVisibility(View.VISIBLE);
@@ -233,6 +240,7 @@ public class TRecyclerView<T extends ListBean> extends LinearLayout {
     }
 
     public void fetch() {
+        Log.i(TAG, "fetch: ");
         begin++;
         if (isEmpty) {
             ll_emptyview.setVisibility(View.GONE);
@@ -243,14 +251,21 @@ public class TRecyclerView<T extends ListBean> extends LinearLayout {
             return;
         }
 //        model.setParam(param);
-        mRxManager.add(model.getPageAt(begin)
+
+        Observable<List<M>> observable = model.getPageAt(begin);
+        if (observable == null) {
+            setEmpty();
+            return;
+        }
+
+        mRxManager.add(observable
                 .subscribe(
-                        new Action1<Data<T>>() {
+                        new Action1<List<M>>() {
                             @Override
-                            public void call(Data<T> subjects) {
+                            public void call(List<M> subjects) {
                                 swiperefresh.setRefreshing(false);
-                                mCommAdapter.setBeans(subjects.results, begin);
-                                if (begin == 1 && (subjects.results == null || subjects.results.size() == 0))
+                                mCommAdapter.setBeans(subjects, begin);
+                                if (begin == 1 && (subjects == null || subjects.size() == 0))
                                     setEmpty();
                             }
                         }, new Action1<Throwable>() {
@@ -266,9 +281,9 @@ public class TRecyclerView<T extends ListBean> extends LinearLayout {
 
     public class UpDateData {
         public int i;
-        public T oj;
+        public M oj;
 
-        public UpDateData(int i, T oj) {
+        public UpDateData(int i, M oj) {
             this.i = i;
             this.oj = oj;
         }
@@ -279,7 +294,7 @@ public class TRecyclerView<T extends ListBean> extends LinearLayout {
         protected List<T> mItemList = new ArrayList<>();
         public boolean isHasMore = true;
 
-        public int viewtype, isHasFooter = 1, isHasHader = 0, mHeadViewType, mFooterViewType;
+        public int mViewtype, isHasFooter, isHasHader, mHeadViewType, mFooterViewType;
         public Object mHeadData;
         //footer 默认值
         public Class<? extends BaseViewHolder> mItemViewClass, mHeadViewClass, mFooterViewClass;
@@ -295,20 +310,20 @@ public class TRecyclerView<T extends ListBean> extends LinearLayout {
             mFooterViewType = CommonFooterVH.LAYOUT_TYPE;
         }
 
-        public void setViewType(int i, Class<? extends BaseViewHolder> cla) {
+        public void setViewType(int type, Class<? extends BaseViewHolder> cla) {
             this.isHasMore = true;
-            this.viewtype = i;
+            this.mViewtype = type;
             this.mItemList = new ArrayList<>();
             this.mItemViewClass = cla;
             notifyDataSetChanged();
         }
 
-        public void setHeadViewType(int i, Class<? extends BaseViewHolder> cla, Object data) {
+        public void setHeadViewType(int type, Class<? extends BaseViewHolder> cla, Object data) {
             if (cla == null) {
                 this.isHasHader = 0;
             } else {
                 this.isHasHader = 1;
-                this.mHeadViewType = i;
+                this.mHeadViewType = type;
                 this.mHeadViewClass = cla;
                 this.mHeadData = data;
             }
@@ -319,6 +334,7 @@ public class TRecyclerView<T extends ListBean> extends LinearLayout {
         }
 
         public void setFooterViewType(int i, Class<? extends BaseViewHolder> cla) {
+            this.isHasFooter = 1;
             this.mFooterViewType = i;
             this.mFooterViewClass = cla;
             this.mItemList = new ArrayList<>();
@@ -327,9 +343,24 @@ public class TRecyclerView<T extends ListBean> extends LinearLayout {
 
         @Override
         public int getItemViewType(int position) {
-            return isHasHader == 1 ? (position == 0 ? mHeadViewType
-                    : (position + 1 == getItemCount() ? mFooterViewType : viewtype))
-                    : (position + 1 == getItemCount() ? mFooterViewType : viewtype);
+            Log.i(TAG, "getItemViewType: " + position);
+//            if (isHasHader == 1) {
+//                if (position == 0) {
+//                    return mHeadViewType;
+//                } else if (position + 1 == getItemCount()) {
+//                    return mFooterViewType;
+//                } else {
+//                    return mViewtype;
+//                }
+//            } else if (position + 1 == getItemCount()) {
+//                return mFooterViewType;
+//            } else {
+//                return mViewtype;
+//            }
+
+            return isHasHader == 1 ?
+                    (position == 0 ? mHeadViewType : (position + 1 == getItemCount() ? mFooterViewType : mViewtype))
+                    : (position + 1 == getItemCount() ? mFooterViewType : mViewtype);
         }
 
         @Override
@@ -351,15 +382,15 @@ public class TRecyclerView<T extends ListBean> extends LinearLayout {
         @Override
         public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             try {
-
+                Log.i(TAG, "onCreateViewHolder: " + viewType);
                 if (viewType == mHeadViewType) {
                     return mFooterViewClass.getConstructor(View.class).newInstance(
                             LayoutInflater.from(parent.getContext()).inflate(
                                     mHeadViewType, parent, false));
-                } else if (viewType == viewtype) {
+                } else if (viewType == mViewtype) {
                     return mItemViewClass.getConstructor(View.class).newInstance(
                             LayoutInflater.from(parent.getContext()).inflate(
-                                    viewtype, parent, false));
+                                    mViewtype, parent, false));
                 } else if (viewType == mFooterViewType) {
                     return mFooterViewClass.getConstructor(View.class).newInstance(
                             LayoutInflater.from(parent.getContext()).inflate(
@@ -375,7 +406,7 @@ public class TRecyclerView<T extends ListBean> extends LinearLayout {
 //                        : (RecyclerView.ViewHolder) (isFoot ? mFooterViewClass : mItemViewClass)
 //                        .getConstructor(View.class).newInstance(
 //                                LayoutInflater.from(parent.getContext())
-//                                        .inflate(isFoot ? mFooterViewType : viewtype, parent,
+//                                        .inflate(isFoot ? mFooterViewType : mViewtype, parent,
 //                                                false)));
             } catch (Exception e) {
                 Log.d("ViewHolderException", "onCreateViewHolder十有八九是xml写错了,哈哈");
@@ -386,10 +417,21 @@ public class TRecyclerView<T extends ListBean> extends LinearLayout {
 
         @Override
         public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-            ((BaseViewHolder) holder).onBindViewHolder(holder.itemView,
-                    position + 1 == getItemCount() ? (isHasMore ? new Object()
-                            : null) : isHasHader == 1 && position == 0 ? mHeadData
-                            : mItemList.get(position - isHasHader));
+            Log.i(TAG, "onBindViewHolder position : " + position);
+            BaseViewHolder BaseViewHolder = (BaseViewHolder) holder;
+            int type = getItemViewType(position);
+            if (type == mHeadViewType) {
+                BaseViewHolder.onBindViewHolder(holder.itemView, mHeadData);
+            } else if (type == mFooterViewType) {
+                BaseViewHolder.onBindViewHolder(holder.itemView, isHasMore ? new Object() : null);
+            } else if (type == mViewtype) {
+                BaseViewHolder.onBindViewHolder(holder.itemView, mItemList.get(position - isHasHader));
+            }
+            
+//            ((BaseViewHolder) holder).onBindViewHolder(holder.itemView,
+//                    position + 1 == getItemCount() ? (isHasMore ? new Object()
+//                            : null) : isHasHader == 1 && position == 0 ? mHeadData
+//                            : mItemList.get(position - isHasHader));
         }
 
         public void removeItem(int position) {
@@ -403,6 +445,6 @@ public class TRecyclerView<T extends ListBean> extends LinearLayout {
             notifyItemChanged(position);
         }
 
-        
+
     }
 }

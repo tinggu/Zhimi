@@ -18,8 +18,8 @@ import com.linjin.zhimi.main.menu.MenuEventLast;
 import com.linjin.zhimi.main.msg.MsgFragment;
 import com.linjin.zhimi.main.self.SelfFragment;
 import com.linjin.zhimi.main.topic.TopicFragment;
-import com.linjin.zhimi.topic.TopicActivity;
-import com.linjin.zhimi.topic.TopicFlag;
+import com.linjin.zhimi.business.BusinessActivity;
+import com.linjin.zhimi.business.BusinessFlag;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -31,10 +31,10 @@ import butterknife.BindView;
 import me.yokeyword.fragmentation.SupportFragment;
 
 
-public class MainActivity extends BaseMvpActivity
+public class HomeActivity extends BaseMvpActivity
         implements RadioGroup.OnCheckedChangeListener {
 
-    private static final String TAG = "MainActivity";
+    private static final String TAG = "HomeActivity";
 
     public static final int FIRST = 0;
     public static final int SECOND = 1;
@@ -220,22 +220,22 @@ public class MainActivity extends BaseMvpActivity
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEventLast(MenuEventLast eventLast) {
-        Intent intent = new Intent(this, TopicActivity.class);
-        intent.putExtra(TopicFlag.FLAG, TopicFlag.FLAG_LAST);
+        Intent intent = new Intent(this, BusinessActivity.class);
+        intent.putExtra(BusinessFlag.FLAG, BusinessFlag.FLAG_LATEST);
         startActivity(intent);
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEventCollent(MenuEventCollent eventCollent) {
-        Intent intent = new Intent(this, TopicActivity.class);
-        intent.putExtra(TopicFlag.FLAG, TopicFlag.FLAG_COLLENT);
+        Intent intent = new Intent(this, BusinessActivity.class);
+        intent.putExtra(BusinessFlag.FLAG, BusinessFlag.FLAG_COLLENT);
         startActivity(intent);
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEventDraft(MenuEventDraft eventDraft) {
-        Intent intent = new Intent(this, TopicActivity.class);
-        intent.putExtra(TopicFlag.FLAG, TopicFlag.FLAG_DRAFT);
+        Intent intent = new Intent(this, BusinessActivity.class);
+        intent.putExtra(BusinessFlag.FLAG, BusinessFlag.FLAG_DRAFT);
         startActivity(intent);
     }
 }

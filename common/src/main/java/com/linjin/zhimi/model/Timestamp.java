@@ -1,6 +1,6 @@
 package com.linjin.zhimi.model;
 
-import com.cyou.common.entity.BaseBean;
+import com.cyou.common.entity.RESTResult;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -12,9 +12,14 @@ import com.google.gson.annotations.SerializedName;
  * Date       : 2015/12/30
  **/
 
-public class Timestamp extends BaseBean {
+public class Timestamp extends RESTResult<Long> {
 
     @Expose
     @SerializedName("time")
     public long timestamp;
+
+    @Override
+    public Long getData() {
+        return timestamp;
+    }
 }

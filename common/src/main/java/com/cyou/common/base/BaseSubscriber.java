@@ -3,7 +3,7 @@ package com.cyou.common.base;
 import android.text.TextUtils;
 import android.widget.Toast;
 
-import com.cyou.common.entity.BaseBean;
+import com.cyou.common.entity.RESTResult;
 import com.cyou.quick.QuickApplication;
 import com.linjin.zhimi.DataCenter;
 import com.linjin.zhimi.rest.ApiCode;
@@ -28,9 +28,9 @@ public class BaseSubscriber<T> extends Subscriber<T> {
     @Override
     public void onNext(T o) {
 
-        BaseBean model;
-        if ((o instanceof BaseBean)) {
-            model = (BaseBean) o;
+        RESTResult model;
+        if ((o instanceof RESTResult)) {
+            model = (RESTResult) o;
         } else {
             return;
         }

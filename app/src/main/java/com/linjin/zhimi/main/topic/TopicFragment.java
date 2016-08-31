@@ -39,7 +39,7 @@ public class TopicFragment
     @BindView(R.id.right)
     View right;
 
-    BaseListFragment listFragment;
+//    BaseListFragment   listFragment;
 //    @BindView(R.id.recyclerView)
 //    RefreshableRecyclerView recyclerView;
 //
@@ -51,8 +51,10 @@ public class TopicFragment
         super.onViewCreated(view, savedInstanceState);
         initView();
         if (savedInstanceState == null) {
-            listFragment = BaseListFragment.newInstance(TopicItemVH.class, "topic");
-            listFragment.typeRecyclerView.setHeadView(CommonHeaderVH.class);
+            BaseListFragment listFragment = BaseListFragment.newInstance(TopicItemVH.class, "topic",
+                    new TopicListPresenter());
+            String uri = "res://com.linjin.zhimi/" + R.mipmap.fx_intro;
+//            listFragment.setHeadView(CommonHeaderVH.class, CommonHeaderVH.LAYOUT_TYPE, uri);
             loadRootFragment(R.id.fl_container, listFragment);
         }
     }

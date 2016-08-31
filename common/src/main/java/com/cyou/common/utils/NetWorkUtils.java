@@ -8,10 +8,7 @@ import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
 import java.util.Enumeration;
-
-/**
- * Created by liujianguang on 2015/7/23.
- */
+ 
 public class NetWorkUtils {
 
 

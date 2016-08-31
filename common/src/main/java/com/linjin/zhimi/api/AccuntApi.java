@@ -1,6 +1,6 @@
 package com.linjin.zhimi.api;
 
-import com.cyou.common.entity.BaseBean;
+import com.cyou.common.entity.RESTResult;
 import com.linjin.zhimi.model.account.UserModel;
 
 import retrofit2.http.Field;
@@ -56,10 +56,10 @@ public interface AccuntApi {
 
     @FormUrlEncoded
     @POST("user/regsms")
-    Observable<BaseBean> checkCode(@Field("appkey") String appkey,
-                                   @Field("phone") String phone,
-                                   @Field("zone") String zone,
-                                   @Field("code") String code);
+    Observable<RESTResult> checkCode(@Field("appkey") String appkey,
+                                     @Field("phone") String phone,
+                                     @Field("zone") String zone,
+                                     @Field("code") String code);
 
 
     /**
@@ -97,6 +97,6 @@ public interface AccuntApi {
      */
     @FormUrlEncoded
     @POST("/getCheckCode")
-    Observable<BaseBean> getCheckCode(@Field("mobileNum") String mobileNum,
-                                      @Field("type") byte type);
+    Observable<RESTResult> getCheckCode(@Field("mobileNum") String mobileNum,
+                                        @Field("type") byte type);
 }

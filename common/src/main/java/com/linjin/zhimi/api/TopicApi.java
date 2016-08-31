@@ -1,6 +1,6 @@
 package com.linjin.zhimi.api;
 
-import com.cyou.common.entity.BaseBean;
+import com.cyou.common.entity.RESTResult;
 import com.linjin.zhimi.model.account.UserModel;
 
 import retrofit2.http.Field;
@@ -49,14 +49,14 @@ public interface TopicApi {
 
     @FormUrlEncoded
     @POST("topic/collectAdd")
-    Observable<BaseBean> collectAdd(@Field("uid") String uid,
-                                    @Field("row_id") String row_id
+    Observable<RESTResult> collectAdd(@Field("uid") String uid,
+                                      @Field("row_id") String row_id
     );
 
     @FormUrlEncoded
     @POST("topic/collectDel")
-    Observable<BaseBean> collectDel(@Field("uid") String uid,
-                                    @Field("row_id") String row_id
+    Observable<RESTResult> collectDel(@Field("uid") String uid,
+                                      @Field("row_id") String row_id
     );
 
     

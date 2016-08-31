@@ -1,10 +1,9 @@
-package com.linjin.zhimi.topic.summary;
+package com.linjin.zhimi.business.summary;
 
 
 import android.support.v4.app.FragmentActivity;
 
 import com.cyou.quick.mvp.MvpBasePresenter;
-import com.linjin.zhimi.model.topic.TopicAnswer;
 
 /**
  * Description:

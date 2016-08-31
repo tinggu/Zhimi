@@ -12,7 +12,7 @@ import com.linjin.zhimi.R;
 import com.linjin.zhimi.activity.WebViewActivity;
 import com.linjin.zhimi.friend.apply.ApplyActivity;
 import com.linjin.zhimi.friend.search.SearchFriendActivity;
-import com.linjin.zhimi.main.MainActivity;
+import com.linjin.zhimi.main.HomeActivity;
 import com.linjin.zhimi.publish.PublishActivity;
 
 /**
@@ -54,7 +54,7 @@ public class IntentStarter {
         DataCenter dataCenter = DataCenter.getInstance();
         Intent intent;
         if (dataCenter.hasUser()) {
-            intent = new Intent(activity, MainActivity.class);
+            intent = new Intent(activity, HomeActivity.class);
         } else {
             intent = new Intent(activity, LoginActivity.class);
         }
@@ -62,7 +62,7 @@ public class IntentStarter {
     }
 
     public static void showMain(Activity activity) {
-        Intent i = new Intent(activity, MainActivity.class);
+        Intent i = new Intent(activity, HomeActivity.class);
         activity.startActivity(i);
         activity.overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
     }

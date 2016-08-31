@@ -1,6 +1,6 @@
 package com.linjin.zhimi.api;
 
-import com.cyou.common.entity.BaseBean;
+import com.cyou.common.entity.RESTResult;
 
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -18,5 +18,5 @@ public interface CheckToken {
     
     @FormUrlEncoded
     @POST("/checkToken")
-    Observable<BaseBean> checkToken(@Field("token") String token);
+    Observable<RESTResult> checkToken(@Field("token") String token);
 }

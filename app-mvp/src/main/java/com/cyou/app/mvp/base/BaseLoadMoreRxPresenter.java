@@ -5,7 +5,7 @@ import android.widget.Toast;
 
 import com.cyou.app.mvp.loadmore.LoadMoreRxPresenter;
 import com.cyou.app.mvp.loadmore.LoadMoreView;
-import com.cyou.common.entity.BaseBean;
+import com.cyou.common.entity.RESTResult;
 import com.cyou.common.utils.RetrofitErrorFilter;
 import com.cyou.quick.QuickApplication;
 import com.linjin.zhimi.DataCenter;
@@ -36,10 +36,10 @@ public class BaseLoadMoreRxPresenter<V extends LoadMoreView<M>, M> extends LoadM
 
     @Override
     protected void onLoadMoreNext(M data) {
-        if ((data instanceof BaseBean) && ((BaseBean) data).getCode() == ApiCode.FAILED_CODE_TOKEN_INVALID) {
+        if ((data instanceof RESTResult) && ((RESTResult) data).getCode() == ApiCode.FAILED_CODE_TOKEN_INVALID) {
         
             DataCenter.getInstance().removeUser();
-            String tip = ((BaseBean) data).getMsg();
+            String tip = ((RESTResult) data).message;
             if (!TextUtils.isEmpty(tip)) {
                 Toast.makeText(QuickApplication.getInstance(), tip, Toast.LENGTH_SHORT).show();
             }
@@ -50,18 +50,18 @@ public class BaseLoadMoreRxPresenter<V extends LoadMoreView<M>, M> extends LoadM
 
     @Override
     protected void onNext(M data) {
-        if ((data instanceof BaseBean) && ((BaseBean) data).getCode() == ApiCode.FAILED_CODE_TOKEN_INVALID) {
+        if ((data instanceof RESTResult) && ((RESTResult) data).getCode() == ApiCode.FAILED_CODE_TOKEN_INVALID) {
             DataCenter.getInstance().removeUser();
-            String tip = ((BaseBean) data).getMsg();
+            String tip = ((RESTResult) data).message;
             if (!TextUtils.isEmpty(tip)) {
                 Toast.makeText(QuickApplication.getInstance(), tip, Toast.LENGTH_SHORT).show();
             }
             return;
         }
         //兼容搜索stateCode=2的情况
-        if ((data instanceof BaseBean) && 
-                (((BaseBean) data).getCode() == ApiCode.SUCCESS_CODE ||
-                        ((BaseBean) data).getCode() == ApiCode.NO_DATA_CODE) && isViewAttached()) {
+        if ((data instanceof RESTResult) && 
+                (((RESTResult) data).getCode() == ApiCode.SUCCESS_CODE ||
+                        ((RESTResult) data).getCode() == ApiCode.NO_DATA_CODE) && isViewAttached()) {
             getView().showContent();
         }
         super.onNext(data);

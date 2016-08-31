@@ -55,13 +55,13 @@ public class LoginPresenter extends AccuntPresenter<LoginView> {
                 LogUtils.i("login", "LoginSuccess onNext ");
                 if (userModel.getCode() == ApiCode.SUCCESS_CODE) {
                     LogUtils.i("login", "LoginSuccess onNext ");
-                    DataCenter.getInstance().saveUser(userModel.getUser());
+                    DataCenter.getInstance().saveUser(userModel.getData());
 //                    initConstants();
                     EventBus.getDefault().post(new LoginSuccessfulEvent());
                 } else {
                     if (isViewAttached()) {
                      
-                        getView().showTip( userModel.getMsg());
+                        getView().showTip( userModel.message);
                     }
                     
                 }

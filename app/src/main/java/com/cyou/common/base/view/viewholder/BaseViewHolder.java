@@ -2,19 +2,23 @@ package com.cyou.common.base.view.viewholder;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 
 import butterknife.ButterKnife;
 
 
 public abstract class BaseViewHolder<T> extends RecyclerView.ViewHolder {
-    
+
+    public static final String TAG = "BaseViewHolder";
+
     public Context mContext;
 
-    public BaseViewHolder(View v) {
-        super(v);
-        mContext = v.getContext();
-        ButterKnife.bind(v);
+    public BaseViewHolder(View view) {
+        super(view);
+        mContext = view.getContext();
+        ButterKnife.bind(view);
+        Log.i(TAG, "CommonFooterVH: " + view);
     }
 
     /**
@@ -29,6 +33,6 @@ public abstract class BaseViewHolder<T> extends RecyclerView.ViewHolder {
      *
      * @return
      */
-    public abstract void onBindViewHolder(View view, T obj) ;
+    public abstract void onBindViewHolder(View view, T obj);
 
 }

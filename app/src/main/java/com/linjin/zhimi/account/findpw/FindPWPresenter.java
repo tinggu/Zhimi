@@ -1,7 +1,7 @@
 package com.linjin.zhimi.account.findpw;
 
 import com.cyou.app.mvp.rx.scheduler.AndroidSchedulerTransformer;
-import com.cyou.common.entity.BaseBean;
+import com.cyou.common.entity.RESTResult;
 import com.linjin.zhimi.DataCenter;
 import com.linjin.zhimi.account.AccuntPresenter;
 import com.linjin.zhimi.api.AccuntApi;
@@ -33,7 +33,7 @@ public class FindPWPresenter extends AccuntPresenter<FindPasswordView> {
 
     public void doGetCheckCode(String mobileNum) {
 
-        Subscriber<BaseBean> subscriber = new Subscriber<BaseBean>() {
+        Subscriber<RESTResult> subscriber = new Subscriber<RESTResult>() {
             @Override
             public void onCompleted() {
 
@@ -47,15 +47,15 @@ public class FindPWPresenter extends AccuntPresenter<FindPasswordView> {
             }
 
             @Override
-            public void onNext(BaseBean code) {
+            public void onNext(RESTResult code) {
                 if (isViewAttached() && code.getCode() != ApiCode.SUCCESS_CODE) {
                     getView().showTip(ApiCode.getMsg(code.getCode()));
                 }
 //                checkCode = code.getCheckCode();
             }
         };
-        Observable<BaseBean> observable = accuntApi.getCheckCode(mobileNum, AccuntApi.TYPE_FIND_PASSWORD);
-        observable.compose(new AndroidSchedulerTransformer<BaseBean>()).subscribe(subscriber);
+        Observable<RESTResult> observable = accuntApi.getCheckCode(mobileNum, AccuntApi.TYPE_FIND_PASSWORD);
+        observable.compose(new AndroidSchedulerTransformer<RESTResult>()).subscribe(subscriber);
 //        AppProvide.applyScheduler(accuntApi.getCheckCode(mobileNum, AccuntApi.TYPE_FIND_PASSWORD))
 //                .subscribe(subscriber);
     }
@@ -95,7 +95,7 @@ public class FindPWPresenter extends AccuntPresenter<FindPasswordView> {
             public void onNext(UserModel account) {
                 LogUtils.i("login", "FindPWPresenter onNext ");
 
-                DataCenter.getInstance().saveUser(account.getUser());
+                DataCenter.getInstance().saveUser(account.getData());
                 EventBus.getDefault().post(new LoginSuccessfulEvent());
 
                 EventBus.getDefault().post(new FindPWSuccessfulEvent());
@@ -112,7 +112,7 @@ public class FindPWPresenter extends AccuntPresenter<FindPasswordView> {
                     @Override
                     public Observable<UserModel> call(UserModel token) {
                         if (token.getCode() == ApiCode.SUCCESS_CODE) {
-                            DataCenter.getInstance().saveUser(token.getUser());
+                            DataCenter.getInstance().saveUser(token.getData());
                             return Observable.just(token);
                         } else {
                             return Observable.error(new Throwable(ApiCode.getMsg(token.getCode())));

@@ -3,15 +3,17 @@ package com.cyou.common.entity;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class BaseBean {
+public abstract class RESTResult<T> {
 
+    public static final int SUCCESS = 0;
+    public static final int SIGN_OUT = 1;
     /**
      * 状态码
      */
     @Expose
     @SerializedName("code")
-    private int code;
-   
+    public int code;
+
 
     public int getCode() {
         return code;
@@ -22,20 +24,22 @@ public class BaseBean {
      */
     @Expose
     @SerializedName("message")
-    private String  msg;
+    public String message;
 
 
-    public String getMsg() {
-        return msg;
+    public String getMessage() {
+        return message;
     }
+
+    public abstract T getData();
 
     @Override
     public String toString() {
-        return "BaseBean{" +
+        return "RESTResult{" +
                 "code=" + code +
-                ", data='" + msg + '\'' +
+                ", data='" + message + '\'' +
                 '}';
     }
 
-    
+
 }

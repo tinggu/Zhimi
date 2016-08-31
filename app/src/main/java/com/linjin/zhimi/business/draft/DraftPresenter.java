@@ -1,4 +1,4 @@
-package com.linjin.zhimi.topic.draft;
+package com.linjin.zhimi.business.draft;
 
 
 import android.support.v4.app.FragmentActivity;

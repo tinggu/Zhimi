@@ -7,7 +7,7 @@ package com.cyou.common.entity;
  * Author     : wangjia_bi
  * Date       : 2016/7/13 16:38
  */
-public abstract class ListBean extends BaseBean implements IListBean{
+public abstract class ListBean extends RESTResult implements IListBean{
 
 //    @Override
 //    public void setParam(Map<String, String> param) {

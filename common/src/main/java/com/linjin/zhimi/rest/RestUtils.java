@@ -4,15 +4,16 @@ import android.content.Context;
 import android.text.TextUtils;
 
 import com.cyou.common.utils.AppConstants;
-import com.linjin.zhimi.Constants;
-import com.linjin.zhimi.DataCenter;
-import com.linjin.zhimi.ServerConstants;
 import com.cyou.common.utils.DeviceUtils;
 import com.cyou.common.utils.LogUtils;
 import com.cyou.common.utils.MD5Utils;
 import com.cyou.quick.QuickApplication;
+import com.facebook.stetho.okhttp3.StethoInterceptor;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.linjin.zhimi.Constants;
+import com.linjin.zhimi.DataCenter;
+import com.linjin.zhimi.ServerConstants;
 
 import java.io.File;
 import java.io.IOException;
@@ -28,9 +29,6 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-/**
- * Created by liujianguang on 2015/12/18.
- */
 public class RestUtils implements AppConstants, ParameterKeys, ServerConstants {
 
     private static OkHttpClient okHttpClient;
@@ -102,13 +100,13 @@ public class RestUtils implements AppConstants, ParameterKeys, ServerConstants {
                 CacheBufferdSkin cache = new CacheBufferdSkin();
                 request.body().writeTo(cache);
                 String strBody = cache.bodyStr;
-                
+
                 sb.append("---------------------request--------------------------------")
                         .append("\nrequest-->url").append("|").append(url)
                         .append("\nrequest.headers").append(":{\n").append(request.headers()).append("}")
                         .append("\nrequest.body:").append(strBody);
                 LogUtils.i("Retrofit", sb.toString());
-                
+
                 sb.delete(0, sb.length());
                 sb.append("---------------------response--------------------------------")
                         .append("\nresponse-->url").append("|").append(url)
@@ -150,7 +148,7 @@ public class RestUtils implements AppConstants, ParameterKeys, ServerConstants {
                         .append("\nrequest.headers").append(":{\n").append(request.headers()).append("}")
                         .append("\nrequest.body:").append(strBody);
                 LogUtils.i("Retrofit", sb.toString());
-               
+
             } catch (Exception e) {
 
             }
@@ -162,16 +160,13 @@ public class RestUtils implements AppConstants, ParameterKeys, ServerConstants {
             Context context = QuickApplication.getInstance();
             File cacheDir = new File(context.getCacheDir(), RESPONSE_CACHE);
             OkHttpClient.Builder builder = new OkHttpClient.Builder();
-            builder.cache(new Cache(cacheDir, RESPONSE_CACHE_SIZE))
+            okHttpClient = builder
+                    .cache(new Cache(cacheDir, RESPONSE_CACHE_SIZE))
                     .connectTimeout(HTTP_CONNECT_TIMEOUT, TimeUnit.MILLISECONDS)
-                    .readTimeout(HTTP_READ_TIMEOUT, TimeUnit.MILLISECONDS).
-                    addInterceptor(getRequestInterceptor());
-            okHttpClient = builder.build();
-//            okHttpClient = latest OkHttpClient();
-//            okHttpClient.setCache(latest Cache(cacheDir, RESPONSE_CACHE_SIZE));
-//            okHttpClient.setConnectTimeout(HTTP_CONNECT_TIMEOUT, TimeUnit.MILLISECONDS);
-//            okHttpClient.setReadTimeout(HTTP_READ_TIMEOUT, TimeUnit.MILLISECONDS);
-//            okHttpClient.interceptors().add(getRequestInterceptor());
+                    .readTimeout(HTTP_READ_TIMEOUT, TimeUnit.MILLISECONDS)
+                    .addInterceptor(getRequestInterceptor())
+                    .addNetworkInterceptor(new StethoInterceptor())
+                    .build();
         }
         return okHttpClient;
     }

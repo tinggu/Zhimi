@@ -1,10 +1,10 @@
 package com.linjin.zhimi.model;
 
-import com.cyou.common.entity.BaseBean;
+import com.cyou.common.entity.RESTResult;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class BasePagModel extends BaseBean {
+public abstract class BasePagModel extends RESTResult {
 
     /**
      * 当前页数
@@ -20,4 +20,5 @@ public class BasePagModel extends BaseBean {
     @SerializedName("totalPage")
     public int totalPage;
 
+  
 }

@@ -1,5 +1,7 @@
-package com.linjin.zhimi.topic;
+package com.linjin.zhimi.business.details;
 
+
+import android.support.v4.app.FragmentActivity;
 
 import com.cyou.quick.mvp.MvpBasePresenter;
 
@@ -10,15 +12,11 @@ import com.cyou.quick.mvp.MvpBasePresenter;
  * Author     : wangjia_bi
  * Date       : 2015/6/11 14:53
  */
-public class TopicPresenter extends MvpBasePresenter<TopicView> {
+public class DetailsPresenter extends MvpBasePresenter {
 
-    TopicActivity activity;
+    FragmentActivity activity;
 
-    public TopicPresenter(TopicActivity activity) {
+    public DetailsPresenter(FragmentActivity activity) {
         this.activity = activity;
-    }
-
-    public void showDetails() {
-        activity.showDetails(true);
     }
 }

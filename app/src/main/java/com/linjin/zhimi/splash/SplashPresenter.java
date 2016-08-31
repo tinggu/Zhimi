@@ -64,7 +64,7 @@ public class SplashPresenter extends MvpBasePresenter<MvpView> {
                 public void onSuccess(String userid) {
 
                     Log.d("LoginActivity", "--onSuccess" + userid);
-//                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
+//                    startActivity(new Intent(LoginActivity.this, HomeActivity.class));
 //                    finish();
                 }
 

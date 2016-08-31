@@ -15,36 +15,51 @@ import me.yokeyword.fragmentation.SupportFragment;
 
 public class BaseListFragment extends SupportFragment {
 
-    public TRecyclerView typeRecyclerView;
+    private TRecyclerView tRecyclerView;
+    Class<? extends BaseViewHolder> headVH;
+    protected int headType;
+    protected Object headData;
+    protected ListPresenter listPresenter;
 
     /**
      * @param vh 传入VH的类名
      * @return
      */
-    public static BaseListFragment newInstance(Class<? extends BaseViewHolder> vh, String type) {
+    public static BaseListFragment newInstance(Class<? extends BaseViewHolder> vh,
+                                               String type,   ListPresenter listPresenter) {
         Bundle arguments = new Bundle();
         arguments.putString(C.VH_CLASS, vh.getCanonicalName());
         arguments.putString(C.TYPE, type);
         BaseListFragment fragment = new BaseListFragment();
-        fragment.setArguments(arguments);
+        fragment.setArguments(arguments); 
+        fragment.setPresenter(listPresenter);
         return fragment;
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        typeRecyclerView = new TRecyclerView(getContext());
-        typeRecyclerView.setView(TUtil.forName(getArguments().getString(C.VH_CLASS)));
-        return typeRecyclerView;
+        tRecyclerView = new TRecyclerView(getContext());
+        tRecyclerView.setView(TUtil.forName(getArguments().getString(C.VH_CLASS)), listPresenter);
+        if (headVH != null) {
+            tRecyclerView.setHeadView(headVH, headType, headData);
+        }
+        return tRecyclerView;
     }
 
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        if (typeRecyclerView != null) typeRecyclerView.fetch();
+        if (tRecyclerView != null) tRecyclerView.fetch();
     }
 
-    public void setHeadView(Class<? extends BaseViewHolder> vh){
-        typeRecyclerView.setHeadView(vh);
+    public void setHeadView(Class<? extends BaseViewHolder> vh, int headType, Object headData) {
+        this.headVH = vh;
+        this.headType = headType;
+        this.headData = headData;
+    }
+
+    public void setPresenter(ListPresenter listPresenter) {
+        this.listPresenter = listPresenter;
     }
 }

@@ -1,4 +1,4 @@
-package com.linjin.zhimi.topic;
+package com.linjin.zhimi.business;
 
 /**
  * Description:
@@ -7,12 +7,11 @@ package com.linjin.zhimi.topic;
  * Author     : tinggu
  * Date       : 2016/6/4 10:37
  */
-public interface TopicFlag {
+public interface BusinessFlag {
     String FLAG = "flag";
-    String FLAG_SUMMARY = "summary";
+    String FLAG_SUMMARY = "summary"; 
     String FLAG_DRAFT = "draft";
     String FLAG_DETAILS = "details";
-    String FLAG_LAST = "last";
-    String FLAG_COLLENT = "collent";
-//    String FLAG_ = "summary";
+    String FLAG_LATEST = "latest";
+    String FLAG_COLLENT = "collent"; 
 }

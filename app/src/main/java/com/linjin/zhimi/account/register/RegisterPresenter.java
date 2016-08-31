@@ -2,7 +2,7 @@ package com.linjin.zhimi.account.register;
 
 
 import com.cyou.app.mvp.rx.scheduler.AndroidSchedulerTransformer;
-import com.cyou.common.entity.BaseBean;
+import com.cyou.common.entity.RESTResult;
 import com.linjin.zhimi.DataCenter;
 import com.linjin.zhimi.account.AccuntPresenter;
 import com.linjin.zhimi.api.AccuntApi;
@@ -119,7 +119,7 @@ public class RegisterPresenter extends AccuntPresenter<RegisterView> {
     public void doGetCheckCode(String mobileNum) {
 
 
-        Subscriber<BaseBean> subscriber = new Subscriber<BaseBean>() {
+        Subscriber<RESTResult> subscriber = new Subscriber<RESTResult>() {
             @Override
             public void onCompleted() {
 
@@ -135,7 +135,7 @@ public class RegisterPresenter extends AccuntPresenter<RegisterView> {
             }
 
             @Override
-            public void onNext(BaseBean code) {
+            public void onNext(RESTResult code) {
                 if (isViewAttached() && code.getCode() != ApiCode.SUCCESS_CODE) {
                     getView().showTip("错误码:" + code.getCode());
                 }
@@ -143,15 +143,15 @@ public class RegisterPresenter extends AccuntPresenter<RegisterView> {
             }
         };
 
-        Observable<BaseBean> observable = accuntApi.getCheckCode(mobileNum, AccuntApi.TYPE_REGISTER);
-        observable.compose(new AndroidSchedulerTransformer<BaseBean>()).subscribe(subscriber);
+        Observable<RESTResult> observable = accuntApi.getCheckCode(mobileNum, AccuntApi.TYPE_REGISTER);
+        observable.compose(new AndroidSchedulerTransformer<RESTResult>()).subscribe(subscriber);
 //        AppProvide.applyScheduler()  .subscribe(subscriber);
 
     }
 
     public void checkCode(String code) {
-        Observable<BaseBean> observable = accuntApi.checkCode(SMSSDKInitUtils.APPKEY, code, zone, phone);
-        observable.compose(new AndroidSchedulerTransformer<BaseBean>()).subscribe(new Subscriber<BaseBean>() {
+        Observable<RESTResult> observable = accuntApi.checkCode(SMSSDKInitUtils.APPKEY, code, zone, phone);
+        observable.compose(new AndroidSchedulerTransformer<RESTResult>()).subscribe(new Subscriber<RESTResult>() {
 
             @Override
             public void onCompleted() {
@@ -165,12 +165,12 @@ public class RegisterPresenter extends AccuntPresenter<RegisterView> {
             }
 
             @Override
-            public void onNext(BaseBean model) {
+            public void onNext(RESTResult model) {
                 if (model.getCode() == ApiCode.SUCCESS_CODE) {
                     nextStep();
                 } else {
                     if (isViewAttached())
-                        getView().showTip(model.getMsg());
+                        getView().showTip(model.getMessage());
 
                 }
 
@@ -228,7 +228,7 @@ public class RegisterPresenter extends AccuntPresenter<RegisterView> {
                     @Override
                     public Observable<UserModel> call(UserModel token) {
                         if (token.getCode() == ApiCode.SUCCESS_CODE) {
-                            DataCenter.getInstance().saveUser(token.getUser());
+                            DataCenter.getInstance().saveUser(token.getData());
                             return Observable.just(token);
                         } else {
                             return Observable.error(new Throwable("错误码:" + token.getCode()));

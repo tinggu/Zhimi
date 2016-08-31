@@ -7,6 +7,7 @@ import com.cyou.quick.QuickApplication;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.cyou.common.utils.LogUtils;
 import com.cyou.common.utils.TrackUtils;
+import com.facebook.stetho.Stetho;
 import com.squareup.leakcanary.LeakCanary;
 import com.umeng.message.PushAgent;
 
@@ -24,6 +25,8 @@ public class ZhiMiApplication extends QuickApplication {
     }
 
     private void init() {
+        Stetho.initializeWithDefaults(this);
+        
         initLog();
 
         DataCenter.getInstance().init();
